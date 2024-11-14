@@ -1,0 +1,76 @@
+Ammo_SniperHvy_Barret_M82 is TAmmunitionDescriptor
+(
+    DescriptorId                      = GUID:{59411f88-fde1-48a2-bc94-4bfd135ad9dc}
+    Name                              = 'AEXZKCFCSZ'
+    TypeCategoryName                  = 'GGSLNBFHEX'
+    Caliber                           = '12_7mm'
+    WeaponDescriptionToken            = 'QQSDUKCNVD'
+    TraitsToken                       = [ 'STAT', ]
+    WeaponCursorType                  = Weapon_Cursor_MachineGun
+    MinMaxCategory                    = MinMax_inf_sniper
+    Arme                              = TDamageTypeRTTI(Family=DamageFamily_he_autocanon Index=2)
+    ProjectileType                    = EProjectileType/Obus
+    ImpactHappening                   = [ 'FusileSniperLourd127' ]
+    FxPower                           = EFXPower/Moyen
+    TempsEntreDeuxTirs                = 5.0
+    TempsEntreDeuxFx                  = 5.0
+    PorteeMaximaleGRU                 = 1400
+    PorteeMaximaleTBAGRU              = 1050
+    AffecteParNombre                  = True
+    AngleDispersion                   = 0.0
+    DispersionAtMaxRange              = ((100) * Metre)
+    DispersionAtMinRange              = ((50) * Metre)
+    DispersionWithoutSorting          = False
+    CorrectedShotAimtimeMultiplier    = 1.0
+    RadiusSplashPhysicalDamages       = 0 * Metre
+    PhysicalDamages                   = 0.252
+    ShowDamageInUI                    = True
+    RadiusSplashSuppressDamages       = 1 * Metre
+    SuppressDamages                   = 12.0
+    AllowSuppressDamageWhenNoImpact                = False
+    DisplaySalveAccuracy              = True
+    TirIndirect                       = False
+    TirReflexe                        = True
+    InterdireTirReflexe               = False
+    MaximalSpeed                      = 0.0
+    ShotWithoutPhysics                = False
+    FluidFriction                     = 0.0
+    NoiseDissimulationMalus           = 2.0
+    ShotsBeforeMaxNoise               = 3
+    TargetOnlyOneUnitInDistrict       = True
+    HitRollRuleDescriptor = TDiceHitRollRuleDescriptor
+    (
+        DescriptorId          = GUID:{5a27bb43-778c-4b72-b515-b6f53241b5c8}
+        BaseCriticModifier = 25
+        BaseHitValueModifiers =
+        [
+            (EBaseHitValueModifier/Base, 0.0),
+            (EBaseHitValueModifier/Idling, 55),
+            (EBaseHitValueModifier/Moving, 0),
+            (EBaseHitValueModifier/Targeted, 0.0),
+        ]
+    )
+    MaxSuccessiveHitCount             = 5
+    TempsDeVisee                      = 5.0
+    TempsEntreDeuxSalves              = 5.0
+    TempsEntreDeuxSalves_Min           = -1.0
+    TempsEntreDeuxSalves_Max           = -1.0
+    NbTirParSalves                    = 1
+    SupplyCost                        = 1.0
+    NbSalvosShootOnPosition           = 1
+    CanShootOnPosition                = True
+    CanShootWhileMoving               = False
+    NbrProjectilesSimultanes          = 1
+    AffichageMunitionParSalve         = 1
+    InterfaceWeaponTexture            = "Texture_Interface_Weapon_M82_Barrett"
+    SmokeDescriptor                   = nil
+    FireDescriptor                    = nil
+    TargetUnitCenter                  = True
+    CanHarmAirplanes                  = True
+    IsHarmlessForAllies               = True
+    PiercingWeapon                    = False
+    TandemCharge                      = False
+    FlightTimeForSpeed                    = 0.5
+    DistanceForSpeed                      = 1500.0 * Metre
+    DamageTypeEvolutionOverRangeDescriptor  = ~/DamageTypeEvolutionOverRangeDescriptor_AP1_1Km
+)

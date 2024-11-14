@@ -1,0 +1,5486 @@
+{
+    "TEffectSourceDescriptor": [
+        "DescriptorId"
+    ],
+    "TEffectsConstantes": [
+        "BrickEffectSourceDescriptor",
+        "CommanderEffectSourceDescriptor",
+        "HitCriticalEffectSourceDescriptor",
+        "TerrainCriticalEffectSourceDescriptor"
+    ],
+    "THelicopterWaypointWeightsDescriptor": [
+        "AnglesXY",
+        "AngularSpeedXY",
+        "AngleZ",
+        "Speed",
+        "Position",
+        "AnglularZSpeed"
+    ],
+    "THelicopterWeightsManager": [
+        "HelicopterWeights",
+        "IntermediateWaypointHelicopterWeights",
+        "DefaultHelicopterWeights",
+        "DefaultIntermediateWaypointsHelicopterWeights",
+        "WaypointScoreThresholds",
+        "DefaultFinalWaypointScore",
+        "DefaultIntermediateWayPointScoreTolerance"
+    ],
+    "TInitialisationGameDistanceUnits": [],
+    "TBaseClass": [
+        "OpportunisticTargetInGroup",
+        "IngameCubeActionButtonContainer12",
+        "DistanceMarginGRU",
+        "MediumSmoke",
+        "Assault",
+        "Neutral",
+        "LookAtAllTransport",
+        "LowerLeft",
+        "Captain",
+        "Sergeant",
+        "Multiply",
+        "Ended",
+        "HEMissile",
+        "LinearStep",
+        "dico_maps",
+        "Destruction",
+        "WarrantOfficer",
+        "ComputeBreadthFromLargestChild",
+        "CHECKED",
+        "Fade",
+        "PlayerMissionAttack",
+        "Ruin",
+        "ImpactMinReferenceAltitude",
+        "HorizontalFitToParent",
+        "AirplaneFactor",
+        "RetreatOnOutOfAmmo",
+        "Medium",
+        "ToggleClicked",
+        "InfantryScaleMax",
+        "OTAN",
+        "dico_lang",
+        "HEShell",
+        "BigWordNewLine",
+        "Length",
+        "Recons",
+        "Offensive",
+        "AA_Veh",
+        "Airplane",
+        "HighAltitude",
+        "MultiLine",
+        "ToggleHighlighted",
+        "Engineer",
+        "LieutenantColonel",
+        "Disc",
+        "Cadre_Texte",
+        "ParabolicArch",
+        "CutByDots",
+        "HasShot",
+        "dico_credits",
+        "VEHICLE_RECO",
+        "dico_input",
+        "Cadre",
+        "Bloqueur",
+        "Seen",
+        "Skirmish",
+        "Rocher",
+        "Horizontal",
+        "Cheapest",
+        "SecondLieutenant",
+        "Artillerie",
+        "BottomAndLeft",
+        "Time",
+        "Air_AT",
+        "NearCover",
+        "ennemi",
+        "Balle",
+        "TopAndLeft",
+        "Fuel",
+        "Bleu",
+        "Grayed",
+        "Helico",
+        "ONE_LINE",
+        "joueur",
+        "Air_Sead",
+        "Target",
+        "IngameCubeActionButtonContainer25",
+        "Reco_Veh",
+        "dico_map",
+        "AT_Gun",
+        "Override",
+        "ToDefend",
+        "ForetLegere",
+        "Bullet",
+        "NSawTooth",
+        "IngameCubeActionButtonContainer2",
+        "ExtraLourd",
+        "Reco",
+        "UpdateGUIFromIconType",
+        "Building",
+        "FitToParentConservingRatio",
+        "FireAtWill",
+        "Low",
+        "AT",
+        "HardCover",
+        "ProduceBuilding",
+        "Invalid",
+        "Moving",
+        "AirplaneMinReferenceAltitude",
+        "IngameCubeActionButtonContainer11",
+        "NoMoreProd",
+        "ToggleGrayed",
+        "Nothing",
+        "CorridorAttack",
+        "UpperLeft",
+        "Bottom",
+        "LargestChild",
+        "BloqueConstruction",
+        "Easy",
+        "LDHint",
+        "NotSpecified",
+        "Air_AA",
+        "Scripted",
+        "MinorVictor",
+        "UniversalFactory",
+        "InvMaxed",
+        "AllTerrainWheelAmphibious",
+        "IngameCubeActionButtonContainer23",
+        "AirReco",
+        "PlayerMissionArtillery",
+        "GuidedMissile",
+        "Medaille",
+        "Draw",
+        "INFANTRY_RECO",
+        "NoGrade",
+        "AirStrike",
+        "dico_companies",
+        "Wall",
+        "Hel_Support",
+        "Grenade",
+        "Bombe",
+        "ClusterBomb",
+        "CMD_Veh",
+        "ComputeBreadthFromLargestBetweenFatherAndChildren",
+        "LightSmoke",
+        "vide",
+        "Air_Support",
+        "StrategicLayerAir",
+        "Incomplete",
+        "FitToLargestBetweenChildAndParent",
+        "Shell",
+        "Idling",
+        "INACTIVE",
+        "Helis",
+        "Flying",
+        "TranslateZoomFade",
+        "Scout",
+        "Support",
+        "AA_Hel",
+        "LinearRect",
+        "Battalion",
+        "Title",
+        "StrategicPlain",
+        "Chasseur",
+        "Smoke",
+        "AntiAircraft",
+        "Deprecated",
+        "AlwaysOnGround",
+        "IngameCubeActionButtonContainer31",
+        "BorderWidth",
+        "Infantry",
+        "PRESSED",
+        "AntiAirplane",
+        "MaxBetweenParentAndContent",
+        "PlayerDisconnected",
+        "DefaultScaleMax",
+        "NearGround",
+        "Substract",
+        "CaseSizeGRU",
+        "GroundSupport",
+        "Clicked",
+        "Xp_Frame",
+        "Caster",
+        "IngameCubeActionButtonContainer10",
+        "Banner",
+        "Obus",
+        "FitToParent",
+        "IngameCubeActionContainer",
+        "Defensive",
+        "ToCapture",
+        "Difficile",
+        "IngameCubeActionButtonContainer6",
+        "SquareDecelerate",
+        "Deposit",
+        "LowerRight",
+        "FinalBlow",
+        "FrameProperty",
+        "Background",
+        "Max",
+        "Planes",
+        "UpdateGUIFromStrategicIconType",
+        "TrackAmphibious",
+        "IsObjectifCoeff",
+        "MinBetweenUserDefinedAndContent",
+        "Orders",
+        "dico_interface_options",
+        "MostExpensive",
+        "Move",
+        "AverageDefense",
+        "Gris",
+        "PASTE_DISABLED",
+        "CorridorDefense",
+        "Life",
+        "Rouge",
+        "CubicBezier",
+        "Toggled",
+        "Button1",
+        "MajorVictor",
+        "TacticalAttackNearCover",
+        "NeedSupport",
+        "DistanceBonus",
+        "INDETERMINATE",
+        "FitToLargestBetweenChildAndParentVertically",
+        "SquareAccelerate",
+        "Moyen",
+        "HIDE_CHARACTERS",
+        "DependOfRange_Far",
+        "Base",
+        "LargestBetweenFatherAndChildren",
+        "Hidden",
+        "IngameCubeActionButtonContainer24",
+        "Allied",
+        "NotActive",
+        "Independant",
+        "StrategicUrban",
+        "NoCollision",
+        "Physical",
+        "Hel_Transport",
+        "OnSelfSetInvisible",
+        "FlyingVehicle",
+        "ScoreDefeat",
+        "FitToLargestBetweenChildAndParentHorizontally",
+        "ScenarioCommand",
+        "IngameCubeActionButtonContainer33",
+        "Cowering",
+        "Suppressed",
+        "Vertical",
+        "MaxBetweenUserDefinedAndContent",
+        "Reco_Inf",
+        "AnyDifficulty",
+        "IsDefenseUnit",
+        "ArtilleryCluster",
+        "BorderWidthToken",
+        "IAStratPathCacheCostPathfindType",
+        "HeavySmoke",
+        "SquareTooth",
+        "VerticalFitToParent",
+        "Integer",
+        "IsSupport",
+        "PlayerMission",
+        "Short",
+        "ScenarioIAStrat",
+        "Pinned",
+        "Air",
+        "Anywhere",
+        "UnitLoss",
+        "ScenarioDeployment",
+        "ForetDenseCoeff",
+        "CMD_Tank",
+        "AlwaysInHighAltitude",
+        "Passive",
+        "ScriptedEvent",
+        "Objective",
+        "NotDefined",
+        "CapturedNotActive",
+        "FOB",
+        "StickToBorder",
+        "APShell",
+        "Number",
+        "Total_Xp",
+        "UNTOUCHED",
+        "ZonePoint",
+        "Front",
+        "Squirmish",
+        "StrategicLayerGround",
+        "FitToContentHorizontally",
+        "SmartOrders",
+        "DCA",
+        "OpportunisticSingleTarget",
+        "Orange",
+        "ProjectileAltitude",
+        "V_TOP",
+        "Sides",
+        "Defense",
+        "Batiment",
+        "Defensif",
+        "AllTerrainWheel",
+        "ManualTrigger",
+        "ObjectiveAttack",
+        "CorridorDynamicDefense",
+        "Supply",
+        "Aerial",
+        "ForetLightCoeff",
+        "Up",
+        "DistrictCoeff",
+        "LookAtNonEmptyTransport",
+        "Logistic",
+        "Conquest",
+        "READ_ONLY",
+        "COPY_DISABLED",
+        "Xp_Bar",
+        "Normal",
+        "Attack",
+        "AverageAttack",
+        "Ground",
+        "FadeZoom",
+        "Add",
+        "Leger",
+        "Facile",
+        "IngameCubeActionButtonContainer4",
+        "Missile",
+        "Invoke",
+        "ChasseurBombardier",
+        "MaxBetweenUserDefinedAndContentVertically",
+        "IngameCubeActionButtonContainer8",
+        "UltraLourd",
+        "Right",
+        "Next_Level",
+        "TresFacile",
+        "Top",
+        "H_LEFT",
+        "Left",
+        "Breakthrough",
+        "Vehicles",
+        "CubicStep",
+        "DependOfRange_Near",
+        "High",
+        "PetitBatiment",
+        "Manpad",
+        "FitToContentVertically",
+        "DistanceDecayLengthGRU",
+        "Howitzer",
+        "BigWordCut",
+        "UserDefined",
+        "INFANTRY",
+        "AntiRadar",
+        "CMD_Hel",
+        "TotalScore",
+        "FirstLieutenant",
+        "Vehicle",
+        "APMissile",
+        "MajorDefeat",
+        "InfantryMinReferenceAltitude",
+        "Fighter",
+        "PlusDifficile",
+        "NeverLooktAtTransport",
+        "AuxiliarySupport",
+        "HOVERED",
+        "TransportPara",
+        "IntermediateHighlighted",
+        "MalusDefaultDefensePoint",
+        "ResizeFont",
+        "ACTIVE",
+        "dico_interface_ingame",
+        "PACT",
+        "Button2",
+        "Object",
+        "LENGTH",
+        "AT_Hel",
+        "IngameCubeActionButtonContainer5",
+        "IngameCubeActionButtonContainer22",
+        "Evasion",
+        "ImpactFactor",
+        "UnitFactory",
+        "Axis",
+        "dico_interface_outgame",
+        "LowAltitude",
+        "OnSelfSetVisible",
+        "IngameCubeActionButtonContainer7",
+        "Operational",
+        "H_CENTER",
+        "UltraLourd_Red",
+        "KeepDefault",
+        "AT_Veh",
+        "HumanDifficulty",
+        "NoMoreZone",
+        "SwitchPlacement",
+        "BestDefense",
+        "None",
+        "Suppress",
+        "VeryLong",
+        "IngameCubeActionButtonContainer1",
+        "UseOnRS_TBAWithGroundOpticsLerp",
+        "Aircraft",
+        "CaseSize",
+        "CMD_Inf",
+        "OverTimeMapObjective",
+        "Cadre_Level",
+        "Fire",
+        "MinorDefeat",
+        "Failed",
+        "Long",
+        "MaxBetweenUserDefinedAndContentHorizontally",
+        "ImpactScaleMax",
+        "ScoreVictory",
+        "INPUT_DISABLED",
+        "tout",
+        "AirSupport",
+        "Agressif",
+        "Bullets",
+        "Art",
+        "TotalVictory",
+        "StrategicRiver",
+        "Rear",
+        "Title_Border",
+        "Undefined",
+        "UnknowDefensePoint",
+        "Track",
+        "dico_manual",
+        "Mlrs",
+        "Scroll",
+        "Stun",
+        "dico_platoons",
+        "UpperRight",
+        "Armored",
+        "Vert",
+        "Major",
+        "DistanceDecayCoeff",
+        "UNCHECKED",
+        "Intermediate",
+        "dico_dialogues",
+        "HoldFire",
+        "dico_trophies",
+        "Reco_Hel",
+        "Targeted",
+        "Water",
+        "MajorVictory",
+        "neutre",
+        "Hard",
+        "StrategicForest",
+        "NotCounted",
+        "ComputeBreadthFromFrameProperty",
+        "TogglableOrders",
+        "ForetDense",
+        "Tanks",
+        "Highlighted",
+        "VEHICLE",
+        "InfantryFactor",
+        "Lourd",
+        "allie",
+        "AltitudeCoeff",
+        "DoubleClic",
+        "Default",
+        "PASSWORD",
+        "IngameCubeActionButtonContainer3",
+        "ScriptDecided",
+        "Random",
+        "TotalDefeat",
+        "CaptureCommandZone",
+        "Bomb",
+        "Armor_Heavy",
+        "Artillery",
+        "CorridorArtillery",
+        "CubicRect",
+        "All",
+        "TopAndRight",
+        "UnitDestruction",
+        "EauProfonde",
+        "BestAttack",
+        "AirplaneScaleMax",
+        "MinorVictory",
+        "Bombardier",
+        "AA",
+        "DontUse",
+        "IngameCubeActionButtonContainer26",
+        "BigWordLetRun",
+        "QuadraDecelerate",
+        "Agressive",
+        "FitToContent",
+        "Armor",
+        "IngameCubeActionButtonContainer21",
+        "TresDifficile",
+        "DefaultFactor",
+        "EauPeuProfonde",
+        "DefaultMinReferenceAltitude",
+        "dico_units",
+        "Ifv",
+        "TacticalAttackInCover",
+        "StringStartingWithNumber",
+        "Down",
+        "Surrender",
+        "IngameCubeActionButtonContainer9",
+        "MinBetweenParentAndContent",
+        "Ricochet",
+        "Transport",
+        "Strategic",
+        "Button3",
+        "BalancedMultiline",
+        "Mortar",
+        "Succes",
+        "BottomAndRight",
+        "SuicideAttack",
+        "IngameCubeActionButtonContainer32",
+        "Supply_Hel",
+        "MapObjective",
+        "Rect",
+        "StrategicSemiUrban"
+    ],
+    "EGameDifficulty": [
+        "Values"
+    ],
+    "TGameDifficultyListConfiguration": [
+        "MissionTypeToDifficulties"
+    ],
+    "ModelDescriptor": [
+        "FileName",
+        "TextureDirectory"
+    ],
+    "TConstantAlternativeSelector": [
+        "Key"
+    ],
+    "TPilotLodSelector": [
+        "CameraMoverManagerModernWarfare",
+        "OptionalLimit",
+        "HighLowLimitInMeter",
+        "LowNoneLimitInMeter"
+    ],
+    "TCameraScaler": [
+        "ScaleOption",
+        "ScaleFactor",
+        "ScaleMinReferenceAltitude",
+        "Camera",
+        "ScaleMax"
+    ],
+    "TIdentityScaler": [],
+    "TLodSelector": [
+        "HighMidLimitInMeter",
+        "CameraMoverManagerModernWarfare",
+        "MidLowLimitInMeter",
+        "OptionalLimit"
+    ],
+    "TTimelyDepictionReceiverFactory": [
+        "DepictionTemplate"
+    ],
+    "TDepictionTemplate": [
+        "Selector",
+        "CoatingName",
+        "Actions",
+        "DepictionAlternatives",
+        "Operators",
+        "AdditionalTextures",
+        "SubDepictions",
+        "ResidentMaterialTags",
+        "Scaler"
+    ],
+    "DepictionDescriptor_LOD_High": [
+        "MeshDescriptor"
+    ],
+    "DepictionDescriptor_LOD_Mid": [
+        "MeshDescriptor"
+    ],
+    "DepictionDescriptor_LOD_Low": [
+        "MeshDescriptor",
+        "DisabledOperators"
+    ],
+    "TConstantScaler": [
+        "Scale"
+    ],
+    "TSubDepiction": [
+        "Anchors",
+        "Depiction"
+    ],
+    "DepictionDescriptor_LOD_InfantryHigh": [
+        "MeshDescriptor"
+    ],
+    "DepictionDescriptor_LOD_InfantryLow": [
+        "MeshDescriptor"
+    ],
+    "TEntityDescriptor": [
+        "ClassNameForDebug",
+        "ModulesDescriptors",
+        "World",
+        "DescriptorId"
+    ],
+    "TFlagsModuleDescriptor": [
+        "InitialFlagSet"
+    ],
+    "TPositionModuleDescriptor": [
+        "InGeoDb"
+    ],
+    "TVisibilityModuleDescriptor": [
+        "VisionUnitType",
+        "UnitConcealmentBonus"
+    ],
+    "TLinkTeamModuleDescriptor": [],
+    "TPackSignauxModuleDescriptor": [],
+    "TTagsModuleDescriptor": [
+        "TagSet"
+    ],
+    "TTargetDataModuleDescriptor": [],
+    "TCameraShowroomModuleDescriptor": [
+        "SpawnType"
+    ],
+    "TSoundDescriptor": [
+        "SoundSettings",
+        "TheSoundStream",
+        "UseSpecialLoop"
+    ],
+    "TSoundStream": [
+        "FileName"
+    ],
+    "TUIRenderLayersManager": [
+        "RenderLayerArray"
+    ],
+    "TUILayer": [
+        "UserInputLayer",
+        "Scene",
+        "RenderLayersManager"
+    ],
+    "TUIDebugConsoleDescriptor": [
+        "UniqueName",
+        "ComponentFrame",
+        "IsClippable",
+        "HasBackground",
+        "BackgroundBlockColorToken",
+        "HasBorder",
+        "BorderLineColorToken",
+        "UniformDrawer",
+        "Components",
+        "TextSize",
+        "TextColor",
+        "InfoTextColor",
+        "SecondaryInfoTextColor",
+        "SuccessTextColor",
+        "FailureTextColor",
+        "TextSelectionColor",
+        "SelectionColor",
+        "SelectionColorNoFocus",
+        "MaxNumberOfCharacters",
+        "TextPosPixel",
+        "TextPosMagnifiable",
+        "TextPosRelative",
+        "TextWidthPixel",
+        "TextWidthMagnifiable",
+        "TextWidthRelative",
+        "TextMarginMagnifiable",
+        "MinFrameRelativeWidthHeight",
+        "TextStyle",
+        "SpeedAnimRatio"
+    ],
+    "TUIFramePropertyRTTI": [
+        "RelativeOffset",
+        "MagnifiableWidthHeight",
+        "RelativeWidthHeight",
+        "AlignementToAnchor",
+        "PixelWidthHeight",
+        "AlignementToFather",
+        "MagnifiableOffset",
+        "PixelOffset"
+    ],
+    "BUCKSensibleAreaDescriptor": [
+        "MagnifierMultiplication",
+        "Components",
+        "FitStyle",
+        "HidePointerEvents",
+        "ElementName",
+        "MaskEvents",
+        "ComponentFrame"
+    ],
+    "TUIFormattedTextStyle": [
+        "TextStyle",
+        "ParagraphStyle",
+        "Typeface"
+    ],
+    "TTextStyle": [
+        "ColorUp",
+        "Stroke",
+        "FontSize",
+        "StrokeHardness",
+        "StrokeSize",
+        "ColorStroke",
+        "ColorBottom",
+        "Offset",
+        "UpperCase",
+        "TextThickness"
+    ],
+    "TParagraphStyle": [
+        "BigWordAction",
+        "Balanced",
+        "VerticalAlignment",
+        "LineWidth",
+        "InterLine",
+        "OpticalAlignment",
+        "Alignment"
+    ],
+    "TUIDebugConsoleResources": [
+        "Handler",
+        "DebugConsole",
+        "UserInputLayer",
+        "LayerConsole",
+        "StyleGuide",
+        "UserInputBinder",
+        "Camera",
+        "World3D",
+        "Scene3D"
+    ],
+    "TUIStyleGuide": [
+        "CommonResource",
+        "Typeface",
+        "TextStylesMap",
+        "TextSizesMap",
+        "LineSizesMap",
+        "LineHeightsMap",
+        "MagnifiableMarginsMap",
+        "BlockColorsMap",
+        "LineColorsMap",
+        "TextColorsMap",
+        "HintManagementProperties",
+        "HintableAreaDescriptor",
+        "TextFormatScript"
+    ],
+    "TFloatRTTI": [
+        "Value"
+    ],
+    "TColorRTTI": [
+        "Color"
+    ],
+    "TTextFormatScriptRTTI": [
+        "Commands"
+    ],
+    "TTFSCommand_StyleChange": [
+        "Typeface",
+        "Style"
+    ],
+    "BUCKContainerDescriptor": [
+        "UniqueName",
+        "ChildFitToContent",
+        "BorderLineColorToken",
+        "Components",
+        "IsClippable",
+        "HidePointerEvents",
+        "FitStyle",
+        "UniformDrawer",
+        "ElementName",
+        "BackgroundBlockColorToken",
+        "ComponentFrame",
+        "MagnifierMultiplication",
+        "BorderThicknessToken",
+        "BordersToDraw",
+        "HasBackground",
+        "HasBorder"
+    ],
+    "BUCKListDescriptor": [
+        "UniqueName",
+        "ChildFitToContent",
+        "BorderLineColorToken",
+        "AssumeChildrenAreClippable",
+        "Axis",
+        "MagnifiableWidthHeight",
+        "FirstMargin",
+        "TextToken",
+        "Elements",
+        "HidePointerEvents",
+        "ElementName",
+        "AssumeChildrenAreFixedSize",
+        "BackgroundBlockColorToken",
+        "ComponentFrame",
+        "ComponentDescriptor",
+        "BorderThicknessToken",
+        "HintExtendedToken",
+        "ClipContent",
+        "SortingType",
+        "GridAlign",
+        "BreadthComputationMode",
+        "ForegroundComponents",
+        "InterItemMargin",
+        "BackgroundComponents",
+        "HintBodyToken",
+        "HasBackground",
+        "PointerEventsToAllow",
+        "HasBorder",
+        "LastMargin"
+    ],
+    "TRTTILength": [
+        "Pixel",
+        "Magnifiable"
+    ],
+    "BUCKListElementDescriptor": [
+        "MinSize",
+        "ExtendWeight",
+        "ComponentDescriptor"
+    ],
+    "TActionPointConsumptionGridConstantsDescriptor": [
+        "TerrainsBloquants",
+        "TerrainsRalentisseurs",
+        "TailleDeCaseApproximativeGRU",
+        "CouleurDeLaCourbe",
+        "EpaisseurDeLaCourbe"
+    ],
+    "TAirplaneConstantesModernWarfareDescriptor": [
+        "EvacuationAltitudeGRU",
+        "TempsEntreDeuxDecollagesEnSecondes",
+        "EvacWinchesterToutesLesArmesPrincipales",
+        "UtiliserArmesPendantEvac",
+        "FrontLandingGearMeshNodeName",
+        "BackLandingGearMeshNodeName"
+    ],
+    "TDynamicTerrainRegularPolygonDelimiter": [
+        "Radius",
+        "SideCount"
+    ],
+    "TRoutConstants": [
+        "TestMoralNombreDes",
+        "TestMoralNombreFacesDes",
+        "TestMoralSeuil",
+        "LanceTestMoralPertePV",
+        "TempsEntreDeuxTestsMoralPertePV",
+        "LanceTestMoralSeuilSuppression",
+        "TempsEntreDeuxTestsMoralSeuilSuppression",
+        "EffetConditionSuppression",
+        "EffetAppliqueSuppression",
+        "SortieSeuilSuppression"
+    ],
+    "TDistrictSpawner": [],
+    "TEvaluationMenaceConstantesDescriptor": [
+        "CercleMenaceGRU",
+        "EscapeRadiusGRU",
+        "DureeDeMemoireDeLaMenaceEnSecondes",
+        "ConsidererLesMenacesEnMouvementCommeDirectes"
+    ],
+    "TSpecificFactoryResources": [
+        "FactoryDisplayOrder",
+        "FactoryDescriptions"
+    ],
+    "TSpecificFactoryDescription": [
+        "FactoryHintExtended",
+        "FactoryName",
+        "FactoryHintTitle",
+        "FactoryHintBody"
+    ],
+    "TArrivalFormationConstantes": [
+        "UnitSpacingWidthLBU",
+        "FrontLineMinimalSizeLBU",
+        "DefaultFormationWidthToDepthRatio"
+    ],
+    "TUnitFormationDescriptor": [
+        "FrontMarginLBU",
+        "SpacingDepthLBU",
+        "SpacingWidthLBU",
+        "FormationLines"
+    ],
+    "TUnitFormationLineDescriptor": [
+        "UnitTypes"
+    ],
+    "TFormationConstantes": [
+        "UnitFormationDescriptor",
+        "UnitDeploymentFormationDescriptor",
+        "DistanceMaintienClicPourDeplacementGhostGRU",
+        "SnapToFavorableTerrainRadiusGRU"
+    ],
+    "TRollParameters": [
+        "DistanceToleranceGRU",
+        "PiercingThresholdBias",
+        "DicesNumberFaces",
+        "InterpolateRangeTable",
+        "RangeModifiersTable",
+        "SuccessiveHitModifiersTable",
+        "MinimalHitChanceWithECM"
+    ],
+    "TIAStratConstantesDescriptor_Specific": [
+        "AutoDeployNumberOfFrameWithoutProduction",
+        "SeedForIAStrat",
+        "CacherLesUnitesIdle",
+        "FollowUnitIfNoTarget",
+        "CanRequestTransportProduction",
+        "CanSelectTransportUnits",
+        "ForceSelectCurrentTransporter",
+        "NbMacroActionAllowedToProduceSimultaneous",
+        "RayonDOccupationDansLaGeoDbProdution_ValeurMinGRU",
+        "RayonDOccupationDansLaGeoDbProdution_ValeurMaxGRU",
+        "ForbiddenTagsByMission",
+        "MinUnitWeightToReserveCorridor",
+        "UnitTagAndWeightToReserveCorridor",
+        "ControlRatioMinToControl",
+        "ZoneKnowledgeDuration",
+        "CommandZoneWeight",
+        "MinDistanceToRequireTransportGRU",
+        "MaxDistanceToAcceptTransportRequestGRU",
+        "ForbidToLoadNewUnits",
+        "IAStartDelay",
+        "UnitPowerInformationData",
+        "ShouldConsiderAPBounceAsDangerous",
+        "ShouldConsiderPierceAsDangerous",
+        "APPierceDangerousness",
+        "ArtilleryStrikeThreatLifeTime",
+        "DistanceToSeekDistrictForUnitInDefenseGRU",
+        "DistanceToSeekDefenseUnitForUnitInDefenseGRU",
+        "DistanceToSeekForestForUnitInDefenseGRU",
+        "DistanceToSeekPolygonCenterForUnitInDefenseGRU",
+        "UseAntiStackingForVehicles",
+        "UseAntiStackingForInfantry",
+        "MaxNumberOfStackingUnits",
+        "ObjectiveAttackOwnershipRatio",
+        "DefenseMacroActionFleePowerRatio",
+        "OrderedDefensePointTypeToUnitTag",
+        "MaxDistanceForNearCoverDefensePoint",
+        "DefaultDefensePointScoringFeature",
+        "TaggedDefensePointScoringFeature",
+        "AnticipationDelay",
+        "OffAnticipationDistanceCoef",
+        "MinAnticipationDistanceCoef",
+        "MaxAnticipationDistanceCoef",
+        "MergeGroupDistInPolygon",
+        "AddToGroupDistInPolygon",
+        "DistToValidateRegroupPointInPolygon",
+        "NumberOfDangerousIndiceAlwaysIgnoredForTacticalPathInCover",
+        "SecondsToIgnoreDangerousIndiceForTacticalPathInCover",
+        "BlitzkriegMultiplierForTacticalPathInCover",
+        "NumberOfDangerousIndicesToIgnoreForRegroupPoint",
+        "DistanceToRetreatForFleeGRU",
+        "TimeToWaitAfterFleeToGoBackToOriginalPositionInSeconds",
+        "TimeSinceLastShotReceivedForFlee",
+        "UpdateRetreatPointInterval",
+        "NumberTicksForIdle",
+        "MinSupplyStock",
+        "MinLifeRatioForRetreat",
+        "MinFuelRatioForRetreat",
+        "ZoneFillerType",
+        "DefaultInMapArtilleryAmount",
+        "DefaultOutMapArtilleryAmount",
+        "DefaultTransportSettings",
+        "DefaultTransportIsRequiredProduction",
+        "RoEConstantes",
+        "CommanderTagSet",
+        "HelicoSafeCollisionPlanesOrderByTag",
+        "IAStratPathCostCacheFilePath",
+        "IAStratDistanceFromNotDefendedCommandZoneGRU",
+        "HysteresisDistanceForCommandUnitAlreadyAssignToCommandZoneGRU",
+        "CapturableCommandZoneMoveOutAndCapturePowerRatioForAIDifficulty",
+        "MinimumScoreRatioForStayInCommandZonePerIADifficulty",
+        "ProductionCapturableRadiusCheckMultiplier",
+        "SupplyMinDistanceCheckGRU",
+        "SupplyDistanceToStopGRU",
+        "IAStratPathCacheCostPathfindType",
+        "DeployOffRoadUnitsTags",
+        "MinSpeedForSearchZone"
+    ],
+    "TDefensePointScoringFeature": [
+        "DefensePointPositioning",
+        "DefensePointScoringValue"
+    ],
+    "TCircleZoneFiller": [
+        "Radius"
+    ],
+    "TUnitPowerInformationConstante": [
+        "UnitPowerAntiAirMultiplier",
+        "UnitPowerDistrictCoeff",
+        "UnitPowerTerrainCoeff",
+        "UnitPowerBuildingMultiplier",
+        "UnitPowerUnarmedOrPinnedMultiplier",
+        "DefaultDistanceToConsiderOtherUnitsPowerGRU"
+    ],
+    "TRoEConstantes": [
+        "UnarmedVehiculeBehavior",
+        "MissilesBehavior",
+        "ShotReactionBehavior",
+        "ActivateAutoResale"
+    ],
+    "TIAStratAirstrikeConstantes": [
+        "UseAirstrikeDefenseSystem",
+        "DefenseAirstrikeSettings",
+        "UseAirStrikeOpportunisticAttack",
+        "OpportunisticSingleTargetAirstrikeSettings",
+        "OpportunisticTargetInGroupAirstrikeSettings",
+        "TargetPowerForOpportunisticSingleTargetAirStrike",
+        "TargetPowerForOpportunisticTargetInGroupAirStrike",
+        "RadiusForOpportunisticTargetInGroupAirStrikeGRU",
+        "MinNbrOfTargetsForOpportunisticTargetInGroupAirStrike",
+        "StrikeLimitations",
+        "AirplaneWaitForDecisionTime",
+        "ThreatOutOfCorridorDevaluationValue"
+    ],
+    "TIAStratArtilleryStrikeConstantes": [
+        "ArtilleryStrikeSupportOffsetGRU",
+        "ArtilleryStrikeThreatBonusPerTags",
+        "ArtilleryRangeRatioPosition"
+    ],
+    "TIAStratVisionConstantes": [
+        "VisionParametersByDifficulty",
+        "VisionTestDefenseRatio",
+        "VisionTestHideUnitRatio"
+    ],
+    "TMapSlicingConstantes": [
+        "NbPositionsPerPolygon",
+        "MaxNbUnitsPerPolygon",
+        "WaypointsInLightCoverTerrainTypes"
+    ],
+    "TFakeGunThreatDescriptor": [
+        "FakeThreatLifeTime",
+        "DistanceFromStartGRU",
+        "StepSize",
+        "DecalageAltitude",
+        "VisionRangeGRU",
+        "OwnerRatioForFakeGunThreat",
+        "GunList"
+    ],
+    "TFakeGunDescriptor": [
+        "CurrentRangeGRU",
+        "TypeArme",
+        "IsPiercing",
+        "ColPlan",
+        "TirIndirect"
+    ],
+    "TDamageTypeRTTI": [
+        "Family",
+        "Index"
+    ],
+    "TIAStratVisionParameters": [
+        "KnowledgeTimerForAttackBehavior",
+        "UnitsKnowledge",
+        "KnowledgeMemoTimer"
+    ],
+    "TIAStratWeaponConstantesDescriptor": [
+        "SafeDamageType",
+        "DamageWithMenaceForDangerounessArmor",
+        "AlwaysThreateningDamageFamily",
+        "MacroActionArtilleryDamageTypeThreat",
+        "AttackDamageTypeThreat",
+        "DamageTypeForPrincipalAmmo"
+    ],
+    "TInfluenceMapConstantesDescriptor": [
+        "DefaultDecay",
+        "DefaultMomentum",
+        "TailleDeCaseGRU",
+        "ManageInfluencePoints",
+        "MinValueInfluenceForOwnership",
+        "InfluenceMapName",
+        "EmptyCellDefaultOffset",
+        "UseMinValueForEmptyOwnerCell",
+        "SmoothDistance"
+    ],
+    "TInfluenceMapDescriptors": [
+        "DecayActifUniquementEnPhaseDeCommandement",
+        "InfluenceMapDescriptor",
+        "ZoneInfluenceMapDescriptor"
+    ],
+    "TInfluenceMapConstantesSelector": [
+        "InfluenceConstByGameMode"
+    ],
+    "TSupplyDescriptor": [
+        "DefaultSupplyRangeGRU",
+        "FuelSupplyBySecond",
+        "FuelSupplyCostBySecond",
+        "HealthSupplyBySecond",
+        "HealthSupplyCostBySecond",
+        "SupplySupplyBySecond",
+        "SupplySupplyCostBySecond",
+        "AmmunitionSupplyBySecond",
+        "CriticsSupplyBySecond",
+        "CriticsSupplyCostBySecond",
+        "FeedbackDrawer"
+    ],
+    "TSupplyFeedbackDrawer": [
+        "LineColor",
+        "ZOffset",
+        "LineThickness",
+        "FeedbackDescriptor"
+    ],
+    "TSupplyFeedbackDescriptor": [
+        "FeedbackScreenResilienceDuration",
+        "FeedbackFadeOutTime"
+    ],
+    "TSpecificResourcesAccesser": [
+        "CommandPointResource",
+        "StrategicPointResource",
+        "TicketResource",
+        "FactoryResources"
+    ],
+    "TNoiseDescriptor": [
+        "NoiseWaitTimeMin",
+        "NoiseWaitTimeMax",
+        "NoiseLerpTimeMin",
+        "NoiseLerpTimeMax"
+    ],
+    "TSoldierAnimationDataDescriptor": [
+        "IdleLookProba",
+        "ProbaViolentDeath"
+    ],
+    "TSoldierSquadDataDescriptor": [
+        "OnHitProbaNormalWeapon",
+        "OnHitProbaOtherWeapon",
+        "FiringUnitRatio",
+        "DecalageSeFire"
+    ],
+    "TColumnFormationDescriptor": [
+        "FrontWedgeDistanceFromLeaderGRU",
+        "BackWedgeDistanceFromLeaderGRU",
+        "InterSoldierDistanceGRU",
+        "WedgesAngle"
+    ],
+    "TLineFormationDescriptor": [
+        "InterSoldierDistanceGRU"
+    ],
+    "TSoldierSquadMovementDataDescriptor": [
+        "NoiseMaxGRU",
+        "SoldierMaxAcceleration"
+    ],
+    "TTransportConstantesDescriptor": [
+        "MaximalSpeedToUnload"
+    ],
+    "TVisionConstantesDescriptor": [
+        "PorteeDeVisionGlobaleGRU"
+    ],
+    "TWeaponConstantsDescriptor": [
+        "DefaultStressMultiplier",
+        "StressMultiplierPerDamageFamily",
+        "DefaultSuppressDamage",
+        "SuppressDamagePerFamily",
+        "ResistanceFamiliesNeedPiercing",
+        "PierceBonusForDamageFamilies",
+        "ResistanceToMimeticImpact",
+        "DefaultMimeticProjectile",
+        "DamageTypeToMimeticProjectile",
+        "BlindagesToIgnoreForDamageFamilies",
+        "EfficientShotMinAccuracy",
+        "EfficientShotMinPenetration",
+        "DefensiveSmokeRangeMaxGRU"
+    ],
+    "TWeaponTypePrioritiesHolder": [
+        "WeaponTypes",
+        "DistanceToConsiderAsFarGRU",
+        "Score_OnRange",
+        "Score_OutOfRange"
+    ],
+    "TWreckageConstantsDescriptor": [
+        "MultiplicateurMasseObstacle",
+        "DetruireQuandEcrase",
+        "ExploserQuandEcrase"
+    ],
+    "EAllianceStyleModernWarfare": [],
+    "EAutoresolveAdvantage": [
+        "Values"
+    ],
+    "EIADifficulty": [
+        "Values"
+    ],
+    "TIADifficultyListConfiguration": [
+        "HumanIADifficulty",
+        "IAAnyDifficulty",
+        "DefaultIADifficulty",
+        "ScriptedDifficulty",
+        "IADifficultyList"
+    ],
+    "TIADifficultyConfiguration": [
+        "IADifficultyHint",
+        "IAName",
+        "IADifficultyName"
+    ],
+    "EPlayerColor": [
+        "Values"
+    ],
+    "TCombatAdvantageDefinition": [
+        "AdvantageValue",
+        "ShowTextForAdvantageWinner",
+        "HintToken",
+        "TextToken",
+        "TagToCheckAgainst",
+        "TagToCheck"
+    ],
+    "TStrategicAutoresolveAlea": [
+        "ModificationValue",
+        "TriggerWeight",
+        "TextToken"
+    ],
+    "TStrategicAutoResolveConstantes": [
+        "AleasByCombatType",
+        "PertesAttaquant",
+        "PertesDefenseur",
+        "PawnPowerBonusFactorByTerrainTypeAndPlayerSide",
+        "ApplyPawnPowerBonusOnSupportUnit",
+        "AvantagesByCombatType",
+        "CombatNoAntiAirAdvantageType",
+        "AirUnitTags",
+        "InfantryUnitTags",
+        "VictoryTypeByBalanceOfPowerByTerrainType",
+        "PertePourAttaquantSelonDecalageCombatAerien",
+        "PertePourDefenseurSelonDecalageCombatAerien",
+        "VictoryTypeByBalanceOfPowerCombatAerien",
+        "PertePourAttaquantSelonDecalageCombatSolAir",
+        "PertePourDefenseurSelonDecalageCombatSolAir",
+        "VictoryTypeByBalanceOfPowerCombatSolAir",
+        "PertePourAttaquantSelonDecalageCombatAirSol",
+        "PertePourDefenseurSelonDecalageCombatAirSol",
+        "VictoryTypeByBalanceOfPowerCombatAirSol",
+        "APLossForInterceptorAndPassingPawnByVictoryTypeForAttackerAirBattle",
+        "APLossForInterceptorAndPassingPawnByVictoryTypeForAttackerAirGroundBattle",
+        "APLossForInterceptorAndPassingPawnByVictoryTypeForAttackerGroundAirBattle"
+    ],
+    "TIAStratStrategicConstantesDescriptor": [
+        "NbAirplanesToKeepBeforeUsingAirDeny",
+        "NbAirplanesToKeepBeforeUsingBombard",
+        "DistanceMaxToAssignPawnToExistingGroupGRU",
+        "DistanceMaxForPawnToBeAvailableForCurrentObjectiveGRU",
+        "MaxCellsDistanceFromFrontlineAllowedOutOfSupply",
+        "MaxFatigueToBeSelectedForStrategicBattle",
+        "AttackAndDefensePowerRatioForAttackersToMoveBack",
+        "PawnWithTagToPlaceFarthestFromEnemy",
+        "StartBattleDescriptorByType",
+        "BombardTargetMinimumPowerValue",
+        "DefenseBonusByTerrainType",
+        "TerrainThatGenerateDefensePoint",
+        "DistanceInCellsFromEnemiesToActivateInnerDefensePoints",
+        "MinAttackPowerToAttackInPriority",
+        "PrioritaryAttackTargetMaxDistanceFromFrontLine",
+        "DefaultRankForPrioritaryDefensePoint",
+        "NumberPositionRankToPlaceUnits",
+        "MinimumRankForWeakestBattleUnitDefensePoint",
+        "MinimumRankForStrongestBattleUnitDefensePoint",
+        "MinimumRankForWeakestBattleUnitAttackPoint",
+        "MinimumRankForStrongestBattleUnitAttackPoint",
+        "MinimumRankForSupportUnit",
+        "GroupPoolsSortedByPriority",
+        "PawnBattleRolesToCoverWithSupport"
+    ],
+    "TIAStartBattleDescriptor": [
+        "MinVictoryNeededToAttackForObjectiveStatus"
+    ],
+    "TIAGroupPool": [
+        "ZoneStatus",
+        "Validators",
+        "Behaviors",
+        "PossibleTags",
+        "Elements",
+        "Name"
+    ],
+    "TIAGroupValidator": [
+        "ExcludedTags",
+        "BattleRole",
+        "PawnsCount"
+    ],
+    "TIAGroupPoolElement": [
+        "Comparator",
+        "PawnsCountByObjectiveWeight"
+    ],
+    "TIAPawnsBehavior": [
+        "Placement",
+        "EndTurn",
+        "Filter",
+        "PreBattle"
+    ],
+    "TIAPawnsBehaviorFilterExhausted": [],
+    "TIAPawnsBehaviorExhaustedPlacement": [],
+    "TIAPawnsBehaviorFilterNotSupplied": [],
+    "TIAPawnsBehaviorNotSuppliedPlacement": [],
+    "TIAPawnsBehaviorFilterArtillery": [],
+    "TIAPawnsBehaviorArtilleryEndTurn": [],
+    "TIAPawnsBehaviorFilterAntiAir": [],
+    "TIAPawnsBehaviorAntiAirPlacement": [],
+    "TIAPawnsBehaviorAntiAirPreBattle": [],
+    "TIAPawnsBehaviorAntiAirEndTurn": [],
+    "TIAPawnsBehaviorFilterPawnsWithTargetToAttack": [],
+    "TIAPawnsBehaviorAttackTargetPlacement": [],
+    "TIAPawnsBehaviorFilterAcceptEveryPawns": [],
+    "TIAPawnsBehaviorAttackPlacement": [],
+    "TIAPawnsBehaviorDefensePlacement": [],
+    "TIAPawnsBehaviorFilterPawnsWithoutInfluence": [],
+    "TIAPawnsBehaviorMoveWithoutInfluenceEndTurn": [],
+    "TStrategicCameraConstantesDescriptor": [
+        "GoingBackDuration",
+        "GoBackWithStraightPath",
+        "IdleAltitude",
+        "FollowAltitude",
+        "OrderSpecificBehavior",
+        "IdleSite"
+    ],
+    "TArmoryConstantes": [
+        "HalfSeparationEntreDeuxUnitSiDeuxUnit"
+    ],
+    "TDeckGeneratorContainer": [
+        "DeckNameToGenerator"
+    ],
+    "TDeckGroupRules": [
+        "MaxNbSmartGroupByCombatGroup",
+        "MaxNbPackBySmartGroup",
+        "CanUseSamePackInSameSmartGroupSlot",
+        "MaxNbCombatGroupForGameMode",
+        "CombatGroupDefaultName",
+        "SmartGroupDefaultName",
+        "SmartGroupLeaderGradeList"
+    ],
+    "TFeedbackMessageDispatcher": [
+        "UnitAcknowDescriptor"
+    ],
+    "TModernWarfarePlayerXPCalculatorDescriptor": [
+        "XPMultiplierByVictoryType",
+        "XPMultiplierSkirmish",
+        "XPMultiplierMulti",
+        "XPMultiplierRanked",
+        "GameDurationInMinForMaxXP",
+        "MaxGameDurationXP",
+        "MaxWinstreakMultiplier"
+    ],
+    "TAllUnits": [
+        "PlayableUnitsByWorld"
+    ],
+    "TActionCall": [
+        "Par_Fumigene_Alpha",
+        "NamedParams",
+        "Par_Fumigene_Color",
+        "Action"
+    ],
+    "TPinnableValue": [],
+    "TGamePhaseManagerDescriptor": [
+        "InitPhaseType",
+        "GamePhaseDescriptorList"
+    ],
+    "TStrategicGamePhaseDescriptor": [
+        "GamePhaseType"
+    ],
+    "TWargameGamePhaseDescriptor": [
+        "GamePhaseType"
+    ],
+    "TDeploiementGamePhaseDescriptor": [
+        "GamePhaseType",
+        "ListeProprietesTempsGrace"
+    ],
+    "TDeploiementGracePeriodDescriptor": [
+        "StepList",
+        "TempsGracePourTimerEnSecond"
+    ],
+    "TGracePeriodStepForDeploiementTimer": [
+        "MultiplicateurTempsGrace",
+        "TempsMaxEnSecondes"
+    ],
+    "TMissileCarriageConnoisseurHandler": [],
+    "TReinforcementManager": [
+        "ReinforcementColor",
+        "RoadSnapDistanceInLBU",
+        "LandCorridorTextOffset",
+        "AerialCorridorTextOffset"
+    ],
+    "TReverseScannerWithIdentificationDescriptor": [
+        "VisibilityRollRule"
+    ],
+    "TModernWarfareVisibilityRollRule": [
+        "DistanceMultiplierRule",
+        "VisibilityRuleDescriptor",
+        "TimeBetweenEachIdentifyRoll",
+        "IdentifyBaseProbability"
+    ],
+    "TModernWarfareDistanceMultiplierRollRuleDescriptor": [
+        "Exposant",
+        "MultiplicateurAPorteeMinimaleEnMouvement",
+        "MultiplicateurAPorteeMaximaleEnMouvement",
+        "MultiplicateurAPorteeMaximale",
+        "MultiplicateurAPorteeMinimale",
+        "ExposantEnMouvement"
+    ],
+    "TScannerConfigurationDescriptor": [
+        "DetectionTBAGRU",
+        "SpecializedOpticalStrengths",
+        "OpticalStrength",
+        "OpticsAltitudeConfig",
+        "PorteeIdentification",
+        "PorteeVisionFOWGRU",
+        "OpticalStrengthAltitude",
+        "PorteeVisionGRU",
+        "PorteeVisionTBAGRU",
+        "SpecializedDetectionsGRU"
+    ],
+    "TModernWarfareVisibilityRollRuleDescriptor": [
+        "PourcentageCourteDistance",
+        "PourcentageMoyenneDistance",
+        "ModificateurCourteDistance",
+        "ModificateurMoyenneDistance",
+        "ModificateurLongueDistance",
+        "Time1ForReIdentModificateur",
+        "Time2ForReIdentModificateur",
+        "Time3ForReIdentModificateur",
+        "ModificateurReIdentAvantTime1",
+        "ModificateurReIdentAvantTime2",
+        "ModificateurReIdentAvantTime3",
+        "ModificateurCibleEnMouvement",
+        "ModificateurPlusieursIdentSuccessive"
+    ],
+    "TWorldConstantes": [
+        "HelperVisibility"
+    ],
+    "TWorldInterfaceDescriptorSelector": [
+        "DescriptorsByName"
+    ],
+    "TWorldInterfaceDescriptor": [
+        "GamePhaseManagerDescriptor",
+        "World3D",
+        "ZoneManagerDescriptors",
+        "SoundAndMusicSwitchDescriptor"
+    ],
+    "TZoneNamesDico": [
+        "CampToZoneNames"
+    ],
+    "TDeploiementZoneManagerDescriptor": [
+        "AreaManagerProxy",
+        "ZoneNamesDico"
+    ],
+    "TCommandementZoneManagerDescriptor": [
+        "AreaManagerProxy",
+        "ZoneNamesDico"
+    ],
+    "TZoneManagerForIAStratDescriptor": [
+        "AreaManagerProxy"
+    ],
+    "TStrategicIAZoneManagerDescriptor": [
+        "AreaManagerProxy"
+    ],
+    "TNDFTransactionFileList": [
+        "Files"
+    ],
+    "TResourceMultiMaterialMesh": [
+        "FileName"
+    ],
+    "CommonMeshDesc": [
+        "ModelFile"
+    ],
+    "TResourceMatrixArrayAnimation": [
+        "FileName",
+        "PlayInLoop"
+    ],
+    "DepictionOperator_AnimationDeployable": [
+        "DeployAnimation",
+        "FoldAnimation",
+        "IdleAnimation",
+        "MoveFrontAnimation",
+        "MoveBackAnimation",
+        "DeployFromMoveTime",
+        "DeployFromTurnTime",
+        "FoldForMoveTime",
+        "FoldForTurnTime"
+    ],
+    "TModuleSelector": [
+        "Selection",
+        "Default"
+    ],
+    "TTargetCoordinatorModuleDescriptor": [],
+    "TCoatingKitchen": [
+        "Cookbook",
+        "Pantry"
+    ],
+    "TCoatingCookbook": [
+        "Recipes"
+    ],
+    "TCoatingRecipe": [
+        "Ingredients"
+    ],
+    "TCoatingPantry": [
+        "Entries"
+    ],
+    "TCoatingIngredientOperator": [
+        "Descriptor"
+    ],
+    "TCosmeticTrapdoorOperatorDesc": [
+        "TrapdoorList",
+        "LoadSupportBoneName",
+        "LimitTranslationInMeter",
+        "TranslationDurationInSec",
+        "TrapdoorOpeningDurationInSec"
+    ],
+    "TTrapdoor": [
+        "LimitAngleInDegree",
+        "TrapdoorBoneName"
+    ],
+    "TCosmeticOffsetTurretWhileMovingOperatorDesc": [
+        "AngleInDegree"
+    ],
+    "TCosmeticLandingGearOperatorDesc": [
+        "AnimationList"
+    ],
+    "TBoneProceduralAnimation": [
+        "LimitValue",
+        "Axis",
+        "BoneName",
+        "Delay",
+        "Duration",
+        "IsTranslation"
+    ],
+    "TAirplaneDeviatorDesc": [],
+    "TCosmeticSelectionStyleOperatorDesc": [],
+    "TCosmeticSpottedStyleOperatorDesc": [],
+    "TCosmeticGhostColorOperatorDesc": [],
+    "TCosmeticPawnGhostColorOperatorDesc": [],
+    "TCosmeticTacticGhostColorOperatorDesc": [
+        "Color",
+        "Alphas",
+        "Blends"
+    ],
+    "TCosmeticTeamColorOperatorDesc": [],
+    "TCosmeticExplodedStyleOperatorDesc": [
+        "ExplodedDamageTextures"
+    ],
+    "TCosmeticSetToPoseOperatorDesc": [],
+    "TCosmeticAirplanePartsOperatorDesc": [
+        "OperatorId"
+    ],
+    "TCosmeticMovementAirplaneOperatorDesc": [
+        "OperatorId"
+    ],
+    "TCosmeticAirplaneShadowOperatorDesc": [
+        "OperatorId"
+    ],
+    "TDepictionPylonSelector": [
+        "HighLimitInMeter",
+        "Camera"
+    ],
+    "TGfxDescriptorChassis": [
+        "SpringY",
+        "SpringDamperMaxY",
+        "SpringX",
+        "SousMobileName",
+        "NoiseGridHeight",
+        "NoiseGridSize",
+        "SpringDamperMaxX",
+        "SpringDamperMultiplier",
+        "DamperY",
+        "Force",
+        "DamperX"
+    ],
+    "TStrategicEntityConstantes": [
+        "IAObjective",
+        "IAGroup"
+    ],
+    "TIAGroupPawnsModuleDescriptor": [],
+    "TIALinkToObjectivesModuleDescriptor": [],
+    "TIATargetObjectiveModuleDescriptor": [],
+    "TIAGroupPoolModuleDescriptor": [],
+    "TIAGroupTargetModuleDescriptor": [],
+    "TIAObjectiveZoneModuleDescriptor": [],
+    "TIAObjectiveStrategyStateModuleDescriptor": [],
+    "TIAGeneralStrategy": [
+        "AllowToByPassNbMacroActionAllowedToProduceSimultaneous",
+        "StrategyName",
+        "FirstGenerator",
+        "TransitionList",
+        "DoNotCancelProduction",
+        "AuthorizedCorridorList"
+    ],
+    "TSequenceGeneratorDescriptor": [
+        "NbMacroActionAllowedToProduceSimultaneous",
+        "ScalingGeneratorList",
+        "GeneratorList"
+    ],
+    "TIASkirmishList_Specific": [
+        "IAStrategyForAutoDeploy",
+        "IAStrategyListForSoloCampaign",
+        "IAStrategyConfiguration",
+        "IAStrategyOverrideByMap",
+        "IAStrategyOverrideForTicketsEconomy"
+    ],
+    "TMacroActionDescriptor_Attack_Specific": [
+        "ParametresDeMission"
+    ],
+    "TGenerationSettingHolder": [
+        "GenerationType",
+        "NumberLaunchBasedOnGenerationType"
+    ],
+    "TAirStrikeSettingHolder": [
+        "TypesDeRequetesAcceptees",
+        "Setting"
+    ],
+    "TSupportSettingHolder": [
+        "SettingList"
+    ],
+    "TArtilleryAmountSettingHolder": [
+        "ArtilleryAmount"
+    ],
+    "TBlitzkriegSettingHolder": [
+        "RatioFactorToDisableSelfPreservation",
+        "MinimumCostForSelfPreservation"
+    ],
+    "TAttackRatioSettingHolder": [
+        "RatioMinimumPourAttaquer"
+    ],
+    "TMacroActionProductionSettingHolder": [
+        "DisableReinforcement",
+        "DistanceToOptimumStartDuringDeploymentGRU",
+        "PoolModelList",
+        "OnlyAllowToSelectUnits",
+        "ProdProperties"
+    ],
+    "TMacroActionLifetimeSettingHolder": [
+        "MaintainForever"
+    ],
+    "TDisableUnitToReleaseSettingHolder": [],
+    "TMacroActionDescriptor_Defense_Specific": [
+        "ParametresDeMission"
+    ],
+    "TMacroActionDescriptor_Artillery_PlayerMission": [
+        "ParametresDeMission"
+    ],
+    "TArtilleryPositionningSettingHolder": [
+        "ArtilleryPositionOffsetGRU"
+    ],
+    "TArtilleryPlayerMissionSettingHolder": [
+        "TargetFilter",
+        "MinDurationForTargetValidity",
+        "MaxDurationForTargetValidity",
+        "AuthorizedTargetTags"
+    ],
+    "TArtilleryStrikeSettingHolder": [
+        "SupportStrikeRatio",
+        "DelaytBetweenTargetDeathAndNewStrike"
+    ],
+    "TMacroActionDescriptor_AirStrike_Specific": [
+        "ParametresDeMission"
+    ],
+    "TAirStrikeAcceptableThreatSettingHolder": [
+        "PercentAcceptableDangerousIndicesForAirplaneValidTarget"
+    ],
+    "TMacroActionDescriptor_AirReco_Specific": [
+        "ParametresDeMission"
+    ],
+    "AirRecoMissionLaunchSettingHolderTemplate": [
+        "MaxAirplaneCountOnBattlefield",
+        "TicksBetweenTwoLaunch",
+        "TicksBetweenTwoMissions"
+    ],
+    "TMacroActionDescriptor_Supply_Specific": [
+        "ParametresDeMission"
+    ],
+    "TSupplySettingHolder": [
+        "SupplyableMinimumRatio"
+    ],
+    "TPlayerMissionDescriptor": [
+        "UsePosition",
+        "ExclusionTags",
+        "MacroActionDescriptor",
+        "Mergeable",
+        "AuthorizedTags"
+    ],
+    "TPlayerMissionConstantesDescriptor": [
+        "PlayerMissionDescriptorByType",
+        "MaxCustomZoneDistanceForSimilarGRU"
+    ],
+    "TPlayerMissionOrderDescriptor": [
+        "DescriptorPriority",
+        "DebugName",
+        "UseMousePolicy"
+    ],
+    "TUIPlayerMissionConstantesDescriptor": [
+        "PlayerMissionFeedbackDescriptorByType",
+        "StartFadeAlphaAfterTimeInSeconds",
+        "AlphaFadeDurationInSeconds"
+    ],
+    "TFeedbackStyleDescriptor": [
+        "Thickness",
+        "Color"
+    ],
+    "TMacroActionDescriptor_CorridorDefense_Specific": [
+        "ParametresDeMission"
+    ],
+    "TMacroActionDescriptor_CorridorDynamicDefense_Specific": [
+        "ParametresDeMission"
+    ],
+    "TMacroActionDescriptor_Support_Specific": [
+        "ParametresDeMission"
+    ],
+    "TCounterTagSettingHolder": [
+        "TagDeContre"
+    ],
+    "TPoolModel": [
+        "ModelList"
+    ],
+    "TPoolElement": [
+        "IndexPriorityOverPrice",
+        "Nb",
+        "DescriptorId",
+        "PriceComparisonMethod",
+        "Required",
+        "TagsPriority"
+    ],
+    "TSupportSetting": [
+        "TagDeContre",
+        "TagAContrer",
+        "Ratio"
+    ],
+    "Template_Capture_Command_Zone": [
+        "PoolModelList",
+        "GenerationType",
+        "AlsoConsiderTheseDescriptorsForMaintain",
+        "NumberLaunchBasedOnGenerationType"
+    ],
+    "TSequenceCondition_And": [
+        "Condition2",
+        "Condition1"
+    ],
+    "TIAGeneralStrategyTransition": [
+        "Origine",
+        "Condition",
+        "Destination"
+    ],
+    "TSequenceCondition_AutoDeployFlagValue": [
+        "Value"
+    ],
+    "TSequenceCondition_Not": [
+        "Condition"
+    ],
+    "TSequenceCondition_Phase": [
+        "PhaseType"
+    ],
+    "TSequenceCondition_True": [],
+    "Template_SequenceConditionOpponentHasScoreHigher": [
+        "RatioValue",
+        "ScorePointType"
+    ],
+    "TSequenceCondition_IsAttackingAlliance": [
+        "IsAttackingAlliance"
+    ],
+    "Template_CubeActionOrderButtonInformationsDescriptor_WithSound": [
+        "LeftClickSound",
+        "SpotlightUniqueName",
+        "Mapping",
+        "CubeActionFunctionType",
+        "HintExtendedToken",
+        "ValidationTargetToken",
+        "ButtonTextToken",
+        "HintTitleToken",
+        "DebugName",
+        "CubeActionName",
+        "OrderToken",
+        "HintBodyToken",
+        "HintDico",
+        "ActionType"
+    ],
+    "InterfaceSound": [
+        "FileName"
+    ],
+    "TIngameGamePadUserInputForTrailer": [
+        "UsePad",
+        "InputLayer",
+        "InGameManagerHandler",
+        "Scene",
+        "ScreenShotDirectoryName",
+        "ScreenShotBaseName",
+        "ActivePauseGameSpeed",
+        "PauseLock"
+    ],
+    "TGDActionCallbackManager": [],
+    "TOrderEvaluatorCollectionListDescriptor": [
+        "CollectionByName"
+    ],
+    "TOrderEvaluatorCollectionDescriptor": [
+        "GameplayLogicManagerHandler",
+        "OrderEvaluatorList"
+    ],
+    "TOrderEvaluatorAny": [
+        "MouseWidgetSelector",
+        "FXFeedback",
+        "IgnoreDirectOrder",
+        "OrderToken",
+        "PlayFXFeedbackWithoutTargets",
+        "IsTargetAuthorized",
+        "IgnoreDefaultOrder"
+    ],
+    "TOrderEvaluatorFortifyAntiAir": [
+        "OrderToken",
+        "IgnoreDefaultOrder"
+    ],
+    "TOrderEvaluatorStrategicMove": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "FXFeedback",
+        "MouseWidgetSelector",
+        "PlayFXFeedbackWithoutTargets"
+    ],
+    "TOrderEvaluatorShootDefensiveSmoke": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "IgnoreDirectOrder"
+    ],
+    "TOrderEvaluatorStop": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "IgnoreDirectOrder"
+    ],
+    "TOrderEvaluatorChangeAltitude": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "IgnoreDirectOrder"
+    ],
+    "TOrderEvaluatorSpread": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "IgnoreDirectOrder"
+    ],
+    "TOrderEvaluatorLoadIntoTransport": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "FXFeedback",
+        "MouseWidgetSelector"
+    ],
+    "TOrderEvaluatorLoadUnit": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "FXFeedback",
+        "MouseWidgetSelector"
+    ],
+    "TOrderEvaluatorAssaultDistrict": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "IgnoreDirectOrder",
+        "FXFeedback",
+        "MouseWidgetSelector",
+        "OrderInterpretationForOrderDisplayAndAcknows"
+    ],
+    "TOrderEvaluatorEnterDistrict": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "FXFeedback",
+        "MouseWidgetSelector"
+    ],
+    "TOrderEvaluatorAttack": [
+        "MouseWidgetSelector",
+        "FXFeedback",
+        "OrderToken",
+        "PlayFXFeedbackWithoutTargets",
+        "IgnoreDefaultOrder"
+    ],
+    "TOrderEvaluatorMoveAndAttack": [
+        "ClampDestinationOnNavMesh",
+        "MouseWidgetSelector",
+        "FXFeedback",
+        "IgnoreDirectOrder",
+        "OrderInterpretationForOrderDisplayAndAcknows",
+        "OrderToken",
+        "PlayFXFeedbackWithoutTargets",
+        "IgnoreDefaultOrder"
+    ],
+    "TOrderEvaluatorShootOnPosition": [
+        "MouseWidgetSelector",
+        "FXFeedback",
+        "OrderInterpretationForOrderDisplayAndAcknows",
+        "OrderToken",
+        "PlayFXFeedbackWithoutTargets",
+        "IgnoreDefaultOrder"
+    ],
+    "TOrderEvaluatorUnloadAtPosition": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "FXFeedback",
+        "MouseWidgetSelector",
+        "PlayFXFeedbackWithoutTargets",
+        "ClampDestinationOnNavMesh"
+    ],
+    "TOrderEvaluatorMove": [
+        "ClampDestinationOnNavMesh",
+        "MouseWidgetSelector",
+        "FXFeedback",
+        "OrderInterpretationForOrderDisplayAndAcknows",
+        "OrderToken",
+        "PlayFXFeedbackWithoutTargets",
+        "IgnoreDefaultOrder"
+    ],
+    "TOrderEvaluatorUseAnyCapacite": [
+        "OrderToken",
+        "IgnoreDefaultOrder",
+        "MouseWidgetSelector"
+    ],
+    "TReplayHUDManager": [
+        "InGameManagerHandler"
+    ],
+    "TModernWarfareUnitNamesDico": [
+        "NationToDicoToken"
+    ],
+    "TUIResourceTexture_Common": [
+        "FileName"
+    ],
+    "TBUCKToolAdditionalTextureBank": [
+        "Textures"
+    ],
+    "TBombAttackStrategyDescriptor": [],
+    "TDiveAttackStrategyDescriptor": [
+        "MinPitchForDiveInDegree",
+        "MaxPitchForDiveInDegree",
+        "MinDiveAlignmentDuration"
+    ],
+    "TDiveMissileAttackStrategyDescriptor": [
+        "MinPitchForDiveInDegree",
+        "MaxPitchForDiveInDegree",
+        "MinDiveAlignmentDuration"
+    ],
+    "TDiveBombAttackStrategyDescriptor": [
+        "MinPitchForDiveBombInDegree",
+        "PitchForDiveBombInDegree",
+        "MaxPitchForDiveBombInDegree",
+        "DiveBombRecoveryDuration"
+    ],
+    "TDogfightAttackStrategyDescriptor": [
+        "MinDistanceBetweenFighterAndTargetForAttackOnSlowAirplaneStrategy",
+        "MaxDistanceBetweenFighterAndTargetForLateralMoveOnSlowAirplaneStrategy",
+        "SpeedRatioForAttackOnSlowAirplaneStrategy",
+        "SpeedRatioForAttackOnVerySlowAirplaneStrategy",
+        "MaxAngleDifferenceWithTargetInDegree",
+        "MaxAngleToConsiderTargetAheadInDegree",
+        "AngleToFakeTargetPositionInDegree"
+    ],
+    "TStukaNosediveAttackStrategyDescriptor": [
+        "DistanceNosediveGRU",
+        "WaypointDistanceFromTargetGRU",
+        "AgilityMultiplicator"
+    ],
+    "TAirGroundMissileAttackStrategyDescriptor": [],
+    "TDebugModuleDescriptor": [],
+    "TTypeUnitModuleDescriptor": [
+        "TypeUnitFormation",
+        "MotherCountry",
+        "AcknowUnitType",
+        "Nationalite"
+    ],
+    "TEntityDescriptorConstantesSelector": [
+        "ConstantesByWorld"
+    ],
+    "TCriticalEffectModuleDescriptor": [
+        "PierceEffectsOnSides",
+        "TerrainCriticalEffectTimer",
+        "PierceEffectsOnRear",
+        "EffectsOnTop",
+        "RicochetEffectsOnFront",
+        "RicochetEffectsOnRear",
+        "EffectsOnSides",
+        "Bounds",
+        "EffectsFromTerrain",
+        "PierceEffectsOnTop",
+        "EffectsOnRear",
+        "RicochetEffectsOnSides",
+        "PierceEffectsOnFront",
+        "RicochetEffectsOnTop",
+        "EffectsOnFront"
+    ],
+    "AirplaneCriticalEffect_WingsDamaged": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_EngineOnFire": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_PropellerDamaged": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_EngineDamaged": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_FloatCarburatorFailure": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_OilLeak": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_EngineOverheating": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_EngineStalling": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_ElevatorDamaged": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_FuelTankLeaking": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_RadiatorDamaged": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_RadiatorOverheating": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_PilotInjured": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_PilotPanicked": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_PilotUnconscious": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_WeaponsJammed": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_AileronDamaged": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_TailDamaged": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_FuelTankOnFire": [
+        "Roll"
+    ],
+    "AirplaneCriticalEffect_RudderDamaged": [
+        "Roll"
+    ],
+    "TemplateCriticalEffectModule_GroundUnit": [
+        "PackEffetCritique"
+    ],
+    "HelicoCriticalEffect_HUD": [
+        "Roll"
+    ],
+    "HelicoCriticalEffect_CrewInjured": [
+        "Roll"
+    ],
+    "HelicoCriticalEffect_MainRotorDamaged": [
+        "Roll"
+    ],
+    "HelicoCriticalEffect_Turbine_Engine_Failure": [
+        "Roll"
+    ],
+    "HelicoCriticalEffect_turbineOnFire": [
+        "Roll"
+    ],
+    "HelicoCriticalEffect_FuelTankOnFire": [
+        "Roll"
+    ],
+    "HelicoCriticalEffect_FuelTankLeaking": [
+        "Roll"
+    ],
+    "HelicoCriticalEffect_WeaponsJammed": [
+        "Roll"
+    ],
+    "HelicoCriticalEffect_Hydraulic_Fluid_Fire": [
+        "Roll"
+    ],
+    "HelicoCriticalEffect_TailRotorDamaged": [
+        "Roll"
+    ],
+    "CriticalEffect_AmmoExplosion": [
+        "Roll"
+    ],
+    "CriticalEffect_Bounce": [
+        "Roll"
+    ],
+    "TCriticalEffectDescriptor": [
+        "Token",
+        "HappeningKey",
+        "EffectsPack",
+        "TimeOut",
+        "RepairCost",
+        "Unique",
+        "DisplayOnDeath"
+    ],
+    "TLocalisationDicoResource": [
+        "CanBeMissing",
+        "DicoToken",
+        "FileName"
+    ],
+    "TAllianceDescriptionModuleDescriptor": [],
+    "TAllianceScoreModuleDescriptor": [],
+    "TAllianceRelationsModuleDescriptor": [],
+    "TIAAllianceAirManagerModuleDescriptor": [
+        "MemoryTurnLength"
+    ],
+    "TGroupModuleDescriptor": [],
+    "TStateEngineGroupModuleDescriptor": [],
+    "TActionPointsReachModuleDescriptor": [],
+    "TIALinkToGroupModuleDescriptor": [],
+    "TStrategicSequenceModuleDescriptor": [],
+    "TStrategicAerialModuleDescriptor": [],
+    "TTeamCurrencyManagerModuleDescriptor": [
+        "PiggyBanks"
+    ],
+    "TPiggyBankDescriptor": [
+        "CurrencyType"
+    ],
+    "TStrategicTeamProductionModuleDescriptor": [],
+    "TFactoryModuleDescriptor": [
+        "Factories"
+    ],
+    "TVirtualFactoryDescriptor": [
+        "FactoryType",
+        "IsSimultaneous"
+    ],
+    "TTeamDescriptionModuleDescriptor": [],
+    "TTeamUnitsModuleDescriptor": [],
+    "TEffectApplierModuleDescriptor": [],
+    "TLinkAllianceModuleDescriptor": [],
+    "TTeamForAIModuleDescriptor": [],
+    "TTeamDefeatModuleDescriptor": [],
+    "TTeamScoreModuleDescriptor": [],
+    "TTeamInitialCurrencyModuleDescriptor": [],
+    "TFumigeneModuleDescriptor": [],
+    "TStatisticsModuleDescriptor": [],
+    "TIATeamStrategyModuleDescriptor": [],
+    "TStrategicStatisticModuleDescriptor": [],
+    "TEntityDescriptorConstantes": [
+        "GroupUnitDescriptor",
+        "AllianceUnitDescriptor",
+        "FakeTargetDescriptor",
+        "TeamUnitDescriptor"
+    ],
+    "TApparenceModelModuleDescriptor": [
+        "BlackHoleIdentifier",
+        "PickableObject",
+        "GameplayBBoxBoneName",
+        "ReferenceMesh",
+        "Depiction",
+        "DefaultVisibility"
+    ],
+    "Template_DescriptorFire_Depiction": [
+        "FX",
+        "Radius",
+        "Density"
+    ],
+    "TFireModuleDescriptor": [
+        "TimeToLive",
+        "SpreadProbability",
+        "TimeBeforeSpreadAttempt",
+        "OverridenSpreadDescriptor",
+        "IsNewFireProbability",
+        "IgniteDistricts",
+        "SmokeDescriptor",
+        "TimeBetweenBurns",
+        "TimeBeforeSpreading",
+        "AmmunitionForBurn",
+        "RadiusGRU"
+    ],
+    "TAmmunitionDescriptor": [
+        "TempsDeVisee",
+        "TirReflexe",
+        "MaxSuccessiveHitCount",
+        "IgnoreInflammabilityConditions",
+        "TargetUnitCenter",
+        "WeaponDescriptionToken",
+        "ShotWithoutPhysics",
+        "DispersionWithoutSorting",
+        "CanHarmAirplanes",
+        "PiercingWeapon",
+        "Arme",
+        "AltitudeAPorteeMinimaleGRU",
+        "FireDescriptor",
+        "TempsEntreDeuxSalves_Max",
+        "FlightTimeForSpeed",
+        "TempsEntreDeuxTirs",
+        "TempsEntreDeuxSalves_Min",
+        "DisplaySalveAccuracy",
+        "CanShootOnPosition",
+        "CorrectedShotDispersionMultiplier",
+        "InterfaceWeaponTexture",
+        "FireTriggeringProbability",
+        "NbSalvosShootOnPosition",
+        "TempsEntreDeuxSalves",
+        "PorteeMaximaleGRU",
+        "PorteeMaximaleHAGRU",
+        "HitRollRuleDescriptor",
+        "TempsEntreDeuxFx",
+        "MissileTimeBetweenCorrections",
+        "DistanceForSpeedGRU",
+        "PorteeMinimaleTBAGRU",
+        "NbrProjectilesSimultanes",
+        "AngleDispersion",
+        "AltitudeAPorteeMaximaleGRU",
+        "MinMaxCategory",
+        "RadiusSplashPhysicalDamagesGRU",
+        "AllowSuppressDamageWhenNoImpact",
+        "RadiusSplashSuppressDamagesGRU",
+        "ImpactHappening",
+        "AffichageMunitionParSalve",
+        "NoiseDissimulationMalus",
+        "SupplyCost",
+        "Name",
+        "ProjectileType",
+        "MaxAccelerationGRU",
+        "Guidance",
+        "FxPower",
+        "WeaponCursorType",
+        "WeaponForceNote",
+        "ShowDamageInUI",
+        "IsHarmlessForAllies",
+        "MissileDescriptor",
+        "PorteeMinimaleHAGRU",
+        "TirIndirect",
+        "FluidFriction",
+        "NbTirParSalves",
+        "SuppressDamages",
+        "TargetOnlyOneUnitInDistrict",
+        "Caliber",
+        "DamageTypeEvolutionOverRangeDescriptor",
+        "TraitsToken",
+        "DescriptorId",
+        "DispersionAtMaxRangeGRU",
+        "IsFireAndForget",
+        "ShotsBeforeMaxNoise",
+        "AffecteParNombre",
+        "PhysicalDamages",
+        "IsSubAmmunition",
+        "CanShootWhileMoving",
+        "PorteeMaximaleTBAGRU",
+        "MaximalSpeedGRU",
+        "TandemCharge",
+        "SmokeDescriptor",
+        "InterdireTirReflexe",
+        "PorteeMinimaleGRU",
+        "TypeCategoryName",
+        "ForceHitTopArmor",
+        "CorrectedShotAimtimeMultiplier",
+        "DispersionAtMinRangeGRU"
+    ],
+    "TDiceHitRollRuleDescriptor": [
+        "DescriptorId",
+        "BaseCriticModifier",
+        "BaseHitValueModifiers",
+        "DistanceToTarget"
+    ],
+    "TInfluencePositionModuleDescriptor": [],
+    "TInfluenceDataModuleDescriptor": [],
+    "TOrderDisplayModuleDescriptor": [],
+    "TCapturableModuleDescriptor": [
+        "RadiusCaptureGRU"
+    ],
+    "TGroupableUnitModuleDescriptor": [],
+    "TPlayerMissionModuleDescriptor": [],
+    "TTargetManagerModuleDescriptor": [],
+    "TIAStratZoneIndexModuleDescriptor": [],
+    "TOrderableModuleDescriptor": [
+        "UnlockableOrders"
+    ],
+    "Template_DescriptorSmoke_Depiction": [
+        "Radius",
+        "Height",
+        "Density"
+    ],
+    "TSmokeModuleDescriptor": [
+        "AltitudeGRU",
+        "RadiusGRU",
+        "TimeToLive",
+        "Terrain"
+    ],
+    "DeckPackDescriptor": [
+        "Xp",
+        "Transport",
+        "Unit"
+    ],
+    "TDeckDescriptor": [
+        "DeckDivision",
+        "DeckPackList",
+        "DeckCombatGroupList",
+        "DeckName",
+        "DeckIdentifier",
+        "Superior"
+    ],
+    "TDeckCombatGroupDescriptor": [
+        "IsHQ",
+        "Name",
+        "SmartGroupList"
+    ],
+    "TDeckSmartGroupDescriptor": [
+        "IsHQ",
+        "Name",
+        "PackIndexUnitNumberList"
+    ],
+    "TDeckDescriptorList": [
+        "DeckListForAutoFill",
+        "DeckListForIdentifier"
+    ],
+    "TDeckSerializer": [
+        "DivisionIds",
+        "UnitIds"
+    ],
+    "TDeckDivisionList": [
+        "DivisionList"
+    ],
+    "TDeckDivisionRules": [
+        "DivisionRules"
+    ],
+    "TDeckDivisionRule": [
+        "UnitRuleList"
+    ],
+    "TDeckUniteRule": [
+        "UnitDescriptor",
+        "NumberOfUnitInPack",
+        "NumberOfUnitInPackXPMultiplier",
+        "AvailableTransportList",
+        "AvailableWithoutTransport"
+    ],
+    "TDeckDivisionDescriptor": [
+        "TypeTexture",
+        "PackList",
+        "CountryId",
+        "DescriptorId",
+        "DescriptionHintTitleToken",
+        "CostMatrix",
+        "DivisionTags",
+        "StrategicLabelColor",
+        "DivisionName",
+        "PortraitTexture",
+        "EmblemTexture",
+        "CfgName",
+        "DivisionPowerClassification",
+        "MaxActivationPoints",
+        "DivisionNationalite"
+    ],
+    "BuildingCadavreModuleDescriptor": [
+        "CadavreDuration",
+        "ModuleDescriptorsToSteal"
+    ],
+    "TExperienceModuleDescriptor": [
+        "ExperienceGainBySecond",
+        "CanWinExperience",
+        "ExperienceMultiplierBonusOnKill",
+        "ExperienceLevelsPackDescriptor"
+    ],
+    "TSupplyModuleDescriptor": [
+        "SupplyCapacity",
+        "SupplyDescriptor",
+        "SupplyPriority"
+    ],
+    "TBaseDamageModuleDescriptor": [
+        "StunDamageLevelsPack",
+        "MaxSuppressionDamages",
+        "MaxStunDamages",
+        "MaxPhysicalDamages",
+        "SuppressDamageLevelsPack",
+        "PhysicalDamageLevelsPack"
+    ],
+    "TDamageModuleDescriptor": [
+        "KillWhenDamagesReachMax",
+        "UseTopArmorAgainstFire",
+        "SuppressDamagesRegenRatio",
+        "AutoOrientation",
+        "BlindageProperties",
+        "HitRollECM",
+        "StunDamagesRegen"
+    ],
+    "TBlindageProperties": [
+        "ExplosiveReactiveArmor",
+        "ResistanceSides",
+        "ResistanceFront",
+        "ResistanceRear",
+        "ResistanceTop"
+    ],
+    "TResistanceTypeRTTI": [
+        "Family",
+        "Index"
+    ],
+    "BuildingApparenceModelModuleDescriptor": [
+        "BlackHoleIdentifier",
+        "SymbolName"
+    ],
+    "TCadavreGeneratorModuleDescriptor": [
+        "CadavreDescriptor"
+    ],
+    "TIAStratModuleDescriptor": [
+        "DatabaseId",
+        "GameplayBehavior"
+    ],
+    "TProductionModuleDescriptor": [
+        "Factory",
+        "ProductionRessourcesNeeded",
+        "ProductionTime"
+    ],
+    "TTacticalLabelModuleDescriptor": [
+        "IdentifiedTexture",
+        "PositionHeightOffset",
+        "NbSoldiers",
+        "UnidentifiedTexture",
+        "MultiSelectionSortingOrder"
+    ],
+    "TBUCKToolAlternativeValues_TUIValueTextureNameFromTEugBMutableInteger": [
+        "CommandNameTrigger",
+        "Values",
+        "Alterator"
+    ],
+    "TUnitUpkeepModuleDescriptor": [
+        "UpkeepPercentage"
+    ],
+    "TUnitUIModuleDescriptor": [
+        "SpecialtiesList",
+        "DisplayRoadSpeedInKmph",
+        "InfoPanelConfigurationToken",
+        "NameToken",
+        "CountryTexture",
+        "GenerateName",
+        "MenuIconTexture",
+        "TypeStrategicCount",
+        "UpgradeFromUnit",
+        "UnitRole",
+        "ButtonTexture"
+    ],
+    "TCapaciteDescriptor": [
+        "Price",
+        "TypeCible",
+        "TagsCiblePossible",
+        "TargetEffect",
+        "InfluenceMapType",
+        "Name",
+        "ActionRadiusWithBoundingBox",
+        "AreaShape",
+        "CheckVisibility",
+        "MaxTargetNb",
+        "TargetEffectDuration",
+        "Declenchement",
+        "CanBeCastFromTransport",
+        "Conditions",
+        "RangeGRU",
+        "CumulEffect",
+        "CastTime",
+        "RadiusGRU",
+        "SelfEffectDuration",
+        "DisplayRangeColor",
+        "FeedbackActivationMask",
+        "TargetMySelf",
+        "NameToken",
+        "MinVirtualUnits",
+        "DescriptorId",
+        "TargetInBuilding",
+        "SelfEffect",
+        "Cooldown",
+        "MultiplyCost",
+        "AllowReflexDuringCast",
+        "TargetInSelf",
+        "DisplayRangeThickness",
+        "TargetTeamFilter",
+        "InfluenceMapAlliance",
+        "TargetInTransport",
+        "OrderMustSpreadTargets",
+        "TagsCibleExcluded",
+        "TargetWoundedFilter"
+    ],
+    "TConditionTagRaisedInUnit": [
+        "Tag",
+        "DescriptorId",
+        "Amount"
+    ],
+    "TConditionTagNotRaisedInUnit": [
+        "Tag",
+        "DescriptorId",
+        "Amount"
+    ],
+    "TConditionNotInMovement": [
+        "DescriptorId"
+    ],
+    "TDamageLevelsPackDescriptor": [
+        "NameForDebug",
+        "DamageLevelsDescriptors",
+        "DescriptorId"
+    ],
+    "TDamageLevelDescriptor": [
+        "HitRollModifier",
+        "MoralModifier",
+        "EffectsPacks",
+        "FeedbackOnSelf",
+        "DescriptorId",
+        "LocalizationToken",
+        "TextColor",
+        "NameForDebug",
+        "Value",
+        "AnimationType"
+    ],
+    "TGameplayDamageResistanceContainer": [
+        "ResistanceFamilyDefinitionList",
+        "DamageFamilyDefinitionList",
+        "Values"
+    ],
+    "TResistanceTypeFamilyDefinition": [
+        "MaxIndex",
+        "Family"
+    ],
+    "TDamageTypeFamilyDefinition": [
+        "MaxIndex",
+        "Family"
+    ],
+    "TResistanceFamilyList": [
+        "Values"
+    ],
+    "TDamageFamilyList": [
+        "Values"
+    ],
+    "TStairsDamageTypeEvolutionOverRangeDescriptor": [
+        "AP",
+        "DistanceGRU"
+    ],
+    "TDistrictUnitsContainerModuleDescriptor": [
+        "AllowedTagSet",
+        "NbSlots"
+    ],
+    "TDynamicTerrainModuleDescriptor": [
+        "TerrainToApplyOnInit",
+        "TerrainToApplyOnDeath"
+    ],
+    "TShootingPointsModuleDescriptor": [],
+    "TMinimapDisplayModuleDescriptor": [
+        "FollowUnitOrientation",
+        "Texture"
+    ],
+    "TGameplayEffectsPacksList": [
+        "EffectsPacks"
+    ],
+    "TEffectsPackDescriptor": [
+        "NameForDebug",
+        "DescriptorId",
+        "EffectsDescriptors"
+    ],
+    "TUnitEffectIncreaseWeaponDispersionMaxRangeDescriptor": [
+        "ModifierType",
+        "ModifierValue"
+    ],
+    "TUnitEffectRaiseTagDescriptor": [
+        "TagListToRaise"
+    ],
+    "TUnitEffectShowLabelIconDescriptor": [
+        "TextureToken"
+    ],
+    "TUnitEffectIncreaseDamageTakenDescriptor": [
+        "DamageType",
+        "ModifierType",
+        "BonusDamage"
+    ],
+    "TStrategicSupplyMalusEffectDescriptor": [
+        "ModifierType",
+        "SupplyMalus"
+    ],
+    "TUnitEffectIncreaseInfluenceValueDescriptor": [
+        "Bonus",
+        "ModifierType"
+    ],
+    "TUnitEffectIncreaseWeaponPorteeMaxDescriptor": [
+        "ModifierValue",
+        "ModifierValueGRU",
+        "ModifierType"
+    ],
+    "TUnitEffectIncreaseWeaponPorteeMaxHADescriptor": [
+        "ModifierValue",
+        "ModifierValueGRU",
+        "ModifierType"
+    ],
+    "TUnitEffectIncreaseWeaponPorteeMaxProjectileDescriptor": [
+        "ModifierValue",
+        "ModifierValueGRU",
+        "ModifierType"
+    ],
+    "TUnitEffectIncreaseWeaponPorteeMaxTBADescriptor": [
+        "ModifierValue",
+        "ModifierValueGRU",
+        "ModifierType"
+    ],
+    "TUnitEffectIncreaseDispersionDescriptor": [
+        "BonusDispersion",
+        "ModifierType"
+    ],
+    "TUnitEffectAlterWeaponTempsEntreDeuxSalvesDescriptor": [
+        "ModifierType",
+        "ModifierValue"
+    ],
+    "TUnitEffectAlterWeaponTempsEntreDeuxTirsDescriptor": [
+        "ModifierType",
+        "ModifierValue"
+    ],
+    "TUnitEffectIncreaseChassisRotationSpeedDescriptor": [
+        "ModifierType",
+        "BonusChassisRotationSpeed"
+    ],
+    "TUnitEffectIncreaseTurretRotationSpeedDescriptor": [
+        "BonusTurretRotationSpeed",
+        "ModifierType"
+    ],
+    "TUnitEffectIncreaseSpeedDescriptor": [
+        "BonusSpeedBaseInPercent",
+        "ModifierType"
+    ],
+    "TBonusWeaponAimtimeEffectDescriptor": [
+        "ModifierType",
+        "ModifierValue"
+    ],
+    "TUnitEffectBonusExperienceLevelDescriptor": [
+        "ModifierType",
+        "ExperienceLevelModifier"
+    ],
+    "TUnitEffectIncreaseDangerousnessDescriptor": [
+        "ModifierType",
+        "BonusDangerousness"
+    ],
+    "TUnitEffectTransportSlotNumberModificationDescriptor": [
+        "EffectOnTransportSlotNumber",
+        "ModifierType"
+    ],
+    "TUnitEffectIncreaseWeaponPhysicalDamagesDescriptor": [
+        "ModifierType",
+        "ModifierValue"
+    ],
+    "TUnitEffectIncreaseVisionDescriptor": [
+        "ModifierType",
+        "BonusVisionBase"
+    ],
+    "TUnitEffectIncreaseSpecializedDetectionDescriptor": [
+        "VisionType",
+        "ModifierType",
+        "BonusValueGRU",
+        "BonusValue"
+    ],
+    "TUnitEffectIncreaseInfluenceValueMinDescriptor": [
+        "Bonus",
+        "ModifierType"
+    ],
+    "TUnitEffectSetSelectableDescriptor": [
+        "Selectable"
+    ],
+    "TUnitEffectStopWithInertiaEffectDescriptor": [
+        "UpdateEachTick"
+    ],
+    "TDerouteUnitEffectDescriptor": [],
+    "TEffectInflictPhysicalDamageDescriptor": [
+        "ModifierType",
+        "PhysicalDamageValue"
+    ],
+    "TUnitEffectIncreaseWeaponPrecisionArretDescriptor": [
+        "ModifierType",
+        "ModifierValue"
+    ],
+    "TUnitEffectIncreaseWeaponPrecisionMouvementDescriptor": [
+        "ModifierType",
+        "ModifierValue"
+    ],
+    "TUnitEffectRemoveUnitDescriptor": [],
+    "TKillUnitEffectDescriptor": [],
+    "TEffectInflictSuppressDamageDescriptor": [
+        "ModifierType",
+        "SuppressDamageValue"
+    ],
+    "TUnitEffectBonusPrecisionWhenTargetedDescriptor": [
+        "ModifierType",
+        "BonusPrecisionWhenTargeted"
+    ],
+    "TUnitEffectIncreaseOpticalStrengthDescriptor": [
+        "ModifierType",
+        "BonusOpticalStrength"
+    ],
+    "TUnitEffectIncreaseWeaponPorteeMaxIgnoreSmokeDescriptor": [
+        "ModifierType",
+        "BonusWeaponPorteeMax"
+    ],
+    "TUnitEffectReplaceArmorDescriptor": [
+        "BlindageLocation",
+        "ReplacementBlindage"
+    ],
+    "TUnitEffectIncreaseConcealmentBonusDescriptor": [
+        "ModifierType",
+        "BonusConcealmentBonus"
+    ],
+    "TUnitEffectHealOverTimeDescriptor": [
+        "DamageType",
+        "HealUnitsPerSecond",
+        "NbUpdatePerSecond"
+    ],
+    "TUnitEffectChangeTeamDescriptor": [
+        "FutureTeam"
+    ],
+    "TTeamIdentifierForUnitEffect": [
+        "TeamType",
+        "TeamNumber"
+    ],
+    "TUnitEffectAddCapacityDescriptor": [
+        "CapacityToAdd"
+    ],
+    "TEvacAirplaneEffectDescriptor": [],
+    "TExperienceLevelsPackDescriptor": [
+        "NameForDebug",
+        "ExperienceLevelsDescriptors",
+        "DescriptorId"
+    ],
+    "TExperienceLevelDescriptor": [
+        "ThresholdPriceMultiplier",
+        "HintTitleToken",
+        "IconsByNationality",
+        "ThresholdAdditionalValue",
+        "DescriptorId",
+        "HintBodyToken",
+        "LocalizationToken",
+        "NameForDebug",
+        "LevelEffectsPacks"
+    ],
+    "FXMissileFiring": [
+        "Action"
+    ],
+    "FiringAndProjectile": [
+        "Happenings"
+    ],
+    "TRandomHappening": [
+        "Alternatives"
+    ],
+    "FXFiring_0": [
+        "Action"
+    ],
+    "FXProjectile_0": [
+        "Action"
+    ],
+    "FXFiring_1": [
+        "Action"
+    ],
+    "FXProjectile_1": [
+        "Action"
+    ],
+    "FXFiring_2": [
+        "Action"
+    ],
+    "FXProjectile_2": [
+        "Action"
+    ],
+    "TIntroduceMobileHappening": [
+        "Happening"
+    ],
+    "FXProjectile_3": [
+        "Action"
+    ],
+    "FXFiring_3": [
+        "Action"
+    ],
+    "FXProjectile_4": [
+        "Action"
+    ],
+    "FXFiring_4": [
+        "Action"
+    ],
+    "FXProjectile_5": [
+        "Action"
+    ],
+    "FXFiring_5": [
+        "Action"
+    ],
+    "FXProjectile_6": [
+        "Action"
+    ],
+    "FXFiring_6": [
+        "Action"
+    ],
+    "FXProjectile_7": [
+        "Action"
+    ],
+    "FXFiring_7": [
+        "Action"
+    ],
+    "FXProjectile_8": [
+        "Action"
+    ],
+    "FXFiring_8": [
+        "Action"
+    ],
+    "FXProjectile_9": [
+        "Action"
+    ],
+    "FXFiring_9": [
+        "Action"
+    ],
+    "FXProjectile_10": [
+        "Action"
+    ],
+    "FXProjectile_11": [
+        "Action"
+    ],
+    "FXProjectile_12": [
+        "Action"
+    ],
+    "FXProjectile_13": [
+        "Action"
+    ],
+    "FXFiring_12": [
+        "Action"
+    ],
+    "FXProjectile_14": [
+        "Action"
+    ],
+    "FXFiring_13": [
+        "Action"
+    ],
+    "FXProjectile_15": [
+        "Action"
+    ],
+    "FXFiring_14": [
+        "Action"
+    ],
+    "FXProjectile_16": [
+        "Action"
+    ],
+    "FXFiring_15": [
+        "Action"
+    ],
+    "FXProjectile_17": [
+        "Action"
+    ],
+    "FXFiring_10": [
+        "Action"
+    ],
+    "FXProjectile_18": [
+        "Action"
+    ],
+    "FXFiring_16": [
+        "Action"
+    ],
+    "FXProjectile_19": [
+        "Action"
+    ],
+    "FXFiring_11": [
+        "Action"
+    ],
+    "FXFiring_17": [
+        "Action"
+    ],
+    "FXProjectile_20": [
+        "Action"
+    ],
+    "FXFiring_18": [
+        "Action"
+    ],
+    "FXProjectile_21": [
+        "Action"
+    ],
+    "FXFiring_19": [
+        "Action"
+    ],
+    "FXProjectile_22": [
+        "Action"
+    ],
+    "FXFiring_20": [
+        "Action"
+    ],
+    "FXProjectile_23": [
+        "Action"
+    ],
+    "FXFiring_21": [
+        "Action"
+    ],
+    "FXProjectile_24": [
+        "Action"
+    ],
+    "TCompositeHappening": [
+        "SubHappenings"
+    ],
+    "ImpactWrapper": [
+        "Action"
+    ],
+    "TImpactHappening": [
+        "Happenings"
+    ],
+    "TMissileCarriageConnoisseur": [
+        "PylonSet",
+        "WeaponInfos",
+        "MeshDescriptor"
+    ],
+    "TMissileCarriageWeaponInfo": [
+        "MountingType",
+        "MeshDescriptor",
+        "WeaponIndex",
+        "MissileType",
+        "Count"
+    ],
+    "TMissileCarriageSubDepictionGenerator": [
+        "Missiles",
+        "MissileCarriageConnoisseur",
+        "ReferenceMesh",
+        "Pylons"
+    ],
+    "TMissileCarriageSubDepictionMissileInfo": [
+        "MissileIndex",
+        "Depiction",
+        "WeaponIndex"
+    ],
+    "TemplateDepictionMissileGroundUnit": [
+        "ProjectileModelResource",
+        "MissileNumber",
+        "PhysicalProperty"
+    ],
+    "TStaticMissileCarriageSubDepictionGenerator": [
+        "Missiles",
+        "MissileCarriageConnoisseur",
+        "ReferenceMesh",
+        "Pylons"
+    ],
+    "TStaticMissileCarriageSubDepictionMissileInfo": [
+        "Depiction",
+        "MissileCount",
+        "WeaponIndex"
+    ],
+    "TemplateDepictionMissileShowroom": [
+        "ProjectileModelResource"
+    ],
+    "TDepictionDescriptor": [
+        "MeshDescriptor",
+        "SelectorId"
+    ],
+    "TemplateDepictionStaticMissilesGroundUnit": [
+        "ProjectileModelResource",
+        "PhysicalProperty"
+    ],
+    "TemplateDepictionStaticMissilesAirUnit": [
+        "ProjectileModelResource",
+        "PhysicalProperty"
+    ],
+    "Template_DescriptorMissileBase": [
+        "ProjectileModelResource",
+        "Actions"
+    ],
+    "template_PropulsionActionHappening": [
+        "Action"
+    ],
+    "TGuidedMissileModuleDescriptor": [],
+    "TGuidedMissileMovementModuleDescriptor": [
+        "UncontrollableConfig",
+        "RangeChaos",
+        "TerminalPhaseConfig",
+        "AngleMaxForRandomMouvUncontrollable",
+        "RotationSpeedWhenUncontrollable",
+        "TimeBetweenChaosUpdates",
+        "AscendantPhaseConfig",
+        "DefaultConfig",
+        "TimeMinBetweenRandomMoveWhenUncontrollable",
+        "TimeMaxBetweenRandomMoveWhenUncontrollable",
+        "CruiseAltitudeGRU"
+    ],
+    "TGuidedMissileMovementConfigDescriptor": [
+        "MaxSpeedGRU",
+        "MaxAccelerationGRU",
+        "AutoGyr"
+    ],
+    "TDangerousnessModuleDescriptor": [
+        "Dangerousness"
+    ],
+    "TShowRoomEquivalenceManager": [
+        "UnitToShowRoomEquivalent"
+    ],
+    "TInfantrySquadModuleDescriptor": [
+        "SquadDataDescriptor",
+        "NbSoldatInGroupeCombat",
+        "InfantryMimeticName",
+        "MimeticDescriptor",
+        "WeaponUnitFXKey"
+    ],
+    "Descriptor_Unit_MimeticUnit": [
+        "MimeticName",
+        "DescriptorId"
+    ],
+    "TInfantrySquadWeaponAssignmentModuleDescriptor": [
+        "InitialSoldiersToTurretIndexMap"
+    ],
+    "UnitCadavreModuleDescriptor": [
+        "DeathExplosionAmmo",
+        "KillAsAirplane",
+        "ModuleDescriptorsToSteal",
+        "KillAsVehicule",
+        "KillAsHelico",
+        "CadavreDuration",
+        "KillAsInfanterie"
+    ],
+    "HelicopterCadavrePositionModuleDescriptor": [
+        "NearGroundFlyingAltitudeGRU",
+        "LowAltitudeFlyingAltitudeGRU"
+    ],
+    "AirplaneCadavrePositionModuleDescriptor": [
+        "LowAltitudeFlyingAltitudeGRU"
+    ],
+    "TemplateUnitCriticalModule": [
+        "Module"
+    ],
+    "VehicleApparenceModelModuleDescriptor": [
+        "BlackHoleIdentifier",
+        "Depiction",
+        "ReferenceMesh",
+        "GameplayBBoxBoneName"
+    ],
+    "TAutoCoverModuleDescriptor": [
+        "AutoCoverRangeGRU",
+        "OccupationRadiusGRU",
+        "TerrainList",
+        "TerrainListMask",
+        "UseTerrainsForEscape"
+    ],
+    "TRoutModuleDescriptor": [
+        "MoralLevel"
+    ],
+    "TGenericMovementModuleDescriptor": [
+        "MaxSpeedInKmph",
+        "PathfindType"
+    ],
+    "TLandMovementModuleDescriptor": [
+        "StartTime",
+        "VehicleSizeInMeter",
+        "TempsDemiTour",
+        "UnitMovingType",
+        "SpeedBonusFactorOnRoad",
+        "MaxAccelerationGRU",
+        "MaxDecelerationGRU",
+        "RotationStopTime",
+        "StopTime",
+        "RotationStartTime"
+    ],
+    "TFuelModuleDescriptor": [
+        "FuelCapacity",
+        "FuelMoveDuration"
+    ],
+    "TemplateUnitMissileCarriage": [
+        "Connoisseur"
+    ],
+    "TAutomaticBehaviorModuleDescriptor": [
+        "MaxDistanceForOffensiveReactionGRU",
+        "MaxDistanceForEngagementGRU",
+        "SearchedTagsInEngagementTarget",
+        "CanAssist",
+        "DistanceToFleeGRU",
+        "AssistRequestBroadcastRadiusGRU"
+    ],
+    "TCubeActionModuleDescriptor": [
+        "CubeActionDescriptor"
+    ],
+    "TOrderConfigModuleDescriptor": [
+        "ValidOrders"
+    ],
+    "TStrategicDataModuleDescriptor": [
+        "UnitAttackValue",
+        "UnitBonusXpPerLevelValue",
+        "UnitDefenseValue"
+    ],
+    "TVisualShootPositionsModuleDescriptor": [],
+    "TTransportableModuleDescriptor": [
+        "TransportedSoldier",
+        "TimeToLoad",
+        "IsTowable",
+        "NbSeatsOccupied",
+        "TransportedTexture"
+    ],
+    "TCapaciteModuleDescriptor": [
+        "DefaultSkillList"
+    ],
+    "TDeploymentShiftModuleDescriptor": [
+        "DeploymentShiftGRU"
+    ],
+    "TTransporterModuleDescriptor": [
+        "WreckUnloadSuppressDamageBonus",
+        "LoadRadiusGRU",
+        "TransportableTagSet",
+        "NbSeatsAvailable",
+        "WreckUnloadPhysicalDamageBonus",
+        "WreckUnloadStunDamageBonus"
+    ],
+    "TCommanderModuleDescriptor": [],
+    "TZoneInfluenceMapModuleDescriptor": [
+        "InfluenceStrength",
+        "IsEnabledByComportementAuto",
+        "StrengthDecayPerSecond",
+        "MinimumInfluenceStrength",
+        "PreventsDecayInZone"
+    ],
+    "TInfluenceScoutModuleDescriptor": [],
+    "InfantryApparenceModelModuleDescriptor": [
+        "Depiction"
+    ],
+    "TLinkToDistrictModuleDescriptor": [],
+    "TSellModuleDescriptor": [],
+    "HelicopterPositionModuleDescriptor": [
+        "NearGroundFlyingAltitudeGRU",
+        "LowAltitudeFlyingAltitudeGRU"
+    ],
+    "THelicopterMovementModuleDescriptor": [
+        "TorqueManoeuvrability",
+        "UpwardSpeedInKmph",
+        "MaxInclination",
+        "Mass",
+        "CyclicManoeuvrability",
+        "WorldFloorProxy",
+        "RotorArea",
+        "GFactorLimit",
+        "MaxSpeedInKmph"
+    ],
+    "TFlareModuleDescriptor_MW": [
+        "DistanceActivationGRU",
+        "TimeBetweenFlare",
+        "MinimalTimeBetweenFlare",
+        "ProjectileSpeed",
+        "BonusTimeBetweenFlareByProjectile"
+    ],
+    "AirplanePositionModuleDescriptor": [
+        "LowAltitudeFlyingAltitudeGRU"
+    ],
+    "AirplaneMovementDescriptor": [
+        "AltitudeGRU",
+        "AgilityRadiusGRU",
+        "EvacToStartingPoint",
+        "OrderedAttackStrategies",
+        "RollAngle",
+        "RollSpeed",
+        "SpeedInKmph",
+        "AltitudeMinGRU",
+        "PitchAngle",
+        "EvacAngle"
+    ],
+    "TAirplaneModuleDescriptor": [
+        "TravelDuration",
+        "EvacuationTime"
+    ],
+    "TWeaponManagerModuleDescriptor": [
+        "Salves",
+        "AlwaysOrientArmorTowardsThreat",
+        "TurretDescriptorList",
+        "SalvoIsMainSalvo"
+    ],
+    "TTurretTwoAxisDescriptor": [
+        "MountedWeaponDescriptorList",
+        "OutOfRangeTrackingDuration",
+        "AngleRotationBasePitch",
+        "AngleRotationBase",
+        "AngleRotationMinPitch",
+        "YulBoneOrdinal",
+        "AimingPriority",
+        "AngleRotationMax",
+        "MasterTurretYulBoneOrdinal",
+        "TurretIdleBehaviourDescriptor",
+        "AngleRotationMaxPitch",
+        "Tag",
+        "VitesseRotation"
+    ],
+    "TMountedWeaponDescriptor": [
+        "SalvoStockIndex",
+        "DispersionRadiusOffThickness",
+        "AmmoConsumption_ForInterface",
+        "ShowInInterface",
+        "EffectTag",
+        "WeaponActiveAndCanShootPropertyName",
+        "DispersionRadiusOffColor",
+        "AnimateOnlyOneSoldier",
+        "DispersionRadiusOnThickness",
+        "HandheldEquipmentKey",
+        "Ammunition",
+        "WeaponIgnoredPropertyName",
+        "DispersionRadiusOnColor",
+        "TirContinu",
+        "WeaponShootDataPropertyName",
+        "NbWeapons",
+        "ShowDispersion"
+    ],
+    "TTurretUnitDescriptor": [
+        "MountedWeaponDescriptorList",
+        "AngleRotationMinPitch",
+        "YulBoneOrdinal",
+        "AimingPriority",
+        "Tag",
+        "AngleRotationMaxPitch",
+        "AngleRotationMax"
+    ],
+    "TTurretInfanterieDescriptor": [
+        "MountedWeaponDescriptorList",
+        "YulBoneOrdinal"
+    ],
+    "TTurretBombardierDescriptor": [
+        "MountedWeaponDescriptorList",
+        "YulBoneOrdinal",
+        "FlyingSpeedInKmph",
+        "Tag",
+        "FlyingAltitudeGRU"
+    ],
+    "StrategicAirplanePawnDepictionTemplate": [
+        "MeshDescriptorPawn",
+        "MeshSocle"
+    ],
+    "GhostAerialDepictionTemplate": [
+        "Selector",
+        "Alternatives"
+    ],
+    "TacticAerialDepictionTemplate": [
+        "AdditionalTextures",
+        "Selector",
+        "CoatingName",
+        "Alternatives",
+        "Operators",
+        "Actions",
+        "PaleLength",
+        "PaleCount",
+        "RotationAxis",
+        "SousMobile"
+    ],
+    "DepictionOperator_Rotors": [
+        "HelixList"
+    ],
+    "THelix": [
+        "BladesBoneName",
+        "HelixBoneName",
+        "RotationSpeed",
+        "Clockwise",
+        "RotationAxis",
+        "BlurActionId",
+        "BladeCount"
+    ],
+    "ShowroomAerialDepictionTemplate": [
+        "MeshDescriptor",
+        "BoneName",
+        "RotationAxis",
+        "RotationInDegree"
+    ],
+    "GhostVehicleDepictionTemplate": [
+        "Selector",
+        "Alternatives"
+    ],
+    "SubDepiction_ServantLeft": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "SubDepiction_ServantRight": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "ShowroomSubDepiction_ServantLeft": [
+        "MeshDescriptor"
+    ],
+    "ShowroomSubDepiction_ServantRight": [
+        "MeshDescriptor"
+    ],
+    "SubDepiction_ATGMServantLeft": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "SubDepiction_ATGMServantRight": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "ShowroomSubDepiction_ATGMServantLeft": [
+        "MeshDescriptor"
+    ],
+    "ShowroomSubDepiction_ATGMServantRight": [
+        "MeshDescriptor"
+    ],
+    "SubDepiction_Driver": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "SubDepiction_GunnerRight": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "SubDepiction_GunnerLeft": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "SubDepiction_ServantWalkOnlyLeft": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "SubDepiction_GunnerIdleOnlyLeft": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "SubDepiction_ServantWalkOnlyRight": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "SubDepiction_GunnerIdleOnlyRight": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "ShowroomSubDepiction_GunnerLeft": [
+        "MeshDescriptor"
+    ],
+    "ShowroomSubDepiction_GunnerRight": [
+        "MeshDescriptor"
+    ],
+    "SubDepiction_GunnerStandingUpIdleOnlyLeft": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "ShowroomSubDepiction_GunnerStandingUpLeft": [
+        "MeshDescriptor"
+    ],
+    "SubDepiction_DriverUndeployed": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "SubDepiction_GunnerDeployed": [
+        "MeshDescriptorHigh",
+        "MeshDescriptorLow"
+    ],
+    "DepictionOperator_WeaponMissileCarriageFire": [
+        "FireEffectTag",
+        "WeaponIndex",
+        "WeaponShootDataPropertyName",
+        "Connoisseur",
+        "NbProj"
+    ],
+    "TacticVehicleDepictionTemplate": [
+        "Selector",
+        "CoatingName",
+        "Actions",
+        "Operators",
+        "SubDepictions",
+        "Alternatives",
+        "SubDepictionGenerators"
+    ],
+    "DepictionOperator_WeaponInstantFire": [
+        "FireEffectTag",
+        "WeaponShootDataPropertyName",
+        "NbProj",
+        "Anchors"
+    ],
+    "DepictionOperator_WeaponContinuousFire": [
+        "FireEffectTag",
+        "WeaponActiveAndCanShootPropertyName",
+        "WeaponShootDataPropertyName",
+        "Anchors",
+        "NbFX"
+    ],
+    "TransportedInfantrySubGenerator": [
+        "Mesh"
+    ],
+    "DepictionOperator_Carousel_Radar": [
+        "WeaponIgnoredProperties",
+        "WaitTimeInSeconds",
+        "RevolutionsPerMinute"
+    ],
+    "RocketSubDepictionTemplate": [
+        "RocketCount",
+        "WeaponIndex",
+        "RocketMeshDescriptor",
+        "UnitMeshDescriptor",
+        "PhysicalProperty"
+    ],
+    "DepictionOperator_CarouselWithSpecificAngle_Radar": [
+        "CoveragePercentage",
+        "WeaponIgnoredProperties",
+        "WaitTimeInSeconds",
+        "RevolutionsPerMinute"
+    ],
+    "StrategicGroundVehiclePawnDepictionTemplate": [
+        "MeshSocle",
+        "MeshDescriptorPawn",
+        "SubDepictionGenerators"
+    ],
+    "StrategicHelicopterPawnDepictionTemplate": [
+        "MeshDescriptorPawn",
+        "MeshSocle"
+    ],
+    "StrategicInfantryPawnDepictionTemplate": [
+        "MeshDescriptorPawn",
+        "MeshSocle"
+    ],
+    "TacticTowedSubDepictionTemplate": [
+        "Alternatives",
+        "InitialPoses",
+        "MissileAlternatives",
+        "AllowedUnits"
+    ],
+    "TInitialPoseAngle": [
+        "Angle",
+        "MeshDescriptor"
+    ],
+    "TInitialPoseAnimation": [
+        "MeshDescriptor",
+        "Animation"
+    ],
+    "TemplateInfantryDepictionSquad": [
+        "SoundOperator"
+    ],
+    "TMeshlessDepictionDescriptor": [
+        "ReferenceMeshForSkeleton",
+        "SelectorId"
+    ],
+    "TemplateAllSubWeaponDepiction": [
+        "Alternatives",
+        "Operators"
+    ],
+    "DepictionOperator_WeaponInstantFireInfantry": [
+        "WeaponShootDataPropertyName",
+        "FireEffectTag"
+    ],
+    "TemplateAllSubBackpackWeaponDepiction": [
+        "Alternatives"
+    ],
+    "TemplateInfantryDepictionFactoryTactic": [
+        "Selector",
+        "Operators",
+        "SubDepictions",
+        "Alternatives"
+    ],
+    "DepictionOperator_SkeletalAnimation2_Default": [
+        "ConditionalTags"
+    ],
+    "TemplateInfantryDepictionFactoryGhost": [
+        "Selector",
+        "Alternatives"
+    ],
+    "TemplateWeaponAccessorySubDepiction": [
+        "MeshDescriptor",
+        "EnabledValue"
+    ],
+    "TemplateInfantrySelectorTactic": [
+        "UniqueCount",
+        "Surrogates"
+    ],
+    "InfantryFiringHappening": [
+        "Power",
+        "WaitBetweenShot",
+        "Action"
+    ],
+    "InfantryProjectileHappening": [
+        "Power",
+        "FluidFriction",
+        "WithoutPhysics",
+        "InitialSpeed",
+        "WaitBetweenShot",
+        "Action"
+    ],
+    "TEnumResourceList": [
+        "Values",
+        "Alias"
+    ],
+    "TCubeActionCapacityButtonInformationsDescriptor": [
+        "Mapping",
+        "HoverSound",
+        "CubeActionFunctionType",
+        "BackgroundTexture",
+        "Descriptor",
+        "HintExtendedToken",
+        "ButtonTextToken",
+        "HintTitleToken",
+        "CubeActionName",
+        "HintBodyToken",
+        "HintDico",
+        "ClickSound"
+    ],
+    "TCubeActionMenuDescriptor": [
+        "CubeActionName",
+        "CubeActionContent"
+    ],
+    "TStrategicLabelModuleDescriptor": [
+        "BackgroundTexture"
+    ],
+    "TDeckModuleDescriptor": [
+        "PictureForSelection",
+        "Score",
+        "RegimentName",
+        "DeckIdentifier",
+        "AcceptableTagSet",
+        "MaxPackCount"
+    ],
+    "TStrategicBattleModuleDescriptor": [
+        "HasZoneOfControl",
+        "BattleRole",
+        "AirDenyRadiusInAPCase",
+        "BattleSupportRadiusInAPCase",
+        "CanBeInitialTarget"
+    ],
+    "TActionPointsModuleDescriptor": [
+        "NbInitialActionsPointsForProducedPawn",
+        "InitialActionPoint",
+        "ActionPointRecoveryPerTurn"
+    ],
+    "StrategicUIModuleDescriptor": [
+        "ProdMenuTexture",
+        "NameToken"
+    ],
+    "TStrategicPositionModuleDescriptor": [
+        "IsAirport"
+    ],
+    "StrategicFatigueModuleDescriptor": [
+        "InitialFatigue"
+    ],
+    "TInfluenceMapModuleDescriptor": [
+        "InfluenceStrength",
+        "StrengthDecayPerSecond",
+        "MinimumInfluenceStrength",
+        "PreventsDecayInZone"
+    ],
+    "TStrategicSupplierModuleDescriptor": [
+        "SupplyActionPoint"
+    ],
+    "TStrategicAirportModuleDescriptor": [],
+    "TStrategicMovementModuleDescriptor": [
+        "SpeedReducerTerrainAPConsumptionModifier",
+        "ConsumeAPOnMove",
+        "MaxSpeed",
+        "RoadAPConsumptionModifier",
+        "NormalTerrainAPConsumptionModifier"
+    ],
+    "TAcknowUnitAction": [
+        "Values"
+    ],
+    "TAcknowUnitContainerDescriptor": [
+        "Content"
+    ],
+    "TAcknowDescriptor": [
+        "MotherCountry",
+        "TypeSpecific",
+        "Sound",
+        "Action"
+    ],
+    "Template_UnitAcknow": [
+        "Identifier",
+        "Filter"
+    ],
+    "TAcknowUnitType": [
+        "Values"
+    ],
+    "TCosmeticConstantMovementSoundOperatorDesc": [
+        "OperatorId",
+        "MaxVolumeSpeed",
+        "MaxVolume",
+        "FadeInDuration",
+        "Sounds",
+        "MinVolume"
+    ],
+    "TCosmeticDriveMovementSoundOperatorDesc": [
+        "OperatorId",
+        "MaxVolumeSpeed",
+        "IdleFadeOutDuration",
+        "IdleSounds",
+        "IdleDuration",
+        "IdleFadeInDuration",
+        "VolumeIdleStop",
+        "RunSounds",
+        "StartSounds",
+        "MaxVolume",
+        "StopSounds",
+        "RunFadeOutDuration",
+        "RunFadeInDuration",
+        "RunOutPitchVelocity",
+        "MinVolume",
+        "RunOutPitchToGo"
+    ],
+    "TCosmeticFlyMovementSoundOperatorDesc": [
+        "OperatorId",
+        "MaxVolumeSpeed",
+        "IdleFadeOutDuration",
+        "IdleFadeInDuration",
+        "RunSounds",
+        "StartSounds",
+        "MaxVolume",
+        "StopSounds",
+        "RunFadeOutDuration",
+        "RunFadeInDuration",
+        "RunOutPitchVelocity",
+        "MinVolume",
+        "CrashSounds",
+        "RunOutPitchToGo"
+    ],
+    "TCosmeticWalkMovementSoundOperatorDesc": [
+        "OperatorId",
+        "MaxVolumeSpeed",
+        "IdleFadeOutDuration",
+        "RunSounds",
+        "StartSounds",
+        "MaxVolume",
+        "StopSounds",
+        "RunFadeOutDuration",
+        "RunFadeInDuration",
+        "RunOutPitchVelocity",
+        "MinVolume",
+        "IdleSounds",
+        "RunOutPitchToGo"
+    ],
+    "TSoundSet": [
+        "Items"
+    ],
+    "TSoundHappening": [
+        "Volume",
+        "SoundDescList"
+    ],
+    "TCosmeticTurretSoundOperatorDesc": [
+        "OperatorId",
+        "StartSound",
+        "RotateSound",
+        "StopSound",
+        "TurretAxisName"
+    ],
+    "TUnitSpecialtiesContainer": [
+        "Descriptors"
+    ],
+    "TUnitSpecialtyDescriptor": [
+        "SpecialtyHintExtendedToken",
+        "SpecialtyTextureName",
+        "SpecialtyHintBodyToken",
+        "SpecialtyHintTitleToken"
+    ],
+    "TUnitTraitsContainer": [
+        "Descriptors"
+    ],
+    "TUnitTraitDescriptor": [
+        "TraitHintTitleToken",
+        "TraitTextureName",
+        "TraitHintBodyToken"
+    ],
+    "TWeaponsMinMaxValuesInterfaceHelper": [
+        "WeaponsMinMaxValues",
+        "UnitMinMaxValues"
+    ],
+    "TWeaponMinMaxValues": [
+        "SuppressDamages",
+        "TurretSpeed",
+        "MaxRangeHAGRU",
+        "SupplyCost",
+        "PhysicalDamages",
+        "MaxRangeTBAGRU",
+        "SplashDamageRadiusGRU",
+        "MaxRangeGRU",
+        "NbShotsBySalvo",
+        "AccuracyMovement",
+        "TimeBetweenTwoShots",
+        "Accuracy",
+        "Penetration",
+        "ReloadTime",
+        "AimTime",
+        "RateOfFire"
+    ],
+    "TMinMaxValue": [
+        "Max",
+        "Min"
+    ],
+    "TUnitMinMaxValues": [
+        "Armor"
+    ],
+    "TUIResourceTexture": [
+        "FileName"
+    ],
+    "TResourcePackLoader": [
+        "Packs"
+    ],
+    "TResourceDescriptorMeshPack": [
+        "PackName",
+        "TransactionFiles",
+        "UseDecompressedBufferResourceThreshold"
+    ],
+    "TResourceDescriptorProxyPack": [
+        "PackName",
+        "TransactionFiles"
+    ],
+    "TSoundAndMusicSwitchDescriptor": [
+        "SoundServiceVolumesDescriptor"
+    ],
+    "Music": [
+        "FileName",
+        "Copyrighted"
+    ],
+    "TCurrentSavingVersion": [
+        "VersionNum"
+    ],
+    "TTFSCommand_UISymbol": [
+        "BBMin",
+        "ShaderDescriptor",
+        "UseTextColor",
+        "BBMax",
+        "TextureToken"
+    ],
+    "TemplateTFS_Division": [
+        "TextureToken"
+    ],
+    "TemplateTFS_Flag": [
+        "TextureToken"
+    ],
+    "TUIHintManagementProperties": [
+        "AppearAfterDuration",
+        "DisapearAfterDuration",
+        "ExtendAfterDuration",
+        "PointerFollowingProperties"
+    ],
+    "TPointerFollowingPropertiesRTTI": [
+        "MagnifiableOffset",
+        "HorizontalPlacement",
+        "VerticalPlacement",
+        "OutOfBorderHorizontalAction",
+        "OutOfBorderVerticalAction"
+    ],
+    "AuraDescriptor": [
+        "TopRightTexture",
+        "BottomLeftTexture",
+        "TopTextureToken",
+        "LeftTextureToken",
+        "RightTextureToken",
+        "BottomTextureToken",
+        "AuraBorderSize",
+        "BottomRightTexture",
+        "TopLeftTexture"
+    ],
+    "TGamerPictureFallbacks": [
+        "DefaultAvatarTexture"
+    ],
+    "TResourceTexturePreloadTextureData": [
+        "FileName"
+    ],
+    "TDescriptorPositionEvents": [
+        "MaxEventCount",
+        "EventsDurationInSeconds",
+        "TriggNextEventDurationCeilInSeconds",
+        "CameraMoverTargetClient",
+        "World3D",
+        "SituationAwarenessNextEventCommandName",
+        "MinAltitudeInMeter",
+        "MaxAltitudeInMeter"
+    ],
+    "TGroupSelectionReminderResources": [
+        "UserInputLayer",
+        "EpsilonTimeForDoubleClic",
+        "PositionEventManager",
+        "MergeUnitsMapping"
+    ],
+    "TemplateSoundDescriptor": [
+        "FileName"
+    ],
+    "TMouseCursorAnimation": [
+        "AnimationCycleTime",
+        "TextureList",
+        "IgnoreContent",
+        "HotSpotX",
+        "HotSpotY"
+    ],
+    "TResourceDescriptorTextureAnimation": [
+        "FileNameList"
+    ],
+    "TSelectionHandlerInGameResources": [
+        "RenderToolbox",
+        "DrawingParameters",
+        "UserInputLayer",
+        "UserInputLayer_SquareSelection",
+        "Camera",
+        "World",
+        "DebugSelection",
+        "SceneReferenceForSelection",
+        "UpdateDynamicValuesCommandName",
+        "UseStickySelection",
+        "UseInvertedHotkeysForUniformSelection",
+        "KeyboardPresetUpdater",
+        "SquareSelectionActive"
+    ],
+    "TSmartChipListDescription": [
+        "ParagraphStyle",
+        "TextStyle",
+        "TypefaceToken",
+        "TextDico",
+        "TextSize",
+        "TextFormatScript",
+        "SmartOrderTextColor",
+        "SmartGroupTextColor",
+        "SmartOrderBackgroundColorToken",
+        "SmartGroupBackgroundColorToken",
+        "MagnifiableChipSize"
+    ],
+    "TUICommonLabelResource": [
+        "Camera"
+    ],
+    "LDHintStandardComponentWithPause": [],
+    "LDHintStandardComponent": [
+        "TextureToken",
+        "TextureMagnifiableWidthHeight",
+        "HasButtons",
+        "ComponentFrame"
+    ],
+    "PanelRoundedCorner": [
+        "UniqueName",
+        "BorderLineColorToken",
+        "Components",
+        "RoundedVertexes",
+        "FitStyle",
+        "HidePointerEvents",
+        "ElementName",
+        "BackgroundBlockColorToken",
+        "ComponentFrame",
+        "BorderThicknessToken",
+        "BorderLocalRenderLayer",
+        "HasBackground",
+        "BackgroundLocalRenderLayer",
+        "Radius",
+        "HasBorder"
+    ],
+    "BUCKTextDescriptor": [
+        "UniqueName",
+        "ChildFitToContent",
+        "BorderLineColorToken",
+        "Components",
+        "BigLineAction",
+        "TextToken",
+        "TextDico",
+        "HorizontalFitStyle",
+        "BackgroundBlockColorToken",
+        "Hint",
+        "ComponentFrame",
+        "BorderThicknessToken",
+        "TextPadding",
+        "TextFormatScript",
+        "ParagraphStyle",
+        "TextStyle",
+        "Rotation",
+        "FitStyle",
+        "TextColor",
+        "ElementName",
+        "VerticalFitStyle",
+        "ClipContent",
+        "BordersToDraw",
+        "HasBackground",
+        "TextSize",
+        "TypefaceToken",
+        "HasBorder"
+    ],
+    "TUICommonLDHintResource": [
+        "ComponentByName"
+    ],
+    "BUCKVideoDescriptor": [
+        "VideoFrame",
+        "SoundVolume",
+        "HasBackground",
+        "Loop",
+        "VideoDrawer",
+        "ElementName",
+        "BackgroundBlockColorToken",
+        "ComponentFrame"
+    ],
+    "ScenarioOverviewComponent": [
+        "ElementName"
+    ],
+    "SpecificModalButton": [
+        "TextSizeToken",
+        "ButtonAlignementToFather",
+        "IsFilled",
+        "Mapping",
+        "TextToken",
+        "ButtonAlignementToAnchor",
+        "HintableAreaElementName",
+        "ElementName"
+    ],
+    "TEugBMutablePBaseClass": [
+        "Value"
+    ],
+    "TUserInputMapping": [
+        "MouseEventID",
+        "KeyboardEventID"
+    ],
+    "BUCKTextureDescriptor": [
+        "ClipTextureToComponent",
+        "Rotation",
+        "Components",
+        "TextureToken",
+        "ResizeMode",
+        "TextureColorToken",
+        "HasBackground",
+        "HidePointerEvents",
+        "TextureFrame",
+        "ElementName",
+        "TileTextureInComponent",
+        "BackgroundBlockColorToken",
+        "TextureDrawer",
+        "ComponentFrame"
+    ],
+    "TUISpecificScenarioMapOverviewViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "TUISpecificCountryInfos": [
+        "NameToken",
+        "Country",
+        "FlagTexture",
+        "PawnExpTexture"
+    ],
+    "TUISpecificCountriesInfos": [
+        "CountriesInfos"
+    ],
+    "WarningStandardComponent": [
+        "BorderLineColorToken",
+        "TextColor",
+        "TypefaceToken",
+        "VerticalOffset",
+        "BackgroundBlockColorToken"
+    ],
+    "TEnumAlertMessageType": [
+        "Values"
+    ],
+    "TDispatchedMessageType": [
+        "Values"
+    ],
+    "TEnumObjectiveMessageType": [
+        "Values"
+    ],
+    "TRTTILength4": [
+        "Magnifiable"
+    ],
+    "HintTitleTextBUCKComponent": [
+        "ComponentFrame",
+        "ParagraphStyle",
+        "HorizontalFitStyle",
+        "TextPadding",
+        "TypefaceToken",
+        "BigLineAction",
+        "TextDico",
+        "TextSize",
+        "TextColor"
+    ],
+    "HintBodyTextBUCKComponent": [
+        "ComponentFrame",
+        "ParagraphStyle",
+        "TextPadding",
+        "HorizontalFitStyle",
+        "TypefaceToken",
+        "BigLineAction",
+        "TextDico",
+        "TextSize",
+        "TextColor"
+    ],
+    "TCommandementZoneResources": [
+        "Camera",
+        "WorldFloorProxy",
+        "LabelPositionOffset"
+    ],
+    "TUITacticalGameRulesHelper": [
+        "TimeStepMessage",
+        "TimeInMinutesStepList",
+        "SuddenDeathTokens",
+        "StandardStepMessages",
+        "AttackingAllianceStepMessages",
+        "DefendingAllianceStepMessages",
+        "TimeToShowStepMessageInSecond",
+        "ComponentToUseForSuddenDeathMessage",
+        "ComponentToUseForRemainingTimeMessage",
+        "ComponentToUseForLocalPlayerAllianceMessage",
+        "ComponentToUseForOtherAllianceMessage",
+        "LDHintTextComponentNameToFill",
+        "LDHintMoralDico",
+        "LDHintMoralTokenLocalPlayerAlliance",
+        "LDHintMoralTokenEnemyAlliance",
+        "LDHintMoralDuration",
+        "LDHintMoralThreshold",
+        "LDHintComponentForLocalPlayerAlliance",
+        "LDHintComponentForEnemyAlliance"
+    ],
+    "TUITacticalGameRulesHelperStepMessages": [
+        "LocalPlayerAllianceScoreByGameMode",
+        "OtherAllianceScoreByGameMode",
+        "AreDecreasingSteps"
+    ],
+    "TOrderDisplayDrawer": [
+        "OrderDisplayDrawInfos",
+        "DefaultOrderDisplayDrawInfo",
+        "AltitudeMinToDrawDashLine",
+        "WorldFloorProxy"
+    ],
+    "TOrderDisplayDrawInfo": [
+        "MustDrawCircleStart",
+        "ColorLineStart",
+        "ColorCircleDestination",
+        "AerialDashLineBaseCircleRadius",
+        "AerialDashLineDrawCircleAtBase",
+        "ColorLineEnd",
+        "DisplayWaypoints",
+        "AerialDashLineDashLength",
+        "ColorCircleStart",
+        "CircleStartThickness",
+        "CircleDestinationRadius",
+        "MustDrawDashLineForAerialOrderDestination",
+        "DashLengthInMeters",
+        "CircleDestinationThickness",
+        "MaxDistanceBetweenColorsGRU",
+        "OrderToken",
+        "LineThickness",
+        "MustDrawCircle",
+        "Hatched",
+        "MustDrawArrow",
+        "AerialDashLineThickness",
+        "AerialDashLineBaseCircleThickness",
+        "ReverseArrow",
+        "HideNextOrders"
+    ],
+    "TTacticOrderDisplayResources": [
+        "Camera",
+        "OrderDisplayUserInputLayer",
+        "OrderDisplayDrawer",
+        "AlwaysShowOrderButtonAlsoShowsSmartOrders",
+        "StartFadeAlphaAfterTimeInSeconds",
+        "AlphaFadeDurationInSeconds",
+        "SubSelectionAlphaFadeMultiplier",
+        "CameraMoverHelperProxy",
+        "FadeHeightTransitionStart",
+        "FadeHeightTransitionEnd",
+        "InstantOrdersThatNeedFakeFeedback"
+    ],
+    "TUIFeedbackDispatchedMessageDescriptor": [
+        "AllowFocusOnEvent",
+        "MinimapPingAnimType",
+        "TextFormatter",
+        "IsActiveForEnemies",
+        "MinimapPingType",
+        "MinimapPingDuration",
+        "MinimapPingAnimStartTime",
+        "IsActiveForAllies",
+        "IsActiveOnlyOnSelectedUnits",
+        "IsActiveForPlayer",
+        "BaseFilterColorForMinimap",
+        "AlertMessageType",
+        "IsActiveForSpectator",
+        "TimeBeforeRepeat",
+        "LabelDescriptor",
+        "UnitAcknow",
+        "HudSound"
+    ],
+    "TFeedback2DLabelDescriptor": [
+        "FadeOutTime",
+        "InitialOffset",
+        "FadeInTime",
+        "UILayer",
+        "Camera",
+        "FinalOffset",
+        "TotalTime",
+        "ComponentDescriptor"
+    ],
+    "TUIFeedbackTextFormatterWithToken": [
+        "Dico",
+        "Token"
+    ],
+    "TUIFeedbackTextFormatterUseOptionalParamAsToken": [
+        "Dico"
+    ],
+    "TUISpecificInGameFeedbackMessageManagerDescriptor": [
+        "MessagesByType",
+        "Minimap_TimeBetweenPings"
+    ],
+    "TInGameCorrectedShotFeedbackRessources": [
+        "Color",
+        "BorderThickness"
+    ],
+    "TUICommonExperienceTexturesResources": [
+        "ExpTextures"
+    ],
+    "FlareCustomEditableText": [
+        "IsFromStrategic"
+    ],
+    "FlareButtonNeedHelp": [
+        "IsFromStrategic"
+    ],
+    "FlareButtonStrategyAttack": [
+        "IsFromStrategic"
+    ],
+    "FlareButtonStrategyDefend": [
+        "IsFromStrategic"
+    ],
+    "FlareButtonSupport": [
+        "IsFromStrategic"
+    ],
+    "FlareButtonEnemySpotted": [
+        "IsFromStrategic"
+    ],
+    "FlareButtonCustom": [
+        "IsFromStrategic"
+    ],
+    "TUIInGameFlarePanelViewDescriptor": [
+        "MainComponentContainerUniqueName",
+        "MainComponentDescriptor"
+    ],
+    "TUISpecificInGameReplayResource": [
+        "HideUIKeyInterceptor",
+        "HideRenderLayers",
+        "VideoModeValue",
+        "Component",
+        "ComponentWaitingForModeObs"
+    ],
+    "BUCKGaugeDescriptor": [
+        "DurationForGaugeFullChange",
+        "BorderLineColorToken",
+        "GraduationColorToken",
+        "Components",
+        "GaugeMax",
+        "GaugeValueMinSize",
+        "GraduationStep",
+        "ElementName",
+        "GaugeComponentNames",
+        "BackgroundBlockColorToken",
+        "ComponentFrame",
+        "BorderThicknessToken",
+        "GraduationThicknessToken",
+        "GridAlign",
+        "HasBackground",
+        "HasBorder"
+    ],
+    "BUCKGaugeValueDescriptor": [
+        "BorderThicknessToken",
+        "BorderLineColorToken",
+        "Components",
+        "HasBackground",
+        "ElementName",
+        "HasBorder",
+        "BackgroundBlockColorToken",
+        "ComponentFrame"
+    ],
+    "TUISpecificInGameHUDResource": [
+        "MinimapResources",
+        "HUDReplayResource",
+        "HUDAlertPanelDescriptor",
+        "CameraMoverTargetClient",
+        "PerformanceAlertViewDescriptor",
+        "ShowUnitInfosMapping",
+        "TurnOffWeaponsMapping",
+        "DisplayAllOrdersMapping",
+        "OrderDisplayResources",
+        "SelectionPanelDescriptor",
+        "SelectionWeaponPanelDescriptor",
+        "SelectionRoeDescriptor",
+        "MiniMapInfoViewDescriptor",
+        "ShortcutsForSelectionViewDescriptor",
+        "PhasePanelElementNames"
+    ],
+    "LDHintInfoIngameScore": [
+        "FeedbackType"
+    ],
+    "SuperHint": [
+        "alignementGauche",
+        "challenge"
+    ],
+    "LDHint_cutscene_10": [],
+    "CutscenePanoramique": [],
+    "Component_1Video_1Text": [],
+    "Component_1Texture_1Text": [],
+    "Component_1Texture_1Text_Portrait": [],
+    "Component_1Texture_1Text_TextureLeft": [],
+    "Component_Operation_1Texture_1Text": [],
+    "Component_1Text_hint": [],
+    "Component_1Text": [],
+    "Component_1Text_FullScreen": [],
+    "Component_1_Texture_1Text_FullScreen": [],
+    "TitreChallenge": [],
+    "TUICommonLDVideoViewDescriptor": [
+        "MainComponentContainerUniqueName",
+        "ShowSubtitles",
+        "VideoLoadingPriority",
+        "Components",
+        "MainComponentDescriptor",
+        "SkipVideoOption"
+    ],
+    "TMinimapPingType": [
+        "Values"
+    ],
+    "TMinimapPingAnimType": [
+        "Values"
+    ],
+    "TUISpecificBUCKMinimapDescriptor": [
+        "ElementName",
+        "ComponentFrame",
+        "UniformDrawer",
+        "IsClippable"
+    ],
+    "TUISpecificInGameMinimapResources": [
+        "WorldFloorProxy",
+        "CameraMoverTargetClient",
+        "CameraMoverHelperProxy",
+        "CameraAngleTexture",
+        "UniformAntiAliasedDrawer",
+        "BackgroundDrawer",
+        "TextureForPingType",
+        "UnitAppearingColor",
+        "UnitSelectedColor",
+        "UnitTakingDamageColor",
+        "CameraTrapezoidOriginColor",
+        "ScaleUnitInsideMinimap",
+        "ScalePingInsideMinimap",
+        "CommandZoneBorderWidth",
+        "SortOrderList",
+        "SortOrderInsideLayer",
+        "EventDuration",
+        "Camera",
+        "SeuilRotateCameraInDegree",
+        "DistrictColor"
+    ],
+    "TUISpecificInGameOptionsResources": [
+        "ShowUnitName",
+        "IconsToShow",
+        "LabelSize",
+        "StrategicLabelSize",
+        "MinimalistTargetCursorDisplay",
+        "MinimapDisplay",
+        "AutoCreateSmartGroup",
+        "HudSize",
+        "ProdMenuBehavior",
+        "LabelTacticAggregationType",
+        "DisplayAutoDeploy",
+        "CurrentComparator"
+    ],
+    "BUCKSpecificHintableArea": [
+        "HintBodyToken",
+        "HintExtendedToken",
+        "ElementName",
+        "HintTitleToken",
+        "DicoToken"
+    ],
+    "TUIPathDescriptor": [
+        "Color",
+        "RenderLayerSelector",
+        "OpacityControlByFloat",
+        "Material",
+        "ArrowWidth",
+        "SizeMultiplierHelper",
+        "ArrowLength",
+        "Width",
+        "PlaqueSurLeSol"
+    ],
+    "TRenderLayerSelector": [
+        "RenderLayerName"
+    ],
+    "TReinforcementResource": [
+        "LandReinforcementArrowDescriptor",
+        "AerialReinforcementArrowDescriptor"
+    ],
+    "TUISpecificInGameResources": [
+        "Handler",
+        "UILayer",
+        "UILayerLDHint",
+        "CommonResources",
+        "MainStyleGuides",
+        "UnitReticleDescriptor",
+        "LabelRackForAggregationDescriptor",
+        "ViewDescriptors",
+        "MainContainerResource",
+        "ShortcutUserInputLayer",
+        "LDScriptUserInputLayer",
+        "CommonHUDResources",
+        "HUDResource",
+        "LabelResource",
+        "FlareLabelResources",
+        "PlayerMissionLabelResources",
+        "GabaritResources",
+        "UnitLabelResource",
+        "OutmapFeedbackResource",
+        "FeedbackLineOfSightResource",
+        "WarningPanelResources",
+        "LabelsOnMapResources",
+        "ScriptedLabelResources",
+        "FeedbackManagerDescriptor",
+        "GameRulesHelper",
+        "CorrectedShotRessources",
+        "ReinforcementResource",
+        "SelectionHandlerInGameResources",
+        "GroupSelectionReminderResources",
+        "PositionEvents",
+        "MousePolicyManagerResources",
+        "OptionManager",
+        "CommanderResources",
+        "HelperVisibility",
+        "CommandementZoneResources"
+    ],
+    "UISpecificIngameChatViewDescriptor": [
+        "PanelColorStyle",
+        "ButtonColorStyle"
+    ],
+    "UISpecificUnitInfoPanelViewDescriptor": [
+        "MainComponentContainerUniqueName",
+        "IsShowRoom"
+    ],
+    "UISpecificSkirmishProductionMenuViewDescriptor": [
+        "IsFromStrategic"
+    ],
+    "UISpecificSmartGroupSelectionPanelViewDescriptor": [
+        "MainComponentContainerUniqueName"
+    ],
+    "TUICommonMainContainerResource": [
+        "ForegroundComponents",
+        "SafeBoxSize",
+        "SafeBoxMin",
+        "ContentRefSize"
+    ],
+    "TUISpecificInGameUnitLabelResources": [
+        "UILayer",
+        "UI3DLayer",
+        "Camera",
+        "CameraMoverHelperProxy",
+        "OpacityControlByFloat",
+        "FadeFactorForShaderParameter",
+        "LabelInAggregatMagnifiableBox",
+        "LabelMagnifiableBox",
+        "MagnifiableOffsetCenter",
+        "MagnifiableOffsetAggregatCenter",
+        "NbMaxAggregatedUnits",
+        "GhostLabelVersionTransparency",
+        "GhostLabelDeploymentVersionTransparency",
+        "UI3DTransformation",
+        "DamageTypeNameToFeedbackType",
+        "SmartOrderLabelTokens",
+        "TerrainTypeToTexture",
+        "AimingDefaultColor",
+        "AimingWhileMovingColor",
+        "ReloadingDefaultColor",
+        "ReloadingWhileMovingColor"
+    ],
+    "TModernWarfareLabelTransformation": [
+        "Scene2D",
+        "RefResolution",
+        "Camera"
+    ],
+    "TUICommonWarningPanelResource": [
+        "FadeOutDuration",
+        "LifeAnimDurationForTemporary",
+        "FadeInDuration",
+        "ComponentByName"
+    ],
+    "TUISpecificOutmapFeedbackResources": [
+        "Camera",
+        "VitesseDeRotation",
+        "EcartementEntreCerclesExterieurs",
+        "EpaisseurDesTraitsExterieurs",
+        "TailleRelativeDeLaZoneRemplie",
+        "CouleurExterieure",
+        "EcartementEntreCerclesInterieurs",
+        "EpaisseurDesTraitsInterieurs",
+        "PositionAnneauInterieur",
+        "CouleurInterieure",
+        "EpaisseurCroix",
+        "LongueurCroix",
+        "CouleurCroix",
+        "CouleurAPortee",
+        "CouleurAPorteeInterieur",
+        "CouleurHorsDePortee",
+        "CouleurHorsDePorteeInterieur",
+        "CouleurDuFlash",
+        "CouleurDuFlashInterieur",
+        "DureeDuFadeOutAuTir",
+        "DureeDuFlashDeValidation",
+        "EpaisseurTraitStrike",
+        "CouleurDuTexte",
+        "CouleurDeLaBordure",
+        "DistanceApparition",
+        "DistanceDisparition",
+        "OffsetDuTexte",
+        "DescripteurDuPanel",
+        "DescripteurDuMessage",
+        "UILayer"
+    ],
+    "BUCKGradientDescriptor": [
+        "TransitionColor1",
+        "Transition0",
+        "Transition1",
+        "IsRelative",
+        "IsVertical",
+        "Transition3",
+        "ElementName",
+        "Transition2",
+        "TransitionColor0",
+        "ComponentFrame"
+    ],
+    "TUISpecificCommandZoneLabelViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "UI3DLayer",
+        "VisibilityRange",
+        "FadeDuration",
+        "OpacityControlByFloat",
+        "TokenFormatCommandPointsByCombatRule"
+    ],
+    "BUCKButtonDescriptor": [
+        "UniqueName",
+        "LeftClickSound",
+        "Grayed",
+        "ChildFitToContent",
+        "Components",
+        "Mapping",
+        "DefaultToggleValue",
+        "CannotDeselect",
+        "FitStyle",
+        "HidePointerEvents",
+        "ElementName",
+        "MaskEvents",
+        "BackgroundBlockColorToken",
+        "ComponentFrame",
+        "ForceEvents",
+        "HasBackground",
+        "IsTogglable",
+        "RadioButtonManager",
+        "HasBorder"
+    ],
+    "TUISpecificHUDAlertPanelViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "AlertLineDescriptor",
+        "EmptyLineDescriptor",
+        "MinimapMagnifiableSize",
+        "AlertLineHeight",
+        "LineDisplayDuration",
+        "MessageList"
+    ],
+    "BUCKSpecificScrollingContainerDescriptor": [
+        "ExternalScrollbar",
+        "ScrollBarBackgroundToken",
+        "VerticalScrollbarComponentFrame",
+        "Components",
+        "ScrollBarElevatorBackgroundToken",
+        "HasBackground",
+        "HasVerticalScrollbar",
+        "FitStyle",
+        "FitToMaximumSize",
+        "ElementName",
+        "BackgroundBlockColorToken",
+        "ScrollStepSize",
+        "ComponentFrame"
+    ],
+    "TRTTILength2": [
+        "Magnifiable"
+    ],
+    "TUISpecificHUDMultiSelectionPanelViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "MultiSelectionHorizontalListDescriptor",
+        "UnitLabelResources",
+        "NbUnitsByLine",
+        "LabelMagnifier"
+    ],
+    "TBUCKRadioButtonManager": [],
+    "HUDButton": [
+        "BorderLineColorToken",
+        "Mapping",
+        "BackgroundTexture",
+        "CannotDeselect",
+        "ElementName",
+        "ComponentFrame",
+        "HintExtendedToken",
+        "BorderThickness",
+        "HintTitleToken",
+        "BackgroundColorToken",
+        "HasBackground",
+        "HintBodyToken",
+        "IsTogglable",
+        "HintDico",
+        "RadioButtonManager",
+        "BackgroundTextureFrameProperty",
+        "HasBorder"
+    ],
+    "TUISpecificInGameHUDTimePanelViewDescriptor": [
+        "GameSpeedInfos",
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "TUIGameSpeedDescriptor": [
+        "GameSpeedValue",
+        "GameSpeedToken"
+    ],
+    "TUISpecificIdleUnitViewDescriptor": [
+        "MainComponentContainerUniqueName",
+        "MainComponentDescriptor"
+    ],
+    "BUCKSpecificButton": [
+        "LeftClickSound",
+        "BorderLineColorToken",
+        "Components",
+        "TextParagraphStyle",
+        "TextToken",
+        "RoundedVertexes",
+        "HasText",
+        "TextDico",
+        "BigBorderBackgroundColorToken",
+        "BackgroundBlockColorToken",
+        "ButtonAlignementToFather",
+        "RoundedCorner",
+        "TextElementName",
+        "ButtonMagnifiableWidthHeight",
+        "TextTypefaceToken",
+        "RadioButtonManager",
+        "HasBackgroundTexture",
+        "Mapping",
+        "HintableAreaComponent",
+        "BackgroundTexture",
+        "ButtonAlignementToAnchor",
+        "HidePointerEvents",
+        "OverrideTextElementName",
+        "ElementName",
+        "ButtonRelativeWidthHeight",
+        "PanelRoundedCorner_BackgroundBlockColorToken",
+        "TextColorToken",
+        "TextSizeToken",
+        "IsTogglable",
+        "PanelRoundedCorner_BorderLineColorToken",
+        "HasBorder"
+    ],
+    "TUISpecificPlayerMissionLabelResources": [
+        "Layer",
+        "PlayerMissionLabelMagnificationMultiplier",
+        "PlayerMissionUserInputLayer",
+        "FadeTime",
+        "PlayerMissionLabelDescriptor",
+        "PlayerMissionLabelTransformation"
+    ],
+    "PlayerMissionLabelDescriptor": [
+        "TextToken",
+        "IconTextureToken",
+        "IconSize"
+    ],
+    "TLabelTransformPreTranslateFaceCamFakePerspective": [
+        "Scene2D",
+        "ConstnessFactor",
+        "Camera",
+        "ScalePerAltitudeConstReso"
+    ],
+    "TLabelRackDescriptor": [
+        "ComponentFrame",
+        "RowAlignementToFather",
+        "RowAlignementToAnchor",
+        "OneLabelMagnifiableWidthHeight",
+        "DistrictComponent"
+    ],
+    "TUISpecificInGameLabelRackDescriptor": [
+        "MainComponentDescriptor",
+        "UnitLabelResources"
+    ],
+    "TUISpecificMiniMapInfoViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "BUCKSpecificOffMapButton": [
+        "ElementName",
+        "ButtonWidthHeight",
+        "HeightCoefficientToRemoveFromInteriorButtonWidth",
+        "MainBackgroundColorToken",
+        "BorderLineColorToken",
+        "Components"
+    ],
+    "TUISpecificOffMapAirplaneViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "ExperienceTextureTokens"
+    ],
+    "TBUCKButtonDescriptor": [
+        "ElementName",
+        "ComponentFrame",
+        "RadioButtonManager",
+        "IsTogglable",
+        "Components"
+    ],
+    "BUCKRackDescriptor": [
+        "BladeDescriptor",
+        "UniqueName",
+        "Axis",
+        "FirstMargin",
+        "HidePointerEvents",
+        "ElementName",
+        "AssumeChildrenAreFixedSize",
+        "BackgroundBlockColorToken",
+        "ComponentFrame",
+        "BreadthComputationMode",
+        "ForegroundComponents",
+        "InterItemMargin",
+        "BackgroundComponents",
+        "HasBackground",
+        "LastMargin"
+    ],
+    "TUISpecificReinforcementLabelViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "UI3DLayer",
+        "VisibilityRange",
+        "FadeDuration",
+        "OpacityControlByFloat",
+        "ReinforcementTokens"
+    ],
+    "TNameAndUnitCountDescription": [
+        "NbUnitsBackgroundColor",
+        "NbUnitsTextColor",
+        "UnitNameHPadding",
+        "UnitInfoTextSize",
+        "UnitNameTextStyle",
+        "UnitNumberHPadding",
+        "NbUnitsTextStyle",
+        "TextFormatScript",
+        "HideBackground",
+        "UnitInfoVPadding",
+        "TypefaceToken",
+        "ParagraphStyle"
+    ],
+    "TLeavingDistrictChronoDescription": [
+        "ChronoDrawer",
+        "ChronoTexture",
+        "ChronoBackgroundColor",
+        "ChronoForegroundColor"
+    ],
+    "TBUCKSpecificLabelUnitIconDescriptor": [
+        "ElementName",
+        "ComponentFrame",
+        "ChildFitToContent",
+        "LocalRenderLayer",
+        "TextureDrawer",
+        "UniformDrawer",
+        "HasBorder",
+        "BorderThicknessToken",
+        "BorderLineColorToken",
+        "HasBackground",
+        "MoraleAndHPGaugesDescription",
+        "SmartChipDescription"
+    ],
+    "TBUCKSpecificLabelUpperListDescriptor": [
+        "ElementName",
+        "ComponentFrame",
+        "NameAndUnitCountDescription",
+        "IsClippable",
+        "HasBackground",
+        "ChildFitToContent",
+        "BackgroundLocalRenderLayer",
+        "LocalRenderLayer",
+        "UniformDrawer",
+        "TextureDrawer",
+        "EvacuationIconTextureName",
+        "EvacuationIconMagnifiableSize",
+        "ReloadIconMagnifiableSize",
+        "ReloadIconDrawer",
+        "ReloadIconChronoTexture",
+        "ReloadIconTextureToken",
+        "ReloadIconChronoBackgroundColor",
+        "ReloadIconChronoForegroundColor",
+        "PlayerNameTextStyle",
+        "PlayerNameTextColor",
+        "PlayerNameTypefaceToken",
+        "PlayerNameTextSize",
+        "PlayerNamePadding"
+    ],
+    "TCarriedUnitLabelDescriptor": [
+        "ElementName",
+        "ComponentFrame",
+        "NameAndUnitCountDescription",
+        "HasBackground",
+        "IsClippable",
+        "BackgroundLocalRenderLayer",
+        "LocalRenderLayer",
+        "UniformDrawer"
+    ],
+    "BUCKListElementSpacer": [
+        "Magnifiable"
+    ],
+    "BUCKLocalLayerContainerDescriptor": [
+        "FitStyle",
+        "ElementName",
+        "Components",
+        "NbLayersToLock",
+        "ComponentFrame"
+    ],
+    "TUISpecificInGameUnitLabelViewForMultiSelectionDescriptor": [
+        "MainComponentDescriptor",
+        "ExperienceTexturesResources",
+        "AnimConcealedBlinkDuration",
+        "AnimPanickedBlinkDuration",
+        "AnimShakenPauseTime",
+        "AnimShakenBlinkDuration",
+        "AnimShakenNbBlinks",
+        "SuppressAnimAlphaMinimum",
+        "ConcealedAnimAlphaMinimum",
+        "NormalBackgroundTexture",
+        "CarriedUnitIconUnknown"
+    ],
+    "CurrentUnitLabelUpperList": [
+        "ChildFitToContent"
+    ],
+    "CarriedUnitNameList": [],
+    "TSmartChipListDescriptor": [
+        "UniformDrawer",
+        "ElementName",
+        "Description",
+        "AlignementToFather",
+        "AlignementToAnchor",
+        "LocalRenderLayer"
+    ],
+    "LabelFeedbackIcons": [
+        "ComponentFrame"
+    ],
+    "TMoraleGaugeDescriptor": [
+        "ElementName",
+        "Description",
+        "LocalRenderLayer",
+        "UniformDrawer",
+        "AlignementToFather",
+        "AlignementToAnchor"
+    ],
+    "UISpecificInGameUnitLabelViewDescriptor": [
+        "MainComponentDescriptor"
+    ],
+    "WeaponInformation": [
+        "IsSelection"
+    ],
+    "TVisibilityRangeContainer": [
+        "AltitudeMax",
+        "ItemList"
+    ],
+    "TVisibilityRange": [
+        "AltitudeMax",
+        "AltitudeMin"
+    ],
+    "TSimpleHelperVisibility": [
+        "RangeList",
+        "Camera",
+        "WorldFloorProxy"
+    ],
+    "TUIGameDifficultyListConfiguration": [
+        "GameDifficultyConfigs"
+    ],
+    "TUIGameDifficultyConfigurationRTTI": [
+        "Texture",
+        "Name",
+        "DescriptionByMissionType"
+    ],
+    "TUISpecificOutGameActionScreensContainerResource": [
+        "UILayerContainer",
+        "UILayerEventBlocker",
+        "ContainerDescriptor",
+        "DummyComponent"
+    ],
+    "TUISpecificOutGameCutSceneResources": [
+        "UILayer",
+        "MainContainer"
+    ],
+    "TUISpecificOutGameHUBContainerResource": [
+        "ContentRefSize",
+        "SafeBoxMin",
+        "SafeBoxSize",
+        "ScreenMinY",
+        "ScreenMaxY",
+        "EventInterceptorLayer",
+        "ForegroundContent"
+    ],
+    "BUCKTextureAnimationDescriptor": [
+        "ComponentFrame",
+        "AnimDuration",
+        "AlphaAnimDuration",
+        "IsCyclic",
+        "TextureList"
+    ],
+    "TUISpecificOutGameLoadingPanelResource": [
+        "LoadingText",
+        "UserInputLayer",
+        "EditorHints",
+        "DevHints",
+        "CommonHints",
+        "LoadingComponents"
+    ],
+    "BUCKTypingTextDescriptor": [
+        "BigLineAction",
+        "TextToken",
+        "AnimDuration",
+        "TextColor",
+        "AnimTextInSec",
+        "ElementName",
+        "TextDico",
+        "HorizontalFitStyle",
+        "VerticalFitStyle",
+        "ComponentFrame",
+        "TextSize",
+        "TypefaceToken",
+        "ParagraphStyle",
+        "TextStyle"
+    ],
+    "BUCKRandomVideoContainerDescriptor": [
+        "ElementName",
+        "ComponentFrame",
+        "VideoDescriptor",
+        "PossibleVideos"
+    ],
+    "TUIResourceVideo": [
+        "DicoVideo",
+        "VideoFile"
+    ],
+    "SpecificModalWindow": [
+        "UniqueName",
+        "ContentMagnifiableWidthHeight",
+        "ElementsList",
+        "TitleToken",
+        "ButtonList"
+    ],
+    "SpecificModaleWindowFrame": [
+        "UniqueName",
+        "ContentRelativeWidthHeight",
+        "ContentMagnifiableWidthHeight",
+        "LastMargin",
+        "ContentComponents",
+        "FirstMargin",
+        "TitleToken",
+        "ButtonList",
+        "ComponentFrame"
+    ],
+    "BUCKEditableTextInputFieldDescriptor": [
+        "ElementName",
+        "ComponentFrame"
+    ],
+    "TUISpecificOutGameModaleResource": [
+        "ErrorText",
+        "ModaleContentWidth",
+        "ModaleWindow",
+        "ModaleText",
+        "ModaleButtonList",
+        "ModaleButton",
+        "ModaleConfirmButton",
+        "ModaleCancelButton",
+        "ModaleEditableText",
+        "ModaleWindowResourceForPrivacyPolicy",
+        "ModaleWindowResourceForOutdatedMods",
+        "ModaleRename",
+        "ModaleWindowResourceForMissingDLCs",
+        "ModaleButtonResourceForMissingDLCs",
+        "ModaleConfirmButtonResourceForMissingDLCs",
+        "ModaleCancelButtonResourceForMissingDLCs"
+    ],
+    "SpecificModalText": [
+        "TextToken",
+        "ElementName"
+    ],
+    "TUISpecificOutGamePlayerPropertyResource": [
+        "DefaultAvatar",
+        "UnknownAvatar",
+        "IAAvatar"
+    ],
+    "TUISpecificOutGameResources": [
+        "Handler",
+        "UILayer",
+        "DragAndDropUILayer",
+        "WarningUILayer",
+        "CommonResources",
+        "OptionManager",
+        "MainStyleGuides",
+        "HUBContainerResource",
+        "ActionScreensContainerResource",
+        "UserInputBinder",
+        "UIOffscreenSceneFactory",
+        "LevelUpAnimResource",
+        "WaitAnimResource",
+        "LoadingResource",
+        "LoginResource",
+        "EscapePanelResources",
+        "MainPanelWidth",
+        "MainPanelContentWidth",
+        "UISpecificDivisionSelectionViewDescriptor",
+        "CreditsResource",
+        "PlayerPropertyResource",
+        "NicknameChangeResource",
+        "ModaleResource",
+        "NotificationPanelResource",
+        "WarningPanelResources",
+        "ModCenterResources",
+        "ModResources",
+        "PingDisplayResources",
+        "TutorialGuideDescriptor",
+        "HostPanelResources",
+        "AutoMatchGameSearchContent",
+        "VersionTextContent",
+        "CampaignSoloResource",
+        "LevelUpContent",
+        "GameModeResources",
+        "CombatRuleResources",
+        "CutSceneResources",
+        "CountDownSound",
+        "GameFoundSound",
+        "ProfileClickSound",
+        "ViewDescriptors"
+    ],
+    "UISpecificOutGameFriendListViewDescriptor": [
+        "ComponentContainerUniqueName",
+        "IsSubView"
+    ],
+    "UISpecificScenarioViewDescriptor": [
+        "IsSubView",
+        "ComponentContainerUniqueName",
+        "GameType"
+    ],
+    "UISpecificSaveLoadPanelViewDescriptor": [
+        "ComponentContainerUniqueName"
+    ],
+    "UISpecificLeaderboardViewDescriptor": [
+        "ComponentContainerUniqueName"
+    ],
+    "UISpecificOutGameCreateAccountViewDescriptor": [
+        "IsAutologinAccount"
+    ],
+    "TVideoTextureDico": [
+        "FileName"
+    ],
+    "LoginTvContainer": [
+        "ElementName",
+        "Components"
+    ],
+    "AnimatedWaitingComponent": [
+        "ComponentFrame"
+    ],
+    "TUISpecificConnectingPanelViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "TUISpecificConnectionStateViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "OnlineToken",
+        "OfflineToken"
+    ],
+    "MenuActionButton": [
+        "HintExtendedToken",
+        "HintTitleToken",
+        "TextToken",
+        "HintBodyToken",
+        "ElementName"
+    ],
+    "BUCKSpecificDivisionBriefMainComponentDescriptor": [
+        "AlignementToAnchor",
+        "AlignementToFather",
+        "IsTogglable",
+        "CannotDeselect",
+        "RadioButtonManager",
+        "HasBattlegroup"
+    ],
+    "EcranGaucheTextEditable": [
+        "TokenTitle",
+        "ElementName",
+        "IsPassword"
+    ],
+    "LoginScreenMainButton": [
+        "ButtonAlignementToFather",
+        "ButtonMagnifiableWidthHeight",
+        "Mapping",
+        "TextToken",
+        "ButtonMagnifiableOffset",
+        "ButtonAlignementToAnchor",
+        "ElementName"
+    ],
+    "TUISpecificLinkAccountViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "TUISpecificMultiLobbyShortcutsViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "LobbysToDisplay"
+    ],
+    "TLobbyNDFDescriptor": [
+        "NameToDisplay",
+        "CombatRule",
+        "InitMoney",
+        "UseAutofill",
+        "NumberOfPlayers"
+    ],
+    "OutGameOneChannelHeaderAndChannelListDescriptor": [
+        "ChannelListElementName",
+        "ShrinkButtonElementName",
+        "TitleElementName",
+        "TitleToken"
+    ],
+    "BUCKSpecificEditableTextDescriptor": [
+        "ElementName",
+        "HidePointerEvents",
+        "ComponentFrame",
+        "HasBackground",
+        "BackgroundBlockColorToken",
+        "ClippingContainerFrameProperty",
+        "TextSizeToken",
+        "TypefaceToken",
+        "Flags",
+        "MaxChars",
+        "TextStyle",
+        "HintComponentName",
+        "HintComponentDescriptor"
+    ],
+    "TUISpecificOutGameChatMessageListViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "MaxNameSizeInChat"
+    ],
+    "TUISpecificOutGameChatMessageViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "BackgroundTextColorByMessageType",
+        "TextColorByMessageType"
+    ],
+    "TUISpecificOutGameChatOneChannelViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "TUISpecificOutGameFriendModaleViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "BUCKSpecificAvatarDescriptor": [
+        "ElementName",
+        "TextureToken",
+        "ComponentFrame"
+    ],
+    "TUIOutgameFriendLineViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "TUISpecificOutGameLobbyPlayerListViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "AlliesToken",
+        "AxisToken"
+    ],
+    "TUISpecificOutGameMotdViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "MainBackButtonContainer": [
+        "ButtonDefaultToken",
+        "BackMapping"
+    ],
+    "BUCKSpecificSliderDescriptor": [
+        "MaskEvents"
+    ],
+    "BUCKSpecificDropdownDescriptor": [
+        "BorderLineColorToken",
+        "Components",
+        "ItemsTextPadding",
+        "ShowArrow",
+        "HidePointerEvents",
+        "HasBorder",
+        "ElementName",
+        "ItemComponents",
+        "ComponentFrame",
+        "FloatingListMagnifiableWidth",
+        "MainTextColorToken",
+        "AlignFloatingPanelRight",
+        "OpenSound",
+        "ArrowTextureColorToken",
+        "ItemMagnifiableHeight",
+        "ItemsTextColorToken"
+    ],
+    "WindowFrame": [
+        "ContentRelativeWidthHeight",
+        "ButtonList",
+        "TitleToken",
+        "ContentExtendWeight",
+        "AdditionalComponents"
+    ],
+    "BUCKStateUpdaterDescriptor": [
+        "ComponentFrame",
+        "Components"
+    ],
+    "SpecificModalEditableText": [
+        "HasText",
+        "Flags",
+        "EditableTextElementName",
+        "TextToken"
+    ],
+    "TUISpecificOutGameShowInviteCodeModaleViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "ThumbnailSoloDescriptor": [
+        "LeftClickSound",
+        "ForceEvents",
+        "TextToken",
+        "ElementName"
+    ],
+    "TUISpecificOutGameStrategicLobbyPlayerViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "DefaultIAName"
+    ],
+    "SoloNavigationButton": [
+        "TextSizeToken",
+        "HintExtendedToken",
+        "ButtonMagnifiableWidthHeight",
+        "Mapping",
+        "HintTitleToken",
+        "IsEmphasized",
+        "TextToken",
+        "HintBodyToken",
+        "HintableAreaElementName",
+        "ElementName"
+    ],
+    "BUCKPerspectiveWarpOffscreenContainerDescriptor": [
+        "ElementName",
+        "DistortTextureDrawer",
+        "PointerEventsToAllow",
+        "MagnifiableTopLeftOffset",
+        "MagnifiableTopRightOffset",
+        "MagnifiableBottomLeftOffset",
+        "MagnifiableBottomRightOffset",
+        "ComponentFrame",
+        "Components"
+    ],
+    "BUCKMultiListContentElementDescriptor": [
+        "FitStyle",
+        "ElementName",
+        "Components",
+        "ComponentFrame"
+    ],
+    "TUISpecificOutGameSoloCampaignResources": [
+        "ChapterDescriptions"
+    ],
+    "BUCKSpecificCheckBoxDescriptor": [
+        "ElementName",
+        "ComponentFrame"
+    ],
+    "TUISpecificOutGameCreditsResource": [
+        "Credits",
+        "ScrollStep",
+        "DelayAtBottomBeforeGoingUp",
+        "DelayAtTopBeforeGoingDown",
+        "ShouldGoUpWhenBottomReached",
+        "ScrollStepUp",
+        "ShouldTeleportToTop"
+    ],
+    "ConfirmButton": [
+        "BorderLineColorToken",
+        "Components",
+        "Mapping",
+        "TextToken",
+        "HintableAreaComponent",
+        "ButtonAlignementToAnchor",
+        "ElementName",
+        "BackgroundBlockColorToken",
+        "TextColorToken",
+        "TextSizeToken",
+        "BorderThicknessToken",
+        "ButtonAlignementToFather",
+        "ButtonMagnifiableWidthHeight",
+        "TextTypefaceToken",
+        "HasBackground",
+        "TextStyle"
+    ],
+    "BUCKTranslationAnimatedContainerDescriptor": [
+        "ElementName",
+        "ButtonNameForTrigger",
+        "FramePropertyBeforeAnimation",
+        "AnimationTotalDuration",
+        "FramePropertyAfterAnimation",
+        "Components"
+    ],
+    "TUISpecificOutGameEscapePanelResources": [
+        "EscapePanelMenu",
+        "EscapePanelContinueButton",
+        "EscapePanelRestartButton",
+        "EscapePanelHelpButton",
+        "EscapePanelSaveButton",
+        "EscapePanelLoadButton",
+        "EscapePanelOptionsButton",
+        "EscapePanelTutorialGuideButton",
+        "EscapePanelSurrenderOrQuitButton"
+    ],
+    "TUISpecificOutGameHostPanelResources": [
+        "ModalWindowHost",
+        "ContentDescriptor"
+    ],
+    "TUISpecificOutGameLoginResource": [
+        "Login",
+        "Password",
+        "SavePassword",
+        "ErrorText",
+        "ErrorConnectionModalDescriptor",
+        "ChangePasswordModalDescriptor"
+    ],
+    "StandardButton": [
+        "TextToken",
+        "ElementName"
+    ],
+    "CancelButton": [
+        "ButtonAlignementToFather",
+        "ButtonAlignementToAnchor",
+        "ButtonMagnifiableWidthHeight",
+        "ElementName",
+        "Mapping",
+        "TextToken"
+    ],
+    "TUISpecificOutGameNicknameChangeResource": [
+        "NicknameChangePanel"
+    ],
+    "TUISpecificShowRoomResources": [
+        "Handler",
+        "UILayer",
+        "UILayerAboveBlur",
+        "UILayerLDHint",
+        "CommonResources",
+        "InGameResourcesHandler",
+        "OutGameResourcesHandler",
+        "MousePointerMaskLayer",
+        "MainStyleGuides",
+        "ViewDescriptors",
+        "GroupSelectionReminderResources",
+        "LabelResource",
+        "MainContainerResource",
+        "MousePolicyManagerResources",
+        "WarningPanelResources",
+        "WarnOnMultiplayerDeckNotFilled",
+        "SelectionHandlerInGameResources",
+        "MagnifierMultiplier",
+        "DummyComponentForBlur",
+        "CountriesToShow",
+        "AllianceToCountriesToShow",
+        "SpecificHidingViewDescriptor",
+        "DeckCreatorViewHelperDescriptor",
+        "CameraMoverManager",
+        "ShortcutUserInputLayer",
+        "LDScriptUserInputLayer"
+    ],
+    "UISpecificShowRoomGroupsDeckCreatorScreenViewDescriptor": [
+        "IsForChallenge",
+        "ChallengeDescriptionType",
+        "ChallengeMoreDescriptionType"
+    ],
+    "TUISpecificHidingViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "FadedAnimation"
+    ],
+    "TUIAnimFactorRTTI": [
+        "ParamsAnim",
+        "AnimDuration",
+        "Modificator"
+    ],
+    "BUCKEditableTextDescriptor": [
+        "ElementName",
+        "ComponentFrame",
+        "ClippingContainerFrameProperty",
+        "Flags",
+        "SelectionColorToken",
+        "TypefaceToken",
+        "TextColorToken",
+        "TextSizeToken",
+        "MaxChars"
+    ],
+    "HintInGameBUCKComponent": [
+        "BackgroundBlockColorToken",
+        "BorderLineColorToken"
+    ],
+    "TStrategicBattleResources": [
+        "CantFightGhostColors",
+        "CantMoveGhostColors",
+        "BattlePlanningSupportInBattleGroupStyleDescriptor",
+        "BattlePlanningSupportNotInBattleGroupStyleDescriptor",
+        "BattlePlanningPawnInBattleGroupStyleDescriptor",
+        "BattlePlanningPotentialAttackerPawnStyleDescriptor",
+        "FightingSupportPawnStyleDescriptor",
+        "FightingFighterPawnStyleDescriptor",
+        "PotentialAttackersAnimDuration",
+        "MinAlphaForPotentialAttackers",
+        "MaxAlphaForPotentialAttackers"
+    ],
+    "TGhostColors": [
+        "GhostAlphas",
+        "GhostBlends",
+        "GhostColor"
+    ],
+    "TLineFeedbackStyleDescriptor": [
+        "ParabolicArrowHeight",
+        "Border",
+        "Hatched",
+        "UnselectedStyle",
+        "SelectedStyle"
+    ],
+    "TArrowFeedbackStyleDescriptor": [
+        "ArrowLineEndWidth",
+        "ArrowTipLength",
+        "UnselectedStyle",
+        "SelectedStyle",
+        "ArrowLineStartWidth",
+        "ArrowTipWidth"
+    ],
+    "BUCKTreeViewDescriptor": [
+        "ElementName",
+        "ComponentFrame",
+        "LineMainComponentExtendWeight",
+        "TreeViewLineComponentDescriptor",
+        "TreeViewLineButtonDescriptor"
+    ],
+    "TreeLineButton": [
+        "LeftClickSound"
+    ],
+    "TUISpecificStrategicBattleOrderSubPanelViewDescriptor": [
+        "MainComponentDescriptor",
+        "PawnLineViewDescriptor",
+        "CompanyLineViewDescriptor",
+        "CompanyRadioButtonManager"
+    ],
+    "UISpecificStrategicBattleOrderPanelDefaultLineViewDescriptor": [
+        "TitleTextDico"
+    ],
+    "UISpecificStrategicBattleOrderPanelCompanyLineViewDescriptor": [
+        "RadioButtonManager"
+    ],
+    "BUCKSpecificStrategicHintableArea": [
+        "HintBodyToken",
+        "HintExtendedToken",
+        "ElementName",
+        "HintTitleToken",
+        "DicoToken"
+    ],
+    "TUISpecificStrategicConnectedPlayersViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "TUISpecificStrategicDateViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "NbTurnWithMaxToken",
+        "NbTurnWithoutMaxToken"
+    ],
+    "BUCKSpotlightDescriptor": [
+        "UniqueName",
+        "ElementName",
+        "ComponentFrame"
+    ],
+    "OmbrePanel": [],
+    "TUISpecificStrategicHUDGameSpeedViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "GameSpeedMutliplierInPercent"
+    ],
+    "TUISpecificStrategicHUDChatButtonViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName"
+    ],
+    "TUISpecificStrategicHUDHeaderViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "CancelMenuBinding"
+    ],
+    "TUISpecificStrategicObjectiveBriefViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "NationaliteFlagTextures",
+        "TextColorByObjectiveState"
+    ],
+    "TUISpecificStrategicObjectiveScoreViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "NationaliteTextureTokens"
+    ],
+    "TBUCKLocalLayerContainerDescriptor": [
+        "ComponentFrame",
+        "NbLayersToLock",
+        "ChildFitToContent",
+        "Components"
+    ],
+    "PowerValueContainer": [
+        "TextColorToken",
+        "ElementName",
+        "BackgroundBlockColorToken",
+        "TextToken"
+    ],
+    "TUISpecificStrategicPlayerNameDisplayViewDescriptor": [
+        "MainComponentDescriptor"
+    ],
+    "TUISpecificStrategicPlayerTurnCheckerResources": [
+        "LDHintComponentName",
+        "LDHintTextComponentNameToFill",
+        "LDHintDuration",
+        "PlayerTurnToken",
+        "OtherPlayerTurnToken"
+    ],
+    "TUISpecificStrategicSpawnPointViewDescriptor": [
+        "MainComponentDescriptor",
+        "LabelsLayer",
+        "LabelsTransformation",
+        "TransparencyForNotSelectedReinforcementGroup",
+        "ColorTokenSpawnCapturedByEnemy",
+        "ColorTokenSpawnCapturedByLocalPlayer",
+        "ColorTokenSpawnPointMain",
+        "BlinkingFlagPeriod"
+    ],
+    "BoutonStartBattle": [
+        "SpotlightUniqueName",
+        "Mapping",
+        "MagnifiableWidthHeight",
+        "TextToken",
+        "HintBodyToken",
+        "ElementName"
+    ],
+    "StrategicSecondaryCubeActionPanel": [
+        "ComponentFrame",
+        "ContentComponents"
+    ],
+    "TStrategicBattlePlanningResources": [
+        "MainComponent"
+    ],
+    "TUIStrategicEndTurnResources": [
+        "MainComponent"
+    ],
+    "Steelman_newLDHINT": [
+        "Texture",
+        "portrait_name",
+        "width"
+    ],
+    "ST_Component_1Texture_1Text_Portrait": [
+        "portrait_name"
+    ],
+    "Steelman_LDHint_Portrait": [],
+    "FullScreenImageEtTexte": [
+        "TextureToken"
+    ],
+    "ST_Component_1Texture_1Text": [],
+    "ST_Popup_1Texture_5Text": [],
+    "EndgameResultAnimationStrategic": [
+        "victory",
+        "draw"
+    ],
+    "Steelman_video": [
+        "TextureToken"
+    ],
+    "Template_HardwareMouseWidgetResource": [
+        "HardwareMouseCursorAnimation"
+    ],
+    "Template_HardwareMouseWidgetResource_WithTerrainFeedback": [
+        "StillTimeBeforeHintAppearance",
+        "TerrainTypeToHintContent",
+        "TerrainTypeToMouseCursorAnimation"
+    ],
+    "THintContentHolder": [
+        "BodyToken",
+        "TitleToken",
+        "ExtendedToken"
+    ],
+    "TUISpecificStrategicResources": [
+        "Handler",
+        "UILayer",
+        "UILayerLDHint",
+        "CommonResources",
+        "MainStyleGuides",
+        "ViewDescriptors",
+        "MainContainerResource",
+        "CommonHUDResources",
+        "LabelResource",
+        "GabaritResources",
+        "ZoCResources",
+        "WarningPanelResources",
+        "LabelsOnMapResources",
+        "ScriptedLabelResources",
+        "FeedbackManagerDescriptor",
+        "UnitLabelResource",
+        "FlareLabelResources",
+        "SelectionHandlerInGameResources",
+        "GroupSelectionReminderResources",
+        "PositionEvents",
+        "MousePolicyManagerResources",
+        "OptionManager",
+        "ShortcutUserInputLayer",
+        "LDScriptUserInputLayer",
+        "DisplayAllOrdersMapping",
+        "StrategicOrderDisplayResources",
+        "EndTurnResources",
+        "AutoResolveResources",
+        "StartBattleResources",
+        "BattlePlanningResources",
+        "ConnectedPlayersResources",
+        "PlayerNameDisplayDescriptor",
+        "StrategicBattleResources",
+        "PlayerTurnCheckerResources",
+        "WorldFloorRegistry"
+    ],
+    "UISpecificSelectionPanelPawnViewDescriptorTemplate": [
+        "MainComponentContainerUniqueName",
+        "ContainsCubeAction",
+        "HasSpotlight"
+    ],
+    "TStrategicOrderDisplayResources": [
+        "Camera",
+        "OrderDisplayUserInputLayer",
+        "OrderDisplayDrawer",
+        "PhaseLabelDescriptor"
+    ],
+    "TStrategicOrderDisplayDrawer": [
+        "OrderDisplayDrawInfo"
+    ],
+    "TStrategicOrderDisplayDrawInfo": [
+        "LineThickness",
+        "ArrowLength",
+        "ArrowWidth",
+        "ArrowLineWidth",
+        "ArrowFadeLength"
+    ],
+    "TUISpecificCubeActionViewDescriptor": [
+        "MainComponentDescriptor",
+        "MainComponentContainerUniqueName",
+        "ButtonTemplateDescriptorMap",
+        "EmptyButtonTemplateDescriptor",
+        "SpotlightDescriptor"
+    ],
+    "CubeActionButton": [
+        "BackgroundBlockColorToken",
+        "BorderLineColorToken",
+        "RoundedVertexes",
+        "BigLineAction",
+        "HintableAreaComponent"
+    ],
+    "CubeActionToggleButton": [
+        "BigLineAction"
+    ],
+    "TUISpecificUnitLabelResources": [
+        "UILayer",
+        "UI3DLayer",
+        "Camera",
+        "CameraMoverHelperProxy",
+        "FadeFactorForShaderParameter",
+        "OpacityControlByFloat",
+        "UI3DTransformation"
+    ]
+}
