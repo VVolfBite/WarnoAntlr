@@ -1,5 +1,7 @@
 from itertools import takewhile
 from src.extractor.base_class import BaseDescription
+
+
 # 引入类
 class TDiceHitRollRuleDescriptor(BaseDescription):
     def __init__(
@@ -390,7 +392,6 @@ class TStairsDamageTypeEvolutionOverRangeDescriptor(BaseDescription):
 
     def ap_increase_by_distance(self, distance):
         return int(distance * self.AP / self.DistanceGRU)
-
 
 
 class TDamageTypeRTTI(BaseDescription):
@@ -895,6 +896,7 @@ class TAmmunitionDescriptor(BaseDescription):
             + self.TempsEntreDeuxTirs * (self.NbTirParSalves - 1)
         )
 
+
 # 炮台
 class TMountedWeaponDescriptor(BaseDescription):
     def __init__(
@@ -966,6 +968,46 @@ class TMountedWeaponDescriptor(BaseDescription):
         )
 
 
+class TTurretUnitDescriptor(BaseDescription):
+    def __init__(
+        self,
+        Tag=None,
+        AngleRotationMinPitch=None,
+        AimingPriority=None,
+        MountedWeaponDescriptorList=None,
+        AngleRotationMax=None,
+        YulBoneOrdinal=None,
+        AngleRotationMaxPitch=None,
+    ):
+        self.Tag = Tag
+        self.AngleRotationMinPitch = AngleRotationMinPitch
+        self.AimingPriority = AimingPriority
+        self.MountedWeaponDescriptorList = MountedWeaponDescriptorList
+        self.AngleRotationMax = AngleRotationMax
+        self.YulBoneOrdinal = YulBoneOrdinal
+        self.AngleRotationMaxPitch = AngleRotationMaxPitch
+
+    def __repr__(self):
+        return (
+            f"<TTurretUnitDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "Tag",
+                        "AngleRotationMinPitch",
+                        "AimingPriority",
+                        "MountedWeaponDescriptorList",
+                        "AngleRotationMax",
+                        "YulBoneOrdinal",
+                        "AngleRotationMaxPitch",
+                    ]
+                ]
+            )
+            + ">"
+        )
+
+
 class TTurretTwoAxisDescriptor(BaseDescription):
     def __init__(
         self,
@@ -1017,46 +1059,6 @@ class TTurretTwoAxisDescriptor(BaseDescription):
                         "AngleRotationMax",
                         "MasterTurretYulBoneOrdinal",
                         "OutOfRangeTrackingDuration",
-                    ]
-                ]
-            )
-            + ">"
-        )
-
-
-class TTurretUnitDescriptor(BaseDescription):
-    def __init__(
-        self,
-        Tag=None,
-        AngleRotationMinPitch=None,
-        AimingPriority=None,
-        MountedWeaponDescriptorList=None,
-        AngleRotationMax=None,
-        YulBoneOrdinal=None,
-        AngleRotationMaxPitch=None,
-    ):
-        self.Tag = Tag
-        self.AngleRotationMinPitch = AngleRotationMinPitch
-        self.AimingPriority = AimingPriority
-        self.MountedWeaponDescriptorList = MountedWeaponDescriptorList
-        self.AngleRotationMax = AngleRotationMax
-        self.YulBoneOrdinal = YulBoneOrdinal
-        self.AngleRotationMaxPitch = AngleRotationMaxPitch
-
-    def __repr__(self):
-        return (
-            f"<TTurretUnitDescriptor "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in [
-                        "Tag",
-                        "AngleRotationMinPitch",
-                        "AimingPriority",
-                        "MountedWeaponDescriptorList",
-                        "AngleRotationMax",
-                        "YulBoneOrdinal",
-                        "AngleRotationMaxPitch",
                     ]
                 ]
             )
@@ -1236,6 +1238,75 @@ class TMissileCarriageSubDepictionMissileInfo(BaseDescription):
 
 
 # 单位模组类
+
+
+class TModuleSelector(BaseDescription):
+    def __init__(self, Selection=None, Default=None):
+        self.Selection = Selection
+        self.Default = Default
+
+    def __repr__(self):
+        return (
+            f"<TModuleSelector "
+            + ", ".join(
+                [f"{attr}={getattr(self, attr)}" for attr in ["Selection", "Default"]]
+            )
+            + ">"
+        )
+
+
+class TUnitUIModuleDescriptor(BaseDescription):
+    def __init__(
+        self,
+        SpecialtiesList=None,
+        DisplayRoadSpeedInKmph=None,
+        UpgradeFromUnit=None,
+        UnitRole=None,
+        NameToken=None,
+        CountryTexture=None,
+        GenerateName=None,
+        ButtonTexture=None,
+        TypeStrategicCount=None,
+        InfoPanelConfigurationToken=None,
+        MenuIconTexture=None,
+    ):
+        self.SpecialtiesList = SpecialtiesList
+        self.DisplayRoadSpeedInKmph = DisplayRoadSpeedInKmph
+        self.UpgradeFromUnit = UpgradeFromUnit
+        self.UnitRole = UnitRole
+        self.NameToken = NameToken
+        self.CountryTexture = CountryTexture
+        self.GenerateName = GenerateName
+        self.ButtonTexture = ButtonTexture
+        self.TypeStrategicCount = TypeStrategicCount
+        self.InfoPanelConfigurationToken = InfoPanelConfigurationToken
+        self.MenuIconTexture = MenuIconTexture
+
+    def __repr__(self):
+        return (
+            f"<TUnitUIModuleDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "SpecialtiesList",
+                        "DisplayRoadSpeedInKmph",
+                        "UpgradeFromUnit",
+                        "UnitRole",
+                        "NameToken",
+                        "CountryTexture",
+                        "GenerateName",
+                        "ButtonTexture",
+                        "TypeStrategicCount",
+                        "InfoPanelConfigurationToken",
+                        "MenuIconTexture",
+                    ]
+                ]
+            )
+            + ">"
+        )
+
+
 class TTypeUnitModuleDescriptor(BaseDescription):
     def __init__(
         self,
@@ -1267,30 +1338,6 @@ class TTypeUnitModuleDescriptor(BaseDescription):
         )
 
 
-class TDangerousnessModuleDescriptor(BaseDescription):
-    def __init__(self, Dangerousness=None):
-        self.Dangerousness = Dangerousness
-
-    def __repr__(self):
-        return (
-            f"<TDangerousnessModuleDescriptor "
-            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["Dangerousness"]])
-            + ">"
-        )
-
-
-class TemplateUnitCriticalModule(BaseDescription):
-    def __init__(self, Module=None):
-        self.Module = Module
-
-    def __repr__(self):
-        return (
-            f"<TemplateUnitCriticalModule "
-            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["Module"]])
-            + ">"
-        )
-
-
 class TTagsModuleDescriptor(BaseDescription):
     def __init__(self, TagSet=None):
         self.TagSet = TagSet
@@ -1303,99 +1350,35 @@ class TTagsModuleDescriptor(BaseDescription):
         )
 
 
-class TExperienceModuleDescriptor(BaseDescription):
+class TBlindageProperties(BaseDescription):
     def __init__(
         self,
-        ExperienceGainBySecond=None,
-        ExperienceLevelsPackDescriptor=None,
-        CanWinExperience=None,
-        ExperienceMultiplierBonusOnKill=None,
+        ResistanceFront=None,
+        ResistanceRear=None,
+        ResistanceTop=None,
+        ExplosiveReactiveArmor=None,
+        ResistanceSides=None,
     ):
-        self.ExperienceGainBySecond = ExperienceGainBySecond
-        self.ExperienceLevelsPackDescriptor = ExperienceLevelsPackDescriptor
-        self.CanWinExperience = CanWinExperience
-        self.ExperienceMultiplierBonusOnKill = ExperienceMultiplierBonusOnKill
+        self.ResistanceFront = ResistanceFront
+        self.ResistanceRear = ResistanceRear
+        self.ResistanceTop = ResistanceTop
+        self.ExplosiveReactiveArmor = ExplosiveReactiveArmor
+        self.ResistanceSides = ResistanceSides
 
     def __repr__(self):
         return (
-            f"<TExperienceModuleDescriptor "
+            f"<TBlindageProperties "
             + ", ".join(
                 [
                     f"{attr}={getattr(self, attr)}"
                     for attr in [
-                        "ExperienceGainBySecond",
-                        "ExperienceLevelsPackDescriptor",
-                        "CanWinExperience",
-                        "ExperienceMultiplierBonusOnKill",
+                        "ResistanceFront",
+                        "ResistanceRear",
+                        "ResistanceTop",
+                        "ExplosiveReactiveArmor",
+                        "ResistanceSides",
                     ]
                 ]
-            )
-            + ">"
-        )
-
-
-class TVisibilityModuleDescriptor(BaseDescription):
-    def __init__(self, UnitConcealmentBonus=None, VisionUnitType=None):
-        self.UnitConcealmentBonus = UnitConcealmentBonus
-        self.VisionUnitType = VisionUnitType
-
-    def __repr__(self):
-        return (
-            f"<TVisibilityModuleDescriptor "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in ["UnitConcealmentBonus", "VisionUnitType"]
-                ]
-            )
-            + ">"
-        )
-
-
-class TAutoCoverModuleDescriptor(BaseDescription):
-    def __init__(
-        self,
-        TerrainList=None,
-        OccupationRadiusGRU=None,
-        AutoCoverRangeGRU=None,
-        TerrainListMask=None,
-        UseTerrainsForEscape=None,
-    ):
-        self.TerrainList = TerrainList
-        self.OccupationRadiusGRU = OccupationRadiusGRU
-        self.AutoCoverRangeGRU = AutoCoverRangeGRU
-        self.TerrainListMask = TerrainListMask
-        self.UseTerrainsForEscape = UseTerrainsForEscape
-
-    def __repr__(self):
-        return (
-            f"<TAutoCoverModuleDescriptor "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in [
-                        "TerrainList",
-                        "OccupationRadiusGRU",
-                        "AutoCoverRangeGRU",
-                        "TerrainListMask",
-                        "UseTerrainsForEscape",
-                    ]
-                ]
-            )
-            + ">"
-        )
-
-
-class TModuleSelector(BaseDescription):
-    def __init__(self, Selection=None, Default=None):
-        self.Selection = Selection
-        self.Default = Default
-
-    def __repr__(self):
-        return (
-            f"<TModuleSelector "
-            + ", ".join(
-                [f"{attr}={getattr(self, attr)}" for attr in ["Selection", "Default"]]
             )
             + ">"
         )
@@ -1486,6 +1469,125 @@ class TRoutModuleDescriptor(BaseDescription):
         return (
             f"<TRoutModuleDescriptor "
             + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["MoralLevel"]])
+            + ">"
+        )
+
+
+class TDangerousnessModuleDescriptor(BaseDescription):
+    def __init__(self, Dangerousness=None):
+        self.Dangerousness = Dangerousness
+
+    def __repr__(self):
+        return (
+            f"<TDangerousnessModuleDescriptor "
+            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["Dangerousness"]])
+            + ">"
+        )
+
+
+class TemplateUnitCriticalModule(BaseDescription):
+    def __init__(self, Module=None):
+        self.Module = Module
+
+    def __repr__(self):
+        return (
+            f"<TemplateUnitCriticalModule "
+            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["Module"]])
+            + ">"
+        )
+
+
+class TemplateUnitMissileCarriage(BaseDescription):
+    def __init__(self, Connoisseur=None):
+        self.Connoisseur = Connoisseur
+
+    def __repr__(self):
+        return (
+            f"<TemplateUnitMissileCarriage "
+            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["Connoisseur"]])
+            + ">"
+        )
+
+
+class TExperienceModuleDescriptor(BaseDescription):
+    def __init__(
+        self,
+        ExperienceGainBySecond=None,
+        ExperienceLevelsPackDescriptor=None,
+        CanWinExperience=None,
+        ExperienceMultiplierBonusOnKill=None,
+    ):
+        self.ExperienceGainBySecond = ExperienceGainBySecond
+        self.ExperienceLevelsPackDescriptor = ExperienceLevelsPackDescriptor
+        self.CanWinExperience = CanWinExperience
+        self.ExperienceMultiplierBonusOnKill = ExperienceMultiplierBonusOnKill
+
+    def __repr__(self):
+        return (
+            f"<TExperienceModuleDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "ExperienceGainBySecond",
+                        "ExperienceLevelsPackDescriptor",
+                        "CanWinExperience",
+                        "ExperienceMultiplierBonusOnKill",
+                    ]
+                ]
+            )
+            + ">"
+        )
+
+
+class TVisibilityModuleDescriptor(BaseDescription):
+    def __init__(self, UnitConcealmentBonus=None, VisionUnitType=None):
+        self.UnitConcealmentBonus = UnitConcealmentBonus
+        self.VisionUnitType = VisionUnitType
+
+    def __repr__(self):
+        return (
+            f"<TVisibilityModuleDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["UnitConcealmentBonus", "VisionUnitType"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TAutoCoverModuleDescriptor(BaseDescription):
+    def __init__(
+        self,
+        TerrainList=None,
+        OccupationRadiusGRU=None,
+        AutoCoverRangeGRU=None,
+        TerrainListMask=None,
+        UseTerrainsForEscape=None,
+    ):
+        self.TerrainList = TerrainList
+        self.OccupationRadiusGRU = OccupationRadiusGRU
+        self.AutoCoverRangeGRU = AutoCoverRangeGRU
+        self.TerrainListMask = TerrainListMask
+        self.UseTerrainsForEscape = UseTerrainsForEscape
+
+    def __repr__(self):
+        return (
+            f"<TAutoCoverModuleDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "TerrainList",
+                        "OccupationRadiusGRU",
+                        "AutoCoverRangeGRU",
+                        "TerrainListMask",
+                        "UseTerrainsForEscape",
+                    ]
+                ]
+            )
             + ">"
         )
 
@@ -1603,58 +1705,6 @@ class THelicopterMovementModuleDescriptor(BaseDescription):
         )
 
 
-class TFuelModuleDescriptor(BaseDescription):
-    def __init__(self, FuelMoveDuration=None, FuelCapacity=None):
-        self.FuelMoveDuration = FuelMoveDuration
-        self.FuelCapacity = FuelCapacity
-
-    def __repr__(self):
-        return (
-            f"<TFuelModuleDescriptor "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in ["FuelMoveDuration", "FuelCapacity"]
-                ]
-            )
-            + ">"
-        )
-
-
-class TBlindageProperties(BaseDescription):
-    def __init__(
-        self,
-        ResistanceFront=None,
-        ResistanceRear=None,
-        ResistanceTop=None,
-        ExplosiveReactiveArmor=None,
-        ResistanceSides=None,
-    ):
-        self.ResistanceFront = ResistanceFront
-        self.ResistanceRear = ResistanceRear
-        self.ResistanceTop = ResistanceTop
-        self.ExplosiveReactiveArmor = ExplosiveReactiveArmor
-        self.ResistanceSides = ResistanceSides
-
-    def __repr__(self):
-        return (
-            f"<TBlindageProperties "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in [
-                        "ResistanceFront",
-                        "ResistanceRear",
-                        "ResistanceTop",
-                        "ExplosiveReactiveArmor",
-                        "ResistanceSides",
-                    ]
-                ]
-            )
-            + ">"
-        )
-
-
 class AirplaneMovementDescriptor(BaseDescription):
     def __init__(
         self,
@@ -1698,6 +1748,64 @@ class AirplaneMovementDescriptor(BaseDescription):
                         "AltitudeMinGRU",
                         "AltitudeGRU",
                     ]
+                ]
+            )
+            + ">"
+        )
+
+
+class HelicopterPositionModuleDescriptor(BaseDescription):
+    def __init__(
+        self, LowAltitudeFlyingAltitudeGRU=None, NearGroundFlyingAltitudeGRU=None
+    ):
+        self.LowAltitudeFlyingAltitudeGRU = LowAltitudeFlyingAltitudeGRU
+        self.NearGroundFlyingAltitudeGRU = NearGroundFlyingAltitudeGRU
+
+    def __repr__(self):
+        return (
+            f"<HelicopterPositionModuleDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "LowAltitudeFlyingAltitudeGRU",
+                        "NearGroundFlyingAltitudeGRU",
+                    ]
+                ]
+            )
+            + ">"
+        )
+
+
+class AirplanePositionModuleDescriptor(BaseDescription):
+    def __init__(self, LowAltitudeFlyingAltitudeGRU=None):
+        self.LowAltitudeFlyingAltitudeGRU = LowAltitudeFlyingAltitudeGRU
+
+    def __repr__(self):
+        return (
+            f"<AirplanePositionModuleDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["LowAltitudeFlyingAltitudeGRU"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TFuelModuleDescriptor(BaseDescription):
+    def __init__(self, FuelMoveDuration=None, FuelCapacity=None):
+        self.FuelMoveDuration = FuelMoveDuration
+        self.FuelCapacity = FuelCapacity
+
+    def __repr__(self):
+        return (
+            f"<TFuelModuleDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["FuelMoveDuration", "FuelCapacity"]
                 ]
             )
             + ">"
@@ -1767,14 +1875,67 @@ class TReverseScannerWithIdentificationDescriptor(BaseDescription):
         )
 
 
-class TemplateUnitMissileCarriage(BaseDescription):
-    def __init__(self, Connoisseur=None):
-        self.Connoisseur = Connoisseur
+class TAirplaneModuleDescriptor(BaseDescription):
+    def __init__(self, EvacuationTime=None, TravelDuration=None):
+        self.EvacuationTime = EvacuationTime
+        self.TravelDuration = TravelDuration
 
     def __repr__(self):
         return (
-            f"<TemplateUnitMissileCarriage "
-            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["Connoisseur"]])
+            f"<TAirplaneModuleDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["EvacuationTime", "TravelDuration"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TSupplyModuleDescriptor(BaseDescription):
+    def __init__(self, SupplyCapacity=None, SupplyDescriptor=None, SupplyPriority=None):
+        self.SupplyCapacity = SupplyCapacity
+        self.SupplyDescriptor = SupplyDescriptor
+        self.SupplyPriority = SupplyPriority
+
+    def __repr__(self):
+        return (
+            f"<TSupplyModuleDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["SupplyCapacity", "SupplyDescriptor", "SupplyPriority"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TDeploymentShiftModuleDescriptor(BaseDescription):
+    def __init__(self, DeploymentShiftGRU=None):
+        self.DeploymentShiftGRU = DeploymentShiftGRU
+
+    def __repr__(self):
+        return (
+            f"<TDeploymentShiftModuleDescriptor "
+            + ", ".join(
+                [f"{attr}={getattr(self, attr)}" for attr in ["DeploymentShiftGRU"]]
+            )
+            + ">"
+        )
+
+
+class TUnitUpkeepModuleDescriptor(BaseDescription):
+    def __init__(self, UpkeepPercentage=None):
+        self.UpkeepPercentage = UpkeepPercentage
+
+    def __repr__(self):
+        return (
+            f"<TUnitUpkeepModuleDescriptor "
+            + ", ".join(
+                [f"{attr}={getattr(self, attr)}" for attr in ["UpkeepPercentage"]]
+            )
             + ">"
         )
 
@@ -1803,119 +1964,35 @@ class TProductionModuleDescriptor(BaseDescription):
             + ">"
         )
 
-class AirplanePositionModuleDescriptor(BaseDescription):
-    def __init__(self, LowAltitudeFlyingAltitudeGRU=None):
-        self.LowAltitudeFlyingAltitudeGRU = LowAltitudeFlyingAltitudeGRU
 
-    def __repr__(self):
-        return (
-            f"<AirplanePositionModuleDescriptor "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in ["LowAltitudeFlyingAltitudeGRU"]
-                ]
-            )
-            + ">"
-        )
-    
-class TAirplaneModuleDescriptor(BaseDescription):
-    def __init__(self, EvacuationTime=None, TravelDuration=None):
-        self.EvacuationTime = EvacuationTime
-        self.TravelDuration = TravelDuration
-
-    def __repr__(self):
-        return (
-            f"<TAirplaneModuleDescriptor "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in ["EvacuationTime", "TravelDuration"]
-                ]
-            )
-            + ">"
-        )
-
-
-class TUnitUIModuleDescriptor(BaseDescription):
+class TTransportableModuleDescriptor(BaseDescription):
     def __init__(
         self,
-        SpecialtiesList=None,
-        DisplayRoadSpeedInKmph=None,
-        UpgradeFromUnit=None,
-        UnitRole=None,
-        NameToken=None,
-        CountryTexture=None,
-        GenerateName=None,
-        ButtonTexture=None,
-        TypeStrategicCount=None,
-        InfoPanelConfigurationToken=None,
-        MenuIconTexture=None,
+        TimeToLoad=None,
+        NbSeatsOccupied=None,
+        IsTowable=None,
+        TransportedTexture=None,
+        TransportedSoldier=None,
     ):
-        self.SpecialtiesList = SpecialtiesList
-        self.DisplayRoadSpeedInKmph = DisplayRoadSpeedInKmph
-        self.UpgradeFromUnit = UpgradeFromUnit
-        self.UnitRole = UnitRole
-        self.NameToken = NameToken
-        self.CountryTexture = CountryTexture
-        self.GenerateName = GenerateName
-        self.ButtonTexture = ButtonTexture
-        self.TypeStrategicCount = TypeStrategicCount
-        self.InfoPanelConfigurationToken = InfoPanelConfigurationToken
-        self.MenuIconTexture = MenuIconTexture
+        self.TimeToLoad = TimeToLoad
+        self.NbSeatsOccupied = NbSeatsOccupied
+        self.IsTowable = IsTowable
+        self.TransportedTexture = TransportedTexture
+        self.TransportedSoldier = TransportedSoldier
 
     def __repr__(self):
         return (
-            f"<TUnitUIModuleDescriptor "
+            f"<TTransportableModuleDescriptor "
             + ", ".join(
                 [
                     f"{attr}={getattr(self, attr)}"
                     for attr in [
-                        "SpecialtiesList",
-                        "DisplayRoadSpeedInKmph",
-                        "UpgradeFromUnit",
-                        "UnitRole",
-                        "NameToken",
-                        "CountryTexture",
-                        "GenerateName",
-                        "ButtonTexture",
-                        "TypeStrategicCount",
-                        "InfoPanelConfigurationToken",
-                        "MenuIconTexture",
+                        "TimeToLoad",
+                        "NbSeatsOccupied",
+                        "IsTowable",
+                        "TransportedTexture",
+                        "TransportedSoldier",
                     ]
-                ]
-            )
-            + ">"
-        )
-
-
-class TUnitUpkeepModuleDescriptor(BaseDescription):
-    def __init__(self, UpkeepPercentage=None):
-        self.UpkeepPercentage = UpkeepPercentage
-
-    def __repr__(self):
-        return (
-            f"<TUnitUpkeepModuleDescriptor "
-            + ", ".join(
-                [f"{attr}={getattr(self, attr)}" for attr in ["UpkeepPercentage"]]
-            )
-            + ">"
-        )
-
-
-class TSupplyModuleDescriptor(BaseDescription):
-    def __init__(self, SupplyCapacity=None, SupplyDescriptor=None, SupplyPriority=None):
-        self.SupplyCapacity = SupplyCapacity
-        self.SupplyDescriptor = SupplyDescriptor
-        self.SupplyPriority = SupplyPriority
-
-    def __repr__(self):
-        return (
-            f"<TSupplyModuleDescriptor "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in ["SupplyCapacity", "SupplyDescriptor", "SupplyPriority"]
                 ]
             )
             + ">"
@@ -1952,77 +2029,6 @@ class TTransporterModuleDescriptor(BaseDescription):
                         "WreckUnloadStunDamageBonus",
                         "LoadRadiusGRU",
                         "WreckUnloadSuppressDamageBonus",
-                    ]
-                ]
-            )
-            + ">"
-        )
-
-
-class TDeploymentShiftModuleDescriptor(BaseDescription):
-    def __init__(self, DeploymentShiftGRU=None):
-        self.DeploymentShiftGRU = DeploymentShiftGRU
-
-    def __repr__(self):
-        return (
-            f"<TDeploymentShiftModuleDescriptor "
-            + ", ".join(
-                [f"{attr}={getattr(self, attr)}" for attr in ["DeploymentShiftGRU"]]
-            )
-            + ">"
-        )
-
-
-class HelicopterPositionModuleDescriptor(BaseDescription):
-    def __init__(
-        self, LowAltitudeFlyingAltitudeGRU=None, NearGroundFlyingAltitudeGRU=None
-    ):
-        self.LowAltitudeFlyingAltitudeGRU = LowAltitudeFlyingAltitudeGRU
-        self.NearGroundFlyingAltitudeGRU = NearGroundFlyingAltitudeGRU
-
-    def __repr__(self):
-        return (
-            f"<HelicopterPositionModuleDescriptor "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in [
-                        "LowAltitudeFlyingAltitudeGRU",
-                        "NearGroundFlyingAltitudeGRU",
-                    ]
-                ]
-            )
-            + ">"
-        )
-
-
-class TTransportableModuleDescriptor(BaseDescription):
-    def __init__(
-        self,
-        TimeToLoad=None,
-        NbSeatsOccupied=None,
-        IsTowable=None,
-        TransportedTexture=None,
-        TransportedSoldier=None,
-    ):
-        self.TimeToLoad = TimeToLoad
-        self.NbSeatsOccupied = NbSeatsOccupied
-        self.IsTowable = IsTowable
-        self.TransportedTexture = TransportedTexture
-        self.TransportedSoldier = TransportedSoldier
-
-    def __repr__(self):
-        return (
-            f"<TTransportableModuleDescriptor "
-            + ", ".join(
-                [
-                    f"{attr}={getattr(self, attr)}"
-                    for attr in [
-                        "TimeToLoad",
-                        "NbSeatsOccupied",
-                        "IsTowable",
-                        "TransportedTexture",
-                        "TransportedSoldier",
                     ]
                 ]
             )
@@ -2126,5 +2132,746 @@ class TEntityDescriptor(BaseDescription):
                     ]
                 ]
             )
+            + ">"
+        )
+
+
+# 光环与效果
+
+
+class TCapaciteDescriptor(BaseDescription):
+    def __init__(
+        self,
+        TargetInBuilding=None,
+        SelfEffect=None,
+        RangeGRU=None,
+        MaxTargetNb=None,
+        TargetTeamFilter=None,
+        NameToken=None,
+        DisplayRangeColor=None,
+        TargetEffectDuration=None,
+        TargetMySelf=None,
+        CanBeCastFromTransport=None,
+        TargetWoundedFilter=None,
+        Name=None,
+        DescriptorId=None,
+        AreaShape=None,
+        DisplayRangeThickness=None,
+        TargetEffect=None,
+        Cooldown=None,
+        InfluenceMapAlliance=None,
+        CheckVisibility=None,
+        Price=None,
+        InfluenceMapType=None,
+        Declenchement=None,
+        TargetInTransport=None,
+        OrderMustSpreadTargets=None,
+        ActionRadiusWithBoundingBox=None,
+        FeedbackActivationMask=None,
+        SelfEffectDuration=None,
+        CumulEffect=None,
+        MultiplyCost=None,
+        TagsCibleExcluded=None,
+        AllowReflexDuringCast=None,
+        TagsCiblePossible=None,
+        MinVirtualUnits=None,
+        TypeCible=None,
+        RadiusGRU=None,
+        Conditions=None,
+        CastTime=None,
+        TargetInSelf=None,
+    ):
+        self.TargetInBuilding = TargetInBuilding
+        self.SelfEffect = SelfEffect
+        self.RangeGRU = RangeGRU
+        self.MaxTargetNb = MaxTargetNb
+        self.TargetTeamFilter = TargetTeamFilter
+        self.NameToken = NameToken
+        self.DisplayRangeColor = DisplayRangeColor
+        self.TargetEffectDuration = TargetEffectDuration
+        self.TargetMySelf = TargetMySelf
+        self.CanBeCastFromTransport = CanBeCastFromTransport
+        self.TargetWoundedFilter = TargetWoundedFilter
+        self.Name = Name
+        self.DescriptorId = DescriptorId
+        self.AreaShape = AreaShape
+        self.DisplayRangeThickness = DisplayRangeThickness
+        self.TargetEffect = TargetEffect
+        self.Cooldown = Cooldown
+        self.InfluenceMapAlliance = InfluenceMapAlliance
+        self.CheckVisibility = CheckVisibility
+        self.Price = Price
+        self.InfluenceMapType = InfluenceMapType
+        self.Declenchement = Declenchement
+        self.TargetInTransport = TargetInTransport
+        self.OrderMustSpreadTargets = OrderMustSpreadTargets
+        self.ActionRadiusWithBoundingBox = ActionRadiusWithBoundingBox
+        self.FeedbackActivationMask = FeedbackActivationMask
+        self.SelfEffectDuration = SelfEffectDuration
+        self.CumulEffect = CumulEffect
+        self.MultiplyCost = MultiplyCost
+        self.TagsCibleExcluded = TagsCibleExcluded
+        self.AllowReflexDuringCast = AllowReflexDuringCast
+        self.TagsCiblePossible = TagsCiblePossible
+        self.MinVirtualUnits = MinVirtualUnits
+        self.TypeCible = TypeCible
+        self.RadiusGRU = RadiusGRU
+        self.Conditions = Conditions
+        self.CastTime = CastTime
+        self.TargetInSelf = TargetInSelf
+
+    def __repr__(self):
+        return (
+            f"<TCapaciteDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "TargetInBuilding",
+                        "SelfEffect",
+                        "RangeGRU",
+                        "MaxTargetNb",
+                        "TargetTeamFilter",
+                        "NameToken",
+                        "DisplayRangeColor",
+                        "TargetEffectDuration",
+                        "TargetMySelf",
+                        "CanBeCastFromTransport",
+                        "TargetWoundedFilter",
+                        "Name",
+                        "DescriptorId",
+                        "AreaShape",
+                        "DisplayRangeThickness",
+                        "TargetEffect",
+                        "Cooldown",
+                        "InfluenceMapAlliance",
+                        "CheckVisibility",
+                        "Price",
+                        "InfluenceMapType",
+                        "Declenchement",
+                        "TargetInTransport",
+                        "OrderMustSpreadTargets",
+                        "ActionRadiusWithBoundingBox",
+                        "FeedbackActivationMask",
+                        "SelfEffectDuration",
+                        "CumulEffect",
+                        "MultiplyCost",
+                        "TagsCibleExcluded",
+                        "AllowReflexDuringCast",
+                        "TagsCiblePossible",
+                        "MinVirtualUnits",
+                        "TypeCible",
+                        "RadiusGRU",
+                        "Conditions",
+                        "CastTime",
+                        "TargetInSelf",
+                    ]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseWeaponDispersionMaxRangeDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseWeaponDispersionMaxRangeDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectRaiseTagDescriptor(BaseDescription):
+    def __init__(self, TagListToRaise=None):
+        self.TagListToRaise = TagListToRaise
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectRaiseTagDescriptor "
+            + ", ".join(
+                [f"{attr}={getattr(self, attr)}" for attr in ["TagListToRaise"]]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectShowLabelIconDescriptor(BaseDescription):
+    def __init__(self, TextureToken=None):
+        self.TextureToken = TextureToken
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectShowLabelIconDescriptor "
+            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["TextureToken"]])
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseDamageTakenDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, DamageType=None, BonusDamage=None):
+        self.ModifierType = ModifierType
+        self.DamageType = DamageType
+        self.BonusDamage = BonusDamage
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseDamageTakenDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "DamageType", "BonusDamage"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseInfluenceValueDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, Bonus=None):
+        self.ModifierType = ModifierType
+        self.Bonus = Bonus
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseInfluenceValueDescriptor "
+            + ", ".join(
+                [f"{attr}={getattr(self, attr)}" for attr in ["ModifierType", "Bonus"]]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseWeaponPorteeMaxDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None, ModifierValueGRU=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+        self.ModifierValueGRU = ModifierValueGRU
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseWeaponPorteeMaxDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue", "ModifierValueGRU"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseWeaponPorteeMaxHADescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None, ModifierValueGRU=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+        self.ModifierValueGRU = ModifierValueGRU
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseWeaponPorteeMaxHADescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue", "ModifierValueGRU"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseWeaponPorteeMaxProjectileDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None, ModifierValueGRU=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+        self.ModifierValueGRU = ModifierValueGRU
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseWeaponPorteeMaxProjectileDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue", "ModifierValueGRU"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseWeaponPorteeMaxTBADescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None, ModifierValueGRU=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+        self.ModifierValueGRU = ModifierValueGRU
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseWeaponPorteeMaxTBADescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue", "ModifierValueGRU"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseDispersionDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusDispersion=None):
+        self.ModifierType = ModifierType
+        self.BonusDispersion = BonusDispersion
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseDispersionDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusDispersion"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectAlterWeaponTempsEntreDeuxSalvesDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectAlterWeaponTempsEntreDeuxSalvesDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectAlterWeaponTempsEntreDeuxTirsDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectAlterWeaponTempsEntreDeuxTirsDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseChassisRotationSpeedDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusChassisRotationSpeed=None):
+        self.ModifierType = ModifierType
+        self.BonusChassisRotationSpeed = BonusChassisRotationSpeed
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseChassisRotationSpeedDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusChassisRotationSpeed"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseTurretRotationSpeedDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusTurretRotationSpeed=None):
+        self.ModifierType = ModifierType
+        self.BonusTurretRotationSpeed = BonusTurretRotationSpeed
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseTurretRotationSpeedDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusTurretRotationSpeed"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseSpeedDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusSpeedBaseInPercent=None):
+        self.ModifierType = ModifierType
+        self.BonusSpeedBaseInPercent = BonusSpeedBaseInPercent
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseSpeedDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusSpeedBaseInPercent"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectBonusExperienceLevelDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ExperienceLevelModifier=None):
+        self.ModifierType = ModifierType
+        self.ExperienceLevelModifier = ExperienceLevelModifier
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectBonusExperienceLevelDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ExperienceLevelModifier"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseDangerousnessDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusDangerousness=None):
+        self.ModifierType = ModifierType
+        self.BonusDangerousness = BonusDangerousness
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseDangerousnessDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusDangerousness"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectTransportSlotNumberModificationDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, EffectOnTransportSlotNumber=None):
+        self.ModifierType = ModifierType
+        self.EffectOnTransportSlotNumber = EffectOnTransportSlotNumber
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectTransportSlotNumberModificationDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "EffectOnTransportSlotNumber"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseWeaponPhysicalDamagesDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseWeaponPhysicalDamagesDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseVisionDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusVisionBase=None):
+        self.ModifierType = ModifierType
+        self.BonusVisionBase = BonusVisionBase
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseVisionDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusVisionBase"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseSpecializedDetectionDescriptor(BaseDescription):
+    def __init__(
+        self, BonusValueGRU=None, ModifierType=None, BonusValue=None, VisionType=None
+    ):
+        self.BonusValueGRU = BonusValueGRU
+        self.ModifierType = ModifierType
+        self.BonusValue = BonusValue
+        self.VisionType = VisionType
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseSpecializedDetectionDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "BonusValueGRU",
+                        "ModifierType",
+                        "BonusValue",
+                        "VisionType",
+                    ]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseInfluenceValueMinDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, Bonus=None):
+        self.ModifierType = ModifierType
+        self.Bonus = Bonus
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseInfluenceValueMinDescriptor "
+            + ", ".join(
+                [f"{attr}={getattr(self, attr)}" for attr in ["ModifierType", "Bonus"]]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectSetSelectableDescriptor(BaseDescription):
+    def __init__(self, Selectable=None):
+        self.Selectable = Selectable
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectSetSelectableDescriptor "
+            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["Selectable"]])
+            + ">"
+        )
+
+
+class TUnitEffectStopWithInertiaEffectDescriptor(BaseDescription):
+    def __init__(self, UpdateEachTick=None):
+        self.UpdateEachTick = UpdateEachTick
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectStopWithInertiaEffectDescriptor "
+            + ", ".join(
+                [f"{attr}={getattr(self, attr)}" for attr in ["UpdateEachTick"]]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseWeaponPrecisionArretDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseWeaponPrecisionArretDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseWeaponPrecisionMouvementDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseWeaponPrecisionMouvementDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectRemoveUnitDescriptor(BaseDescription):
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return f"<TUnitEffectRemoveUnitDescriptor>"
+
+
+
+class TUnitEffectBonusPrecisionWhenTargetedDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusPrecisionWhenTargeted=None):
+        self.ModifierType = ModifierType
+        self.BonusPrecisionWhenTargeted = BonusPrecisionWhenTargeted
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectBonusPrecisionWhenTargetedDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusPrecisionWhenTargeted"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseOpticalStrengthDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusOpticalStrength=None):
+        self.ModifierType = ModifierType
+        self.BonusOpticalStrength = BonusOpticalStrength
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseOpticalStrengthDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusOpticalStrength"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseWeaponPorteeMaxIgnoreSmokeDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusWeaponPorteeMax=None):
+        self.ModifierType = ModifierType
+        self.BonusWeaponPorteeMax = BonusWeaponPorteeMax
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseWeaponPorteeMaxIgnoreSmokeDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusWeaponPorteeMax"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectReplaceArmorDescriptor(BaseDescription):
+    def __init__(self, ReplacementBlindage=None, BlindageLocation=None):
+        self.ReplacementBlindage = ReplacementBlindage
+        self.BlindageLocation = BlindageLocation
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectReplaceArmorDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ReplacementBlindage", "BlindageLocation"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectIncreaseConcealmentBonusDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, BonusConcealmentBonus=None):
+        self.ModifierType = ModifierType
+        self.BonusConcealmentBonus = BonusConcealmentBonus
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectIncreaseConcealmentBonusDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "BonusConcealmentBonus"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectHealOverTimeDescriptor(BaseDescription):
+    def __init__(
+        self, NbUpdatePerSecond=None, DamageType=None, HealUnitsPerSecond=None
+    ):
+        self.NbUpdatePerSecond = NbUpdatePerSecond
+        self.DamageType = DamageType
+        self.HealUnitsPerSecond = HealUnitsPerSecond
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectHealOverTimeDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "NbUpdatePerSecond",
+                        "DamageType",
+                        "HealUnitsPerSecond",
+                    ]
+                ]
+            )
+            + ">"
+        )
+
+
+class TUnitEffectChangeTeamDescriptor(BaseDescription):
+    def __init__(self, FutureTeam=None):
+        self.FutureTeam = FutureTeam
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectChangeTeamDescriptor "
+            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["FutureTeam"]])
+            + ">"
+        )
+
+
+
+class TUnitEffectAddCapacityDescriptor(BaseDescription):
+    def __init__(self, CapacityToAdd=None):
+        self.CapacityToAdd = CapacityToAdd
+
+    def __repr__(self):
+        return (
+            f"<TUnitEffectAddCapacityDescriptor "
+            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["CapacityToAdd"]])
             + ">"
         )
