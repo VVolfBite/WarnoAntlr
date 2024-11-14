@@ -14,7 +14,7 @@ sys.path.append(WORK_DIRECTORY)
 from src.extractor.refined_class import *
 
 
-class CapacityComponment:
+class TCapaciteDescriptorComponment:
     def __init__(
         self,
         TCapaciteDescriptor: TCapaciteDescriptor
@@ -100,13 +100,13 @@ class CapacityComponment:
             "需要对目标具有以下词条",
             show_value(TCapaciteDescriptor.TagsCiblePossible),
         )         
-        self.TRTagsCiblePossible = Table_Row(
-            "需要对目标不具有以下词条",
-            show_value(TCapaciteDescriptor.TagsCiblePossible),
-        )     
         self.TRTagsCibleExcluded = Table_Row(
-            "需要对目标有视野",
+            "需要对目标不具有以下词条",
             show_value(TCapaciteDescriptor.TagsCibleExcluded),
+        )     
+        self.TRCheckVisibility = Table_Row(
+            "需要对目标有视野",
+            show_value(TCapaciteDescriptor.CheckVisibility),
         ) 
         self.TRAllowReflexDuringCast = Table_Row(
             "在释放能力时对单位锁定",
@@ -146,181 +146,97 @@ class CapacityComponment:
             show_value(TCapaciteDescriptor.OrderMustSpreadTargets ),
         ) 
         
+    def DetailComponent(self):
+        capacity_table = Content(
+            f"{self.KeyName}",
+            Table([
+                "释放效果",
+                self.TRTargetEffect,
+                self.TRTargetEffectDuration,
+                self.TRSelfEffectDuration,
+                "目标选择",
+                self.TRTypeCible,
+                self.TRTargetTeamFilter,
+                self.TRTargetWoundedFilter,
+                self.TRTargetInBuilding,
+                self.TRTargetInTransport,
+                self.TRTargetInSelf,
+                self.TRTargetMySelf,
+                self.TRTagsCiblePossible,
+                self.TRTagsCibleExcluded,
+                self.TRConditions,
+                "释放范围与时间",
+                self.TRAreaShape,
+                self.TRRadiusGRU,
+                self.TRRangeGRU,
+                self.TRCastTime,
+                self.TRCooldown,
+                "释放规则",
+                self.TRCheckVisibility,
+                self.TRCumulEffect,
+                self.TRDeclenchement,
+                self.TRInfluenceMapType,
+                self.TRInfluenceMapAlliance,
+                self.TRMinVirtualUnits,
+                self.TRMaxTargetNb,
+                self.TRCanBeCastFromTransport,
+                self.TRAllowReflexDuringCast,
+                self.TROrderMustSpreadTargets,
+            ])
+        )
+        return capacity_table
+
+class TEffectsPackDescriptorComponment:
+    def __init__(
+        self,
+        TEffectsPackDescriptor: TEffectsPackDescriptor
+    ):
+        self.TEffectsPackDescriptor = TEffectsPackDescriptor
+        self.KeyName = TEffectsPackDescriptor.KeyName
 
     def DetailComponent(self):
-        if isinstance(self.turret, TTurretUnitDescriptor):
-            turret_type_table_row = [
-                Table_Row("炮台类型", "通用炮台"),
-                self.TRAngleRotationMax,
-                self.TRAngleRotationMaxPitch,
-                self.TRAngleRotationMinPitch,
-            ]
-        elif isinstance(self.turret, TTurretInfanterieDescriptor):
-            turret_type_table_row = [Table_Row("炮台类型", "步兵")]
-        elif isinstance(self.turret, TTurretTwoAxisDescriptor):
-            turret_type_table_row = [
-                Table_Row("炮台类型", "载具(双轴)"),
-                self.TRAimingPriority,
-                self.TRAngleRotationBase,
-                self.TRAngleRotationMax,
-                self.TRAngleRotationBasePitch,
-                self.TRAngleRotationMaxPitch,
-                self.TRAngleRotationMinPitch,
-                self.TRVitesseRotation,
-                self.TROutOfRangeTrackingDuration,
-            ]
-        elif isinstance(self.turret, TTurretBombardierDescriptor):
-            turret_type_table_row = [
-                Table_Row("炮台类型", "飞机(挂载)"),
-                self.TRFlyingAltitudeGRU,
-                self.TRFlyingSpeedInKmph,
-            ]
-        turret_table = Content("炮台信息", Table(turret_type_table_row))
-
-        mounted_weapon_name = []
-        mounted_weapon_list = []
-        for mounted_weapon in self.turret.MountedWeaponDescriptorList:
-            mounted_weapon_name.append(
-                mounted_weapon.Ammunition.KeyName
-                if hasattr(mounted_weapon.Ammunition, "KeyName")
-                else str(mounted_weapon.Ammunition)
-            )
-            mounted_weapon_list.append(
-                MountedWeaponComponent(mounted_weapon).DetailComponent()
-            )
-
-        mounted_weapon_table = Content(
-            "挂载武器信息", Tabs(mounted_weapon_name, mounted_weapon_list)
-        )
-
-        col1 = Col(turret_table, className="twelve columns")
-        col2 = Col(mounted_weapon_table, className="twelve columns")
-
-        row1 = Row([col1])
-        row2 = Row([col2])
-
-        content = Page_Content([row1, row2])
-        return content
+        effect_table = []
+        for effect in self.TEffectsPackDescriptor.EffectsDescriptors:
+            effect_table.append(Table_Row(effect.__class__.__name__))
+            effect_table.append(Table_Row("效果说明",effect.__class__.__name__))
+            if hasattr(effect, 'DamageType'):
+                Table_Row("修正伤害类型",effect.DamageType)
+            if hasattr(effect, 'ModifierType'):
+                Table_Row("修正方式",effect.ModifierType)
+            if hasattr(effect, 'ModifierValue'):
+                Table_Row("修正数值",effect.ModifierValue)
+            if hasattr(effect, 'ExperienceLevelModifier'):
+                Table_Row("修正数值",effect.ExperienceLevelModifier)
+            if hasattr(effect, 'EffectOnTransportSlotNumber'):
+                Table_Row("修正数值",effect.EffectOnTransportSlotNumber)   
 
 
-class MountedWeaponComponent:
-    def __init__(self, mounted_weapon: TMountedWeaponDescriptor):
-        self.mounted_weapon = mounted_weapon
-        self.menu = []
-        self.TRAmmoConsumption_ForInterface = Table_Row(
-            "UI界面消耗弹药量",
-            (
-                show_value(self.mounted_weapon.AmmoConsumption_ForInterface)
-                if hasattr(self.mounted_weapon, "AmmoConsumption_ForInterface")
-                else ""
-            ),
-        )
-        self.TRNbWeapons = Table_Row(
-            "武器数量",
-            (
-                show_value(self.mounted_weapon.NbWeapons)
-                if hasattr(self.mounted_weapon, "NbWeapons")
-                else ""
-            ),
-        )
-        self.TRSalvoStockIndex = Table_Row(
-            "隶属索引号",
-            (
-                show_value(self.mounted_weapon.SalvoStockIndex)
-                if hasattr(self.mounted_weapon, "SalvoStockIndex")
-                else ""
-            ),
-        )
+            if hasattr(effect, 'BonusDamage'):
+                Table_Row("加成数值",effect.BonusDamage)
+            if hasattr(effect, 'Bonus'):
+                Table_Row("加成数值",effect.Bonus)
+            if hasattr(effect, 'BonusDispersion'):
+                Table_Row("加成数值",effect.BonusDispersion)
+            if hasattr(effect, 'BonusChassisRotationSpeed'):
+                Table_Row("加成数值",effect.BonusChassisRotationSpeed)
+            if hasattr(effect, 'BonusTurretRotationSpeed'):
+                Table_Row("加成数值",effect.BonusTurretRotationSpeed)
+            if hasattr(effect, 'BonusSpeedBaseInPercent'):
+                Table_Row("加成数值",effect.BonusSpeedBaseInPercent)
+            if hasattr(effect, 'BonusValueGRUGRU'):
+                Table_Row("加成数值",effect.BonusValueGRUGRU)
 
-    def DetailComponent(self):
-        mounted_weapon_table = Content(
-            "挂载武器",
-            Table(
-                [
-                    self.TRSalvoStockIndex,
-                    self.TRNbWeapons,
-                    self.TRAmmoConsumption_ForInterface,
-                ]
-            ),
-        )
-        mounted_weapon_components = Content(
-            "挂载武器信息",
-            ammunition.AmmunitionComponent(
-                self.mounted_weapon.Ammunition
-            ).AsComponent(),
-        )
-        col1 = Col(mounted_weapon_table, className="twelve columns")
-        col2 = Col(mounted_weapon_components, className="twelve columns")
+            if hasattr(effect, 'BonusDangerousness'):
+                Table_Row("加成数值",effect.BonusDangerousness)
+            if hasattr(effect, 'SupplyMalus'):
+                Table_Row("惩罚数值",effect.SupplyMalus)
 
-        row1 = Row([col1])
-        row2 = Row([col2])
-        content = Page_Content([row1, row2])
-        return content
-
-
-class WeaponComponent:
-    def __init__(self, weapon: TWeaponManagerModuleDescriptor):
-        self.weapon_key = weapon.KeyName
-        self.weapon = weapon
-        self.menu = ["概览"]
-
-        self.TRSalves = Table_Row(
-            "弹链数量",
-            show_value(self.weapon.Salves) if hasattr(self.weapon, "Salves") else "",
-        )
-        self.TRSalvoIsMainSalvo = Table_Row(
-            "为主武器",
-            (
-                show_value(self.weapon.SalvoIsMainSalvo)
-                if hasattr(self.weapon, "SalvoIsMainSalvo")
-                else ""
-            ),
-        )
-
-    def BriefTable(self):
-        page = None
-        return page
-
-    def DetailComponent(self):
-        turret_name = []
-        turret_list = []
-
-        for index, turret_unit in enumerate(self.weapon.TurretDescriptorList):
-            tab = ""
-            tab += " & ".join(
-                (
-                    weapon.Ammunition.KeyName
-                    if hasattr(weapon.Ammunition, "KeyName")
-                    else str(weapon.Ammunition)
-                )
-                for weapon in turret_unit.MountedWeaponDescriptorList
-            )
-            turret_name.append(tab)
-            turret_list.append(TurretComponment(turret_unit).DetailComponent())
-
-        tabs = Tabs(turret_name, turret_list)
-        return tabs
-
-    def AsComponent(self):
-        table = Page_Content(
-            [
-                Row(
-                    [
-                        Col(
-                            TurretComponment(
-                                self.weapon.TurretDescriptorList[0]
-                            ).DetailComponent(),
-                            className="twelve columns",
-                        )
-                    ]
-                )
-            ]
-        )
-        tabs = TurretComponment(self.weapon.TurretDescriptorList[0]).DetailComponent()
-        return table
-
-    def AsPage(self):
-        tabs = self.DetailComponent()
-        header = Header(self.weapon_key)
-        page = Page(header, tabs)
-        return page
+            if hasattr(effect, 'TagListToRaise'):
+                Table_Row("为单位增加以下词条",effect.TagListToRaise)
+            if hasattr(effect, 'TextureToken'):
+                Table_Row("为单位显示以下图标",effect.TextureToken)
+            if hasattr(effect, 'CapacityToAdd'):
+                Table_Row("为单位增加以下能力",effect.CapacityToAdd)
+            if hasattr(effect, 'FutureTeam'):
+                Table_Row("为单位变更阵营",f"{effect.FutureTeam.TeamType}:{effect.Future.TeamNumber}")   
+                     

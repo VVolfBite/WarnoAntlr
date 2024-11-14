@@ -3,24 +3,24 @@ RAW_DATA_PATH = WORK_DIRECTORY + "/data/raw/V135139"
 EXTRACT_DATA_PATH = WORK_DIRECTORY + "/data/extract/V135139"
 PROCESSED_DATA_PATH = WORK_DIRECTORY + "/data/processed/V135139"
 
-CLASS_REGISTER_PATH =  WORK_DIRECTORY + "/src/parser/register_class"
+CLASS_REGISTER_PATH =  WORK_DIRECTORY + "/src/parsers/register_class"
 CLASS_JSON = CLASS_REGISTER_PATH + '/Rclass.json'
 CLASS_PY = CLASS_REGISTER_PATH + '/Rclass.py'
 
 PROCESS_FILE_LIST = [    
-    "/GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", # 光环
+    # "/GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", # 光环
     "/GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", # 效果
     # "/GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", # 条件
 
-    "/GameData/Generated/Gameplay/Gfx/Ammunition.ndf", # 弹药
-    "/GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf", # 导弹
-    "/GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf", # 武器
-    "/GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf", # 单位 
+    # "/GameData/Generated/Gameplay/Gfx/Ammunition.ndf", # 弹药
+    # "/GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf", # 导弹
+    # "/GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf", # 武器
+    # "/GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf", # 单位 
 
     # "/GameData/Generated/Gameplay/Gfx/DamageLevels.ndf", # 伤害等级
-    "/GameData/Generated/Gameplay/Gfx/DamageResistance.ndf", # 伤害防御表
-    "/GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf", # 伤害防御列表
-    "/GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf", # 穿深进化表
+    # "/GameData/Generated/Gameplay/Gfx/DamageResistance.ndf", # 伤害防御表
+    # "/GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf", # 伤害防御列表
+    # "/GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf", # 穿深进化表
 
     # "/GameData/Gameplay/Constantes/Strategic/GDConstantes.ndf",
     # "/GameData/Gameplay/Constantes/Airplane.ndf",

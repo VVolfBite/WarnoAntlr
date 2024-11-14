@@ -1,1002 +1,109 @@
 {
-    "TDeckDivisionRules": [
-        "DivisionRules"
-    ],
-    "TDeckDivisionRule": [
-        "UnitRuleList"
-    ],
-    "TDeckUniteRule": [
-        "UnitDescriptor",
-        "NumberOfUnitInPack",
-        "NumberOfUnitInPackXPMultiplier",
-        "AvailableTransportList",
-        "AvailableWithoutTransport"
-    ],
-    "TAirplaneConstantesModernWarfareDescriptor": [
-        "TempsEntreDeuxDecollagesEnSecondes",
-        "UtiliserArmesPendantEvac",
-        "EvacuationAltitudeGRU",
-        "EvacWinchesterToutesLesArmesPrincipales",
-        "FrontLandingGearMeshNodeName",
-        "BackLandingGearMeshNodeName"
-    ],
-    "TRoutConstants": [
-        "TestMoralNombreFacesDes",
-        "TempsEntreDeuxTestsMoralSeuilSuppression",
-        "TempsEntreDeuxTestsMoralPertePV",
-        "EffetConditionSuppression",
-        "LanceTestMoralSeuilSuppression",
-        "EffetAppliqueSuppression",
-        "LanceTestMoralPertePV",
-        "TestMoralNombreDes",
-        "TestMoralSeuil",
-        "SortieSeuilSuppression"
-    ],
-    "TEvaluationMenaceConstantesDescriptor": [
-        "EscapeRadiusGRU",
-        "DureeDeMemoireDeLaMenaceEnSecondes",
-        "CercleMenaceGRU",
-        "ConsidererLesMenacesEnMouvementCommeDirectes"
-    ],
-    "TSpecificFactoryResources": [
-        "FactoryDescriptions",
-        "FactoryDisplayOrder"
-    ],
-    "TSpecificFactoryDescription": [
-        "FactoryHintTitle",
-        "FactoryHintBody",
-        "FactoryName",
-        "FactoryHintExtended"
-    ],
-    "TActionPointConsumptionGridConstantsDescriptor": [
-        "TailleDeCaseApproximativeGRU",
-        "EpaisseurDeLaCourbe",
-        "TerrainsBloquants",
-        "CouleurDeLaCourbe",
-        "TerrainsRalentisseurs"
-    ],
-    "TBaseClass": [
-        "CaseSizeGRU",
-        "NotDefined",
-        "DependOfRange_Near",
-        "CaseSize",
-        "None",
-        "DependOfRange_Far"
-    ],
-    "TTunableConstante": [
-        "WithdrawalDuration",
-        "ShowroomMinSoldiersPerLine",
-        "DefaultTimeLimitInMinutes",
-        "TagBloquantLeMoveAndAttack",
-        "Color_ObserverDebugOutline",
-        "ForcerMarcheAvantPourAttaquer",
-        "AllowMultipleBuildingSelection",
-        "CadavreOffsetMax",
-        "MaxPullDistanceGRU",
-        "TempsEnSecondesEntreDeuxSmokeAutomatiques",
-        "AutoSmokeQuandRatioPvInferieurA",
-        "LargeurRouteGRU",
-        "RelativeScanningPositionGRU",
-        "ResaleDistanceGRU",
-        "Persistance_Bruit",
-        "TacticVictoryLevelConstantes",
-        "TimerRechercheDeCibleRiposte",
-        "EfficiencyShotSearchDistanceTolerance",
-        "CadavreOffsetMin",
-        "TimeLimitTable",
-        "MaxTerrainAngleForLanding",
-        "BaseAttackingAllianceNum",
-        "UtiliserMouvementRapideParDefaut",
-        "TagControleZone",
-        "DeploymentDuration",
-        "StunEffectDuration",
-        "DefaultGhostColors",
-        "AllowGhostCrossUnitSelection",
-        "FumigeneAlphaGhost",
-        "LaunchDeathAmmoOutmap",
-        "TempsAutoriseHorsMondePourMissileSansCible",
-        "DistancePourDeclencherMarcheArriereGRU",
-        "ShowroomOffsetBetweenLines",
-        "DureeRetraitControleZone",
-        "DistanceCoherenceGRU",
-        "PerteDeSuppressParPointDeVieEntierPerdu",
-        "OutmapShootPositionRelativeAltitude",
-        "EliminationWarningsDuration",
-        "MultiplicateurDistancePourBonusDissimulationGRU",
-        "Color_ObserverDebugFill",
-        "ConsidereUniteConcealmentSurTerrainAvecDissimulation",
-        "AutoCover_DistanceMaxEntreLesChecksDeTerrainsGRU",
-        "TagRadioArtillerie",
-        "TireursIgnoreesPourLaFuite",
-        "ReductionDegatsSuppressDansVehicule",
-        "UnitPositionVerticalOffsetFromRoofGRU",
-        "Color_OutmapDispersionAreaOutline",
-        "DefaultAIDifficultyForPlayerReplacement",
-        "TagRadioJammed",
-        "ShowroomNumberOfLines",
-        "SuddenDeathTime",
-        "AllowMixedSelection",
-        "CanUseAlliedAllianceCorridors",
-        "CommanderRadiusEffectByLevelGRU",
-        "RotationLignesDInfanterie",
-        "DureeDeploiementControleZone",
-        "ToleranceLargeurRoutePourMouvementsRapidesShiftes",
-        "AltitudeVolGRU",
-        "RatioPuissancePourRetaliation",
-        "AutoCover_TagEmpechantLAutocover",
-        "ShowroomOffsetBetweenSoldiers",
-        "DecalageDepuisLeCentreDansCouloirGRU",
-        "RapprocherFormationsSelonObstacles",
-        "PorteeRadioArtillerieGRU",
-        "ResalePriceRatio",
-        "FumigeneMaxCount",
-        "AngleArrierePourMarcheArriereEnDegre",
-        "DistanceMaxSmallMovementsInMeters",
-        "OutmapShootPositionPitch",
-        "MinimumNumberOfUnitToStayInGameWithoutCmdOrProductionInDestructionMode",
-        "OutmapShootPositionYaw",
-        "LandingPositionTimePredictionInSeconds",
-        "CooldownBeforeKillInSeconds",
-        "Color_OutmapDispersionAreaFill",
-        "CommanderEffect",
-        "TagDecrochage",
-        "MaxPullDistanceForAirplaneGRU",
-        "FumigeneTimeout"
-    ],
-    "TGhostColors": [
-        "GhostBlends",
-        "GhostColor",
-        "GhostAlphas"
-    ],
-    "TVictoryLevelConstantes": [
-        "PalierVictoireMineure",
-        "PalierVictoireMajeure",
-        "PalierVictoireTotale"
-    ],
-    "TModernWarfareTunableConstante": [
-        "FrontSideAngleInDeg",
-        "TempsSansTirNiDamagePourPasserHorsCombat",
-        "TagStunned",
-        "TandemModifierType",
-        "LinkToCommonConstantes",
-        "SpreadDistanceUnitGRU",
-        "RearSideAngleInDeg",
-        "IgnoreTirPenetrantSiAucunBlindage",
-        "RefreshBestPlaceEveryNbSeconds",
-        "SplashCollisionPlanes",
-        "NbSalveDesignatedShot",
-        "MargePourLesTestsDeSortieDeDistrictLBU",
-        "MoteurHelicos_TempsDemarrage",
-        "TagUberstress",
-        "ArtilleryDispersionTargetNotVisible",
-        "DensitePointsRecherchePosition",
-        "MultiplicateurConsommationUnitesArretees",
-        "FuirDistrictEnFeu",
-        "MergeAllWeaponOnSameTurretInUI",
-        "TransformerAttackEnMoveSiPasDArmeAdaptee",
-        "AdditionalSuppressDamagePerLostPhysicalDamage",
-        "ShootingAdjustmentAngleMax",
-        "TempsSansStressPourRegen",
-        "TagNonRadarTargetable",
-        "RegenStressParSeconde",
-        "FacteurMinTempsViseeReel",
-        "MoteurHelicos_TempsArret",
-        "DurationForLeavingDistrict",
-        "TandemModifierValue",
-        "DistanceToAddToEnnemiDetectionForOtherWeaponGRU",
-        "ClustersDimensionMaxGRU",
-        "PorteeMinArmeEstConsidereCommeArtillerieGRU",
-        "SplashSurTirRate",
-        "SplashRatioDistance",
-        "DistanceMinFleeFireGRU",
-        "DistanceRelaunchMouvementForMoveAndAttackGRU",
-        "DistanceInfanterieEnnemiDetectionGRU",
-        "DistanceToAddToEnnemiDetectionForAAWeaponGRU",
-        "TagAllowedForMissileRoE",
-        "RelativeBonusMoneyByIADifficulty",
-        "DistanceFriendlyFireGRU",
-        "RatioSupplyAmmoAndFuel",
-        "DistanceToAddToEnnemiDetectionForAntiProjectileWeaponGRU",
-        "SpreadDistanceGroupGRU",
-        "DureeDeRevelationApresAttaque",
-        "SplashRatioDamage"
-    ],
-    "TWargameTunableConstante": [
-        "IncomeMultiplierTokensInDestructionMode",
-        "MaxNbMergedUnitsInGroup",
-        "PlatingAndApDisplayFactor",
-        "ValeurMinAffichageBarMoralLabel",
-        "OrdersAcceptedByTransporterIfTransportedUnitsCanDo",
-        "UpkeepPercentAvailableSettings",
-        "TimeBeforeEarningConquestPoints",
-        "RelativeBonusFluxByIADifficulty",
-        "InfantryTrenchDepthGRU",
-        "UpkeepReductionByIADifficulty",
-        "CommandUnitToSpawnForNation",
-        "DefaultMoneyWinPerAllianceRateInConquestMode",
-        "PaliersDOptique",
-        "BaseIncome",
-        "ValeurMinimumCoverLeger",
-        "DeckUnitExpLevelAdditiveModifierByIADifficulty",
-        "TagDInfanteriePinned",
-        "ValeurMinimumCoverMoyen",
-        "DefaultIncomeMultiplierIndexInDestructionMode",
-        "ValeurOptionTailleNewLabelSmall",
-        "TimeBeforeEarningCommandPointsFactorToAddByNbPlayers",
-        "WargameBuildingAllowedTerrainsMask",
-        "OrderBlockedWhenOutOfFuel",
-        "ValeurOptionTailleNewLabelVeryLarge",
-        "IncomeMultiplier",
-        "VictoryTypeDestructionLevelsTable",
-        "PaliersDAgiliteGRU",
-        "MoneyWinLocalisationTokensInConquestMode",
-        "DissimulationEnumToValue",
-        "CoeffMoneyMaxIfUsingUpkeep",
-        "AmphibiousSpawnLandSeaRatio",
-        "ValeurOptionTailleNewLabelNormal",
-        "PaliersDeDissimulation",
-        "ValeurOptionTailleNewLabelVerySmall",
-        "FactoriesWhichNeverCloseProductionMenuAfterValidation",
-        "PaliersDOptiqueDAltitude",
-        "ConquestPointsDefaultIndex",
-        "TempsAttenteAffichageIconeConflitQuartier",
-        "ValeurMinimumCoverTresLeger",
-        "DeckUnitCountMultiplierByIADifficulty",
-        "UpkeepPercentDefaultSetting",
-        "ConquestPossibleScores",
-        "ArgentInitialSetting",
-        "ValeurOptionTailleNewLabelMinimal",
-        "PaliersDeVitesse",
-        "DefaultIncomeMultiplierIndex",
-        "NomDAffichageDesUnitesNonIdentifiees",
-        "ValeurMaxBarMoralLabel",
-        "DefaultArgentInitial",
-        "TimeBeforeEarningCommandPoints",
-        "UnitValueLimitForSurrender",
-        "ValeurOptionTailleNewLabelLarge",
-        "MoneyWinPerAllianceInConquestMode",
-        "PaliersDeResilience",
-        "ArgentInitialMinimumPourGererLIA",
-        "DestructionScoreToReachSetting",
-        "IncomeMultiplierInDestructionMode",
-        "CommandUnitToSpawnOverWaterForNation"
-    ],
-    "TRollParameters": [
-        "PiercingThresholdBias",
-        "InterpolateRangeTable",
-        "MinimalHitChanceWithECM",
-        "DicesNumberFaces",
-        "RangeModifiersTable",
-        "DistanceToleranceGRU",
-        "SuccessiveHitModifiersTable"
-    ],
-    "TSupplyDescriptor": [
-        "FuelSupplyBySecond",
-        "FeedbackDrawer",
-        "SupplySupplyBySecond",
-        "AmmunitionSupplyBySecond",
-        "CriticsSupplyCostBySecond",
-        "DefaultSupplyRangeGRU",
-        "HealthSupplyCostBySecond",
-        "SupplySupplyCostBySecond",
-        "FuelSupplyCostBySecond",
-        "CriticsSupplyBySecond",
-        "HealthSupplyBySecond"
-    ],
-    "TSupplyFeedbackDrawer": [
-        "FeedbackDescriptor",
-        "ZOffset",
-        "LineColor",
-        "LineThickness"
-    ],
-    "TSupplyFeedbackDescriptor": [
-        "FeedbackScreenResilienceDuration",
-        "FeedbackFadeOutTime"
-    ],
-    "TTransportConstantesDescriptor": [
-        "MaximalSpeedToUnload"
-    ],
-    "TVisionConstantesDescriptor": [
-        "PorteeDeVisionGlobaleGRU"
-    ],
-    "TWeaponConstantsDescriptor": [
-        "DefaultStressMultiplier",
-        "SuppressDamagePerFamily",
-        "PierceBonusForDamageFamilies",
-        "EfficientShotMinPenetration",
-        "DefaultMimeticProjectile",
-        "DefaultSuppressDamage",
-        "BlindagesToIgnoreForDamageFamilies",
-        "DefensiveSmokeRangeMaxGRU",
-        "ResistanceFamiliesNeedPiercing",
-        "StressMultiplierPerDamageFamily",
-        "DamageTypeToMimeticProjectile",
-        "EfficientShotMinAccuracy",
-        "ResistanceToMimeticImpact"
-    ],
-    "TDamageTypeRTTI": [
-        "Index",
-        "Family"
-    ],
-    "TBombAttackStrategyDescriptor": [],
-    "TDiveAttackStrategyDescriptor": [
-        "MinDiveAlignmentDuration",
-        "MaxPitchForDiveInDegree",
-        "MinPitchForDiveInDegree"
-    ],
-    "TDiveMissileAttackStrategyDescriptor": [
-        "MinDiveAlignmentDuration",
-        "MaxPitchForDiveInDegree",
-        "MinPitchForDiveInDegree"
-    ],
-    "TDiveBombAttackStrategyDescriptor": [
-        "DiveBombRecoveryDuration",
-        "MinPitchForDiveBombInDegree",
-        "PitchForDiveBombInDegree",
-        "MaxPitchForDiveBombInDegree"
-    ],
-    "TDogfightAttackStrategyDescriptor": [
-        "SpeedRatioForAttackOnVerySlowAirplaneStrategy",
-        "SpeedRatioForAttackOnSlowAirplaneStrategy",
-        "AngleToFakeTargetPositionInDegree",
-        "MaxDistanceBetweenFighterAndTargetForLateralMoveOnSlowAirplaneStrategy",
-        "MinDistanceBetweenFighterAndTargetForAttackOnSlowAirplaneStrategy",
-        "MaxAngleToConsiderTargetAheadInDegree",
-        "MaxAngleDifferenceWithTargetInDegree"
-    ],
-    "TStukaNosediveAttackStrategyDescriptor": [
-        "AgilityMultiplicator",
-        "DistanceNosediveGRU",
-        "WaypointDistanceFromTargetGRU"
-    ],
-    "TAirGroundMissileAttackStrategyDescriptor": [],
-    "TWeaponTypePrioritiesHolder": [
-        "Score_OutOfRange",
-        "WeaponTypes",
-        "DistanceToConsiderAsFarGRU",
-        "Score_OnRange"
-    ],
-    "TWreckageConstantsDescriptor": [
-        "ExploserQuandEcrase",
-        "DetruireQuandEcrase",
-        "MultiplicateurMasseObstacle"
-    ],
-    "TGameplayTerrain": [
-        "WorldLayerActiveMask",
-        "BloqueInfanterie",
-        "HeightInMeters",
-        "ConcealmentBonus",
-        "BloqueAmphibie",
-        "Name",
-        "BloqueAtterrissage",
-        "DissimulationModifierGroundAir",
-        "SpeedModifierTrack",
-        "SpeedModifierAllTerrainWheel",
-        "AuthorizeNearGroundFlying",
-        "DissimulationModifierGroundGround",
-        "TerrainType",
-        "DamageModifierPerFamilyAndResistance",
-        "BloqueVehicule",
-        "CriticalEffectProbability",
-        "DebugColor",
-        "InflammabilityProbability",
-        "BloqueVision",
-        "SpeedModifierInfantry"
-    ],
-    "TCriticalEffectModuleDescriptor": [
-        "PierceEffectsOnRear",
-        "RicochetEffectsOnRear",
-        "TerrainCriticalEffectTimer",
-        "PierceEffectsOnFront",
-        "Bounds",
-        "EffectsOnRear",
-        "EffectsOnSides",
-        "EffectsFromTerrain",
-        "EffectsOnFront",
-        "RicochetEffectsOnSides",
-        "PierceEffectsOnTop",
-        "RicochetEffectsOnTop",
-        "RicochetEffectsOnFront",
-        "EffectsOnTop",
-        "PierceEffectsOnSides"
-    ],
-    "AirplaneCriticalEffect_WingsDamaged": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_EngineOnFire": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_PropellerDamaged": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_EngineDamaged": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_FloatCarburatorFailure": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_OilLeak": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_EngineOverheating": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_EngineStalling": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_ElevatorDamaged": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_FuelTankLeaking": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_RadiatorDamaged": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_RadiatorOverheating": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_PilotInjured": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_PilotPanicked": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_PilotUnconscious": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_WeaponsJammed": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_AileronDamaged": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_TailDamaged": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_FuelTankOnFire": [
-        "Roll"
-    ],
-    "AirplaneCriticalEffect_RudderDamaged": [
-        "Roll"
-    ],
-    "TemplateCriticalEffectModule_GroundUnit": [
-        "EffectsFromTerrain",
-        "PackEffetCritique"
-    ],
-    "HelicoCriticalEffect_HUD": [
-        "Roll"
-    ],
-    "HelicoCriticalEffect_CrewInjured": [
-        "Roll"
-    ],
-    "HelicoCriticalEffect_MainRotorDamaged": [
-        "Roll"
-    ],
-    "HelicoCriticalEffect_Turbine_Engine_Failure": [
-        "Roll"
-    ],
-    "HelicoCriticalEffect_turbineOnFire": [
-        "Roll"
-    ],
-    "HelicoCriticalEffect_FuelTankOnFire": [
-        "Roll"
-    ],
-    "HelicoCriticalEffect_FuelTankLeaking": [
-        "Roll"
-    ],
-    "HelicoCriticalEffect_WeaponsJammed": [
-        "Roll"
-    ],
-    "HelicoCriticalEffect_Hydraulic_Fluid_Fire": [
-        "Roll"
-    ],
-    "HelicoCriticalEffect_TailRotorDamaged": [
-        "Roll"
-    ],
-    "TEntityDescriptor": [
-        "World",
-        "DescriptorId",
-        "ModulesDescriptors",
-        "ClassNameForDebug"
-    ],
-    "TTypeUnitModuleDescriptor": [
-        "Nationalite",
-        "TypeUnitFormation",
-        "MotherCountry",
-        "AcknowUnitType"
-    ],
-    "TPositionModuleDescriptor": [
-        "InGeoDb"
-    ],
-    "TApparenceModelModuleDescriptor": [
-        "ReferenceMesh",
-        "DefaultVisibility",
-        "Depiction"
-    ],
-    "Template_DescriptorFire_Depiction": [
-        "Density",
-        "Radius",
-        "FX"
-    ],
-    "TFireModuleDescriptor": [
-        "OverridenSpreadDescriptor",
-        "IsNewFireProbability",
-        "TimeToLive",
-        "IgniteDistricts",
-        "TimeBetweenBurns",
-        "TimeBeforeSpreading",
-        "TimeBeforeSpreadAttempt",
-        "RadiusGRU",
-        "AmmunitionForBurn",
-        "SmokeDescriptor",
-        "SpreadProbability"
-    ],
-    "TLinkTeamModuleDescriptor": [],
-    "TAmmunitionDescriptor": [
-        "IsSubAmmunition",
-        "TargetOnlyOneUnitInDistrict",
-        "WeaponForceNote",
-        "ImpactHappening",
-        "FireDescriptor",
-        "PiercingWeapon",
-        "IsHarmlessForAllies",
-        "TirIndirect",
-        "InterdireTirReflexe",
-        "AllowSuppressDamageWhenNoImpact",
-        "CorrectedShotAimtimeMultiplier",
-        "IgnoreInflammabilityConditions",
-        "TempsEntreDeuxFx",
-        "PorteeMinimaleHAGRU",
-        "TypeCategoryName",
-        "CorrectedShotDispersionMultiplier",
-        "SupplyCost",
-        "FluidFriction",
-        "DispersionAtMaxRangeGRU",
-        "DamageTypeEvolutionOverRangeDescriptor",
-        "MissileDescriptor",
-        "WeaponDescriptionToken",
-        "FireTriggeringProbability",
-        "Guidance",
-        "TempsEntreDeuxSalves_Min",
-        "ProjectileType",
-        "PorteeMinimaleGRU",
-        "CanHarmAirplanes",
-        "AngleDispersion",
-        "Caliber",
-        "TirReflexe",
-        "MaximalSpeedGRU",
-        "PhysicalDamages",
-        "AltitudeAPorteeMaximaleGRU",
-        "TempsDeVisee",
-        "RadiusSplashPhysicalDamagesGRU",
-        "MaxAccelerationGRU",
-        "AffecteParNombre",
-        "FlightTimeForSpeed",
-        "MaxSuccessiveHitCount",
-        "TempsEntreDeuxSalves",
-        "SuppressDamages",
-        "MissileTimeBetweenCorrections",
-        "CanShootWhileMoving",
-        "NoiseDissimulationMalus",
-        "IsFireAndForget",
-        "InterfaceWeaponTexture",
-        "FxPower",
-        "TandemCharge",
-        "TempsEntreDeuxTirs",
-        "Name",
-        "ShotWithoutPhysics",
-        "DescriptorId",
-        "ShowDamageInUI",
-        "DispersionWithoutSorting",
-        "MinMaxCategory",
-        "PorteeMaximaleHAGRU",
-        "AffichageMunitionParSalve",
-        "ForceHitTopArmor",
-        "TraitsToken",
-        "DisplaySalveAccuracy",
-        "RadiusSplashSuppressDamagesGRU",
-        "DispersionAtMinRangeGRU",
-        "HitRollRuleDescriptor",
-        "NbTirParSalves",
-        "TempsEntreDeuxSalves_Max",
-        "AltitudeAPorteeMinimaleGRU",
-        "Arme",
-        "ShotsBeforeMaxNoise",
-        "PorteeMaximaleGRU",
-        "WeaponCursorType",
-        "PorteeMaximaleTBAGRU",
-        "PorteeMinimaleTBAGRU",
-        "NbSalvosShootOnPosition",
-        "TargetUnitCenter",
-        "CanShootOnPosition",
-        "NbrProjectilesSimultanes",
-        "DistanceForSpeedGRU",
-        "SmokeDescriptor"
-    ],
-    "TDiceHitRollRuleDescriptor": [
-        "DescriptorId",
-        "BaseCriticModifier",
-        "BaseHitValueModifiers",
-        "DistanceToTarget"
-    ],
-    "Template_DescriptorSmoke_Depiction": [
-        "Height",
-        "Density",
-        "Radius"
-    ],
-    "TSmokeModuleDescriptor": [
-        "TimeToLive",
-        "Terrain",
-        "RadiusGRU",
-        "AltitudeGRU"
-    ],
-    "DeckPackDescriptor": [
-        "Transport",
-        "Unit",
-        "Xp"
-    ],
-    "TDeckDescriptor": [
-        "DeckCombatGroupList",
-        "DeckDivision",
-        "DeckName",
-        "DeckPackList",
-        "DeckIdentifier"
-    ],
-    "TDeckCombatGroupDescriptor": [
-        "Name",
-        "SmartGroupList"
-    ],
-    "TDeckSmartGroupDescriptor": [
-        "Name",
-        "PackIndexUnitNumberList"
-    ],
-    "TDeckDescriptorList": [
-        "DeckListForIdentifier",
-        "DeckListForAutoFill"
-    ],
-    "TDeckSerializer": [
-        "UnitIds",
-        "DivisionIds"
-    ],
-    "TDeckDivisionList": [
-        "DivisionList"
-    ],
-    "TDeckDivisionDescriptor": [
-        "DivisionNationalite",
-        "DivisionTags",
-        "DivisionPowerClassification",
-        "MaxActivationPoints",
-        "DescriptionHintTitleToken",
-        "DescriptorId",
-        "DivisionName",
-        "EmblemTexture",
-        "PackList",
-        "CountryId",
-        "PortraitTexture",
-        "StrategicLabelColor",
-        "TypeTexture",
-        "CostMatrix",
-        "CfgName"
-    ],
-    "TExperienceModuleDescriptor": [
-        "ExperienceGainBySecond",
-        "ExperienceLevelsPackDescriptor",
-        "CanWinExperience",
-        "ExperienceMultiplierBonusOnKill"
-    ],
-    "TSupplyModuleDescriptor": [
-        "SupplyCapacity",
-        "SupplyDescriptor",
-        "SupplyPriority"
-    ],
-    "TBaseDamageModuleDescriptor": [
-        "SuppressDamageLevelsPack",
-        "MaxPhysicalDamages",
-        "StunDamageLevelsPack",
-        "MaxStunDamages",
-        "PhysicalDamageLevelsPack",
-        "MaxSuppressionDamages"
-    ],
-    "TDamageModuleDescriptor": [
-        "SuppressDamagesRegenRatio",
-        "HitRollECM",
-        "KillWhenDamagesReachMax",
-        "UseTopArmorAgainstFire",
-        "StunDamagesRegen",
-        "BlindageProperties",
-        "AutoOrientation"
-    ],
-    "TBlindageProperties": [
-        "ResistanceFront",
-        "ResistanceRear",
-        "ResistanceTop",
-        "ExplosiveReactiveArmor",
-        "ResistanceSides"
-    ],
-    "TResistanceTypeRTTI": [
-        "Index",
-        "Family"
-    ],
-    "TVisibilityModuleDescriptor": [
-        "UnitConcealmentBonus",
-        "VisionUnitType"
-    ],
-    "TReverseScannerWithIdentificationDescriptor": [
-        "VisibilityRollRule"
-    ],
-    "TModernWarfareVisibilityRollRule": [
-        "VisibilityRuleDescriptor",
-        "TimeBetweenEachIdentifyRoll",
-        "IdentifyBaseProbability",
-        "DistanceMultiplierRule"
-    ],
-    "TModernWarfareDistanceMultiplierRollRuleDescriptor": [
-        "MultiplicateurAPorteeMinimaleEnMouvement",
-        "MultiplicateurAPorteeMinimale",
-        "MultiplicateurAPorteeMaximale",
-        "MultiplicateurAPorteeMaximaleEnMouvement",
-        "ExposantEnMouvement",
-        "Exposant"
-    ],
-    "BuildingApparenceModelModuleDescriptor": [
-        "BlackHoleIdentifier",
-        "SymbolName"
-    ],
-    "TCadavreGeneratorModuleDescriptor": [
-        "CadavreDescriptor"
-    ],
-    "TIAStratModuleDescriptor": [
-        "DatabaseId",
-        "GameplayBehavior"
-    ],
-    "TProductionModuleDescriptor": [
-        "ProductionRessourcesNeeded",
-        "Factory",
-        "ProductionTime"
-    ],
-    "TTacticalLabelModuleDescriptor": [
-        "IdentifiedTexture",
-        "MultiSelectionSortingOrder",
-        "NbSoldiers",
-        "PositionHeightOffset",
-        "UnidentifiedTexture"
-    ],
-    "TBUCKToolAlternativeValues_TUIValueTextureNameFromTEugBMutableInteger": [
-        "Values",
-        "CommandNameTrigger",
-        "Alterator"
-    ],
-    "TUnitUpkeepModuleDescriptor": [
-        "UpkeepPercentage"
-    ],
-    "TUnitUIModuleDescriptor": [
-        "SpecialtiesList",
-        "DisplayRoadSpeedInKmph",
-        "UpgradeFromUnit",
-        "UnitRole",
-        "NameToken",
-        "CountryTexture",
-        "GenerateName",
-        "ButtonTexture",
-        "TypeStrategicCount",
-        "InfoPanelConfigurationToken",
-        "MenuIconTexture"
-    ],
-    "TCapaciteDescriptor": [
-        "TargetInBuilding",
-        "SelfEffect",
-        "RangeGRU",
-        "MaxTargetNb",
-        "TargetTeamFilter",
-        "NameToken",
-        "DisplayRangeColor",
-        "TargetEffectDuration",
-        "TargetMySelf",
-        "CanBeCastFromTransport",
-        "TargetWoundedFilter",
-        "Name",
-        "DescriptorId",
-        "AreaShape",
-        "DisplayRangeThickness",
-        "TargetEffect",
-        "Cooldown",
-        "InfluenceMapAlliance",
-        "CheckVisibility",
-        "Price",
-        "InfluenceMapType",
-        "Declenchement",
-        "TargetInTransport",
-        "OrderMustSpreadTargets",
-        "ActionRadiusWithBoundingBox",
-        "FeedbackActivationMask",
-        "SelfEffectDuration",
-        "CumulEffect",
-        "MultiplyCost",
-        "TagsCibleExcluded",
-        "AllowReflexDuringCast",
-        "TagsCiblePossible",
-        "MinVirtualUnits",
-        "TypeCible",
-        "RadiusGRU",
-        "Conditions",
-        "CastTime",
-        "TargetInSelf"
-    ],
-    "TConditionTagRaisedInUnit": [
-        "Tag",
-        "DescriptorId",
-        "Amount"
-    ],
-    "TConditionTagNotRaisedInUnit": [
-        "Tag",
-        "DescriptorId",
-        "Amount"
-    ],
-    "TConditionNotInMovement": [
-        "DescriptorId"
-    ],
-    "TDamageLevelsPackDescriptor": [
-        "DescriptorId",
-        "NameForDebug",
-        "DamageLevelsDescriptors"
-    ],
-    "TDamageLevelDescriptor": [
-        "MoralModifier",
-        "EffectsPacks",
-        "DescriptorId",
-        "NameForDebug",
-        "FeedbackOnSelf",
-        "TextColor",
-        "AnimationType",
-        "HitRollModifier",
-        "LocalizationToken",
-        "Value"
-    ],
-    "TGameplayDamageResistanceContainer": [
-        "ResistanceFamilyDefinitionList",
-        "DamageFamilyDefinitionList",
-        "Values"
-    ],
-    "TResistanceTypeFamilyDefinition": [
-        "Family",
-        "MaxIndex"
-    ],
-    "TDamageTypeFamilyDefinition": [
-        "Family",
-        "MaxIndex"
-    ],
-    "TResistanceFamilyList": [
-        "Values"
-    ],
-    "TDamageFamilyList": [
-        "Values"
-    ],
-    "TStairsDamageTypeEvolutionOverRangeDescriptor": [
-        "AP",
-        "DistanceGRU"
-    ],
-    "TDistrictUnitsContainerModuleDescriptor": [
-        "AllowedTagSet",
-        "NbSlots"
-    ],
-    "TDynamicTerrainModuleDescriptor": [
-        "TerrainToApplyOnInit",
-        "TerrainToApplyOnDeath"
-    ],
-    "TShootingPointsModuleDescriptor": [],
-    "TMinimapDisplayModuleDescriptor": [
-        "FollowUnitOrientation",
-        "Texture"
-    ],
-    "TGameplayEffectsPacksList": [
-        "EffectsPacks"
-    ],
     "TEffectsPackDescriptor": [
         "DescriptorId",
         "EffectsDescriptors",
         "NameForDebug"
     ],
-    "TUnitEffectIncreaseWeaponDispersionMaxRangeDescriptor": [
-        "ModifierType",
-        "ModifierValue"
+    "TUnitEffectIncreaseWeaponMaxRangeDescriptor": [
+        "",
+        ""
     ],
     "TUnitEffectRaiseTagDescriptor": [
-        "TagListToRaise"
+        ""
     ],
     "TUnitEffectShowLabelIconDescriptor": [
-        "TextureToken"
+        ""
     ],
     "TUnitEffectIncreaseDamageTakenDescriptor": [
-        "ModifierType",
-        "DamageType",
-        "BonusDamage"
+        "",
+        "",
+        ""
     ],
-    "TStrategicSupplyMalusEffectDescriptor": [
-        "SupplyMalus",
-        "ModifierType"
+    "TStrategicEffectDescriptor": [
+        "",
+        ""
     ],
     "TUnitEffectIncreaseInfluenceValueDescriptor": [
-        "ModifierType",
-        "Bonus"
+        "",
+        ""
     ],
     "TUnitEffectIncreaseWeaponPorteeMaxDescriptor": [
-        "ModifierType",
-        "ModifierValue",
-        "ModifierValueGRU"
+        "",
+        "",
+        ""
     ],
     "TUnitEffectIncreaseWeaponPorteeMaxHADescriptor": [
-        "ModifierType",
-        "ModifierValue",
-        "ModifierValueGRU"
+        "",
+        "",
+        ""
     ],
     "TUnitEffectIncreaseWeaponPorteeMaxProjectileDescriptor": [
-        "ModifierType",
-        "ModifierValue",
-        "ModifierValueGRU"
+        "",
+        "",
+        ""
     ],
     "TUnitEffectIncreaseWeaponPorteeMaxTBADescriptor": [
-        "ModifierType",
-        "ModifierValue",
-        "ModifierValueGRU"
+        "",
+        "",
+        ""
     ],
-    "TUnitEffectIncreaseDispersionDescriptor": [
-        "ModifierType",
-        "BonusDispersion"
+    "TUnitEffectIncreaseDescriptor": [
+        "",
+        ""
     ],
     "TUnitEffectAlterWeaponTempsEntreDeuxSalvesDescriptor": [
-        "ModifierType",
-        "ModifierValue"
+        "",
+        ""
     ],
     "TUnitEffectAlterWeaponTempsEntreDeuxTirsDescriptor": [
-        "ModifierType",
-        "ModifierValue"
+        "",
+        ""
     ],
-    "TUnitEffectIncreaseChassisRotationSpeedDescriptor": [
-        "ModifierType",
-        "BonusChassisRotationSpeed"
+    "TUnitEffectIncreaseDescriptor": [
+        "",
+        ""
     ],
-    "TUnitEffectIncreaseTurretRotationSpeedDescriptor": [
-        "ModifierType",
-        "BonusTurretRotationSpeed"
+    "TUnitEffectIncreaseDescriptor": [
+        "",
+        ""
     ],
     "TUnitEffectIncreaseSpeedDescriptor": [
-        "ModifierType",
-        "BonusSpeedBaseInPercent"
+        "",
+        ""
     ],
-    "TBonusWeaponAimtimeEffectDescriptor": [
-        "ModifierType",
-        "ModifierValue"
+    "TWeaponAimtimeEffectDescriptor": [
+        "",
+        ""
     ],
-    "TUnitEffectBonusExperienceLevelDescriptor": [
-        "ModifierType",
+    "TUnitEffectExperienceLevelDescriptor": [
+        "",
         "ExperienceLevelModifier"
     ],
-    "TUnitEffectIncreaseDangerousnessDescriptor": [
-        "ModifierType",
-        "BonusDangerousness"
+    "TUnitEffectIncreaseDescriptor": [
+        "",
+        ""
     ],
     "TUnitEffectTransportSlotNumberModificationDescriptor": [
-        "ModifierType",
-        "EffectOnTransportSlotNumber"
+        "",
+        ""
     ],
     "TUnitEffectIncreaseWeaponPhysicalDamagesDescriptor": [
-        "ModifierType",
-        "ModifierValue"
+        "",
+        ""
     ],
     "TUnitEffectIncreaseVisionDescriptor": [
-        "ModifierType",
-        "BonusVisionBase"
+        "",
+        "VisionBase"
     ],
     "TUnitEffectIncreaseSpecializedDetectionDescriptor": [
-        "BonusValueGRU",
-        "ModifierType",
-        "BonusValue",
-        "VisionType"
+        "",
+        "Value",
+        "VisionType",
+        "Value"
     ],
     "TUnitEffectIncreaseInfluenceValueMinDescriptor": [
-        "ModifierType",
-        "Bonus"
+        "",
+        ""
     ],
     "TUnitEffectSetSelectableDescriptor": [
         "Selectable"
@@ -1006,364 +113,57 @@
     ],
     "TDerouteUnitEffectDescriptor": [],
     "TEffectInflictPhysicalDamageDescriptor": [
-        "ModifierType",
+        "",
         "PhysicalDamageValue"
     ],
     "TUnitEffectIncreaseWeaponPrecisionArretDescriptor": [
-        "ModifierType",
-        "ModifierValue"
+        "",
+        ""
     ],
     "TUnitEffectIncreaseWeaponPrecisionMouvementDescriptor": [
-        "ModifierType",
-        "ModifierValue"
+        "",
+        ""
     ],
     "TUnitEffectRemoveUnitDescriptor": [],
     "TKillUnitEffectDescriptor": [],
     "TEffectInflictSuppressDamageDescriptor": [
-        "ModifierType",
+        "",
         "SuppressDamageValue"
     ],
-    "TUnitEffectBonusPrecisionWhenTargetedDescriptor": [
-        "ModifierType",
-        "BonusPrecisionWhenTargeted"
+    "TUnitEffectPrecisionWhenTargetedDescriptor": [
+        "",
+        "PrecisionWhenTargeted"
     ],
     "TUnitEffectIncreaseOpticalStrengthDescriptor": [
-        "ModifierType",
-        "BonusOpticalStrength"
+        "",
+        "OpticalStrength"
     ],
     "TUnitEffectIncreaseWeaponPorteeMaxIgnoreSmokeDescriptor": [
-        "ModifierType",
-        "BonusWeaponPorteeMax"
+        "",
+        "WeaponPorteeMax"
     ],
     "TUnitEffectReplaceArmorDescriptor": [
-        "ReplacementBlindage",
-        "BlindageLocation"
+        "BlindageLocation",
+        "ReplacementBlindage"
     ],
-    "TUnitEffectIncreaseConcealmentBonusDescriptor": [
-        "ModifierType",
-        "BonusConcealmentBonus"
+    "TResistanceTypeRTTI": [
+        "Family",
+        "Index"
+    ],
+    "TUnitEffectIncreaseConcealmentDescriptor": [
+        "",
+        "Concealment"
     ],
     "TUnitEffectHealOverTimeDescriptor": [
+        "",
         "NbUpdatePerSecond",
-        "DamageType",
         "HealUnitsPerSecond"
     ],
     "TUnitEffectChangeTeamDescriptor": [
-        "FutureTeam"
-    ],
-    "TTeamIdentifierForUnitEffect": [
-        "TeamType",
-        "TeamNumber"
+        ""
     ],
     "TUnitEffectAddCapacityDescriptor": [
-        "CapacityToAdd"
+        ""
     ],
-    "TEvacAirplaneEffectDescriptor": [],
-    "TExperienceLevelsPackDescriptor": [
-        "DescriptorId",
-        "ExperienceLevelsDescriptors",
-        "NameForDebug"
-    ],
-    "TExperienceLevelDescriptor": [
-        "DescriptorId",
-        "NameForDebug",
-        "LevelEffectsPacks",
-        "HintTitleToken",
-        "HintBodyToken",
-        "IconsByNationality",
-        "ThresholdPriceMultiplier",
-        "LocalizationToken",
-        "ThresholdAdditionalValue"
-    ],
-    "TMissileCarriageConnoisseur": [
-        "WeaponInfos",
-        "PylonSet",
-        "MeshDescriptor"
-    ],
-    "TMissileCarriageWeaponInfo": [
-        "Count",
-        "MissileType",
-        "WeaponIndex",
-        "MountingType",
-        "MeshDescriptor"
-    ],
-    "TMissileCarriageSubDepictionGenerator": [
-        "Pylons",
-        "ReferenceMesh",
-        "Missiles",
-        "MissileCarriageConnoisseur"
-    ],
-    "TMissileCarriageSubDepictionMissileInfo": [
-        "WeaponIndex",
-        "MissileIndex",
-        "Depiction"
-    ],
-    "TemplateDepictionMissileGroundUnit": [
-        "ProjectileModelResource",
-        "MissileNumber",
-        "PhysicalProperty"
-    ],
-    "TStaticMissileCarriageSubDepictionGenerator": [
-        "Pylons",
-        "ReferenceMesh",
-        "Missiles",
-        "MissileCarriageConnoisseur"
-    ],
-    "TStaticMissileCarriageSubDepictionMissileInfo": [
-        "WeaponIndex",
-        "Depiction",
-        "MissileCount"
-    ],
-    "TemplateDepictionMissileShowroom": [
-        "ProjectileModelResource"
-    ],
-    "TDepictionDescriptor": [
-        "MeshDescriptor",
-        "SelectorId"
-    ],
-    "TemplateDepictionStaticMissilesGroundUnit": [
-        "ProjectileModelResource",
-        "PhysicalProperty"
-    ],
-    "TemplateDepictionStaticMissilesAirUnit": [
-        "ProjectileModelResource",
-        "PhysicalProperty"
-    ],
-    "TemplateUnitCriticalModule": [
-        "Module"
-    ],
-    "TTagsModuleDescriptor": [
-        "TagSet"
-    ],
-    "VehicleApparenceModelModuleDescriptor": [
-        "ReferenceMesh",
-        "GameplayBBoxBoneName",
-        "BlackHoleIdentifier",
-        "Depiction"
-    ],
-    "TAutoCoverModuleDescriptor": [
-        "TerrainList",
-        "OccupationRadiusGRU",
-        "AutoCoverRangeGRU",
-        "TerrainListMask",
-        "UseTerrainsForEscape"
-    ],
-    "TModuleSelector": [
-        "Selection",
-        "Default"
-    ],
-    "TDangerousnessModuleDescriptor": [
-        "Dangerousness"
-    ],
-    "TRoutModuleDescriptor": [
-        "MoralLevel"
-    ],
-    "TGenericMovementModuleDescriptor": [
-        "PathfindType",
-        "MaxSpeedInKmph"
-    ],
-    "TLandMovementModuleDescriptor": [
-        "StartTime",
-        "RotationStopTime",
-        "MaxDecelerationGRU",
-        "StopTime",
-        "RotationStartTime",
-        "SpeedBonusFactorOnRoad",
-        "UnitMovingType",
-        "MaxAccelerationGRU",
-        "TempsDemiTour",
-        "VehicleSizeInMeter"
-    ],
-    "TFuelModuleDescriptor": [
-        "FuelMoveDuration",
-        "FuelCapacity"
-    ],
-    "TScannerConfigurationDescriptor": [
-        "PorteeVisionGRU",
-        "PorteeVisionFOWGRU",
-        "OpticalStrengthAltitude",
-        "OpticalStrength",
-        "PorteeVisionTBAGRU",
-        "OpticsAltitudeConfig",
-        "SpecializedOpticalStrengths",
-        "SpecializedDetectionsGRU",
-        "PorteeIdentification",
-        "DetectionTBAGRU"
-    ],
-    "TemplateUnitMissileCarriage": [
-        "Connoisseur"
-    ],
-    "TAutomaticBehaviorModuleDescriptor": [
-        "CanAssist",
-        "MaxDistanceForOffensiveReactionGRU",
-        "MaxDistanceForEngagementGRU",
-        "DistanceToFleeGRU",
-        "SearchedTagsInEngagementTarget",
-        "AssistRequestBroadcastRadiusGRU"
-    ],
-    "TCubeActionModuleDescriptor": [
-        "CubeActionDescriptor"
-    ],
-    "TOrderConfigModuleDescriptor": [
-        "ValidOrders"
-    ],
-    "TOrderableModuleDescriptor": [
-        "UnlockableOrders"
-    ],
-    "TStrategicDataModuleDescriptor": [
-        "UnitDefenseValue",
-        "UnitAttackValue",
-        "UnitBonusXpPerLevelValue"
-    ],
-    "TVisualShootPositionsModuleDescriptor": [],
-    "TTransportableModuleDescriptor": [
-        "TimeToLoad",
-        "NbSeatsOccupied",
-        "IsTowable",
-        "TransportedTexture",
-        "TransportedSoldier"
-    ],
-    "TCapaciteModuleDescriptor": [
-        "DefaultSkillList"
-    ],
-    "TDeploymentShiftModuleDescriptor": [
-        "DeploymentShiftGRU"
-    ],
-    "TTransporterModuleDescriptor": [
-        "WreckUnloadPhysicalDamageBonus",
-        "TransportableTagSet",
-        "NbSeatsAvailable",
-        "WreckUnloadStunDamageBonus",
-        "LoadRadiusGRU",
-        "WreckUnloadSuppressDamageBonus"
-    ],
-    "TCommanderModuleDescriptor": [],
-    "TZoneInfluenceMapModuleDescriptor": [
-        "StrengthDecayPerSecond",
-        "MinimumInfluenceStrength",
-        "InfluenceStrength",
-        "PreventsDecayInZone",
-        "IsEnabledByComportementAuto"
-    ],
-    "TInfluenceScoutModuleDescriptor": [],
-    "InfantryApparenceModelModuleDescriptor": [
-        "Depiction"
-    ],
-    "TInfantrySquadModuleDescriptor": [
-        "WeaponUnitFXKey",
-        "MimeticDescriptor",
-        "NbSoldatInGroupeCombat",
-        "SquadDataDescriptor",
-        "InfantryMimeticName"
-    ],
-    "Descriptor_Unit_MimeticUnit": [
-        "DescriptorId",
-        "MimeticName"
-    ],
-    "TInfantrySquadWeaponAssignmentModuleDescriptor": [
-        "InitialSoldiersToTurretIndexMap"
-    ],
-    "TLinkToDistrictModuleDescriptor": [],
-    "TSellModuleDescriptor": [],
-    "HelicopterPositionModuleDescriptor": [
-        "LowAltitudeFlyingAltitudeGRU",
-        "NearGroundFlyingAltitudeGRU"
-    ],
-    "THelicopterMovementModuleDescriptor": [
-        "CyclicManoeuvrability",
-        "TorqueManoeuvrability",
-        "MaxSpeedInKmph",
-        "Mass",
-        "RotorArea",
-        "WorldFloorProxy",
-        "UpwardSpeedInKmph",
-        "MaxInclination",
-        "GFactorLimit"
-    ],
-    "TFlareModuleDescriptor_MW": [
-        "BonusTimeBetweenFlareByProjectile",
-        "DistanceActivationGRU",
-        "MinimalTimeBetweenFlare",
-        "ProjectileSpeed",
-        "TimeBetweenFlare"
-    ],
-    "AirplanePositionModuleDescriptor": [
-        "LowAltitudeFlyingAltitudeGRU"
-    ],
-    "AirplaneMovementDescriptor": [
-        "OrderedAttackStrategies",
-        "RollAngle",
-        "EvacToStartingPoint",
-        "PitchAngle",
-        "SpeedInKmph",
-        "AgilityRadiusGRU",
-        "RollSpeed",
-        "EvacAngle",
-        "AltitudeMinGRU",
-        "AltitudeGRU"
-    ],
-    "TAirplaneModuleDescriptor": [
-        "EvacuationTime",
-        "TravelDuration"
-    ],
-    "TWeaponManagerModuleDescriptor": [
-        "SalvoIsMainSalvo",
-        "TurretDescriptorList",
-        "Salves",
-        "AlwaysOrientArmorTowardsThreat"
-    ],
-    "TTurretTwoAxisDescriptor": [
-        "Tag",
-        "VitesseRotation",
-        "TurretIdleBehaviourDescriptor",
-        "YulBoneOrdinal",
-        "AngleRotationMaxPitch",
-        "AngleRotationMinPitch",
-        "AimingPriority",
-        "AngleRotationBase",
-        "AngleRotationBasePitch",
-        "MountedWeaponDescriptorList",
-        "AngleRotationMax",
-        "MasterTurretYulBoneOrdinal",
-        "OutOfRangeTrackingDuration"
-    ],
-    "TMountedWeaponDescriptor": [
-        "AnimateOnlyOneSoldier",
-        "SalvoStockIndex",
-        "WeaponActiveAndCanShootPropertyName",
-        "EffectTag",
-        "WeaponShootDataPropertyName",
-        "DispersionRadiusOnThickness",
-        "NbWeapons",
-        "DispersionRadiusOffColor",
-        "DispersionRadiusOnColor",
-        "Ammunition",
-        "DispersionRadiusOffThickness",
-        "ShowInInterface",
-        "HandheldEquipmentKey",
-        "WeaponIgnoredPropertyName",
-        "AmmoConsumption_ForInterface",
-        "TirContinu",
-        "ShowDispersion"
-    ],
-    "TTurretUnitDescriptor": [
-        "Tag",
-        "AngleRotationMinPitch",
-        "AimingPriority",
-        "MountedWeaponDescriptorList",
-        "AngleRotationMax",
-        "YulBoneOrdinal",
-        "AngleRotationMaxPitch"
-    ],
-    "TTurretInfanterieDescriptor": [
-        "YulBoneOrdinal",
-        "MountedWeaponDescriptorList"
-    ],
-    "TTurretBombardierDescriptor": [
-        "Tag",
-        "MountedWeaponDescriptorList",
-        "FlyingAltitudeGRU",
-        "FlyingSpeedInKmph",
-        "YulBoneOrdinal"
-    ]
+    "TEvacAirplaneEffectDescriptor": []
 }

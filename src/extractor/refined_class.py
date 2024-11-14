@@ -2272,6 +2272,26 @@ class TCapaciteDescriptor(BaseDescription):
         )
 
 
+
+class TEffectsPackDescriptor(BaseDescription):
+    def __init__(self, DescriptorId=None, EffectsDescriptors=None, NameForDebug=None):
+        self.DescriptorId = DescriptorId
+        self.EffectsDescriptors = EffectsDescriptors
+        self.NameForDebug = NameForDebug
+
+    def __repr__(self):
+        return (
+            f"<TEffectsPackDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["DescriptorId", "EffectsDescriptors", "NameForDebug"]
+                ]
+            )
+            + ">"
+        )
+    
+
 class TUnitEffectIncreaseWeaponDispersionMaxRangeDescriptor(BaseDescription):
     def __init__(self, ModifierType=None, ModifierValue=None):
         self.ModifierType = ModifierType
@@ -2873,5 +2893,41 @@ class TUnitEffectAddCapacityDescriptor(BaseDescription):
         return (
             f"<TUnitEffectAddCapacityDescriptor "
             + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["CapacityToAdd"]])
+            + ">"
+        )
+
+
+class TStrategicSupplyMalusEffectDescriptor(BaseDescription):
+    def __init__(self, SupplyMalus=None, ModifierType=None):
+        self.SupplyMalus = SupplyMalus
+        self.ModifierType = ModifierType
+
+    def __repr__(self):
+        return (
+            f"<TStrategicSupplyMalusEffectDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["SupplyMalus", "ModifierType"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TBonusWeaponAimtimeEffectDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, ModifierValue=None):
+        self.ModifierType = ModifierType
+        self.ModifierValue = ModifierValue
+
+    def __repr__(self):
+        return (
+            f"<TBonusWeaponAimtimeEffectDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "ModifierValue"]
+                ]
+            )
             + ">"
         )
