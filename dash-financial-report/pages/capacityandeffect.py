@@ -147,9 +147,7 @@ class TCapaciteDescriptorComponment:
         ) 
         
     def DetailComponent(self):
-        capacity_table = Content(
-            f"{self.KeyName}",
-            Table([
+        table_row = [
                 "释放效果",
                 self.TRTargetEffect,
                 self.TRTargetEffectDuration,
@@ -182,9 +180,8 @@ class TCapaciteDescriptorComponment:
                 self.TRCanBeCastFromTransport,
                 self.TRAllowReflexDuringCast,
                 self.TROrderMustSpreadTargets,
-            ])
-        )
-        return capacity_table
+            ]
+        return table_row
 
 class TEffectsPackDescriptorComponment:
     def __init__(
@@ -196,47 +193,120 @@ class TEffectsPackDescriptorComponment:
 
     def DetailComponent(self):
         effect_table = []
+        effect_table.append(Table_Row(self.KeyName))
         for effect in self.TEffectsPackDescriptor.EffectsDescriptors:
-            effect_table.append(Table_Row(effect.__class__.__name__))
-            effect_table.append(Table_Row("效果说明",effect.__class__.__name__))
+            effect_table.append(Table_Row(f""))
+            effect_table.append(Table_Row(f"增加效果{effect.__class__.__name__}"))
             if hasattr(effect, 'DamageType'):
-                Table_Row("修正伤害类型",effect.DamageType)
+                effect_table.append(Table_Row("修正伤害类型",show_value(effect.DamageType)))
             if hasattr(effect, 'ModifierType'):
-                Table_Row("修正方式",effect.ModifierType)
+                effect_table.append(Table_Row("修正方式",show_value(effect.ModifierType)))
             if hasattr(effect, 'ModifierValue'):
-                Table_Row("修正数值",effect.ModifierValue)
+                effect_table.append(Table_Row("修正数值",show_value(effect.ModifierValue)))
             if hasattr(effect, 'ExperienceLevelModifier'):
-                Table_Row("修正数值",effect.ExperienceLevelModifier)
+                effect_table.append(Table_Row("修正数值",show_value(effect.ExperienceLevelModifier)))
             if hasattr(effect, 'EffectOnTransportSlotNumber'):
-                Table_Row("修正数值",effect.EffectOnTransportSlotNumber)   
-
-
+                effect_table.append(Table_Row("修正数值",show_value(effect.EffectOnTransportSlotNumber)))
+            if hasattr(effect, 'PhysicalDamageValue'):
+                effect_table.append(Table_Row("修正数值",show_value(effect.PhysicalDamageValue)))
+            if hasattr(effect, 'SuppressDamageValue'):
+                effect_table.append(Table_Row("修正数值",show_value(effect.SuppressDamageValue)))
             if hasattr(effect, 'BonusDamage'):
-                Table_Row("加成数值",effect.BonusDamage)
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusDamage)))
             if hasattr(effect, 'Bonus'):
-                Table_Row("加成数值",effect.Bonus)
+                effect_table.append(Table_Row("加成数值",show_value(effect.Bonus)))
+            if hasattr(effect, 'BonusValue'):
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusValue)))
             if hasattr(effect, 'BonusDispersion'):
-                Table_Row("加成数值",effect.BonusDispersion)
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusDispersion)))
             if hasattr(effect, 'BonusChassisRotationSpeed'):
-                Table_Row("加成数值",effect.BonusChassisRotationSpeed)
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusChassisRotationSpeed)))
             if hasattr(effect, 'BonusTurretRotationSpeed'):
-                Table_Row("加成数值",effect.BonusTurretRotationSpeed)
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusTurretRotationSpeed)))
             if hasattr(effect, 'BonusSpeedBaseInPercent'):
-                Table_Row("加成数值",effect.BonusSpeedBaseInPercent)
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusSpeedBaseInPercent)))
             if hasattr(effect, 'BonusValueGRUGRU'):
-                Table_Row("加成数值",effect.BonusValueGRUGRU)
-
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusValueGRUGRU)))
+            if hasattr(effect, 'BonusVisionBase'):
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusVisionBase)))
             if hasattr(effect, 'BonusDangerousness'):
-                Table_Row("加成数值",effect.BonusDangerousness)
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusDangerousness)))
+            if hasattr(effect, 'BonusPrecisionWhenTargeted'):
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusPrecisionWhenTargeted)))
+            if hasattr(effect, 'BonusOpticalStrength'):
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusOpticalStrength)))
+            if hasattr(effect, 'BonusWeaponPorteeMax'):
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusWeaponPorteeMax)))
+            if hasattr(effect, 'BonusConcealmentBonus'):
+                effect_table.append(Table_Row("加成数值",show_value(effect.BonusConcealmentBonus)))
             if hasattr(effect, 'SupplyMalus'):
-                Table_Row("惩罚数值",effect.SupplyMalus)
-
+                effect_table.append(Table_Row("惩罚数值",show_value(effect.SupplyMalus)))
             if hasattr(effect, 'TagListToRaise'):
-                Table_Row("为单位增加以下词条",effect.TagListToRaise)
+                effect_table.append(Table_Row("为单位增加以下词条",show_value(effect.TagListToRaise)))
             if hasattr(effect, 'TextureToken'):
-                Table_Row("为单位显示以下图标",effect.TextureToken)
+                effect_table.append(Table_Row("为单位显示以下图标",show_value(effect.TextureToken)))
             if hasattr(effect, 'CapacityToAdd'):
-                Table_Row("为单位增加以下能力",effect.CapacityToAdd)
+                effect_table.append(Table_Row("为单位增加以下能力",show_value(effect.CapacityToAdd)))
             if hasattr(effect, 'FutureTeam'):
-                Table_Row("为单位变更阵营",f"{effect.FutureTeam.TeamType}:{effect.Future.TeamNumber}")   
-                     
+                effect_table.append(Table_Row("为单位变更阵营",show_value(f"{effect.FutureTeam.TeamType}:{effect.FutureTeam.TeamNumber}")))
+            if hasattr(effect, 'Selectable'):
+                effect_table.append(Table_Row("单位可选",show_value(effect.Selectable)))
+            if hasattr(effect, 'UpdateEachTick'):
+                effect_table.append(Table_Row("在每个刻度时更新",show_value(effect.UpdateEachTick)))
+            if hasattr(effect, 'BlindageLocation'):
+                effect_table.append(Table_Row("替换单位以下的护甲", show_value(f"护甲族:{effect.BlindageLocation} 索引值:{effect.ReplacementBlindage.Index}")))
+            if hasattr(effect, 'ReplacementBlindage'):
+                effect_table.append(Table_Row("替换护甲为", show_value(f"护甲族:{effect.ReplacementBlindage.Family} 索引值:{effect.ReplacementBlindage.Index}")))
+            if hasattr(effect, 'HealUnitsPerSecond'):
+                effect_table.append(Table_Row("每秒回复量",show_value(effect.HealUnitsPerSecond)))
+            if hasattr(effect, 'NbUpdatePerSecond'):
+                effect_table.append(Table_Row("每秒更新次数",show_value(effect.NbUpdatePerSecond)))
+
+        
+        return effect_table
+
+class CapacityAndEffectPage:
+    def __init__(self,capacity_list:list[TCapaciteDescriptor],effect_list:list[TEffectsPackDescriptor]):
+        self.capacity_list = capacity_list
+        self.effect_list =effect_list
+    def DetailComponent(self):
+        capacity_content_list = []
+        effect_content_list = []
+        for capacity in self.capacity_list:
+            comp = TCapaciteDescriptorComponment(capacity)
+            content = Content(comp.KeyName,Table(comp.DetailComponent()))
+            capacity_content_list.append(content)
+
+        for effect in self.effect_list:
+            comp = TEffectsPackDescriptorComponment(effect)
+            content = Content(comp.KeyName,Table(comp.DetailComponent()))
+            effect_content_list.append(content)
+        
+        capacity_page_content = Page_Content(
+            [
+                Row([
+                    Col(capacity_content_list[i], className="six columns")if i < len(capacity_content_list) else None,
+                    Col(capacity_content_list[i + 1], className="six columns") if i + 1 < len(capacity_content_list) else None
+                ])
+                for i in range(0, len(capacity_content_list), 2)
+            ]
+        )
+    
+        effect_page_content = Page_Content(
+            [
+                Row([
+                    Col(effect_content_list[i], className="six columns") if i < len(effect_content_list) else None,
+                    Col(effect_content_list[i + 1], className="six columns") if i + 1 < len(effect_content_list) else None,
+                ])
+                for i in range(0, len(effect_content_list), 2)
+            ]
+        )
+
+        tab_list = ['光环能力','效果']
+        tabs =Tabs(tab_list,[capacity_page_content,effect_page_content])
+        return tabs
+    def AsPage(self):
+        tabs = self.DetailComponent()
+        header = Header("光环与效果")
+        page = Page(header, tabs)
+        return page

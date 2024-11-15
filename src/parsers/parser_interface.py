@@ -128,12 +128,14 @@ class ParserInterface:
                     # 检查字典中是否有这个键，且其值是一个对象
                     if value in dictionary and not isinstance(dictionary[value], (str, int, float, bool)):
                         entity[key] = dictionary[value]  # 替换为对应的对象
+                        
                 else:
                     # 递归处理嵌套的字典或其他类型
                     ParserInterface.refer_class(value, dictionary)
         
         # 检查是否为列表或元组
         elif isinstance(entity, (list, tuple)):
+            entity = list(entity)
             for index, item in enumerate(entity):
                 if isinstance(item, str):
                     # 检查字典中是否有这个键，且其值是一个对象
@@ -158,8 +160,10 @@ class ParserInterface:
 
     @staticmethod
     def backup_instance_name(dictionary):
-        for key,value in dictionary.items():
-            value.KeyName = key
+        for key, value in dictionary.items():
+            # 检查 value 是否为类的实例
+            if isinstance(value, object) and not isinstance(value, (str, int, float, list, dict, tuple)):
+                value.KeyName = key
         return dictionary
     @staticmethod
     def generate_class_json_from_ndf_folder(folder: str):

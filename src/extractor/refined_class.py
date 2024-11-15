@@ -2272,7 +2272,6 @@ class TCapaciteDescriptor(BaseDescription):
         )
 
 
-
 class TEffectsPackDescriptor(BaseDescription):
     def __init__(self, DescriptorId=None, EffectsDescriptors=None, NameForDebug=None):
         self.DescriptorId = DescriptorId
@@ -2290,7 +2289,7 @@ class TEffectsPackDescriptor(BaseDescription):
             )
             + ">"
         )
-    
+
 
 class TUnitEffectIncreaseWeaponDispersionMaxRangeDescriptor(BaseDescription):
     def __init__(self, ModifierType=None, ModifierValue=None):
@@ -2756,7 +2755,6 @@ class TUnitEffectRemoveUnitDescriptor(BaseDescription):
         return f"<TUnitEffectRemoveUnitDescriptor>"
 
 
-
 class TUnitEffectBonusPrecisionWhenTargetedDescriptor(BaseDescription):
     def __init__(self, ModifierType=None, BonusPrecisionWhenTargeted=None):
         self.ModifierType = ModifierType
@@ -2884,7 +2882,6 @@ class TUnitEffectChangeTeamDescriptor(BaseDescription):
         )
 
 
-
 class TUnitEffectAddCapacityDescriptor(BaseDescription):
     def __init__(self, CapacityToAdd=None):
         self.CapacityToAdd = CapacityToAdd
@@ -2931,3 +2928,182 @@ class TBonusWeaponAimtimeEffectDescriptor(BaseDescription):
             )
             + ">"
         )
+
+
+class TDerouteUnitEffectDescriptor(BaseDescription):
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return f"<TDerouteUnitEffectDescriptor>"
+
+
+class TEffectInflictSuppressDamageDescriptor(BaseDescription):
+    def __init__(self, ModifierType=None, SuppressDamageValue=None):
+        self.ModifierType = ModifierType
+        self.SuppressDamageValue = SuppressDamageValue
+
+    def __repr__(self):
+        return (
+            f"<TEffectInflictSuppressDamageDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["ModifierType", "SuppressDamageValue"]
+                ]
+            )
+            + ">"
+        )
+
+
+class TKillUnitEffectDescriptor(BaseDescription):
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return f"<TKillUnitEffectDescriptor>"
+
+
+# 师与卡组配置
+
+class DeckPackDescriptor(BaseDescription):
+    def __init__(self, Transport=None, Unit=None, Xp=None):
+        self.Transport = Transport
+        self.Unit = Unit
+        self.Xp = Xp
+
+    def __repr__(self):
+        return (
+            f"<DeckPackDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in ["Transport", "Unit", "Xp"]
+                ]
+            )
+            + ">"
+        )
+    
+
+
+class TDeckDivisionRules(BaseDescription):
+    def __init__(self, DivisionRules=None):
+        self.DivisionRules = DivisionRules
+
+    def __repr__(self):
+        return (
+            f"<TDeckDivisionRules "
+            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["DivisionRules"]])
+            + ">"
+        )
+
+
+class TDeckDivisionRule(BaseDescription):
+    def __init__(self, UnitRuleList=None):
+        self.UnitRuleList = UnitRuleList
+
+    def __repr__(self):
+        return (
+            f"<TDeckDivisionRule "
+            + ", ".join([f"{attr}={getattr(self, attr)}" for attr in ["UnitRuleList"]])
+            + ">"
+        )
+
+
+class TDeckUniteRule(BaseDescription):
+    def __init__(
+        self,
+        UnitDescriptor=None,
+        NumberOfUnitInPack=None,
+        NumberOfUnitInPackXPMultiplier=None,
+        AvailableTransportList=None,
+        AvailableWithoutTransport=None,
+    ):
+        self.UnitDescriptor = UnitDescriptor
+        self.NumberOfUnitInPack = NumberOfUnitInPack
+        self.NumberOfUnitInPackXPMultiplier = NumberOfUnitInPackXPMultiplier
+        self.AvailableTransportList = AvailableTransportList
+        self.AvailableWithoutTransport = AvailableWithoutTransport
+
+    def __repr__(self):
+        return (
+            f"<TDeckUniteRule "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "UnitDescriptor",
+                        "NumberOfUnitInPack",
+                        "NumberOfUnitInPackXPMultiplier",
+                        "AvailableTransportList",
+                        "AvailableWithoutTransport",
+                    ]
+                ]
+            )
+            + ">"
+        )
+
+
+class TDeckDivisionDescriptor(BaseDescription):
+    def __init__(
+        self,
+        DivisionNationalite=None,
+        DivisionTags=None,
+        DivisionPowerClassification=None,
+        MaxActivationPoints=None,
+        DescriptionHintTitleToken=None,
+        DescriptorId=None,
+        DivisionName=None,
+        EmblemTexture=None,
+        PackList=None,
+        CountryId=None,
+        PortraitTexture=None,
+        StrategicLabelColor=None,
+        TypeTexture=None,
+        CostMatrix=None,
+        CfgName=None,
+    ):
+        self.DivisionNationalite = DivisionNationalite
+        self.DivisionTags = DivisionTags
+        self.DivisionPowerClassification = DivisionPowerClassification
+        self.MaxActivationPoints = MaxActivationPoints
+        self.DescriptionHintTitleToken = DescriptionHintTitleToken
+        self.DescriptorId = DescriptorId
+        self.DivisionName = DivisionName
+        self.EmblemTexture = EmblemTexture
+        self.PackList = PackList
+        self.CountryId = CountryId
+        self.PortraitTexture = PortraitTexture
+        self.StrategicLabelColor = StrategicLabelColor
+        self.TypeTexture = TypeTexture
+        self.CostMatrix = CostMatrix
+        self.CfgName = CfgName
+
+    def __repr__(self):
+        return (
+            f"<TDeckDivisionDescriptor "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "DivisionNationalite",
+                        "DivisionTags",
+                        "DivisionPowerClassification",
+                        "MaxActivationPoints",
+                        "DescriptionHintTitleToken",
+                        "DescriptorId",
+                        "DivisionName",
+                        "EmblemTexture",
+                        "PackList",
+                        "CountryId",
+                        "PortraitTexture",
+                        "StrategicLabelColor",
+                        "TypeTexture",
+                        "CostMatrix",
+                        "CfgName",
+                    ]
+                ]
+            )
+            + ">"
+        )
+

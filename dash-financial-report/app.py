@@ -10,7 +10,8 @@ from pages import (
     newsReviews,
     ammunition,
     weapon,
-    unit
+    unit,
+    capacityandeffect,
 )
 import pickle
 import sys
@@ -21,14 +22,20 @@ sys.path.append(WORK_DIRECTORY)
 import config
 from antlr4 import *
 from src.parsers.parser_interface import ParserInterface
-from src.parsers.register_class.RClass import *
+# from src.parsers.register_class.RClass import *
+from src.extractor.extract_class import *
+from src.extractor.refined_class import *
 with open("global.pkl",'rb') as f:
     global_dict  = pickle.load(f)
 global_dict = ParserInterface.refer_class(global_dict,global_dict)
+global_dict = ParserInterface.backup_instance_name(global_dict)
 
-ammo_object = global_dict['Ammo_Canon_AP_105mm_L7A3_Leo1V']
-weapon_object = global_dict['WeaponDescriptor_Su_25_he_SOV']
-unit_object = global_dict['Descriptor_Unit_2K11_KRUG_DDR']
+# ammo_object = global_dict['Ammo_Canon_AP_105mm_L7A3_Leo1V']
+# weapon_object = global_dict['WeaponDescriptor_Su_25_he_SOV']
+# unit_object = global_dict['Descriptor_Unit_2K11_KRUG_DDR']
+effect_list = [value for key,value in global_dict.items() if isinstance(value,TEffectsPackDescriptor)]
+capacity_list = [value for key,value in global_dict.items() if isinstance(value,TCapaciteDescriptor)]
+
 unite_object = None
 
 
@@ -150,7 +157,8 @@ def display_page(pathname):
             newsReviews.create_layout(app),
         )
     else:
-        return unit.UnitComponent(unit_object).AsPage()
+        return capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
+        # return unit.UnitComponent(unit_object).AsPage()
         # return weapon.WeaponComponent(weapon_object).AsPage()
         # return ammunition.AmmunitionComponent(ammo_object).AsPage()
 
@@ -181,7 +189,4 @@ if __name__ == "__main__":
     
     # with open("global.pkl",'rb') as f:
     #     global_dict  = pickle.load(f)
-  
-    DamageResistanceParams = global_dict['DamageResistanceParams']
-
     app.run_server(debug=True)
