@@ -3107,3 +3107,84 @@ class TDeckDivisionDescriptor(BaseDescription):
             + ">"
         )
 
+## 地形
+
+
+class TGameplayTerrain(BaseDescription):
+    def __init__(
+        self,
+        WorldLayerActiveMask=None,
+        BloqueInfanterie=None,
+        HeightInMeters=None,
+        ConcealmentBonus=None,
+        BloqueAmphibie=None,
+        Name=None,
+        BloqueAtterrissage=None,
+        DissimulationModifierGroundAir=None,
+        SpeedModifierTrack=None,
+        SpeedModifierAllTerrainWheel=None,
+        AuthorizeNearGroundFlying=None,
+        DissimulationModifierGroundGround=None,
+        TerrainType=None,
+        DamageModifierPerFamilyAndResistance=None,
+        BloqueVehicule=None,
+        CriticalEffectProbability=None,
+        DebugColor=None,
+        InflammabilityProbability=None,
+        BloqueVision=None,
+        SpeedModifierInfantry=None,
+    ):
+        self.WorldLayerActiveMask = WorldLayerActiveMask
+        self.BloqueInfanterie = BloqueInfanterie
+        self.HeightInMeters = HeightInMeters
+        self.ConcealmentBonus = ConcealmentBonus
+        self.BloqueAmphibie = BloqueAmphibie
+        self.Name = Name
+        self.BloqueAtterrissage = BloqueAtterrissage
+        self.DissimulationModifierGroundAir = DissimulationModifierGroundAir
+        self.SpeedModifierTrack = SpeedModifierTrack
+        self.SpeedModifierAllTerrainWheel = SpeedModifierAllTerrainWheel
+        self.AuthorizeNearGroundFlying = AuthorizeNearGroundFlying
+        self.DissimulationModifierGroundGround = DissimulationModifierGroundGround
+        self.TerrainType = TerrainType
+        self.DamageModifierPerFamilyAndResistance = DamageModifierPerFamilyAndResistance
+        self.BloqueVehicule = BloqueVehicule
+        self.CriticalEffectProbability = CriticalEffectProbability
+        self.DebugColor = DebugColor
+        self.InflammabilityProbability = InflammabilityProbability
+        self.BloqueVision = BloqueVision
+        self.SpeedModifierInfantry = SpeedModifierInfantry
+
+    def __repr__(self):
+        return (
+            f"<TGameplayTerrain "
+            + ", ".join(
+                [
+                    f"{attr}={getattr(self, attr)}"
+                    for attr in [
+                        "WorldLayerActiveMask",
+                        "BloqueInfanterie",
+                        "HeightInMeters",
+                        "ConcealmentBonus",
+                        "BloqueAmphibie",
+                        "Name",
+                        "BloqueAtterrissage",
+                        "DissimulationModifierGroundAir",
+                        "SpeedModifierTrack",
+                        "SpeedModifierAllTerrainWheel",
+                        "AuthorizeNearGroundFlying",
+                        "DissimulationModifierGroundGround",
+                        "TerrainType",
+                        "DamageModifierPerFamilyAndResistance",
+                        "BloqueVehicule",
+                        "CriticalEffectProbability",
+                        "DebugColor",
+                        "InflammabilityProbability",
+                        "BloqueVision",
+                        "SpeedModifierInfantry",
+                    ]
+                ]
+            )
+            + ">"
+        )
+

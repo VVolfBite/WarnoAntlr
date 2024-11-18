@@ -2,16 +2,12 @@ import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 from pages import (
-    overview,
-    pricePerformance,
-    portfolioManagement,
-    feesMins,
-    distributions,
-    newsReviews,
     ammunition,
     weapon,
     unit,
     capacityandeffect,
+    division,
+    terrain
 )
 import pickle
 import sys
@@ -36,8 +32,13 @@ global_dict = ParserInterface.backup_instance_name(global_dict)
 effect_list = [value for key,value in global_dict.items() if isinstance(value,TEffectsPackDescriptor)]
 capacity_list = [value for key,value in global_dict.items() if isinstance(value,TCapaciteDescriptor)]
 
-unite_object = None
+GlobalPackDict = {key:value for key,value in global_dict.items() if isinstance(value,DeckPackDescriptor)}
+GlobalDeckDivisionDict = {key:value for key,value in global_dict.items() if isinstance(value,TDeckDivisionDescriptor)}
+DivisionRules = [value for key,value in global_dict.items() if isinstance(value,TDeckDivisionRules)][0]
 
+terrain_dict = {key:value for key,value in global_dict.items() if isinstance(value,TGameplayTerrain)}
+
+unite_object = None
 
 app = dash.Dash(
     __name__,
@@ -99,7 +100,6 @@ sidebar = html.Div(
     className="page",
 )
 
-
 # 整体页面
 app.layout = html.Div(
     [
@@ -138,26 +138,23 @@ app.layout = html.Div(
 def display_page(pathname):
     global ammo_object
     if pathname == "/dash-financial-report/price-performance":
-        return pricePerformance.create_layout(app)
+        return capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
     elif pathname == "/dash-financial-report/portfolio-management":
-        return portfolioManagement.create_layout(app)
+        return capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
     elif pathname == "/dash-financial-report/fees":
-        return feesMins.create_layout(app)
+        return capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
     elif pathname == "/dash-financial-report/distributions":
-        return distributions.create_layout(app)
+        return capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
     elif pathname == "/dash-financial-report/news-and-reviews":
-        return newsReviews.create_layout(app)
+        return capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
     elif pathname == "/dash-financial-report/full-view":
         return (
-            overview.create_layout(app),
-            pricePerformance.create_layout(app),
-            portfolioManagement.create_layout(app),
-            feesMins.create_layout(app),
-            distributions.create_layout(app),
-            newsReviews.create_layout(app),
+            capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
         )
     else:
-        return capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
+        return terrain.TerrainPage(terrain_dict).AsPage()
+        # return division.DivisionPage(DivisionRules,GlobalPackDict,GlobalDeckDivisionDict).AsPage()
+        # return capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
         # return unit.UnitComponent(unit_object).AsPage()
         # return weapon.WeaponComponent(weapon_object).AsPage()
         # return ammunition.AmmunitionComponent(ammo_object).AsPage()
@@ -165,28 +162,10 @@ def display_page(pathname):
 
 if __name__ == "__main__":
 
-    for file in config.PROCESS_FILE_LIST:
-        file = config.RAW_DATA_PATH + file
-        # node = ParserInterface.generate_node_object(file)
-        # # # ParserInterface.set_class_json(config.CLASS_JSON)
-        # # # ParserInterface.generate_class_json_from_ndf_folder(config.RAW_DATA_PATH)
-        # # # ParserInterface.generate_class_from_json(config.CLASS_JSON, config.CLASS_PY)
-        # # ParserInterface.set_class_py(config.CLASS_PY)
-        # # # ParserInterface.register_class(node)
-        # value = ParserInterface.value_from_node(node)
-        # global_dict.update(value)
-
-
-    # with open("global.pkl",'wb') as f:
-    #     pickle.dump(global_dict, f)
     
     with open("global.pkl",'rb') as f:
         global_dict  = pickle.load(f)
-    # global_dict = ParserInterface.refer_class(global_dict,global_dict)
 
-    # with open("global.pkl",'wb') as f:
-    #     pickle.dump(global_dict, f)
-    
-    # with open("global.pkl",'rb') as f:
-    #     global_dict  = pickle.load(f)
+    stop = 1
+
     app.run_server(debug=True)
