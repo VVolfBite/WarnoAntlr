@@ -121,12 +121,13 @@ class ParserInterface:
 
     @staticmethod
     def refer_class(entity, dictionary):
+
         # 检查是否为字典
         if isinstance(entity, dict):
             for key, value in entity.items():
                 if isinstance(value, str):
                     # 检查字典中是否有这个键，且其值是一个对象
-                    if value in dictionary and not isinstance(dictionary[value], (str, int, float, bool)):
+                    if value in dictionary and not isinstance(dictionary[value], (str, int, float, bool)) and entity!= dictionary[value]:
                         entity[key] = dictionary[value]  # 替换为对应的对象
                         
                 else:
@@ -139,7 +140,7 @@ class ParserInterface:
             for index, item in enumerate(entity):
                 if isinstance(item, str):
                     # 检查字典中是否有这个键，且其值是一个对象
-                    if item in dictionary and not isinstance(dictionary[item], (str, int, float, bool)):
+                    if item in dictionary and not isinstance(dictionary[item], (str, int, float, bool)) and entity!= dictionary[item]:
                         entity[index] = dictionary[item]  # 替换为对应的对象
                 else:
                     # 递归处理嵌套的结构
@@ -151,7 +152,7 @@ class ParserInterface:
                 if attr_name != "KeyName":
                     if isinstance(attr_value, str):
                         # 检查字典中是否有这个键，且其值是一个对象
-                        if attr_value in dictionary and not isinstance(dictionary[attr_value], (str, int, float, bool)):
+                        if attr_value in dictionary and not isinstance(dictionary[attr_value], (str, int, float, bool)) and entity!= dictionary[attr_value]:
                             setattr(entity, attr_name, dictionary[attr_value])  # 替换为对应的对象
                     else:
                         # 递归处理对象的嵌套属性
