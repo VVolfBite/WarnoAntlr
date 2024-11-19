@@ -1,7 +1,7 @@
 {
     "TEffectsPackDescriptor": [
         "DescriptorId",
-        "EffectsDescriptors",
+        {"EffectsDescriptors":123},
         "NameForDebug"
     ],
 

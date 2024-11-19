@@ -29,6 +29,11 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by NdfGrammarParser#template_prefix.
+    def visitTemplate_prefix(self, ctx:NdfGrammarParser.Template_prefixContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by NdfGrammarParser#r_value.
     def visitR_value(self, ctx:NdfGrammarParser.R_valueContext):
         return self.visitChildren(ctx)
@@ -46,6 +51,11 @@ class NdfGrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by NdfGrammarParser#normal_assignment.
     def visitNormal_assignment(self, ctx:NdfGrammarParser.Normal_assignmentContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#template_assignment.
+    def visitTemplate_assignment(self, ctx:NdfGrammarParser.Template_assignmentContext):
         return self.visitChildren(ctx)
 
 
@@ -176,6 +186,11 @@ class NdfGrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by NdfGrammarParser#obj_reference_value.
     def visitObj_reference_value(self, ctx:NdfGrammarParser.Obj_reference_valueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#replace_value.
+    def visitReplace_value(self, ctx:NdfGrammarParser.Replace_valueContext):
         return self.visitChildren(ctx)
 
 

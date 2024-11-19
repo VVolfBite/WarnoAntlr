@@ -44,6 +44,15 @@ class NdfGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by NdfGrammarParser#template_prefix.
+    def enterTemplate_prefix(self, ctx:NdfGrammarParser.Template_prefixContext):
+        pass
+
+    # Exit a parse tree produced by NdfGrammarParser#template_prefix.
+    def exitTemplate_prefix(self, ctx:NdfGrammarParser.Template_prefixContext):
+        pass
+
+
     # Enter a parse tree produced by NdfGrammarParser#r_value.
     def enterR_value(self, ctx:NdfGrammarParser.R_valueContext):
         pass
@@ -77,6 +86,15 @@ class NdfGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by NdfGrammarParser#normal_assignment.
     def exitNormal_assignment(self, ctx:NdfGrammarParser.Normal_assignmentContext):
+        pass
+
+
+    # Enter a parse tree produced by NdfGrammarParser#template_assignment.
+    def enterTemplate_assignment(self, ctx:NdfGrammarParser.Template_assignmentContext):
+        pass
+
+    # Exit a parse tree produced by NdfGrammarParser#template_assignment.
+    def exitTemplate_assignment(self, ctx:NdfGrammarParser.Template_assignmentContext):
         pass
 
 
@@ -311,6 +329,15 @@ class NdfGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by NdfGrammarParser#obj_reference_value.
     def exitObj_reference_value(self, ctx:NdfGrammarParser.Obj_reference_valueContext):
+        pass
+
+
+    # Enter a parse tree produced by NdfGrammarParser#replace_value.
+    def enterReplace_value(self, ctx:NdfGrammarParser.Replace_valueContext):
+        pass
+
+    # Exit a parse tree produced by NdfGrammarParser#replace_value.
+    def exitReplace_value(self, ctx:NdfGrammarParser.Replace_valueContext):
         pass
 
 

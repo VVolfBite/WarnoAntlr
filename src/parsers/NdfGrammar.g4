@@ -1,22 +1,26 @@
 grammar NdfGrammar;
 
 // 此文件用于生成lexer和parser
-// 使用命令参考 java -jar .\antlr-4.13.2-complete.jar -Dlanguage=Python3 NdfGrammar.g4 -visitor -o antlr
+// 使用命令参考 java -jar .\antlr-4.13.2-complete.jar -Dlanguage=Python3 NdfGrammar.g4 -visitor -o parser
 
 // --- parser rules --- //
 
 // general structure
 
 ndf_file : assignment* EOF;
-assignment : normal_assignment | member_assignment | unnamed_assignment;
+assignment : normal_assignment | member_assignment | unnamed_assignment | template_assignment;
 // 直接用private会导致导出文件使用关键字
 private_prefix: K_PRIVATE;
 export_prefix: K_EXPORT;
+template_prefix: K_TEMPLATE;
 
-r_value : concatination | arithmetic | builtin_type_value | object | normal_assignment | obj_reference_value | nil_value | special_value;
+r_value : concatination | arithmetic | builtin_type_value | object | normal_assignment | obj_reference_value | nil_value | special_value | replace_value | ID;
 object_type : ID;
 block : normal_assignment | member_assignment;
+
+
 normal_assignment : ( export_prefix | private_prefix )? id K_IS r_value;
+template_assignment : template_prefix id  vector_value  K_IS r_value;
 member_assignment : id '=' ( r_value | normal_assignment );
 unnamed_assignment : K_UNNAMED r_value;
 
@@ -53,7 +57,7 @@ pair_value: '(' r_value ',' r_value ')';
 vector_value: '[' (r_value (',' r_value)* ','?)? ']';
 map_value: K_MAP '[' (pair_value (',' pair_value)* ','?)? ']';
 obj_reference_value: ('$'|'~')?  (ID|'/')* ID | obj_reference_value '|' obj_reference_value;
-
+replace_value: '<' ID  '>';
 // special types: values
 
 special_value : rgba_value;
@@ -82,7 +86,7 @@ K_EXPORT : E X P O R T;
 K_PRIVATE : P R I V A T E;
 
 K_UNNAMED : U N N A M E D;
-
+K_TEMPLATE : T E M P L A T E;
 // special keywords
 
 K_RGBA : R G B A;

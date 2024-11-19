@@ -111,6 +111,29 @@ class Generator(NdfGrammarListener):
             assignment = self.stack.pop()
             self.assignments.append(assignment)
 
+    # Enter a parse tree produced by NdfGrammarParser#template_assignment.
+    def enterTemplate_assignment(self, ctx:NdfGrammarParser.Template_assignmentContext):
+        if self.ignore > 0:
+            return
+        assignment = Assignment()
+        assignment.is_template = True
+        # 推入一个Assignment，此时堆栈为 Top | Assignment  ->
+        self.stack.push(assignment)
+
+    # Exit a parse tree produced by NdfGrammarParser#template_assignment.
+    def exitTemplate_assignment(self, ctx:NdfGrammarParser.Template_assignmentContext):
+        if self.ignore > 0:
+            return
+        # 弹出Assignment的Value，此时堆栈为 Top(Assignment) | Value  <-
+        value = self.stack.pop()
+        self.stack.top().value = value
+
+        # 弹出Assignment，此时堆栈为 Bottom | Top(Assignment)
+        if len(self.stack) == 1:
+            assignment = self.stack.pop()
+            self.assignments.append(assignment)
+
+
     def enterArithmetic(self, ctx: NdfGrammarParser.ArithmeticContext):
 
         if DISABLE_CALCULATING == True:
@@ -312,6 +335,13 @@ class Generator(NdfGrammarListener):
             return
         # 更新属性，此时的堆栈为  Top(Assignment)
         self.stack.top().is_export = True
+
+
+    def enterTemplate_prefix(self, ctx: NdfGrammarParser.Template_prefixContext):
+        if self.ignore > 0:
+            return
+        # 更新属性，此时的堆栈为  Top(Assignment)
+        self.stack.top().is_template = True
 
     def enterPrivate_prefix(self, ctx: NdfGrammarParser.Private_prefixContext):
         if self.ignore > 0:

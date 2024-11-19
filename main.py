@@ -29,15 +29,15 @@ def main():
 
 
 
-    with open("global.pkl",'wb') as f:
-        pickle.dump(global_dict, f)
+    # with open("global.pkl",'wb') as f:
+    #     pickle.dump(global_dict, f)
     
-    with open("global.pkl",'rb') as f:
-        global_dict  = pickle.load(f)
-    global_dict = ParserInterface.refer_class(global_dict,global_dict)
-    global_dict = ParserInterface.backup_instance_name(global_dict)
-    with open("global.pkl",'wb') as f:
-        pickle.dump(global_dict, f)
+    # with open("global.pkl",'rb') as f:
+    #     global_dict  = pickle.load(f)
+    # global_dict = ParserInterface.refer_class(global_dict,global_dict)
+    # global_dict = ParserInterface.backup_instance_name(global_dict)
+    # with open("global.pkl",'wb') as f:
+    #     pickle.dump(global_dict, f)
     
     stop = 1
 

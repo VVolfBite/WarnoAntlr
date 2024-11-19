@@ -77,13 +77,6 @@ class ParserInterface:
                 class_def += "    def __init__(self):\n"
                 class_def += "        pass\n"
 
-            class_def += "\n    def __repr__(self):\n"
-
-            if attributes:
-                class_def += f"        return f'<{class_name} ' + ', '.join([f'{{attr}}={{getattr(self, attr)}}' for attr in {repr(attributes)}]) + '>'\n"
-            else:
-                class_def += f"        return f'<{class_name}>'\n"
-
             class_definitions.append(class_def)
         complete_class_definitions = "\n\n".join(class_definitions)
         with open(py_file, "w") as py_file:

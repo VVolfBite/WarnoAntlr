@@ -6,17 +6,37 @@
         "antlr",
         "Arme",
         "Capacite",
+        "carburator",
+        "Carburator",
+        "Constantes",
+        "Deroute",
         "Effets",
+        "Gameplay",
         "HAGRU",
+        "Helico",
+        "Infanterie",
         "Interdire",
         "Malus",
         "Maximale",
         "Minimale",
+        "Modificateurs",
         "Nombre",
         "Portee",
+        "Précision",
+        "Ravitaillement",
+        "Rclass",
         "Reflexe",
         "Simultanes",
         "TBAGRU",
-        "Tirs"
-    ]
+        "Tirs",
+        "Warno"
+    ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:WarnoAntlr-main}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    }
 }

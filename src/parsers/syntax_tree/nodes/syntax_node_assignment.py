@@ -14,6 +14,7 @@ class Assignment(Base):
         self.is_private = False
         self.is_unnamed = False
         self.is_member = False
+        self.is_template = False
 
     def __str__(self):
         return (
@@ -25,6 +26,8 @@ class Assignment(Base):
             + str(self.is_private)
             + ", member: "
             + str(self.is_member)
+            + ", template: "
+            + str(self.is_template)
             + ", value: "
             + str(self.value)
             + "}"
@@ -39,6 +42,7 @@ class Assignment(Base):
             and self.is_export == other.is_export
             and self.is_member == other.is_member
             and self.is_unnamed == other.is_unnamed
+            and self.is_template == other.is_template
             and self.value == other.value
         )
         return ret
