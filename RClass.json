@@ -1,0 +1,14 @@
+{
+    "TEffectsPackDescriptor": [
+        "DescriptorId",
+        {"EffectsDescriptors":123},
+        "NameForDebug"
+    ],
+
+    "TUnitEffectHealOverTimeDescriptor": [
+        "",
+        "NbUpdatePerSecond",
+        "HealUnitsPerSecond"
+    ],
+    "TEvacAirplaneEffectDescriptor": []
+}

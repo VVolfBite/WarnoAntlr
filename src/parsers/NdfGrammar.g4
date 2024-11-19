@@ -14,7 +14,7 @@ private_prefix: K_PRIVATE;
 export_prefix: K_EXPORT;
 template_prefix: K_TEMPLATE;
 
-r_value : concatination | arithmetic | builtin_type_value | object | normal_assignment | obj_reference_value | nil_value | special_value | replace_value | ID;
+r_value : concatination | arithmetic | builtin_type_value | object | normal_assignment | member_assignment | obj_reference_value | nil_value | special_value | replace_value | ID;
 object_type : ID;
 block : normal_assignment | member_assignment;
 

@@ -1,36 +1,7 @@
-template CriticalEffect_FuelExplosion
-[
-    Roll
-] is TCriticalEffect
-(
-    Roll = <Roll>
-    Descriptor = ~/CriticalEffect_FuelExplosion_Desc
-)
 template TemplateClusterLoadNDF
 [
-    Files     = [] ,
-    BaseName  : string       = '',
-    NameSpace : string       = '',
-    Optional  : bool = false,
-    Moddable  : bool = false,
-    FillResourceList : bool    = false,
-    UsingNamespaces = [],
+    C = 1,
 ] is TClusterNdfTransaction
 (
-    NdfTransaction = TNDFTransaction
-    (
-        FileList =
-        [
-        TNDFTransactionFileList
-        (
-            Files = <Files>
-        )
-        ]
-        FillResourceListOutputFileName = <FillResourceList>
-        BaseName = <BaseName>
-        NameSpace =<NameSpace>
-        Optional = <Optional>
-        Moddable = <Moddable>
-        UsingNamespaces = <UsingNamespaces>
-    )
+    A = 1
 )

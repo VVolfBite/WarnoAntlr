@@ -11,7 +11,7 @@ from src.parsers.syntax_tree.actions import semantic_actions_generator
 from src.parsers.syntax_tree.nodes.syntax_node_assignment import *
 from src.parsers.syntax_tree.nodes.syntax_node_collection import *
 # 为了实现直接导入，必须在这里以固定位置导入模组，之后需要考虑放在其他位置
-import src.parsers.register_class.RClass 
+import src.extractor.extract_class
 import src.extractor.refined_class
 class ParserInterface:
     class_register = {}
@@ -92,6 +92,13 @@ class ParserInterface:
             ParserInterface._register_classes(class_name=class_name , class_members=class_member)
             for item in entity.value:
                 ParserInterface.register_class(item)
+        elif isinstance(entity, Assignment) and entity.is_template:
+            class_name = entity.id
+            obj = entity.value
+            class_member = [item.id for item in obj.value]
+            ParserInterface._register_classes(class_name=class_name , class_members=class_member)
+            ParserInterface.register_class(obj)                 
+
         elif isinstance(entity, (Map, Pair, Vector, Collection, File, Assignment)):
             # 遍历这些结构的值，递归查找 Object 类型
             if isinstance(entity, Map):
@@ -196,7 +203,7 @@ class ParserInterface:
 
     @staticmethod
     def _instantiate_class(class_name, **kwargs):
-        get_class = lambda name: getattr(src.extractor.refined_class, name, None) or getattr(src.parsers.register_class.RClass, name, None)
+        get_class = lambda name: getattr(src.extractor.refined_class, name, None) or getattr(src.extractor.extract_class, name, None)
         class_ = get_class(class_name)
         return class_(**kwargs) if class_ is not None else None
 

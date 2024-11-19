@@ -9,8 +9,7 @@ WORK_DIRECTORY = "D:/WarnoAntlr-main/"
 sys.path.append(WORK_DIRECTORY)
 import config
 from antlr4 import *
-from src.parsers.parser_interface import ParserInterface
-from src.parsers.register_class.RClass import *
+
 
 
 def show_value(value, default_view=None):

@@ -124,8 +124,10 @@ class Generator(NdfGrammarListener):
     def exitTemplate_assignment(self, ctx:NdfGrammarParser.Template_assignmentContext):
         if self.ignore > 0:
             return
-        # 弹出Assignment的Value，此时堆栈为 Top(Assignment) | Value  <-
+        # 弹出Assignment的Value，此时堆栈为 Top(Assignment) | VECTOR |Value  <-
         value = self.stack.pop()
+        vector = self.stack.pop()
+        assignment = self.stack.top()
         self.stack.top().value = value
 
         # 弹出Assignment，此时堆栈为 Bottom | Top(Assignment)

@@ -18,7 +18,6 @@ sys.path.append(WORK_DIRECTORY)
 import config
 from antlr4 import *
 from src.parsers.parser_interface import ParserInterface
-# from src.parsers.register_class.RClass import *
 from src.extractor.extract_class import *
 from src.extractor.refined_class import *
 with open("global.pkl",'rb') as f:

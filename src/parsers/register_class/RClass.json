@@ -1,14 +1,8 @@
 {
-    "TEffectsPackDescriptor": [
-        "DescriptorId",
-        {"EffectsDescriptors":123},
-        "NameForDebug"
+    "TClusterNdfTransaction": [
+        "A"
     ],
-
-    "TUnitEffectHealOverTimeDescriptor": [
-        "",
-        "NbUpdatePerSecond",
-        "HealUnitsPerSecond"
-    ],
-    "TEvacAirplaneEffectDescriptor": []
+    "TemplateClusterLoadNDF": [
+        "A"
+    ]
 }

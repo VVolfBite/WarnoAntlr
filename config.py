@@ -44,7 +44,7 @@ PROCESS_FILE_LIST = [
     # "/GameData/Gameplay/Unit/DamageModules.ndf", # 伤害基础
     # "/GameData/Gameplay/Constantes/WeaponTypePriorities.ndf", # 优先级
     # "/GameData/Gameplay/Constantes/WreckageConstants.ndf", # 载具受击
-    "/GameData/Gameplay/Terrains/Terrains.ndf", # 地形
+    # "/GameData/Gameplay/Terrains/Terrains.ndf", # 地形
     # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf", # 飞机暴击模型
     # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_GroundUnit.ndf", # 地面暴击模型
     # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf", # 直升机暴击模型
