@@ -1,7 +1,18 @@
-template CriticalEffect_FuelExplosion
+//-----------------------------------------------------------------------------
+//*****************************************************************************
+//-----------------------------------------------------------------------------
+template regist_objectClusterLoadNDF
 [
-    Roll = 1
-] is TCriticalEffect
+    Files ,
+    BaseName,
+] is TClusterNdfTransaction
 (
-    Descriptor = ~/CriticalEffect_FuelExplosion_Desc
+    NdfTransaction = TNDFTransaction
+    (
+        BaseName = <BaseName>
+        NameSpace =<NameSpace>
+        Optional = <Optional>
+        Moddable = <Moddable>
+        UsingNamespaces = <UsingNamespaces>
+    )
 )

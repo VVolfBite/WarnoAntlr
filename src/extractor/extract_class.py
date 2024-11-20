@@ -5705,3 +5705,16 @@ class TTurretBombardierDescriptor(BaseDescription):
             )
             + ">"
         )
+
+class TNDFTransaction(BaseDescription):
+    def __init__(self, BaseName=None, NameSpace=None, Optional=None, Moddable=None, UsingNamespaces=None):
+        self.BaseName = BaseName
+        self.NameSpace = NameSpace
+        self.Optional = Optional
+        self.Moddable = Moddable
+        self.UsingNamespaces = UsingNamespaces
+
+
+class TClusterNdfTransaction(BaseDescription):
+    def __init__(self, NdfTransaction=None):
+        self.NdfTransaction = NdfTransaction

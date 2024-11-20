@@ -90,7 +90,11 @@ class Object(Collection):
         self.nodetype = NodeType.Object
 
     def __str__(self):
-        return "{type: object, value: " + "".join(map(str, self.value)) + "}"
+        attributes = ", ".join(
+            f"{item.id}={None}"
+            for item in self.value
+        )
+        return f"{self.object_type}({attributes})"
 
     def __eq__(self, other):
         if not type(other) == type(self):

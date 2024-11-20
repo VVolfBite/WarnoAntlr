@@ -42,7 +42,7 @@ def apply_macro_replacements(content: str):
         content = content.replace(key, str(value))
     return content
 
-def generate_target_object(file_name: str, mode = "default"):
+def generate_target_object(file_name: str, mode = "generate"):
     input_stream = antlr4.InputStream(
         apply_macro_replacements(
             str(FileStream(file_name, encoding="utf8"))
@@ -55,28 +55,48 @@ def generate_target_object(file_name: str, mode = "default"):
     listener = semantic_actions_generator.Generator(parser,mode = mode)
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
-    if mode == "defalut":
-        return File(listener.assignments)
-    else:
-        return listener.dict
+    if mode == "generate":
+        return listener.generate_dict
+    elif mode == "regist_object" or mode == "regist_template":
+        return listener.regist_dict
+
+def generate_class_from_dict(dict, py_file):
+    class_definitions = []
+    for class_name, attributes in dict.items():
+        class_def = f"class {class_name}(BaseDescription):\n"
+        if attributes:
+            # 生成带默认值的参数列表
+            params = ", ".join([f"{key}={value}" for key,value in attributes.items()])
+            class_def += f"    def __init__(self, {params}):\n"
+            for key,value in attributes.items():
+                class_def += f"        self.{key} = {key}\n"
+        else:
+            class_def += "    def __init__(self):\n"
+            class_def += "        pass\n"
+
+        class_definitions.append(class_def)
+    complete_class_definitions = "\n\n".join(class_definitions)
+    with open(py_file, "w") as py_file:
+        py_file.write(complete_class_definitions)
+    print(f"Classes successfully written to {py_file}")
 
 
 def main():
     global_dict = {}
     for file in config.PROCESS_FILE_LIST:
         file = config.RAW_DATA_PATH + file
-        class_regist = generate_target_object(file,mode="regist_class")
-       
-        # ParserInterface.set_class_json(config.CLASS_JSON)
-        # # ParserInterface.generate_class_json_from_ndf_folder(config.RAW_DATA_PATH)
-        # ParserInterface.register_class(node)
-        # ParserInterface.generate_class_from_json(config.CLASS_JSON, config.CLASS_PY)
-        # ParserInterface.set_class_py(config.CLASS_PY)
-        
-        # value = ParserInterface.value_from_node(node)
+        class_regist = generate_target_object(file,mode="regist_object")
+        global_dict = merge_dicts(global_dict,class_regist)
+    generate_class_from_dict(global_dict,"TClass")    
+    for file in config.PROCESS_FILE_LIST:
+        file = config.RAW_DATA_PATH + file
+        class_regist = generate_target_object(file,mode="regist_template")
         global_dict = merge_dicts(global_dict,class_regist)
 
-
+    generate_class_from_dict(global_dict,"TClass")    
+    for file in config.PROCESS_FILE_LIST:
+        file = config.RAW_DATA_PATH + file
+        class_generate = generate_target_object(file,mode="generate")
     # with open("global.pkl",'wb') as f:
     #     pickle.dump(global_dict, f)
     

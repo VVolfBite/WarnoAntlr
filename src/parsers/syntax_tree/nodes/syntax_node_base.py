@@ -20,7 +20,8 @@ class NodeType:
         Map,
         Arithmetic,
         Object,
-    ) = range(17)
+        Replacer
+    ) = range(18)
 
 
 # 语法节点树的基类
