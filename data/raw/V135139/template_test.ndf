@@ -1,7 +1,7 @@
-template TemplateClusterLoadNDF
+template CriticalEffect_FuelExplosion
 [
-    C = 1,
-] is TClusterNdfTransaction
+    Roll = 1
+] is TCriticalEffect
 (
-    A = 1
+    Descriptor = ~/CriticalEffect_FuelExplosion_Desc
 )

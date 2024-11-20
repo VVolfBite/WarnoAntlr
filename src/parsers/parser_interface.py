@@ -29,7 +29,7 @@ class ParserInterface:
 
     # 生成节点对象
     @staticmethod
-    def generate_node_object(file_name: str):
+    def generate_node_object(file_name: str, mode = "default"):
         input_stream = antlr4.InputStream(
             ParserInterface.apply_macro_replacements(
                 str(FileStream(file_name, encoding="utf8"))
@@ -39,11 +39,13 @@ class ParserInterface:
         stream = CommonTokenStream(lexer)
         parser = NdfGrammarParser(stream)
         tree = parser.ndf_file()
-        listener = semantic_actions_generator.Generator(parser)
+        listener = semantic_actions_generator.Generator(parser,mode = mode)
         walker = ParseTreeWalker()
         walker.walk(listener, tree)
-
-        return File(listener.assignments)
+        if mode == "defalut":
+            return File(listener.assignments)
+        else:
+            return listener.dict
 
     @staticmethod
     def set_class_json(json_file):
@@ -87,7 +89,7 @@ class ParserInterface:
     def register_class(entity):
         if isinstance(entity, Object):
             class_name = entity.object_type
-            class_member = [item.id for item in entity.value]
+            class_member = {item.id: None for item in entity.value}
             # 对 Object 类型的 entity 进行处理
             ParserInterface._register_classes(class_name=class_name , class_members=class_member)
             for item in entity.value:
@@ -95,7 +97,7 @@ class ParserInterface:
         elif isinstance(entity, Assignment) and entity.is_template:
             class_name = entity.id
             obj = entity.value
-            class_member = [item.id for item in obj.value]
+            class_member = {item.id : item.value for item in obj.value}
             ParserInterface._register_classes(class_name=class_name , class_members=class_member)
             ParserInterface.register_class(obj)                 
 
@@ -166,6 +168,7 @@ class ParserInterface:
             if isinstance(value, object) and not isinstance(value, (str, int, float, list, dict, tuple)):
                 value.KeyName = key
         return dictionary
+
     @staticmethod
     def generate_class_json_from_ndf_folder(folder: str):
         ndf_files = []
@@ -188,9 +191,8 @@ class ParserInterface:
     def _register_classes(class_name, class_members):
         if class_name in ParserInterface.class_register:
             # 更新类的成员
-            existing_members = set(ParserInterface.class_register[class_name])
-            new_members = set(class_members)
-            ParserInterface.class_register[class_name] = list(existing_members | new_members)
+            existing_members = ParserInterface.class_register[class_name]
+            existing_members.update(class_members)
         else:
             # 注册新类
             ParserInterface.class_register[class_name] = class_members

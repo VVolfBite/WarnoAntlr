@@ -31,6 +31,7 @@ class Base:
     def __init__(self):
         self.nodetype = NodeType.UNKNOWN
         self.value = None
+        self.python_value = None
 
     def __str__(self):
         return "{type: " + str(self.nodetype) + ", value: " + str(self.value) + "}"

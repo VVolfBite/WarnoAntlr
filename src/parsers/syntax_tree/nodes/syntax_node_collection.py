@@ -99,8 +99,8 @@ class Object(Collection):
             return False
         return super().__eq__(other)
     
-    # def get_class(self):
-    #     return (self.object_type, [item.id for item in self.value])
+    def get_class(self):
+        return (self.object_type, {item.id : None for item in self.value})
 
 # Pair是对对的描述，是NDF中特有的数据类型，即(P1,P2)
 # 因此Value是两个数据值

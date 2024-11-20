@@ -10,15 +10,15 @@ CLASS_PY = CLASS_REGISTER_PATH + '/Rclass.py'
 PROCESS_FILE_LIST = [    
     "/template_test.ndf",
 
-    # "/GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", # 光环
-    # "/GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", # 效果
-    # # # "/GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", # 条件
+    "/GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", # 光环
+    "/GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", # 效果
+    # # "/GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", # 条件
     # "/GameData/Generated/Gameplay/Gfx/Ammunition.ndf", # 弹药
     # "/GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf", # 导弹
     # "/GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf", # 武器
     # "/GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf", # 单位 
-    # "/GameData/Generated/Gameplay/Decks/Divisions.ndf", # 师卡组数
-    # "/GameData/Generated/Gameplay/Decks/DivisionPacks.ndf", # 师/卡组包  
+    "/GameData/Generated/Gameplay/Decks/Divisions.ndf", # 师卡组数
+    "/GameData/Generated/Gameplay/Decks/DivisionPacks.ndf", # 师/卡组包  
     # "/GameData/Generated/Gameplay/Decks/DivisionRules.ndf", # 师卡组经验修正  
     # "/GameData/Generated/Gameplay/Decks/DivisionCostMatrix.ndf", # 师费用矩阵
     # "/GameData/Generated/Gameplay/Gfx/DamageLevels.ndf", # 伤害等级
