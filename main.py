@@ -80,29 +80,41 @@ def generate_class_from_dict(dict, py_file):
         py_file.write(complete_class_definitions)
     print(f"Classes successfully written to {py_file}")
 
+def refer_class(entity, dictionary):
+    if isinstance(entity, dict):
+        for key, value in entity.items():
+            if isinstance(value, str):
+                if value in dictionary and not isinstance(dictionary[value], (str, int, float, bool)) and entity!= dictionary[value]:
+                    entity[key] = dictionary[value]
+            else:
+                refer_class(value, dictionary)
 
 def main():
     global_dict = {}
-    for file in config.PROCESS_FILE_LIST:
-        file = config.RAW_DATA_PATH + file
-        class_regist = generate_target_object(file,mode="regist_object")
-        global_dict = merge_dicts(global_dict,class_regist)
-    generate_class_from_dict(global_dict,"TClass")    
-    for file in config.PROCESS_FILE_LIST:
-        file = config.RAW_DATA_PATH + file
-        class_regist = generate_target_object(file,mode="regist_template")
-        global_dict = merge_dicts(global_dict,class_regist)
+    # for file in config.PROCESS_FILE_LIST:
+    #     file = config.RAW_DATA_PATH + file
+    #     class_regist = generate_target_object(file,mode="regist_object")
+    #     global_dict = merge_dicts(global_dict,class_regist)
+    # generate_class_from_dict(global_dict,"TClass")
+    # for file in config.PROCESS_FILE_LIST:
+    #     file = config.RAW_DATA_PATH + file
+    #     class_regist = generate_target_object(file,mode="regist_template")
+    #     global_dict = merge_dicts(global_dict,class_regist)
+    # generate_class_from_dict(global_dict,"TClass")
 
-    generate_class_from_dict(global_dict,"TClass")    
+    global_dict = {}    
     for file in config.PROCESS_FILE_LIST:
         file = config.RAW_DATA_PATH + file
         class_generate = generate_target_object(file,mode="generate")
-    # with open("global.pkl",'wb') as f:
-    #     pickle.dump(global_dict, f)
+        global_dict.update(class_generate)
+
+    with open("global.pkl",'wb') as f:
+        pickle.dump(global_dict, f)
     
-    # with open("global.pkl",'rb') as f:
-    #     global_dict  = pickle.load(f)
-    # global_dict = ParserInterface.refer_class(global_dict,global_dict)
+    with open("global.pkl",'rb') as f:
+        global_dict  = pickle.load(f)
+
+    global_dict = refer_class(global_dict,global_dict)
     # global_dict = ParserInterface.backup_instance_name(global_dict)
     # with open("global.pkl",'wb') as f:
     #     pickle.dump(global_dict, f)

@@ -1,3 +1,4 @@
+from email.mime import base
 from email.policy import default
 from multiprocessing import Value
 from antlr4 import *
@@ -15,6 +16,7 @@ import config
 
 WORK_DIRECTORY = "D:/WarnoAntlr-main/"
 sys.path.append(WORK_DIRECTORY)
+import src.extractor.base_class
 import src.extractor.extract_class
 import src.extractor.refined_class
 
@@ -106,6 +108,7 @@ class Generator(NdfGrammarListener):
         if len(self.stack) == 1:
             assignment = self.stack.pop()
             if self.mode == "generate":
+                assignment.python_value.KeyName = assignment.id
                 self.generate_dict.update({assignment.id :assignment.python_value})            
             self.assignments.append(assignment)
 
@@ -174,15 +177,19 @@ class Generator(NdfGrammarListener):
         if self.mode == "generate" or self.mode ==  "regist_template":
             assignment.python_value = value.python_value
         if self.mode ==  "regist_template":
-            class_name, class_member = assignment.id, {attr: str(getattr(value.python_value, attr)) for attr in dir(value.python_value) if not attr.startswith('__')}
+            class_name, class_member = assignment.id, {
+                attr: (getattr(value.python_value, attr).reverse() if isinstance(getattr(value.python_value, attr), src.extractor.base_class.BaseDescription)
+                    else getattr(value.python_value, attr))
+                for attr in dir(value.python_value)
+                if not callable(getattr(value.python_value, attr)) and not attr.startswith('__')
+            }
             stop =1
             self.regist_object(class_name=class_name, class_member=class_member)    
         # 弹出Assignment，此时堆栈为 Bottom | Top(Assignment)
         if len(self.stack) == 1:
             assignment = self.stack.pop()
             self.assignments.append(assignment)
-            if self.mode == "generate":
-                self.generate_dict.update({assignment.id :assignment.python_value})   
+ 
 
 
     def enterArithmetic(self, ctx: NdfGrammarParser.ArithmeticContext):
@@ -398,7 +405,8 @@ class Generator(NdfGrammarListener):
         if self.mode == "generate" or self.mode == "regist_template":
             class_name = obj.object_type
             kwargs = {val.id : val.python_value for val in obj.value}
-            obj.python_value = self.instantiate_class(class_name, **kwargs)
+            instance = self.instantiate_class(class_name, **kwargs)
+            obj.python_value = instance
 
     def enterExport_prefix(self, ctx: NdfGrammarParser.Export_prefixContext):
         if self.ignore > 0:

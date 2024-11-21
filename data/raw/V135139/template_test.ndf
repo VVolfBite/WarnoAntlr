@@ -3,16 +3,20 @@
 //-----------------------------------------------------------------------------
 template regist_objectClusterLoadNDF
 [
-    Files ,
-    BaseName,
+    Fi  = 3,
+    Files  = 3,
 ] is TClusterNdfTransaction
 (
+    File = <File>
     NdfTransaction = TNDFTransaction
     (
-        BaseName = <BaseName>
+        BaseName = CCLass ( ROLL = 31)
         NameSpace =<NameSpace>
         Optional = <Optional>
         Moddable = <Moddable>
         UsingNamespaces = <UsingNamespaces>
     )
 )
+
+
+test is regist_objectClusterLoadNDF(File = 30)

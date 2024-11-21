@@ -205,7 +205,7 @@ class ParserInterface:
 
     @staticmethod
     def _instantiate_class(class_name, **kwargs):
-        get_class = lambda name: getattr(src.extractor.refined_class, name, None) or getattr(src.extractor.extract_class, name, None)
+        get_class = lambda name: getattr(src.extractor.refined_class, name, None) or getattr(src.src.extractor.extract_class, name, None)
         class_ = get_class(class_name)
         return class_(**kwargs) if class_ is not None else None
 
