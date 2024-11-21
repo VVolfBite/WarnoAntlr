@@ -24,17 +24,20 @@ import src.extractor.refined_class
 
 
 def merge_dicts(dict1, dict2):
-    result = dict1.copy()
+    result = dict1.copy()  # 创建一个副本，避免修改原始字典
     for key, value in dict2.items():
-        if key not in result:
-            result[key] = value
+        if key in result and isinstance(result[key], dict) and isinstance(value, dict):
+            # 如果当前键的值是字典，则递归合并
+            result[key] = merge_dicts(result[key], value)
+        elif key in result:
+            # 如果键存在且当前值为 None，允许覆盖
+            if result[key] is None:
+                result[key] = value
         else:
-            for member, value in value.items():
-                if member not in result[key]:
-                    result[key][member] = value
-                elif value is not None:
-                    result[key][member] = value
+            # 如果键不存在，直接添加
+            result[key] = value
     return result
+
 
 
 def apply_macro_replacements(content: str):
@@ -63,31 +66,57 @@ def generate_target_object(file_name: str, mode="generate"):
         return listener.regist_dict
 
 
-def generate_class_from_dict(dict, py_file):
+def generate_class_from_dict(data_dict, py_file):
     class_definitions = []
-    for class_name, attributes in dict.items():
-        class_def = f"class {class_name}(BaseDescription):\n"
-        if attributes:
-            # 生成带默认值的参数列表
-            params = ", ".join(
-                [
-                    f'{key}="{value}"' if isinstance(value, str) else f"{key}={value}"
-                    for key, value in attributes.items()
-                ]
-            )
-            class_def += f"    def __init__(self, {params}):\n"
-            for key, value in attributes.items():
+
+    for class_name, data in data_dict.items():
+        attributes = data.get("attributes") or {}  # 确保 attributes 为字典
+        base = data.get("base") or {}  # 确保 base 为字典
+        base_name = base.get("name") or "BaseDescription"  # 确保 base_name 有默认值
+        base_attributes = base.get("attributes") or {}  # 确保 base_attributes 为字典
+
+        # 生成类定义
+        class_def = f"class {class_name}({base_name}):\n"
+        # 子类自己的参数
+        current_params = ", ".join(
+            [
+                f'{key}="{value}"' if isinstance(value, str) else f"{key}={value}"
+                for key, value in attributes.items()
+            ]
+        )
+        # 父类的初始化调用，去掉@
+        super_params = ", ".join(
+            [
+                f"{key}={value.lstrip('@')}" if isinstance(value, str) and value.startswith('@')
+                else f'{key}="{value}"' if isinstance(value, str) and not value.startswith('@')
+                else f"{key}={value}"
+                for key, value in base_attributes.items()
+            ]
+        )
+        # 处理 __init__ 方法
+        if current_params:
+            class_def += f"    def __init__(self, {current_params}):\n"
+            # 初始化父类，去掉@
+            if super_params:
+                class_def += f"        super().__init__({super_params})\n"
+            # 初始化子类自身属性
+            for key in attributes.keys():
                 class_def += f"        self.{key} = {key}\n"
         else:
+            # 如果没有当前类的属性，只有父类的初始化
             class_def += "    def __init__(self):\n"
-            class_def += "        pass\n"
+            if super_params:
+                class_def += f"        super().__init__({super_params})\n"
+            else:
+                class_def += "        pass\n"
 
         class_definitions.append(class_def)
-    complete_class_definitions = "\n\n".join(class_definitions)
-    with open(py_file, "w") as py_file:
-        py_file.write(complete_class_definitions)
-    print(f"Classes successfully written to {py_file}")
 
+    # 将生成的类写入文件
+    complete_class_definitions = "\n\n".join(class_definitions)
+    with open(py_file, "w") as py_file_obj:
+        py_file_obj.write(complete_class_definitions)
+    print(f"Classes successfully written to {py_file}")
 
 def refer_class(entity, dictionary):
     if isinstance(entity, dict):
@@ -134,36 +163,36 @@ def refer_class(entity, dictionary):
 
 
 def main():
-    global_dict = {}
-    for file in config.PROCESS_FILE_LIST:
-        file = config.RAW_DATA_PATH + file
-        class_regist = generate_target_object(file,mode="regist_object")
-        global_dict = merge_dicts(global_dict,class_regist)
-    generate_class_from_dict(global_dict,"TClass.py")
-    for file in config.PROCESS_FILE_LIST:
-        file = config.RAW_DATA_PATH + file
-        class_regist = generate_target_object(file, mode="regist_template")
-        global_dict = merge_dicts(global_dict, class_regist)
-    generate_class_from_dict(global_dict, "TClass.py")
-
-    # with open("global.pkl",'rb') as f:
-    #     global_dict  = pickle.load(f)
-
+    # global_dict = {}
     # for file in config.PROCESS_FILE_LIST:
     #     file = config.RAW_DATA_PATH + file
-    #     class_generate = generate_target_object(file,mode="generate")
-    #     global_dict.update(class_generate)
+    #     class_regist = generate_target_object(file,mode="regist_object")
+    #     global_dict = merge_dicts(global_dict,class_regist)
+    # generate_class_from_dict(global_dict,"TClass.py")
+    # for file in config.PROCESS_FILE_LIST:
+    #     file = config.RAW_DATA_PATH + file
+    #     class_regist = generate_target_object(file, mode="regist_template")
+    #     global_dict = merge_dicts(global_dict, class_regist)
+    # generate_class_from_dict(global_dict, "TClass.py")
 
-    # with open("global.pkl",'wb') as f:
-    #     pickle.dump(global_dict, f)
+    with open("global.pkl",'rb') as f:
+        global_dict  = pickle.load(f)
 
-    # with open("global.pkl",'rb') as f:
-    #     global_dict  = pickle.load(f)
+    for file in config.PROCESS_FILE_LIST:
+        file = config.RAW_DATA_PATH + file
+        class_generate = generate_target_object(file,mode="generate")
+        global_dict.update(class_generate)
 
-    # global_dict = refer_class(global_dict,global_dict)
-    # # # global_dict = ParserInterface.backup_instance_name(global_dict)
-    # with open("global.pkl",'wb') as f:
-    #     pickle.dump(global_dict, f)
+    with open("global.pkl",'wb') as f:
+        pickle.dump(global_dict, f)
+
+    with open("global.pkl",'rb') as f:
+        global_dict  = pickle.load(f)
+
+    global_dict = refer_class(global_dict,global_dict)
+    # # global_dict = ParserInterface.backup_instance_name(global_dict)
+    with open("global.pkl",'wb') as f:
+        pickle.dump(global_dict, f)
 
     stop = 1
 

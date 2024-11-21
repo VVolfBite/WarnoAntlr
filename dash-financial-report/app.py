@@ -7,7 +7,8 @@ from pages import (
     unit,
     capacityandeffect,
     division,
-    terrain
+    terrain,
+    critical
 )
 import pickle
 import sys
@@ -34,6 +35,8 @@ GlobalDeckDivisionDict = {key:value for key,value in global_dict.items() if isin
 DivisionRules = [value for key,value in global_dict.items() if isinstance(value,TDeckDivisionRules)][0]
 
 terrain_dict = {key:value for key,value in global_dict.items() if isinstance(value,TGameplayTerrain)}
+
+CriticalEffect_dict = {key:value for key,value in global_dict.items() if isinstance(value,TCriticalEffectModuleDescriptor)}
 
 unite_object = None
 
@@ -149,7 +152,8 @@ def display_page(pathname):
             capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
         )
     else:
-        return terrain.TerrainPage(terrain_dict).AsPage()
+        return critical.CriticalPage(CriticalEffect_dict).AsPage()
+        # return terrain.TerrainPage(terrain_dict).AsPage()
         # return division.DivisionPage(DivisionRules,GlobalPackDict,GlobalDeckDivisionDict).AsPage()
         # return capacityandeffect.CapacityAndEffectPage(capacity_list,effect_list).AsPage()
         # return unit.UnitComponent(unit_object).AsPage()

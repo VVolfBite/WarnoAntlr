@@ -8,7 +8,9 @@ CLASS_JSON = CLASS_REGISTER_PATH + '/Rclass.json'
 CLASS_PY = CLASS_REGISTER_PATH + '/Rclass.py'
 
 PROCESS_FILE_LIST = [   
-    "/template_test.ndf", 
+    # "/template_test.ndf", 
+
+
     # "/GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", # 光环
     # "/GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", # 效果
     # # "/GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", # 条件
@@ -25,11 +27,12 @@ PROCESS_FILE_LIST = [
     # "/GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf", # 伤害防御列表
     # "/GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf", # 穿深进化表
     # "/GameData/Gameplay/Terrains/Terrains.ndf", # 地形
-    # "/GameData/Gameplay/Unit/CriticalModules/TemplateCriticalEffectModules.ndf", # 暴击效果说明
-    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf", # 飞机暴击模型
-    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_GroundUnit.ndf", # 地面暴击模型
-    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf", # 直升机暴击模型
-    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Infanterie.ndf", # 步兵暴击模型
+
+    "/GameData/Gameplay/Unit/CriticalModules/TemplateCriticalEffectModules.ndf", # 暴击效果说明
+    "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf", # 飞机暴击模型
+    "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_GroundUnit.ndf", # 地面暴击模型
+    "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf", # 直升机暴击模型
+    "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Infanterie.ndf", # 步兵暴击模型
 
     # "/GameData/Gameplay/Constantes/Strategic/GDConstantes.ndf",
     # "/GameData/Gameplay/Constantes/Airplane.ndf",

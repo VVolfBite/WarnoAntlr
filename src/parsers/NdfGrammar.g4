@@ -20,7 +20,7 @@ block : normal_assignment | member_assignment;
 
 
 normal_assignment : ( export_prefix | private_prefix )? id K_IS r_value;
-template_assignment : template_prefix id  vector_value  K_IS r_value;
+template_assignment : ( export_prefix | private_prefix )? template_prefix id  vector_value  K_IS r_value;
 member_assignment : id '=' ( r_value | normal_assignment );
 unnamed_assignment : K_UNNAMED r_value;
 
