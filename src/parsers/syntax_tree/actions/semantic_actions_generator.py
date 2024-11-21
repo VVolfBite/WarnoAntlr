@@ -2,6 +2,7 @@ from email.mime import base
 from email.policy import default
 from multiprocessing import Value
 from antlr4 import *
+from numpy import isin
 from src.parsers.parser.NdfGrammarListener import NdfGrammarListener
 from src.parsers.parser.NdfGrammarParser import NdfGrammarParser
 
@@ -172,12 +173,18 @@ class Generator(NdfGrammarListener):
         # 弹出Assignment的Value，此时堆栈为 Top(Assignment) | VECTOR |Value  <-
         value = self.stack.pop()
         vector = self.stack.pop()
-        value.value += vector.value
+
         assignment = self.stack.top()
         assignment.value = value
         if self.mode == "generate" or self.mode ==  "regist_template":
             assignment.python_value = value.python_value
         if self.mode ==  "regist_template":
+            ref = {}
+            for val in vector.value:
+                if isinstance(val, Assignment):
+                    ref.update({val.id : val.python_value}) 
+                else:
+                    ref.update({val.python_value : None})         
             class_name, class_member = assignment.id, {
                 attr: (getattr(value.python_value, attr).reverse() if isinstance(getattr(value.python_value, attr), src.extractor.base_class.BaseDescription)
                     else getattr(value.python_value, attr))
@@ -317,7 +324,7 @@ class Generator(NdfGrammarListener):
         for vector_value in vector_values:
             vector.append(vector_value)
         if self.mode == "generate" or self.mode == "regist_template":
-            vector.python_value = tuple([value.python_value for value in vector.value])
+            vector.python_value = [value.python_value for value in vector.value]
 
     def enterPair_value(self, ctx: NdfGrammarParser.Pair_valueContext):
         if self.ignore > 0:
@@ -465,7 +472,7 @@ class Generator(NdfGrammarListener):
         entity.nodetype = NodeType.Integer
         entity.value = int(ctx.getText())
         if self.mode == "generate" or self.mode == "regist_template":
-            entity.python_value = entity.value
+            entity.python_value = int(entity.value)
         # 推入一个Entity，此时堆栈为 Top | Base(Int)  ->
         self.stack.push(entity)
 
@@ -480,7 +487,7 @@ class Generator(NdfGrammarListener):
             entity.nodetype = NodeType.String_double
         entity.value = value
         if self.mode == "generate" or self.mode == "regist_template":
-            entity.python_value = entity.value
+            entity.python_value = str(entity.value)
         # 推入一个Entity，此时堆栈为 Top | Base(String)  ->
         self.stack.push(entity)
 
@@ -502,7 +509,7 @@ class Generator(NdfGrammarListener):
         entity.nodetype = NodeType.Float
         entity.value = float(ctx.getText())
         if self.mode == "generate" or self.mode == "regist_template":
-            entity.python_value = entity.value
+            entity.python_value = float(entity.value)
         # 推入一个Entity，此时堆栈为 Top | Base(Float)  ->
         self.stack.push(entity)
 
@@ -513,7 +520,7 @@ class Generator(NdfGrammarListener):
         entity.nodetype = NodeType.GUID
         entity.value = ctx.getText()
         if self.mode == "generate" or self.mode == "regist_template":
-            entity.python_value = entity.value
+            entity.python_value = str(entity.value)
         # 推入一个Entity，此时堆栈为 Top | Base(GUID)  ->
         self.stack.push(entity)
 
@@ -552,7 +559,7 @@ class Generator(NdfGrammarListener):
                 references = reference_str.split('|')
                 entity.python_value = [ref.strip().split('/')[-1] for ref in references]
             else:
-                entity.python_value = '"' + reference_str.split('/')[-1] + '"'
+                entity.python_value = reference_str.split('/')[-1]
         
         # 推入一个Entity，此时堆栈为 Top | Base(ObjReference)  ->
         self.stack.push(entity)
@@ -570,7 +577,7 @@ class Generator(NdfGrammarListener):
         entity.nodetype = NodeType.Replacer
         entity.value = ctx.getText()
         if self.mode == "generate" or self.mode == "regist_template":
-            entity.python_value = None
+            entity.python_value = "@" + entity.value[1:-1]
         # 推入一个Entity，此时堆栈为 Top | Base(GUID)  ->
         self.stack.push(entity)
 

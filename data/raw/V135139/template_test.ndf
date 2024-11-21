@@ -1,0 +1,19 @@
+template TemplateCriticalEffectModule_GroundUnit
+[
+    EffectsFromTerrain = [],
+    PackEffetCritique ,
+
+]
+is TCriticalEffectModuleDescriptor
+(
+    TerrainCriticalEffectTimer = 1// 5.0
+
+    EffectsFromTerrain = <EffectsFromTerrain>
+    PierceEffectsOnFront = <PackEffetCritique>
+    PierceEffectsOnTop = TClass(
+        Mem = <PackEffetCritique>
+    )
+
+    RicochetEffectsOnFront = []
+)
+

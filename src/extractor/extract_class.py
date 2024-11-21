@@ -975,3 +975,42 @@ class TStairsDamageTypeEvolutionOverRangeDescriptor(BaseDescription):
     def __init__(self, DistanceGRU=None, AP=None):
         self.DistanceGRU = DistanceGRU
         self.AP = AP
+
+class TGameplayTerrain(BaseDescription):
+    def __init__(self, BloqueAmphibie=None, BloqueAtterrissage=None, BloqueInfanterie=None, BloqueVehicule=None, BloqueVision=None, CriticalEffectProbability=None, DebugColor=None, DissimulationModifierGroundAir=None, DissimulationModifierGroundGround=None, HeightInMeters=None, InflammabilityProbability=None, Name=None, SpeedModifierAllTerrainWheel=None, SpeedModifierInfantry=None, SpeedModifierTrack=None, ConcealmentBonus=None, TerrainType=None, WorldLayerActiveMask=None, AuthorizeNearGroundFlying=None, DamageModifierPerFamilyAndResistance=None):
+        self.BloqueAmphibie = BloqueAmphibie
+        self.BloqueAtterrissage = BloqueAtterrissage
+        self.BloqueInfanterie = BloqueInfanterie
+        self.BloqueVehicule = BloqueVehicule
+        self.BloqueVision = BloqueVision
+        self.CriticalEffectProbability = CriticalEffectProbability
+        self.DebugColor = DebugColor
+        self.DissimulationModifierGroundAir = DissimulationModifierGroundAir
+        self.DissimulationModifierGroundGround = DissimulationModifierGroundGround
+        self.HeightInMeters = HeightInMeters
+        self.InflammabilityProbability = InflammabilityProbability
+        self.Name = Name
+        self.SpeedModifierAllTerrainWheel = SpeedModifierAllTerrainWheel
+        self.SpeedModifierInfantry = SpeedModifierInfantry
+        self.SpeedModifierTrack = SpeedModifierTrack
+        self.ConcealmentBonus = ConcealmentBonus
+        self.TerrainType = TerrainType
+        self.WorldLayerActiveMask = WorldLayerActiveMask
+        self.AuthorizeNearGroundFlying = AuthorizeNearGroundFlying
+        self.DamageModifierPerFamilyAndResistance = DamageModifierPerFamilyAndResistance
+
+
+###########
+
+class TClass(BaseDescription):
+    def __init__(self, Mem=None):
+        self.Mem = Mem
+
+
+class TCriticalEffectModuleDescriptor(BaseDescription):
+    def __init__(self, TerrainCriticalEffectTimer=None, EffectsFromTerrain=None, PierceEffectsOnFront=None, PierceEffectsOnTop=None, RicochetEffectsOnFront=None):
+        self.TerrainCriticalEffectTimer = TerrainCriticalEffectTimer
+        self.EffectsFromTerrain = EffectsFromTerrain
+        self.PierceEffectsOnFront = PierceEffectsOnFront
+        self.PierceEffectsOnTop = PierceEffectsOnTop
+        self.RicochetEffectsOnFront = RicochetEffectsOnFront

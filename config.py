@@ -7,24 +7,30 @@ CLASS_REGISTER_PATH =  WORK_DIRECTORY + "/src/parsers/register_class"
 CLASS_JSON = CLASS_REGISTER_PATH + '/Rclass.json'
 CLASS_PY = CLASS_REGISTER_PATH + '/Rclass.py'
 
-PROCESS_FILE_LIST = [    
-    # "/template_test.ndf",
+PROCESS_FILE_LIST = [   
+    "/template_test.ndf", 
+    # "/GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", # 光环
+    # "/GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", # 效果
+    # # "/GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", # 条件
+    # "/GameData/Generated/Gameplay/Gfx/Ammunition.ndf", # 弹药
+    # "/GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf", # 导弹
+    # "/GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf", # 武器
+    # "/GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf", # 单位 
+    # "/GameData/Generated/Gameplay/Decks/Divisions.ndf", # 师卡组数
+    # "/GameData/Generated/Gameplay/Decks/DivisionPacks.ndf", # 师/卡组包  
+    # "/GameData/Generated/Gameplay/Decks/DivisionRules.ndf", # 师卡组经验修正  
+    # "/GameData/Generated/Gameplay/Decks/DivisionCostMatrix.ndf", # 师费用矩阵
+    # "/GameData/Generated/Gameplay/Gfx/DamageLevels.ndf", # 伤害等级
+    # "/GameData/Generated/Gameplay/Gfx/DamageResistance.ndf", # 伤害防御表
+    # "/GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf", # 伤害防御列表
+    # "/GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf", # 穿深进化表
+    # "/GameData/Gameplay/Terrains/Terrains.ndf", # 地形
+    # "/GameData/Gameplay/Unit/CriticalModules/TemplateCriticalEffectModules.ndf", # 暴击效果说明
+    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf", # 飞机暴击模型
+    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_GroundUnit.ndf", # 地面暴击模型
+    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf", # 直升机暴击模型
+    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Infanterie.ndf", # 步兵暴击模型
 
-    "/GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", # 光环
-    "/GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", # 效果
-    # "/GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", # 条件
-    "/GameData/Generated/Gameplay/Gfx/Ammunition.ndf", # 弹药
-    "/GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf", # 导弹
-    "/GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf", # 武器
-    "/GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf", # 单位 
-    "/GameData/Generated/Gameplay/Decks/Divisions.ndf", # 师卡组数
-    "/GameData/Generated/Gameplay/Decks/DivisionPacks.ndf", # 师/卡组包  
-    "/GameData/Generated/Gameplay/Decks/DivisionRules.ndf", # 师卡组经验修正  
-    "/GameData/Generated/Gameplay/Decks/DivisionCostMatrix.ndf", # 师费用矩阵
-    "/GameData/Generated/Gameplay/Gfx/DamageLevels.ndf", # 伤害等级
-    "/GameData/Generated/Gameplay/Gfx/DamageResistance.ndf", # 伤害防御表
-    "/GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf", # 伤害防御列表
-    "/GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf", # 穿深进化表
     # "/GameData/Gameplay/Constantes/Strategic/GDConstantes.ndf",
     # "/GameData/Gameplay/Constantes/Airplane.ndf",
     # "/GameData/Gameplay/Constantes/Deroute.ndf",
@@ -44,11 +50,6 @@ PROCESS_FILE_LIST = [
     # "/GameData/Gameplay/Unit/DamageModules.ndf", # 伤害基础
     # "/GameData/Gameplay/Constantes/WeaponTypePriorities.ndf", # 优先级
     # "/GameData/Gameplay/Constantes/WreckageConstants.ndf", # 载具受击
-    # "/GameData/Gameplay/Terrains/Terrains.ndf", # 地形
-    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf", # 飞机暴击模型
-    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_GroundUnit.ndf", # 地面暴击模型
-    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf", # 直升机暴击模型
-    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Infanterie.ndf", # 步兵暴击模型
     # "/GameData/Gameplay/Unit/Tactic/Fire.ndf", # 火焰
     # "/GameData/Gameplay/Unit/Tactic/Smoke.ndf", # 烟雾
     # "/GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf", # FOB等建筑
