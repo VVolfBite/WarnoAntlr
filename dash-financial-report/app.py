@@ -22,8 +22,6 @@ from src.extractor.extract_class import *
 from src.extractor.refined_class import *
 with open("global.pkl",'rb') as f:
     global_dict  = pickle.load(f)
-global_dict = ParserInterface.refer_class(global_dict,global_dict)
-global_dict = ParserInterface.backup_instance_name(global_dict)
 
 # ammo_object = global_dict['Ammo_Canon_AP_105mm_L7A3_Leo1V']
 # weapon_object = global_dict['WeaponDescriptor_Su_25_he_SOV']

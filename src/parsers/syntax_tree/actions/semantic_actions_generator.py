@@ -108,7 +108,8 @@ class Generator(NdfGrammarListener):
         if len(self.stack) == 1:
             assignment = self.stack.pop()
             if self.mode == "generate":
-                assignment.python_value.KeyName = assignment.id
+                if isinstance(assignment.python_value,src.extractor.base_class.BaseDescription):
+                    assignment.python_value.KeyName = assignment.id
                 self.generate_dict.update({assignment.id :assignment.python_value})            
             self.assignments.append(assignment)
 

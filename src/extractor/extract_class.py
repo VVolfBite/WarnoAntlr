@@ -1,6 +1,5 @@
 from src.extractor.base_class import BaseDescription
 
-
 class TCapaciteDescriptor(BaseDescription):
     def __init__(self, DescriptorId=None, Name=None, NameToken=None, CumulEffect=None, Declenchement=None, TypeCible=None, TargetTeamFilter=None, InfluenceMapAlliance=None, TargetWoundedFilter=None, AreaShape=None, InfluenceMapType=None, ActionRadiusWithBoundingBox=None, RadiusGRU=None, RangeGRU=None, CastTime=None, Cooldown=None, CheckVisibility=None, AllowReflexDuringCast=None, CanBeCastFromTransport=None, TargetEffect=None, TargetEffectDuration=None, SelfEffectDuration=None, MinVirtualUnits=None, OrderMustSpreadTargets=None, MaxTargetNb=None, MultiplyCost=None, TargetInBuilding=None, TargetInTransport=None, TargetInSelf=None, TargetMySelf=None, FeedbackActivationMask=None, DisplayRangeColor=None, DisplayRangeThickness=None, Price=None, TagsCiblePossible=None, TagsCibleExcluded=None, Conditions=None, SelfEffect=None):
         self.DescriptorId = DescriptorId
@@ -327,7 +326,7 @@ class TDiceHitRollRuleDescriptor(BaseDescription):
 
 
 class TAmmunitionDescriptor(BaseDescription):
-    def __init__(self, DescriptorId=None, Name=None, TypeCategoryName=None, Caliber=None, WeaponDescriptionToken=None, TraitsToken=None, WeaponCursorType=None, MinMaxCategory=None, Arme=None, ProjectileType=None, ImpactHappening=None, FxPower=None, TempsEntreDeuxTirs=None, TempsEntreDeuxFx=None, PorteeMaximaleGRU=None, PorteeMinimaleGRU=None, AffecteParNombre=None, AngleDispersion=None, DispersionAtMaxRangeGRU=None, DispersionAtMinRangeGRU=None, DispersionWithoutSorting=None, CorrectedShotAimtimeMultiplier=None, RadiusSplashPhysicalDamagesGRU=None, PhysicalDamages=None, ShowDamageInUI=None, RadiusSplashSuppressDamagesGRU=None, SuppressDamages=None, AllowSuppressDamageWhenNoImpact=None, DisplaySalveAccuracy=None, TirIndirect=None, TirReflexe=None, InterdireTirReflexe=None, MaximalSpeedGRU=None, ShotWithoutPhysics=None, FluidFriction=None, NoiseDissimulationMalus=None, ShotsBeforeMaxNoise=None, TargetOnlyOneUnitInDistrict=None, HitRollRuleDescriptor=None, MaxSuccessiveHitCount=None, TempsDeVisee=None, TempsEntreDeuxSalves=None, TempsEntreDeuxSalves_Min=None, TempsEntreDeuxSalves_Max=None, NbTirParSalves=None, SupplyCost=None, NbSalvosShootOnPosition=None, CanShootOnPosition=None, CanShootWhileMoving=None, NbrProjectilesSimultanes=None, AffichageMunitionParSalve=None, InterfaceWeaponTexture=None, SmokeDescriptor=None, FireDescriptor=None, TargetUnitCenter=None, CanHarmAirplanes=None, IsHarmlessForAllies=None, PiercingWeapon=None, TandemCharge=None, FlightTimeForSpeed=None, DistanceForSpeedGRU=None, DamageTypeEvolutionOverRangeDescriptor=None, PorteeMaximaleTBAGRU=None, FireTriggeringProbability=None, AltitudeAPorteeMinimaleGRU=None, AltitudeAPorteeMaximaleGRU=None, IgnoreInflammabilityConditions=None, IsSubAmmunition=None, ForceHitTopArmor=None, PorteeMinimaleTBAGRU=None, PorteeMinimaleHAGRU=None, PorteeMaximaleHAGRU=None, Guidance=None, CorrectedShotDispersionMultiplier=None, MaxAccelerationGRU=None, IsFireAndForget=None, WeaponForceNote=None, MissileTimeBetweenCorrections=None, MissileDescriptor=None):
+    def __init__(self, DescriptorId=None, Name=None, TypeCategoryName=None, Caliber=None, WeaponDescriptionToken=None, TraitsToken=None, WeaponCursorType=None, MinMaxCategory=None, Arme=None, ProjectileType=None, ImpactHappening=None, FxPower=None, TempsEntreDeuxTirs=None, TempsEntreDeuxFx=None, PorteeMaximaleGRU=None, PorteeMinimaleGRU=None, AffecteParNombre=None, AngleDispersion=None, DispersionAtMaxRangeGRU=None, DispersionAtMinRangeGRU=None, DispersionWithoutSorting=None, CorrectedShotAimtimeMultiplier=None, RadiusSplashPhysicalDamagesGRU=None, PhysicalDamages=None, ShowDamageInUI=None, RadiusSplashSuppressDamagesGRU=None, SuppressDamages=None, AllowSuppressDamageWhenNoImpact=None, DisplaySalveAccuracy=None, TirIndirect=None, TirReflexe=None, InterdireTirReflexe=None, MaximalSpeedGRU=None, ShotWithoutPhysics=None, FluidFriction=None, NoiseDissimulationMalus=None, ShotsBeforeMaxNoise=None, TargetOnlyOneUnitInDistrict=None, HitRollRuleDescriptor=None, MaxSuccessiveHitCount=None, TempsDeVisee=None, TempsEntreDeuxSalves=None, TempsEntreDeuxSalves_Min=None, TempsEntreDeuxSalves_Max=None, NbTirParSalves=None, SupplyCost=None, NbSalvosShootOnPosition=None, CanShootOnPosition=None, CanShootWhileMoving=None, NbrProjectilesSimultanes=None, AffichageMunitionParSalve=None, InterfaceWeaponTexture=None, SmokeDescriptor=None, FireDescriptor=None, TargetUnitCenter=None, CanHarmAirplanes=None, IsHarmlessForAllies=None, PiercingWeapon=None, TandemCharge=None, FlightTimeForSpeed=None, DistanceForSpeedGRU=None, DamageTypeEvolutionOverRangeDescriptor=None, PorteeMaximaleTBAGRU=None, FireTriggeringProbability=None, AltitudeAPorteeMinimaleGRU=None, AltitudeAPorteeMaximaleGRU=None, IgnoreInflammabilityConditions=None, IsSubAmmunition=None, ForceHitTopArmor=None, PorteeMinimaleTBAGRU=None, PorteeMinimaleHAGRU=None, PorteeMaximaleHAGRU=None, Guidance=None, CorrectedShotDispersionMultiplier=None, MaxAccelerationGRU=None, IsFireAndForget=None, MissileTimeBetweenCorrections=None, MissileDescriptor=None):
         self.DescriptorId = DescriptorId
         self.Name = Name
         self.TypeCategoryName = TypeCategoryName
@@ -404,7 +403,6 @@ class TAmmunitionDescriptor(BaseDescription):
         self.CorrectedShotDispersionMultiplier = CorrectedShotDispersionMultiplier
         self.MaxAccelerationGRU = MaxAccelerationGRU
         self.IsFireAndForget = IsFireAndForget
-        self.WeaponForceNote = WeaponForceNote
         self.MissileTimeBetweenCorrections = MissileTimeBetweenCorrections
         self.MissileDescriptor = MissileDescriptor
 
@@ -583,7 +581,7 @@ class TGenericMovementModuleDescriptor(BaseDescription):
 
 
 class TLandMovementModuleDescriptor(BaseDescription):
-    def __init__(self, UnitMovingType=None, SpeedBonusFactorOnRoad=None, MaxAccelerationGRU=None, MaxDecelerationGRU=None, TempsDemiTour=None, StartTime=None, StopTime=None, RotationStartTime=None, RotationStopTime=None):
+    def __init__(self, UnitMovingType=None, SpeedBonusFactorOnRoad=None, MaxAccelerationGRU=None, MaxDecelerationGRU=None, TempsDemiTour=None, StartTime=None, StopTime=None, RotationStartTime=None, RotationStopTime=None, VehicleSizeInMeter=None):
         self.UnitMovingType = UnitMovingType
         self.SpeedBonusFactorOnRoad = SpeedBonusFactorOnRoad
         self.MaxAccelerationGRU = MaxAccelerationGRU
@@ -593,6 +591,7 @@ class TLandMovementModuleDescriptor(BaseDescription):
         self.StopTime = StopTime
         self.RotationStartTime = RotationStartTime
         self.RotationStopTime = RotationStopTime
+        self.VehicleSizeInMeter = VehicleSizeInMeter
 
 
 class TFuelModuleDescriptor(BaseDescription):
@@ -602,7 +601,7 @@ class TFuelModuleDescriptor(BaseDescription):
 
 
 class TScannerConfigurationDescriptor(BaseDescription):
-    def __init__(self, OpticsAltitudeConfig=None, PorteeVisionTBAGRU=None, PorteeVisionFOWGRU=None, DetectionTBAGRU=None, PorteeVisionGRU=None, PorteeIdentification=None, OpticalStrength=None, OpticalStrengthAltitude=None, SpecializedDetectionsGRU=None):
+    def __init__(self, OpticsAltitudeConfig=None, PorteeVisionTBAGRU=None, PorteeVisionFOWGRU=None, DetectionTBAGRU=None, PorteeVisionGRU=None, PorteeIdentification=None, OpticalStrength=None, OpticalStrengthAltitude=None, SpecializedDetectionsGRU=None, SpecializedOpticalStrengths=None):
         self.OpticsAltitudeConfig = OpticsAltitudeConfig
         self.PorteeVisionTBAGRU = PorteeVisionTBAGRU
         self.PorteeVisionFOWGRU = PorteeVisionFOWGRU
@@ -612,24 +611,14 @@ class TScannerConfigurationDescriptor(BaseDescription):
         self.OpticalStrength = OpticalStrength
         self.OpticalStrengthAltitude = OpticalStrengthAltitude
         self.SpecializedDetectionsGRU = SpecializedDetectionsGRU
-
-
-class TModernWarfareDistanceMultiplierRollRuleDescriptor(BaseDescription):
-    def __init__(self, MultiplicateurAPorteeMaximale=None, MultiplicateurAPorteeMinimale=None, Exposant=None, MultiplicateurAPorteeMaximaleEnMouvement=None, MultiplicateurAPorteeMinimaleEnMouvement=None, ExposantEnMouvement=None):
-        self.MultiplicateurAPorteeMaximale = MultiplicateurAPorteeMaximale
-        self.MultiplicateurAPorteeMinimale = MultiplicateurAPorteeMinimale
-        self.Exposant = Exposant
-        self.MultiplicateurAPorteeMaximaleEnMouvement = MultiplicateurAPorteeMaximaleEnMouvement
-        self.MultiplicateurAPorteeMinimaleEnMouvement = MultiplicateurAPorteeMinimaleEnMouvement
-        self.ExposantEnMouvement = ExposantEnMouvement
+        self.SpecializedOpticalStrengths = SpecializedOpticalStrengths
 
 
 class TModernWarfareVisibilityRollRule(BaseDescription):
-    def __init__(self, IdentifyBaseProbability=None, TimeBetweenEachIdentifyRoll=None, VisibilityRuleDescriptor=None, DistanceMultiplierRule=None):
+    def __init__(self, IdentifyBaseProbability=None, TimeBetweenEachIdentifyRoll=None, VisibilityRuleDescriptor=None):
         self.IdentifyBaseProbability = IdentifyBaseProbability
         self.TimeBetweenEachIdentifyRoll = TimeBetweenEachIdentifyRoll
         self.VisibilityRuleDescriptor = VisibilityRuleDescriptor
-        self.DistanceMultiplierRule = DistanceMultiplierRule
 
 
 class TReverseScannerWithIdentificationDescriptor(BaseDescription):
@@ -746,6 +735,149 @@ class TEntityDescriptor(BaseDescription):
         self.ModulesDescriptors = ModulesDescriptors
 
 
+class TTransportableModuleDescriptor(BaseDescription):
+    def __init__(self, TransportedTexture=None, TransportedSoldier=None, NbSeatsOccupied=None, TimeToLoad=None, IsTowable=None):
+        self.TransportedTexture = TransportedTexture
+        self.TransportedSoldier = TransportedSoldier
+        self.NbSeatsOccupied = NbSeatsOccupied
+        self.TimeToLoad = TimeToLoad
+        self.IsTowable = IsTowable
+
+
+class TCapaciteModuleDescriptor(BaseDescription):
+    def __init__(self, DefaultSkillList=None):
+        self.DefaultSkillList = DefaultSkillList
+
+
+class TDeploymentShiftModuleDescriptor(BaseDescription):
+    def __init__(self, DeploymentShiftGRU=None):
+        self.DeploymentShiftGRU = DeploymentShiftGRU
+
+
+class TTransporterModuleDescriptor(BaseDescription):
+    def __init__(self, TransportableTagSet=None, NbSeatsAvailable=None, WreckUnloadPhysicalDamageBonus=None, WreckUnloadSuppressDamageBonus=None, WreckUnloadStunDamageBonus=None, LoadRadiusGRU=None):
+        self.TransportableTagSet = TransportableTagSet
+        self.NbSeatsAvailable = NbSeatsAvailable
+        self.WreckUnloadPhysicalDamageBonus = WreckUnloadPhysicalDamageBonus
+        self.WreckUnloadSuppressDamageBonus = WreckUnloadSuppressDamageBonus
+        self.WreckUnloadStunDamageBonus = WreckUnloadStunDamageBonus
+        self.LoadRadiusGRU = LoadRadiusGRU
+
+
+class TCommanderModuleDescriptor(BaseDescription):
+    def __init__(self):
+        pass
+
+
+class TZoneInfluenceMapModuleDescriptor(BaseDescription):
+    def __init__(self, InfluenceStrength=None, MinimumInfluenceStrength=None, StrengthDecayPerSecond=None, PreventsDecayInZone=None, IsEnabledByComportementAuto=None):
+        self.InfluenceStrength = InfluenceStrength
+        self.MinimumInfluenceStrength = MinimumInfluenceStrength
+        self.StrengthDecayPerSecond = StrengthDecayPerSecond
+        self.PreventsDecayInZone = PreventsDecayInZone
+        self.IsEnabledByComportementAuto = IsEnabledByComportementAuto
+
+
+class TInfluenceScoutModuleDescriptor(BaseDescription):
+    def __init__(self):
+        pass
+
+
+class InfantryApparenceModelModuleDescriptor(BaseDescription):
+    def __init__(self, Depiction=None):
+        self.Depiction = Depiction
+
+
+class Descriptor_Unit_MimeticUnit(BaseDescription):
+    def __init__(self, DescriptorId=None, MimeticName=None):
+        self.DescriptorId = DescriptorId
+        self.MimeticName = MimeticName
+
+
+class TInfantrySquadModuleDescriptor(BaseDescription):
+    def __init__(self, NbSoldatInGroupeCombat=None, SquadDataDescriptor=None, InfantryMimeticName=None, WeaponUnitFXKey=None, MimeticDescriptor=None):
+        self.NbSoldatInGroupeCombat = NbSoldatInGroupeCombat
+        self.SquadDataDescriptor = SquadDataDescriptor
+        self.InfantryMimeticName = InfantryMimeticName
+        self.WeaponUnitFXKey = WeaponUnitFXKey
+        self.MimeticDescriptor = MimeticDescriptor
+
+
+class TInfantrySquadWeaponAssignmentModuleDescriptor(BaseDescription):
+    def __init__(self, InitialSoldiersToTurretIndexMap=None):
+        self.InitialSoldiersToTurretIndexMap = InitialSoldiersToTurretIndexMap
+
+
+class TLinkToDistrictModuleDescriptor(BaseDescription):
+    def __init__(self):
+        pass
+
+
+class TSupplyModuleDescriptor(BaseDescription):
+    def __init__(self, SupplyDescriptor=None, SupplyCapacity=None, SupplyPriority=None):
+        self.SupplyDescriptor = SupplyDescriptor
+        self.SupplyCapacity = SupplyCapacity
+        self.SupplyPriority = SupplyPriority
+
+
+class TSellModuleDescriptor(BaseDescription):
+    def __init__(self):
+        pass
+
+
+class HelicopterPositionModuleDescriptor(BaseDescription):
+    def __init__(self, LowAltitudeFlyingAltitudeGRU=None, NearGroundFlyingAltitudeGRU=None):
+        self.LowAltitudeFlyingAltitudeGRU = LowAltitudeFlyingAltitudeGRU
+        self.NearGroundFlyingAltitudeGRU = NearGroundFlyingAltitudeGRU
+
+
+class THelicopterMovementModuleDescriptor(BaseDescription):
+    def __init__(self, MaxSpeedInKmph=None, WorldFloorProxy=None, UpwardSpeedInKmph=None, TorqueManoeuvrability=None, CyclicManoeuvrability=None, MaxInclination=None, GFactorLimit=None, RotorArea=None, Mass=None):
+        self.MaxSpeedInKmph = MaxSpeedInKmph
+        self.WorldFloorProxy = WorldFloorProxy
+        self.UpwardSpeedInKmph = UpwardSpeedInKmph
+        self.TorqueManoeuvrability = TorqueManoeuvrability
+        self.CyclicManoeuvrability = CyclicManoeuvrability
+        self.MaxInclination = MaxInclination
+        self.GFactorLimit = GFactorLimit
+        self.RotorArea = RotorArea
+        self.Mass = Mass
+
+
+class TFlareModuleDescriptor_MW(BaseDescription):
+    def __init__(self, ProjectileSpeed=None, DistanceActivationGRU=None, TimeBetweenFlare=None, MinimalTimeBetweenFlare=None, BonusTimeBetweenFlareByProjectile=None):
+        self.ProjectileSpeed = ProjectileSpeed
+        self.DistanceActivationGRU = DistanceActivationGRU
+        self.TimeBetweenFlare = TimeBetweenFlare
+        self.MinimalTimeBetweenFlare = MinimalTimeBetweenFlare
+        self.BonusTimeBetweenFlareByProjectile = BonusTimeBetweenFlareByProjectile
+
+
+class AirplanePositionModuleDescriptor(BaseDescription):
+    def __init__(self, LowAltitudeFlyingAltitudeGRU=None):
+        self.LowAltitudeFlyingAltitudeGRU = LowAltitudeFlyingAltitudeGRU
+
+
+class AirplaneMovementDescriptor(BaseDescription):
+    def __init__(self, AltitudeGRU=None, AltitudeMinGRU=None, SpeedInKmph=None, AgilityRadiusGRU=None, PitchAngle=None, RollAngle=None, RollSpeed=None, EvacAngle=None, EvacToStartingPoint=None, OrderedAttackStrategies=None):
+        self.AltitudeGRU = AltitudeGRU
+        self.AltitudeMinGRU = AltitudeMinGRU
+        self.SpeedInKmph = SpeedInKmph
+        self.AgilityRadiusGRU = AgilityRadiusGRU
+        self.PitchAngle = PitchAngle
+        self.RollAngle = RollAngle
+        self.RollSpeed = RollSpeed
+        self.EvacAngle = EvacAngle
+        self.EvacToStartingPoint = EvacToStartingPoint
+        self.OrderedAttackStrategies = OrderedAttackStrategies
+
+
+class TAirplaneModuleDescriptor(BaseDescription):
+    def __init__(self, EvacuationTime=None, TravelDuration=None):
+        self.EvacuationTime = EvacuationTime
+        self.TravelDuration = TravelDuration
+
+
 class TDeckDivisionDescriptor(BaseDescription):
     def __init__(self, DescriptorId=None, CfgName=None, DivisionName=None, DivisionPowerClassification=None, DivisionNationalite=None, DivisionTags=None, DescriptionHintTitleToken=None, PackList=None, MaxActivationPoints=None, CostMatrix=None, EmblemTexture=None, PortraitTexture=None, TypeTexture=None, CountryId=None, StrategicLabelColor=None):
         self.DescriptorId = DescriptorId
@@ -787,3 +919,59 @@ class TDeckDivisionRule(BaseDescription):
 class TDeckDivisionRules(BaseDescription):
     def __init__(self, DivisionRules=None):
         self.DivisionRules = DivisionRules
+
+
+class TDamageLevelDescriptor(BaseDescription):
+    def __init__(self, DescriptorId=None, Value=None, LocalizationToken=None, MoralModifier=None, HitRollModifier=None, TextColor=None, AnimationType=None, EffectsPacks=None, NameForDebug=None, FeedbackOnSelf=None):
+        self.DescriptorId = DescriptorId
+        self.Value = Value
+        self.LocalizationToken = LocalizationToken
+        self.MoralModifier = MoralModifier
+        self.HitRollModifier = HitRollModifier
+        self.TextColor = TextColor
+        self.AnimationType = AnimationType
+        self.EffectsPacks = EffectsPacks
+        self.NameForDebug = NameForDebug
+        self.FeedbackOnSelf = FeedbackOnSelf
+
+
+class TDamageLevelsPackDescriptor(BaseDescription):
+    def __init__(self, DescriptorId=None, DamageLevelsDescriptors=None, NameForDebug=None):
+        self.DescriptorId = DescriptorId
+        self.DamageLevelsDescriptors = DamageLevelsDescriptors
+        self.NameForDebug = NameForDebug
+
+
+class TResistanceTypeFamilyDefinition(BaseDescription):
+    def __init__(self, Family=None, MaxIndex=None):
+        self.Family = Family
+        self.MaxIndex = MaxIndex
+
+
+class TDamageTypeFamilyDefinition(BaseDescription):
+    def __init__(self, Family=None, MaxIndex=None):
+        self.Family = Family
+        self.MaxIndex = MaxIndex
+
+
+class TGameplayDamageResistanceContainer(BaseDescription):
+    def __init__(self, ResistanceFamilyDefinitionList=None, DamageFamilyDefinitionList=None, Values=None):
+        self.ResistanceFamilyDefinitionList = ResistanceFamilyDefinitionList
+        self.DamageFamilyDefinitionList = DamageFamilyDefinitionList
+        self.Values = Values
+
+
+class TResistanceFamilyList(BaseDescription):
+    def __init__(self, Values=None):
+        self.Values = Values
+
+
+class TDamageFamilyList(BaseDescription):
+    def __init__(self, Values=None):
+        self.Values = Values
+
+
+class TStairsDamageTypeEvolutionOverRangeDescriptor(BaseDescription):
+    def __init__(self, DistanceGRU=None, AP=None):
+        self.DistanceGRU = DistanceGRU
+        self.AP = AP

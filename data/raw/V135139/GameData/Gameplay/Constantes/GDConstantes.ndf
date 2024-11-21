@@ -108,7 +108,6 @@ Constantes is TTunableConstante
     SuddenDeathTime = 5 * 60
     MinimumNumberOfUnitToStayInGameWithoutCmdOrProductionInDestructionMode = 5
 
-    TagControleZone = "InfmapCommander"
     DureeDeploiementControleZone = 0.2
     DureeRetraitControleZone = 0.2
 

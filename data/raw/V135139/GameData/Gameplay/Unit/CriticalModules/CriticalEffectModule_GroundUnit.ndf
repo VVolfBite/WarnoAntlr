@@ -5,6 +5,34 @@ export CriticalEffectModule_Vehicule_NonArme is TemplateCriticalEffectModule_Gro
 export CriticalEffectModule_Helico_NonArme is TemplateCriticalEffectModule_GroundUnit( PackEffetCritique = PackEffetCritique_HelicoNonArme )
 export CriticalEffectModule_Helico_Arme is TemplateCriticalEffectModule_GroundUnit( PackEffetCritique = PackEffetCritique_HelicoArme )
 
+private template TemplateCriticalEffectModule_GroundUnit
+[
+    EffectsFromTerrain = [],
+    PackEffetCritique = PackEffetCritique_VehiculeStandard,
+]
+is TCriticalEffectModuleDescriptor
+(
+    Bounds = (1,200)
+    TerrainCriticalEffectTimer = 1// 5.0
+
+    EffectsFromTerrain = <EffectsFromTerrain>
+
+    EffectsOnFront = <PackEffetCritique>
+    EffectsOnSides = <PackEffetCritique>
+    EffectsOnRear = <PackEffetCritique>
+    EffectsOnTop = <PackEffetCritique>
+
+    PierceEffectsOnFront = <PackEffetCritique>
+    PierceEffectsOnSides = <PackEffetCritique>
+    PierceEffectsOnRear = <PackEffetCritique>
+    PierceEffectsOnTop = []
+
+    RicochetEffectsOnFront = []
+    RicochetEffectsOnSides = []
+    RicochetEffectsOnRear = []
+    RicochetEffectsOnTop = []
+)
+
 
 export CriticalEffectModule_Chenilles is TemplateCriticalEffectModule_GroundUnit
 (

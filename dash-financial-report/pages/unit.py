@@ -10,7 +10,7 @@ import sys
 
 WORK_DIRECTORY = "D:/WarnoAntlr-main/"
 sys.path.append(WORK_DIRECTORY)
-
+from src.extractor.extract_class import *
 from src.extractor.refined_class import *
 from pages import ammunition, weapon
 

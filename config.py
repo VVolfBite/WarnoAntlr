@@ -21,10 +21,10 @@ PROCESS_FILE_LIST = [
     "/GameData/Generated/Gameplay/Decks/DivisionPacks.ndf", # 师/卡组包  
     "/GameData/Generated/Gameplay/Decks/DivisionRules.ndf", # 师卡组经验修正  
     "/GameData/Generated/Gameplay/Decks/DivisionCostMatrix.ndf", # 师费用矩阵
-    # "/GameData/Generated/Gameplay/Gfx/DamageLevels.ndf", # 伤害等级
-    # "/GameData/Generated/Gameplay/Gfx/DamageResistance.ndf", # 伤害防御表
-    # "/GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf", # 伤害防御列表
-    # "/GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf", # 穿深进化表
+    "/GameData/Generated/Gameplay/Gfx/DamageLevels.ndf", # 伤害等级
+    "/GameData/Generated/Gameplay/Gfx/DamageResistance.ndf", # 伤害防御表
+    "/GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf", # 伤害防御列表
+    "/GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf", # 穿深进化表
     # "/GameData/Gameplay/Constantes/Strategic/GDConstantes.ndf",
     # "/GameData/Gameplay/Constantes/Airplane.ndf",
     # "/GameData/Gameplay/Constantes/Deroute.ndf",

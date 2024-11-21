@@ -12,6 +12,15 @@ CriticalEffect_AmmoExplosion_Desc is TCriticalEffectDescriptor
     Unique = False
     DisplayOnDeath = True
 )
+// Ammo explosion -> degats 2PV
+template CriticalEffect_AmmoExplosion
+[
+    Roll
+] is TCriticalEffect
+(
+    Roll = <Roll>
+    Descriptor = ~/CriticalEffect_AmmoExplosion_Desc
+)
 
 CriticalEffect_FuelExplosion_Desc is TCriticalEffectDescriptor
 (
@@ -32,8 +41,6 @@ template CriticalEffect_FuelExplosion
     Roll = <Roll>
     Descriptor = ~/CriticalEffect_FuelExplosion_Desc
 )
-
-
 
 CriticalEffect_ArmourCracked_Desc is TCriticalEffectDescriptor
 (

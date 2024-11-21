@@ -85,9 +85,29 @@ def refer_class(entity, dictionary):
         for key, value in entity.items():
             if isinstance(value, str):
                 if value in dictionary and not isinstance(dictionary[value], (str, int, float, bool)) and entity!= dictionary[value]:
-                    entity[key] = dictionary[value]
+                    entity[key] = dictionary[value] 
+                    
             else:
                 refer_class(value, dictionary)
+
+    elif isinstance(entity, (list, tuple)):
+        entity = list(entity)
+        for index, item in enumerate(entity):
+            if isinstance(item, str):
+                if item in dictionary and not isinstance(dictionary[item], (str, int, float, bool)) and entity!= dictionary[item]:
+                    entity[index] = dictionary[item] 
+            else:
+                refer_class(item, dictionary)
+    
+    elif hasattr(entity, '__dict__'):
+        for attr_name, attr_value in entity.__dict__.items():
+            if attr_name != "KeyName":
+                if isinstance(attr_value, str):
+                    if attr_value in dictionary and not isinstance(dictionary[attr_value], (str, int, float, bool)) and entity!= dictionary[attr_value]:
+                        setattr(entity, attr_name, dictionary[attr_value]) 
+                else:
+                    refer_class(attr_value, dictionary)
+    return entity
 
 def main():
     global_dict = {}
@@ -95,12 +115,12 @@ def main():
     #     file = config.RAW_DATA_PATH + file
     #     class_regist = generate_target_object(file,mode="regist_object")
     #     global_dict = merge_dicts(global_dict,class_regist)
-    # generate_class_from_dict(global_dict,"TClass")
+    # generate_class_from_dict(global_dict,"TClass.py")
     # for file in config.PROCESS_FILE_LIST:
     #     file = config.RAW_DATA_PATH + file
     #     class_regist = generate_target_object(file,mode="regist_template")
     #     global_dict = merge_dicts(global_dict,class_regist)
-    # generate_class_from_dict(global_dict,"TClass")
+    # generate_class_from_dict(global_dict,"TClass.py")
 
     global_dict = {}    
     for file in config.PROCESS_FILE_LIST:
@@ -115,9 +135,9 @@ def main():
         global_dict  = pickle.load(f)
 
     global_dict = refer_class(global_dict,global_dict)
-    # global_dict = ParserInterface.backup_instance_name(global_dict)
-    # with open("global.pkl",'wb') as f:
-    #     pickle.dump(global_dict, f)
+    # # global_dict = ParserInterface.backup_instance_name(global_dict)
+    with open("global.pkl",'wb') as f:
+        pickle.dump(global_dict, f)
     
     stop = 1
 
