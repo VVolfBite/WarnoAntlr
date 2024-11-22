@@ -90,7 +90,7 @@ def Content(sub_header: str, component:html):
     return [html.H6([sub_header], className="subtitle padded"), component]
 
 def Table(table_rows: list[html.Tr]):
-    return html.Table(table_rows)
+    return html.Table(table_rows,className="table")
 
 def Table_Row(key:str, value:str=None, caption:str=None):
     if value is None:

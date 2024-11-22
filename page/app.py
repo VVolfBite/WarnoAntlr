@@ -40,10 +40,13 @@ CriticalEffect_dict = {key:value for key,value in global_dict.items() if isinsta
 
 unite_object = None
 
-app = dash.Dash(
-    __name__,
-    meta_tags=[{"name": "viewport", "content": "width=device-width"}],
-)
+
+# external_stylesheets = [
+#     "https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css"
+# ]
+
+app = dash.Dash(__name__)
+
 app.title = "Warno"
 server = app.server
 
