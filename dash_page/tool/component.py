@@ -96,11 +96,11 @@ def ComponentTitle(descriptor: str) -> html.H3:
 # Componment
 ## Nav
 def Navbar(
+    collapse_id: str,  # 折叠区域的 ID
     descriptor: str,  # 品牌名称，显示在左侧
     nav_item_list: list[html.Li],  # 导航项列表
     content_list: list[html.Div],  # 对应的内容区列表
     theme: str = "bg-body-tertiary",  # 主题样式，默认为 "bg-body-tertiary"
-    collapse_id: str = "navbarColor04",  # 折叠区域的 ID
 ) -> html.Nav:
     """
     WIP
@@ -259,6 +259,38 @@ def FloatingInput(input_id: str, label: str, explanation: str = None):
 
     return input_component
 
+def FloatingDropdown(input_id: str, label: str, suggestions : list[str] = None, explanation: str = None):
+    input_component = html.Div(
+        className="form-floating",
+        children=[
+            dcc.Input(
+                type="text",
+                className="form-control",
+                id=input_id,
+                placeholder=label,
+            ),
+            html.Label(htmlFor=input_id, children=[label]),
+            dcc.Dropdown(
+                id=f'{input_id}-dropdown',
+                options=[{'label': suggestion, 'value': suggestion} for suggestion in suggestions],
+                style={'display': 'none'},  # Initially hidden
+                multi=False,
+                clearable=True,
+                placeholder="Select from suggestions"
+            ),
+        ],
+    )
+
+    if explanation:
+        input_component.children.append(
+            html.Small(
+                id=f"{input_id}Help",
+                className="form-text text-muted",
+                children=[explanation],
+            )
+        )
+
+    return input_component
 
 def RangeInput(
     input_id: str,
@@ -328,6 +360,8 @@ def SelectInput(input_id: str, label: str, option_list: list, explanation: str =
     return input_component
 
 
+
+
 def MultiSelectInput(
     input_id: str, label: str, option_list: list, explanation: str = None
 ):
@@ -374,7 +408,7 @@ def SwitchInput(input_id: str, label: str, value: bool = False):
 
 
 def Accordion(
-    headers: list[str], contents: list[html.Div], accordion_id="accordionExample"
+    accordion_id : str, headers: list[str], contents: list[html.Div]
 ) -> html.Div:
     if len(headers) != len(contents):
         raise ValueError("按钮名称列表和内容列表的长度必须一致！")
@@ -426,7 +460,7 @@ def Accordion(
     )
 
 
-def Dropdown(button_name: str, options: list[str]):
+def Dropdown(drop_down_id:str, button_name: str, options: list[str]):
     return html.Div(
         className="dropdown mt-3",
         children=[
@@ -435,7 +469,7 @@ def Dropdown(button_name: str, options: list[str]):
                 button_name,
                 className="btn btn-secondary dropdown-toggle",
                 type="button",
-                id="dropdownMenuButton",
+                id=f"{drop_down_id}",
                 **{
                     "data-bs-toggle": "dropdown",  # Use double-asterisk for attributes with hyphens
                 },
@@ -443,7 +477,7 @@ def Dropdown(button_name: str, options: list[str]):
             # Dropdown menu
             html.Ul(
                 className="dropdown-menu",
-                **{"aria-labelledby": "dropdownMenuButton"},
+                **{"aria-labelledby": f"{drop_down_id}"},
                 children=[
                     html.Li(html.A(option, className="dropdown-item", href="#"))
                     for option in options  # Create list items dynamically
@@ -455,7 +489,7 @@ def Dropdown(button_name: str, options: list[str]):
 
 def OffCanvasSidebar(
     offcanvas_id: str,
-    button: html.Button,
+    button_class: str,
     side_content: html.Div,
     side_header: str = "",
     position: str = "start",
@@ -463,10 +497,22 @@ def OffCanvasSidebar(
     """
     position: str  "start" "end" "top" "bottom"
     """
-    button_class = (
-        button.__getattribute__("className") if hasattr(button, "className") else ""
+    button_theme = html.Button(
+        children=[html.I(className="bi bi-brightness-high")],
+        style={
+            "position": "fixed",  # 固定位置
+            "left": "10px",  # 距离左侧 10px
+            "bottom": "50px",  # 距离底部 10px
+            "zIndex": "1050",  # 确保按钮显示在其他元素的前面
+        },
+        className=f"{button_class}" if button_class else "",
+        **{
+            "data-bs-theme-value" : "dark", 
+            "aria-pressed":"false",
+        },
+        id= "button_theme"
     )
-    button = html.Button(
+    button_expand = html.Button(
         children=[html.I(className="bi bi-code")],
         style={
             "position": "fixed",  # 固定位置
@@ -474,13 +520,13 @@ def OffCanvasSidebar(
             "bottom": "10px",  # 距离底部 10px
             "zIndex": "1050",  # 确保按钮显示在其他元素的前面
         },
-        className=f"{button_class}",
+        className=f"{button_class}" if button_class else "",
         **{
             "data-bs-toggle": "offcanvas",
             "data-bs-target": f"#{offcanvas_id}",
             "aria-controls": offcanvas_id,
         },
-    )
+    )    
     side = html.Div(
         className=f"offcanvas offcanvas-{position}",
         id=offcanvas_id,
@@ -495,14 +541,6 @@ def OffCanvasSidebar(
                         className="offcanvas-title",
                         id=f"{offcanvas_id}Label",
                     ),
-                    html.Button(
-                        className="btn-close text-reset",
-                        type="button",
-                        **{
-                            "data-bs-dismiss": "offcanvas",
-                            "aria-label": "Close",
-                        },
-                    ),
                 ],
             ),
             # Offcanvas Body
@@ -510,7 +548,7 @@ def OffCanvasSidebar(
         ],
     )
 
-    return [button, side]
+    return [button_theme,button_expand, side]
 
 
 ## Small Comp
