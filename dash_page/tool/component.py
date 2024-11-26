@@ -459,6 +459,7 @@ def Accordion(
         children=accordion_items,
     )
 
+
 def Dropdown(drop_down_id:str, button_name: str, options: list[str]):
     return html.Div(
         className="dropdown mt-3",
