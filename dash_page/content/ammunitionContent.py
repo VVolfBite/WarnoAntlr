@@ -12,7 +12,14 @@ class AmmunitionComponent:
     def __init__(self,app, data_manager: DataManager, ammunition: TAmmunitionDescriptor):
         self.ammunition_key = ammunition.KeyName if hasattr(ammunition, "KeyName") else str(ammunition)
         self.ammunition = ammunition
-        self.menu = ["概览", "详细"]
+        self.table_row_list = {
+            "brief":
+            {
+                "基础信息":{
+                    
+                }
+            }
+        }
 
         # 创建一些直接使用变量的内容
         self.TRMinMaxCategory = ammunition.MinMaxCategory if hasattr(ammunition, "MinMaxCategory") else ""

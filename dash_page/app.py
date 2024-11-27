@@ -2,6 +2,7 @@ from dash import Dash, html, Input, Output, State, dcc
 import dash_bootstrap_components as dbc
 import pickle
 import sys
+
 WORK_DIRECTORY = "D:/WarnoAntlr-main/"
 sys.path.append(WORK_DIRECTORY)
 import config
@@ -51,13 +52,11 @@ app.clientside_callback(
     """,
     Input("theme-store", "data"),
 )
-# 布局设置
-data_manager = dataManager.DataManager("./dash_page/util/global.pkl")
 
+data_manager = dataManager.DataManager("./dash_page/util/global.pkl")
+# 布局设置
 side_content = sideContent.SideContent(app, data_manager)
 side_content.register_callbacks()
-main_content = []
-
 side_bar = html.Div(
     [
         dcc.Store(id="theme-store", data="light"),
@@ -90,30 +89,6 @@ side_bar = html.Div(
         ),
     ]
 )
-main_page = html.Div(
-    [
-        dbc.NavbarSimple(
-            children=[],
-            brand="Warno",
-            brand_href="#",
-            color="primary",
-            dark=True,
-        ),
-        html.Div(children=main_content),  # Wrap main_content in a Div if needed
-        
-        # Footer section (empty for now)
-        dbc.NavbarSimple(
-            children=[],
-            brand="Footer",
-            brand_href="#",
-            color="secondary",
-            dark=True,
-            fixed="bottom",
-        ),
-    ]
-)
-
-app.layout = html.Div([side_bar, main_page])
 
 
 # 回调函数：切换主题状态
@@ -132,6 +107,7 @@ def toggle_theme(n1, current_theme):
         className="bi bi-brightness-high" if current_theme == "light" else "bi bi-moon"
     )
 
+
 # 回调函数：开关侧边栏
 @app.callback(
     Output("offcanvas", "is_open"),
@@ -142,6 +118,79 @@ def toggle_offcanvas(n1, is_open):
     if n1:
         return not is_open
     return is_open
+
+
+main_content = [
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+    html.H1(12321312),
+]
+main_page = html.Div(
+    [
+        dbc.NavbarSimple(
+            children=[],
+            brand="Warno",
+            brand_href="#",
+            color="primary",
+            dark=True,
+            fixed="top",
+            sticky=True,
+        ),
+        html.Div(
+            children=main_content,
+            className="container mt-6 mb-6",
+            id="main-content",  # 根据导航栏高度调整
+
+        ),  # Wrap main_content in a Div if needed
+        dbc.NavbarSimple(
+            children=[],
+            brand="Footer",
+            brand_href="#",
+            color="secondary",
+            dark=True,
+            fixed="bottom",
+            sticky=True,
+        ),
+    ],
+    className="container",
+)
+@app.callback(
+    Output("main-content", "children"),
+    Input(side_content.querytype_store_id, "data"), [Input(side_content.querykey_store_id, "data")],
+    prevent_initial_call=True,
+)
+def update_main_content(type_data, key_data):
+    if type_data :
+        return [html.H1(type_data)]
+
+app.layout = html.Div([side_bar, main_page])
 
 
 if __name__ == "__main__":
