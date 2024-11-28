@@ -6,7 +6,7 @@ import sys
 WORK_DIRECTORY = "D:/WarnoAntlr-main/"
 sys.path.append(WORK_DIRECTORY)
 import config
-from dash_page.util import dataManager
+from dash_page.util import dataProcess
 from dash_page.content import sideContent
 
 # 自定义 HTML 模板，为 body 标签添加 id
@@ -53,7 +53,7 @@ app.clientside_callback(
     Input("theme-store", "data"),
 )
 
-data_manager = dataManager.DataManager("./dash_page/util/global.pkl")
+data_manager = dataProcess.DataManager("./dash_page/util/global.pkl")
 # 布局设置
 side_content = sideContent.SideContent(app, data_manager)
 side_content.register_callbacks()

@@ -6,7 +6,7 @@ import pickle
 import sys
 WORK_DIRECTORY = "D:/WarnoAntlr-main/"
 sys.path.append(WORK_DIRECTORY)
-from dash_page.util.dataManager import DataManager
+from dash_page.util.dataProcess import DataManager
 
 
 class SideContent:
