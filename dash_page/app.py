@@ -2,9 +2,18 @@ from dash import Dash, html, Input, Output, State, dcc
 import dash_bootstrap_components as dbc
 import pickle
 import sys
+import os
 
-WORK_DIRECTORY = "D:/WarnoAntlr-main/"
+# 获取当前脚本的绝对路径
+current_directory = os.path.abspath(__file__)
+
+# 获取前两级目录
+WORK_DIRECTORY = os.path.dirname(os.path.dirname(current_directory))
+
+
+# 将工作目录添加到 sys.path
 sys.path.append(WORK_DIRECTORY)
+
 import config
 from dash_page.util import dataProcess
 from dash_page.content import sideContent
