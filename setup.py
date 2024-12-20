@@ -98,5 +98,13 @@ try:
     print(f"  - Number of keys: {num_keys}")
     print(f"  - Size in memory: {dict_size} bytes")
     print(f"  - Sample keys: {sample_keys}")
+
+    # 保存 global_dict 为 JSON 文件
+    output_file = 'global_dict.json'
+    with open(output_file, 'w', encoding='utf-8') as json_file:
+        json.dump(global_dict, json_file, ensure_ascii=False, indent=4)
+
+    print(f"global_dict has been saved as {output_file}")
+
 except Exception as e:
     print(f"An error occurred during setup: {str(e)}")
