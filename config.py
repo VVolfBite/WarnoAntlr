@@ -15,7 +15,7 @@ PROCESS_FILE_LIST = [
     # "/GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", # 效果
     # # "/GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", # 条件
     # "/GameData/Generated/Gameplay/Gfx/Ammunition.ndf", # 弹药
-    # "/GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf", # 导弹
+    "/GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf", # 导弹
     # "/GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf", # 武器
     # "/GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf", # 单位 
     # "/GameData/Generated/Gameplay/Decks/Divisions.ndf", # 师卡组数
@@ -28,11 +28,11 @@ PROCESS_FILE_LIST = [
     # "/GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf", # 穿深进化表
     # "/GameData/Gameplay/Terrains/Terrains.ndf", # 地形
 
-    "/GameData/Gameplay/Unit/CriticalModules/TemplateCriticalEffectModules.ndf", # 暴击效果说明
-    "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf", # 飞机暴击模型
-    "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_GroundUnit.ndf", # 地面暴击模型
-    "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf", # 直升机暴击模型
-    "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Infanterie.ndf", # 步兵暴击模型
+    # "/GameData/Gameplay/Unit/CriticalModules/TemplateCriticalEffectModules.ndf", # 暴击效果说明
+    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf", # 飞机暴击模型
+    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_GroundUnit.ndf", # 地面暴击模型
+    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf", # 直升机暴击模型
+    # "/GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Infanterie.ndf", # 步兵暴击模型
 
     # "/GameData/Gameplay/Constantes/Strategic/GDConstantes.ndf",
     # "/GameData/Gameplay/Constantes/Airplane.ndf",
