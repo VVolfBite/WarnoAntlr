@@ -116,39 +116,46 @@ def refer_class(entity, dictionary):
 global_dict = {}
 
 # 遍历文件列表并生成字典
-try:
-    with open("global.pkl",'rb') as f:
-        global_dict  = pickle.load(f)
+# try:
+with open("./global.pkl",'rb') as f:
+    global_dict  = pickle.load(f)
 
-    del global_dict['Ammo_AA_AIM120A_AMRAAM']
-    
-    for file in config.PROCESS_FILE_LIST:
-        file = config.RAW_DATA_PATH + file
-        class_generate = generate_target_object(file,mode="generate")
-        global_dict.update(class_generate)
+for file in config.PROCESS_FILE_LIST:
+    file = config.RAW_DATA_PATH + file
+    class_generate = generate_target_object(file,mode="generate")
+    global_dict.update(class_generate)
 
-    with open("global.pkl",'wb') as f:
-        pickle.dump(global_dict, f)
+with open("global.pkl",'wb') as f:
+    pickle.dump(global_dict, f)
 
-    with open("global.pkl",'rb') as f:
-        global_dict  = pickle.load(f)
+with open("global.pkl",'rb') as f:
+    global_dict  = pickle.load(f)
 
-    global_dict = refer_class(global_dict,global_dict)
-    with open("global.pkl",'wb') as f:
-        pickle.dump(global_dict, f)
+global_dict = refer_class(global_dict,global_dict)
+with open("global.pkl",'wb') as f:
+    pickle.dump(global_dict, f)
 
-    # 如果字典生成成功，提供一些总结信息
-    print("global_dict has been successfully populated.")
+# 如果字典生成成功，提供一些总结信息
+print("global_dict has been successfully populated.")
 
-    # 输出一些关于字典的总结信息
-    dict_size = sys.getsizeof(global_dict)
-    num_keys = len(global_dict)
-    sample_keys = list(global_dict.keys())[:5]  # 输出前5个键作为示例
+# 输出一些关于字典的总结信息
+dict_size = sys.getsizeof(global_dict)
+num_keys = len(global_dict)
+sample_keys = list(global_dict.keys())[:5]  # 输出前5个键作为示例
 
-    print(f"Summary of global_dict:")
-    print(f"  - Number of keys: {num_keys}")
-    print(f"  - Size in memory: {dict_size} bytes")
-    print(f"  - Sample keys: {sample_keys}")
+print(f"Summary of global_dict:")
+print(f"  - Number of keys: {num_keys}")
+print(f"  - Size in memory: {dict_size} bytes")
+print(f"  - Sample keys: {sample_keys}")
+import shutil
 
-except Exception as e:
-    print(f"An error occurred during setup: {str(e)}")
+# 定义文件路径和目标路径
+source_file = "global.pkl"
+destination_dir = "./dash_page/util/"
+destination_file = os.path.join(destination_dir, "global.pkl")
+shutil.copy(source_file, destination_file)
+
+# except Exception as e:
+#     print(f"An error occurred during setup: {str(e)}")
+
+

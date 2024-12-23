@@ -62,7 +62,7 @@ app.clientside_callback(
     Input("theme-store", "data"),
 )
 
-data_manager = dataProcess.DataManager("./global.pkl")
+data_manager = dataProcess.DataManager("./dash_page/util/global.pkl")
 # 布局设置
 side_content = sideContent.SideContent(app, data_manager)
 side_content.register_callbacks()
