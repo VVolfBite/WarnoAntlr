@@ -147,13 +147,6 @@ print(f"Summary of global_dict:")
 print(f"  - Number of keys: {num_keys}")
 print(f"  - Size in memory: {dict_size} bytes")
 print(f"  - Sample keys: {sample_keys}")
-import shutil
-
-# 定义文件路径和目标路径
-source_file = "global.pkl"
-destination_dir = "./dash_page/util/"
-destination_file = os.path.join(destination_dir, "global.pkl")
-shutil.copy(source_file, destination_file)
 
 # except Exception as e:
 #     print(f"An error occurred during setup: {str(e)}")
