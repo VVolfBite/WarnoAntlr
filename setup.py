@@ -67,24 +67,75 @@ def generate_target_object(file_name: str, mode="generate"):
     except Exception as e:
         raise Exception(f"Error processing file {file_name}: {str(e)}")
 
+def refer_class(entity, dictionary):
+    if isinstance(entity, dict):
+        for key, value in entity.items():
+            if isinstance(value, str):
+                if (
+                    value in dictionary
+                    and not isinstance(dictionary[value], (str, int, float, bool))
+                    and entity != dictionary[value]
+                ):
+                    entity[key] = dictionary[value]
+
+            else:
+                refer_class(value, dictionary)
+
+    elif isinstance(entity, (list, tuple)):
+        entity = list(entity)
+        for index, item in enumerate(entity):
+            if isinstance(item, str):
+                if (
+                    item in dictionary
+                    and not isinstance(dictionary[item], (str, int, float, bool))
+                    and entity != dictionary[item]
+                ):
+                    entity[index] = dictionary[item]
+            else:
+                refer_class(item, dictionary)
+
+    elif hasattr(entity, "__dict__"):
+        for attr_name, attr_value in entity.__dict__.items():
+            if attr_name != "KeyName":
+                if isinstance(attr_value, str):
+                    if (
+                        attr_value in dictionary
+                        and not isinstance(
+                            dictionary[attr_value], (str, int, float, bool)
+                        )
+                        and entity != dictionary[attr_value]
+                    ):
+                        setattr(entity, attr_name, dictionary[attr_value])
+                else:
+                    refer_class(attr_value, dictionary)
+    return entity
+
+
+
 # 初始化全局字典
 global_dict = {}
 
 # 遍历文件列表并生成字典
 try:
-    for file in config.PROCESS_FILE_LIST:
-        file_path = config.RAW_DATA_PATH + file
-        class_regist = generate_target_object(file_path, mode="regist_object")
-        global_dict = merge_dicts(global_dict, class_regist)
+    with open("global.pkl",'rb') as f:
+        global_dict  = pickle.load(f)
 
+    del global_dict['Ammo_AA_AIM120A_AMRAAM']
+    
     for file in config.PROCESS_FILE_LIST:
-        file_path = config.RAW_DATA_PATH + file
-        class_regist = generate_target_object(file_path, mode="regist_template")
-
-    for file in config.PROCESS_FILE_LIST:
-        file_path = config.RAW_DATA_PATH + file
-        class_generate = generate_target_object(file_path, mode="generate")
+        file = config.RAW_DATA_PATH + file
+        class_generate = generate_target_object(file,mode="generate")
         global_dict.update(class_generate)
+
+    with open("global.pkl",'wb') as f:
+        pickle.dump(global_dict, f)
+
+    with open("global.pkl",'rb') as f:
+        global_dict  = pickle.load(f)
+
+    global_dict = refer_class(global_dict,global_dict)
+    with open("global.pkl",'wb') as f:
+        pickle.dump(global_dict, f)
 
     # 如果字典生成成功，提供一些总结信息
     print("global_dict has been successfully populated.")
@@ -98,13 +149,6 @@ try:
     print(f"  - Number of keys: {num_keys}")
     print(f"  - Size in memory: {dict_size} bytes")
     print(f"  - Sample keys: {sample_keys}")
-
-    # 保存 global_dict 为 JSON 文件
-    output_file = 'global_dict.json'
-    with open(output_file, 'w', encoding='utf-8') as json_file:
-        json.dump(global_dict, json_file, ensure_ascii=False, indent=4)
-
-    print(f"global_dict has been saved as {output_file}")
 
 except Exception as e:
     print(f"An error occurred during setup: {str(e)}")
