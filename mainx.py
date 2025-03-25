@@ -29,9 +29,92 @@ import src.extractor.refined_class
 # 基于这个想法，我们准备：1.使用一个新的数据结构使得其能够支持路径信息 2.在语义动作上添加对路径的解析和替换
 
 
+class RegisterManager:
+    def __init__(self, file_list, output_file):
+        self.file_list = file_list
+        self.output_file = output_file
+        self.dict = {}
+
+    def register_class(self):
+        for file in self.file_list:
+            class_regist = extract(file, mode="register_object")
+            self.merge(class_regist)
+
+    def register_template(self):
+        for file in self.file_list:
+            class_regist = extract(file, mode="register_template")
+            self.merge(class_regist)
+
+    def merge(self, dict):
+        for key, value in dict.items():
+            if (
+                key in self.dict
+                and isinstance(self.dict[key], dict)
+                and isinstance(value, dict)
+            ):
+                self.dict[key] = merge_dicts(self.dict[key], value)
+            else:
+                self.dict[key] = value
+
+    def export(self):
+        class_definitions = []
+
+        for class_name, data in data_dict.items():
+            attributes = data.get("attributes", {})
+            base = data.get("base", {})
+            base_name = base.get("name", "BaseDescription")
+            base_attributes = base.get("attributes", {})
+            # 生成类定义
+            class_definition = f"class {class_name}({base_name}):\n"
+            # 子类自己的参数
+            current_params = ", ".join(
+                [
+                    f'{key}="{value}"' if isinstance(value, str) else f"{key}={value}"
+                    for key, value in attributes.items()
+                ]
+            )
+            # 父类的初始化参数，去掉@
+            super_params = ", ".join(
+                [
+                    (
+                        f"{key}={value.lstrip('@')}"
+                        if isinstance(value, str) and value.startswith("@")
+                        else (
+                            f'{key}="{value}"'
+                            if isinstance(value, str) and not value.startswith("@")
+                            else f"{key}={value}"
+                        )
+                    )
+                    for key, value in base_attributes.items()
+                ]
+            )
+            # __init__ 方法
+            if current_params:
+                class_definition += f"    def __init__(self, {current_params}):\n"
+                if super_params:
+                    class_definition += f"        super().__init__({super_params})\n"
+                for key in attributes.keys():
+                    class_definition += f"        self.{key} = {key}\n"
+            else:
+                # 如果没有当前类的属性，只有父类的初始化
+                class_definition += "    def __init__(self):\n"
+                if super_params:
+                    class_definition += f"        super().__init__({super_params})\n"
+                else:
+                    class_definition += "        pass\n"
+
+            class_definitions.append(class_definition)
+
+        # 将生成的类写入文件
+        complete_class_definitions = "\n\n".join(class_definitions)
+        with open(py_file, "w") as py_file_obj:
+            py_file_obj.write(complete_class_definitions)
+        print(f"Classes successfully written to {py_file}")
+
+
 import os
 
-    
+
 # 用于合并结构
 def merge_dicts(dict1, dict2):
     result = dict1.copy()
@@ -187,9 +270,9 @@ def main():
     global_dict = {}
     for file in config.PROCESS_FILE_LIST:
         file = config.RAW_DATA_PATH + file
-        class_regist = extract(file,mode="register_object")
-        global_dict = merge_dicts(global_dict,class_regist)
-    generate_class_from_dict(global_dict,"TClass.py")
+        class_regist = extract(file, mode="register_object")
+        global_dict = merge_dicts(global_dict, class_regist)
+    generate_class_from_dict(global_dict, "TClass.py")
     for file in config.PROCESS_FILE_LIST:
         file = config.RAW_DATA_PATH + file
         class_regist = extract(file, mode="register_template")
@@ -220,7 +303,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
 # 我们设计一个ObjectManger其可以做以下事情： 注册一个
