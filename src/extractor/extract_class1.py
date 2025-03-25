@@ -5726,7 +5726,7 @@ class TClusterNdfTransaction(BaseDescription):
         self.NdfTransaction = NdfTransaction
 
 
-class regist_objectClusterLoadNDF(BaseDescription):
+class register_objectClusterLoadNDF(BaseDescription):
     def __init__(self, File=None, NdfTransaction=TNDFTransaction(BaseName=CCLass(ROLL=31), NameSpace=None, Optional=None, Moddable=None, UsingNamespaces=None)):
         self.File = File
         self.NdfTransaction = NdfTransaction

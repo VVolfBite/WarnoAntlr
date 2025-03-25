@@ -67,12 +67,12 @@ class Generator(NdfGrammarListener):
         # 追踪要忽视的规则数量
         self.ignore = 0
         self.mode = mode
-        self.generate_dict = {}
-        self.regist_dict = {}
+        self.generator = {}
+        self.register = {}
 
-    def regist_object(self, class_name, class_attrs,base_class_name = None, base_class_attrs = None):
-        if class_name not in self.regist_dict:
-            self.regist_dict[class_name] = {
+    def register_object(self, class_name, class_attrs,base_class_name = None, base_class_attrs = None):
+        if class_name not in self.register:
+            self.register[class_name] = {
                 "attributes": class_attrs,
                 "base": {
                     "name": base_class_name,
@@ -80,7 +80,7 @@ class Generator(NdfGrammarListener):
                 } if base_class_name else None
             }
         else:
-            existing_entry = self.regist_dict[class_name]
+            existing_entry = self.register[class_name]
             # 更新自身属性
             for member, value in class_attrs.items():
                 if member not in existing_entry["attributes"] or value is not None:
@@ -117,7 +117,7 @@ class Generator(NdfGrammarListener):
         value = self.stack.pop()
         assignment = self.stack.top()
         assignment.value = value.python_value
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             assignment.python_value = value.python_value
         # 弹出Assignment，此时堆栈为 Bottom | Top(Assignment)
         if len(self.stack) == 1:
@@ -127,7 +127,7 @@ class Generator(NdfGrammarListener):
                     assignment.python_value, src.extractor.base_class.BaseDescription
                 ):
                     assignment.python_value.KeyName = assignment.id
-                self.generate_dict.update({assignment.id: assignment.python_value})
+                self.generator.update({assignment.id: assignment.python_value})
             self.assignments.append(assignment)
 
     def enterMember_assignment(self, ctx: NdfGrammarParser.Member_assignmentContext):
@@ -145,7 +145,7 @@ class Generator(NdfGrammarListener):
         value = self.stack.pop()
         assignment = self.stack.top()
         assignment.value = value
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             assignment.python_value = value.python_value
 
     def enterUnnamed_assignment(self, ctx: NdfGrammarParser.Unnamed_assignmentContext):
@@ -164,14 +164,14 @@ class Generator(NdfGrammarListener):
         assignment = self.stack.top()
         assignment.value = value
         assignment.id = "Unnamed-" + str(hash(str(value)))
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             assignment.python_value = value.python_value
         # 弹出一个Assignment，此时堆栈为 Bottom | Assignment <-
         if len(self.stack) == 1:
             assignment = self.stack.pop()
             self.assignments.append(assignment)
-            if self.mode == "generate" or self.mode == "regist_template":
-                self.generate_dict.update({assignment.id: assignment.python_value})
+            if self.mode == "generate" or self.mode == "register_template":
+                self.generator.update({assignment.id: assignment.python_value})
 
     # Enter a parse tree produced by NdfGrammarParser#template_assignment.
     def enterTemplate_assignment(
@@ -194,7 +194,7 @@ class Generator(NdfGrammarListener):
 
         assignment = self.stack.top()
         assignment.value = value
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             assignment.python_value = value.python_value
             class_name = value.object_type
             class_attrs = {
@@ -203,8 +203,8 @@ class Generator(NdfGrammarListener):
                 if not callable(getattr(value.python_value, attr))
                 and not attr.startswith("__")
             }   
-            self.regist_object(class_name=class_name,class_attrs=class_attrs)
-        if self.mode == "regist_template":
+            self.register_object(class_name=class_name,class_attrs=class_attrs)
+        if self.mode == "register_template":
             class_name = assignment.id
             class_attrs = {
                 val.id if isinstance(val, Assignment) else val.python_value: (
@@ -227,7 +227,7 @@ class Generator(NdfGrammarListener):
                 and not attr.startswith("__")
             }
 
-            self.regist_object(class_name=class_name,class_attrs=class_attrs,base_class_name=base_class_name,base_class_attrs=base_class_attrs)
+            self.register_object(class_name=class_name,class_attrs=class_attrs,base_class_name=base_class_name,base_class_attrs=base_class_attrs)
         # 弹出Assignment，此时堆栈为 Bottom | Top(Assignment)
         if len(self.stack) == 1:
             assignment = self.stack.pop()
@@ -356,7 +356,7 @@ class Generator(NdfGrammarListener):
         vector = self.stack.top()
         for vector_value in vector_values:
             vector.append(vector_value)
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             vector.python_value = []  + [value.python_value for value in vector.value]
 
     def enterPair_value(self, ctx: NdfGrammarParser.Pair_valueContext):
@@ -380,7 +380,7 @@ class Generator(NdfGrammarListener):
         pair = self.stack.top()
         for pair_value in pair_values:
             pair.append(pair_value)
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             key = (
                 tuple(pair.value[0].python_value)
                 if isinstance((pair.value[0].python_value), list)
@@ -412,7 +412,7 @@ class Generator(NdfGrammarListener):
         for map_value in map_values:
             _map.append(map_value)
 
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             _map.python_value = {
                 str(key.python_value): value.python_value
                 for key, value in _map.map.items()
@@ -444,10 +444,10 @@ class Generator(NdfGrammarListener):
         for member in members:
             obj.append(member)
 
-        if self.mode == "regist_object":
+        if self.mode == "register_object":
             class_name, class_attrs = obj.get_class()
-            self.regist_object(class_name=class_name, class_attrs=class_attrs)
-        if self.mode == "generate" or self.mode == "regist_template":
+            self.register_object(class_name=class_name, class_attrs=class_attrs)
+        if self.mode == "generate" or self.mode == "register_template":
             class_name = obj.object_type
             kwargs = {val.id: val.python_value for val in obj.value}
             instance = self.instantiate_class(class_name, **kwargs)
@@ -483,7 +483,7 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.Nil
         entity.value = None
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             entity.python_value = entity.value
         # 推入一个Entity，此时堆栈为 Top | Base(Nil)  ->
         self.stack.push(entity)
@@ -497,7 +497,7 @@ class Generator(NdfGrammarListener):
             entity.value = False
         else:
             entity.value = True
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             entity.python_value = entity.value
         # 推入一个Entity，此时堆栈为 Top | Base(Bool)  ->
         self.stack.push(entity)
@@ -508,7 +508,7 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.Integer
         entity.value = int(ctx.getText())
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             entity.python_value = int(entity.value)
         # 推入一个Entity，此时堆栈为 Top | Base(Int)  ->
         self.stack.push(entity)
@@ -523,7 +523,7 @@ class Generator(NdfGrammarListener):
         else:
             entity.nodetype = NodeType.String_double
         entity.value = value
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             entity.python_value = str(entity.value)
         # 推入一个Entity，此时堆栈为 Top | Base(String)  ->
         self.stack.push(entity)
@@ -534,7 +534,7 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.HexInteger
         entity.value = ctx.getText()
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             entity.python_value = entity.value
         # 推入一个Entity，此时堆栈为 Top | Base(Hex)  ->
         self.stack.push(entity)
@@ -545,7 +545,7 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.Float
         entity.value = float(ctx.getText())
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             entity.python_value = float(entity.value)
         # 推入一个Entity，此时堆栈为 Top | Base(Float)  ->
         self.stack.push(entity)
@@ -556,7 +556,7 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.GUID
         entity.value = ctx.getText()
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             entity.python_value = str(entity.value)
         # 推入一个Entity，此时堆栈为 Top | Base(GUID)  ->
         self.stack.push(entity)
@@ -575,7 +575,7 @@ class Generator(NdfGrammarListener):
 
         nums = text.split(",")
         entity.value = [int(x) for x in nums]
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             entity.python_value = entity.value
         # 推入一个Entity，此时堆栈为 Top | Base(RGBA(List))  ->
         self.stack.push(entity)
@@ -590,7 +590,7 @@ class Generator(NdfGrammarListener):
         entity.nodetype = NodeType.Reference
         entity.value = ctx.getText()
 
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             reference_str = str(entity.value)
             if "|" in reference_str:
                 references = reference_str.split("|")
@@ -613,7 +613,7 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.Replacer
         entity.value = ctx.getText()
-        if self.mode == "generate" or self.mode == "regist_template":
+        if self.mode == "generate" or self.mode == "register_template":
             entity.python_value = "@" + entity.value[1:-1]
         # 推入一个Entity，此时堆栈为 Top | Base(GUID)  ->
         self.stack.push(entity)

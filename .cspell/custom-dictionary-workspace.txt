@@ -1,7 +1,0 @@
-concatination
-Dlanguage
-HEXDIGIT
-HEXNUMBER
-insnensitivity
-rgba
-RGBA
