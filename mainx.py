@@ -21,7 +21,7 @@ import src.extractor.refined_class
 
 # 以下为流程说明：
 # 1. 从目标文件提取结构，生成类结构：此过程先注册对象然后注册模板，在过程中其会不断合并成员域,然后生成Python类结构 extract(file,mode="register")->generate_class_from_dict
-# 2. 从目标文件生成对象，利用之前整理的Python类结构，生成对象 extract(file,mode="generate")
+# 2. 从目标文件生成对象，利用之前整理的Python类结构，生成对象 extract(file,mode="generate_object")
 # 3. 对生成的对象进行引用替换，将对象中的引用替换为实际的对象
 # 现在的问题是：对象引用这里处理的太糟了，我们或许可以设计解析顺序从而防止到最后一步才能进行引用处理的情况，另外一个问题是很大程度上在解析过程种我们就需要使用引用
 # 这意味着我们需要将解析的结果实时送到写一次提取中以防止引用无法被处理，另外一个核心是路径信息程序需要一定程度上的能够确认引用路径信息并定位相关内容
@@ -143,7 +143,7 @@ def apply_macro_replacements(content: str):
 # generate: 生成类结构
 # register_object: 注册对象
 # register_template: 注册模板
-def extract(file_name: str, name_space="/", reference_dict={}, mode="generate"):
+def extract(file_name: str, name_space="/", reference_dict={}, mode="generate_object"):
     input_stream = antlr4.InputStream(
         apply_macro_replacements(str(FileStream(file_name, encoding="utf8")))
     )
@@ -156,7 +156,7 @@ def extract(file_name: str, name_space="/", reference_dict={}, mode="generate"):
     )
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
-    if mode == "generate":
+    if mode == "generate_object":
         return listener.generator
     elif mode == "register_object" or mode == "register_template":
         return listener.register
@@ -284,7 +284,7 @@ def main():
 
     for file in config.PROCESS_FILE_LIST:
         file = config.RAW_DATA_PATH + file
-        class_generate = extract(file, mode="generate")
+        class_generate = extract(file, mode="generate_object")
         global_dict.update(class_generate)
 
     with open("global.pkl", "wb") as f:
