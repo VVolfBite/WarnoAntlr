@@ -11,9 +11,9 @@ PROCESS_FILE_LIST = [
     # "/template_test.ndf", 
 
 
-    # "/GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", # 光环
-    # "/GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", # 效果
-    # # "/GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", # 条件
+    "/GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", # 光环
+    "/GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", # 效果
+    # "/GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", # 条件
     # "/GameData/Generated/Gameplay/Gfx/Ammunition.ndf", # 弹药
     "/GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf", # 导弹
     # "/GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf", # 武器

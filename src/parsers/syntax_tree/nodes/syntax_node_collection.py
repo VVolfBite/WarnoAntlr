@@ -21,6 +21,10 @@ class Collection(Base):
             self.lookup[data.id] = len(self.value) - 1
         elif isinstance(data, Object):
             self.lookup[data.object_type] = len(self.value) - 1
+    
+    def extend(self, data: list):
+        for item in data:
+            self.append(item)
 
     def get_value(self, path: str, default=None):
         # get current ID

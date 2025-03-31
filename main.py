@@ -132,7 +132,7 @@ def generate_class_from_dict(data_dict, py_file):
 
     for class_name, data in data_dict.items():
         attributes = data.get("attributes", {})
-        base = data.get("base", {})
+        base = data.get("base") or {}
         base_name = base.get("name", "BaseDescription")
         base_attributes = base.get("attributes", {})
         # 生成类定义
