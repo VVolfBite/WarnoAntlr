@@ -48,6 +48,7 @@ class Manger:
     def save(self):
         with open(self.output_file, "wb") as f:
             pickle.dump(self.dict, f)
+
     def load(self):
         with open(self.output_file, "rb") as f:
             self.dict = pickle.load(f)
@@ -63,7 +64,7 @@ class Manger:
         for key, value in dict.items():
             if key in self.dict:
                 if isinstance(self.dict[key], dict) and isinstance(value, dict):
-                    self.dict[key] = merge(value)
+                    self.dict[key] = self.merge(value)
                 elif self.dict[key] is None:
                     self.dict[key] = value
             else:
@@ -92,31 +93,32 @@ class Manger:
 
 class RegisterManger(Manger):
     def  __init__(self, file_list, output_file="global.pkl", export_file="TClass.py"):
-        super().__init__(file_list, output_file, export_file)
+        super().__init__(file_list, output_file)
         self.export_file = export_file
     
     def set_export_file(self, export_file):
         self.export_file = export_file
 
     def register(self,file_name):
-        self.register_object(file_name)
-        self.register_template(file_name)
+        self.set_file_list(file_name)
+        self.register_object()
+        self.register_template()
         self.export()
     
     def register_template(self):
-        for file in self.file_list:
+        for file, name_space in self.file_list:
             file = config.RAW_DATA_PATH + file
-            template = self.extract(file, mode="register_template")
-            self.dict = self.merge(self.dict, template)
+            template = self.extract(file,name_space=name_space, mode="register_template")
+            self.merge(template)
 
     def register_object(self):
-        for file in self.file_list:
+        for file, name_space in self.file_list:
             file = config.RAW_DATA_PATH + file
-            object = self.extract(file, mode="register_object")
-            self.dict = self.merge(self.dict, object)
+            object = self.extract(file,name_space=name_space, mode="register_object")
+            self.merge(object)
 
     def add(self, dict):
-        self.dict = self.merge(self.dict, dict)
+        self.merge(dict)
 
     def export(self):
         class_definitions = []
@@ -173,10 +175,6 @@ class RegisterManger(Manger):
 
 
 class GenerateManger(Manger):
-    def __init__(self):
-        super().__init__()
-
-
     def set(self, path, value, namespace=None):
         """设置值，支持绝对路径和相对路径"""
         full_path = self._resolve_path(path, namespace)
@@ -227,9 +225,27 @@ class GenerateManger(Manger):
         return path.strip('/')
     
     def generate(self):
-        for file in self.file_list:
+        for file, name_space in self.file_list:
             file = config.RAW_DATA_PATH + file
-            object = self.extract(file, mode="generate_object")
+            object = self.extract(file,name_space=name_space, mode="generate_object")
             self.set_batch(object, "/")
     
 
+def main():
+    # 1. 注册对象与模板
+    file_list = config.PROCESS_FILE_LIST
+    # register_manger = RegisterManger(file_list, output_file="global.pkl", export_file="TClass.py")
+    # register_manger.register(file_list)
+    # register_manger.save()
+    # register_manger.export()
+
+    # 2. 生成对象
+    generate_manger = GenerateManger(file_list, output_file="global.pkl")
+    generate_manger.generate()
+
+    # 3. 保存对象
+    generate_manger.save()
+
+
+if __name__ == "__main__":
+    main()

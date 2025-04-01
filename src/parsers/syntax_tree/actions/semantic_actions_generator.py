@@ -1,5 +1,4 @@
 from antlr4 import *
-from numpy import isin
 from src.parsers.parser.NdfGrammarListener import NdfGrammarListener
 from src.parsers.parser.NdfGrammarParser import NdfGrammarParser
 
