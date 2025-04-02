@@ -60,7 +60,7 @@ class Generator(NdfGrammarListener):
         self,
         parser: NdfGrammarParser,
         name_space="/",
-        reference_dict={},
+        reference = None,
         mode="default",
     ):
         super().__init__()
@@ -70,7 +70,7 @@ class Generator(NdfGrammarListener):
         self.stack = Stack()
         self.ignore = 0
         self.name_space = name_space
-        self.reference_dict = reference_dict
+        self.reference = reference
         self.mode = mode
         self.generator = {}
         self.register = {}
@@ -579,8 +579,8 @@ class Generator(NdfGrammarListener):
             return
         entity = Base()
         entity.nodetype = NodeType.Reference
-
-        if self.mode in {"generate_object", "register_template"}:
+        reference_str = str(ctx.getText())
+        if self.mode in {"generate_object", "register_template"} and self.reference is not None:
             reference_str = str(ctx.getText())
             if "|" in reference_str:
                 references = reference_str.split("|")
@@ -589,9 +589,8 @@ class Generator(NdfGrammarListener):
                 ]
             else:
                 entity.value = str(reference_str.split("/")[-1])
-        elif self.mode in {"register_object"}:
+        elif self.mode in {"register_object"} or self.reference is None:
             entity.value = str(ctx.getText())
-                               
         # 推入一个Entity，此时堆栈为 Top | Base(ObjReference)  ->
         self.stack.push(entity)
 
