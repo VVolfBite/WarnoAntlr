@@ -1,0 +1,28 @@
+template TestTemplate
+[
+    Key,
+    Value
+] is TestBase
+(
+    FieldA = 123
+    FieldB = "ABC"
+    FieldC = <Key>
+    FieldD = <Value>
+)
+
+export A is TTestA(
+    FieldA = "123"
+    FiledB = 123
+    FieldC = ["A","B","C",1,2,3,123.456]
+    FieldD = 1 DIV 2
+    FieldE = MAP [
+        ("KEY1", "VALUE1"),
+        ("KEY2", "VALUE2"),
+    ]
+    FieldF = TestTemplate
+    (
+        Key = 456
+        Value = 789
+    )
+)
+

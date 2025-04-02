@@ -160,7 +160,7 @@ class Map(Collection):
         # key =  data.value[0].value
         # value = data.value[1]
         self.map[data.value[0]] = data.value[1]
-        self.lookup[str(data.value[0].value)] = len(self.value) - 1
+        self.lookup[str(data.value[0])] = len(self.value) - 1
 
     def get_value(self, path: str, default=None):
         current = path.split("\\")[0]

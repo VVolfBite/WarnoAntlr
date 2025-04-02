@@ -388,7 +388,7 @@ class Generator(NdfGrammarListener):
                 if isinstance(pair.value[0].value, list)
                 else pair.value[0].value
             )
-            pair.value = {key: pair.value[1].value}
+            pair.value = [key, pair.value[1].value]
 
     def enterMap_value(self, ctx: NdfGrammarParser.Map_valueContext):
         if self.ignore > 0:
@@ -413,10 +413,8 @@ class Generator(NdfGrammarListener):
         _map.extend(map_values)
         # 处理 python_value
         if self.mode in {"generate_object", "register_template"}:
-            _map.value = {
-                str(key.value): value.value
-                for key, value in _map.map.items()
-            }
+            _map.value = _map.map
+        
 
     def enterObject_type(self, ctx: NdfGrammarParser.Object_typeContext):
         if self.ignore > 0:

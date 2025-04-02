@@ -248,17 +248,17 @@ class GenerateManger(Manger):
 def main():
     # 1. 注册对象与模板
     file_list = config.PROCESS_FILE_LIST
-    register_manger = RegisterManger(file_list, output_file="global.pkl", export_file="TClass.py")
+    register_manger = RegisterManger(file_list, output_file="register.pkl", export_file="TClass.py")
     register_manger.register(file_list)
     register_manger.save()
-    register_manger.export()
+    
 
-    # 2. 生成对象
-    generate_manger = GenerateManger(file_list, output_file="global.pkl")
-    generate_manger.generate()
+    # # 2. 生成对象
+    # generate_manger = GenerateManger(file_list, output_file="global.pkl")
+    # generate_manger.generate()
 
-    # 3. 保存对象
-    generate_manger.save()
+    # # 3. 保存对象
+    # generate_manger.save()
 
 
 if __name__ == "__main__":
