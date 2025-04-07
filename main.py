@@ -66,15 +66,16 @@ class Manger:
         with open(self.log_file, "a") as f:
             f.write(message + "\n")
 
-    def merge(self,dic):
-        for key, value in dic.items():
-            if key in self.dict:
-                if isinstance(self.dict[key], dict) and isinstance(value, dict):
-                    self.dict[key] = self.merge(value)
-                elif self.dict[key] is None:
-                    self.dict[key] = value
+    def merge(self,dict1,dict2):
+        for key, value in dict2.items():
+            if key in dict1:
+                if isinstance(dict1[key], dict) and isinstance(value, dict):
+                    dict1[key] = self.merge(dict1[key],value)
+                elif dict1[key] is None:
+                    dict1[key] = value
             else:
-                self.dict[key] = value
+                dict1[key] = value
+        return dict1
 
 
     def extract(self, file_name, name_space, reference, mode="generate_object"):
@@ -95,6 +96,10 @@ class Manger:
         elif mode == "register_object" or mode == "register_template":
             return listener.register
 
+    def check_file_exist(self):
+        file_status = {file: os.path.exists(config.RAW_DATA_PATH + file) for file,name_space in self.file_list}
+        return file_status
+
 class RegisterManger(Manger):
     def  __init__(self, file_list, output_file="global.pkl", export_file="TClass.py"):
         super().__init__(file_list, output_file)
@@ -106,6 +111,7 @@ class RegisterManger(Manger):
     def register(self,file_name):
         self.set_file_list(file_name)
         self.register_object()
+        self.export()
         self.register_template()
         self.export()
     
@@ -113,16 +119,16 @@ class RegisterManger(Manger):
         for file, name_space in self.file_list:
             file = config.RAW_DATA_PATH + file
             template = self.extract(file,name_space=name_space,reference=None, mode="register_template")
-            self.merge(template)
+            self.dict = self.merge(self.dict,template)
 
     def register_object(self):
         for file, name_space in self.file_list:
             file = config.RAW_DATA_PATH + file
             object = self.extract(file,name_space=name_space,reference=None, mode="register_object")
-            self.merge(object)
+            self.dict = self.merge(self.dict,object)
 
     def add(self, dict):
-        self.merge(dict)
+        self.dict = self.merge(self.dict,dict)
 
     def export(self):
         class_definitions = []
@@ -146,9 +152,9 @@ class RegisterManger(Manger):
                         f"{key}={value.lstrip('@')}"
                         if isinstance(value, str) and value.startswith("@")
                         else (
-                            f'{key}="{value}"'
-                            if isinstance(value, str) and not value.startswith("@")
-                            else f"{key}={value}"
+                            f'{key}={value}'
+                            # if isinstance(value, str) and not value.startswith("@")
+                            # else f"{key}={value}"
                         )
                     )
                     for key, value in base_attributes.items()
@@ -249,13 +255,14 @@ def main():
     # 1. 注册对象与模板
     file_list = config.PROCESS_FILE_LIST
     register_manger = RegisterManger(file_list, output_file="register.pkl", export_file="TClass.py")
+    register_manger.check_file_exist()
     register_manger.register(file_list)
     register_manger.save()
     
 
-    # # 2. 生成对象
-    # generate_manger = GenerateManger(file_list, output_file="global.pkl")
-    # generate_manger.generate()
+    # 2. 生成对象
+    generate_manger = GenerateManger(file_list, output_file="global.pkl")
+    generate_manger.generate()
 
     # # 3. 保存对象
     # generate_manger.save()

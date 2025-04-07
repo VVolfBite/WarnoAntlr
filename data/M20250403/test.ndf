@@ -1,0 +1,15 @@
+// Value test
+A IS True
+B IS "string"
+C IS 1
+D IS 0X1
+E IS 0.1
+F IS GUID:{1}
+G IS (1,2)
+H IS [1,2,3]
+I IS MAP[
+    ("A",1),
+    ("B",2),
+    ("C",3)
+]
+

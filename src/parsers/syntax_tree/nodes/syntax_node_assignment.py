@@ -29,7 +29,7 @@ class Assignment(Base):
             + ", template: "
             + str(self.is_template)
             + ", value: "
-            + str(self.value)
+            + str(self.content)
             + "}"
         )
 
@@ -43,7 +43,7 @@ class Assignment(Base):
             and self.is_member == other.is_member
             and self.is_unnamed == other.is_unnamed
             and self.is_template == other.is_template
-            and self.value == other.value
+            and self.content == other.content
         )
         return ret
 
@@ -51,9 +51,9 @@ class Assignment(Base):
 
         current = path.split("\\")[0]
         if current == "":
-            return self.value
-        elif isinstance(self.value, Base):
-            return self.value.get_value(path, default)
+            return self.content
+        elif isinstance(self.content, Base):
+            return self.content.get_value(path, default)
         else:
             return default
 
@@ -61,8 +61,8 @@ class Assignment(Base):
 
         current = path.split("\\")[0]
         if current == "":
-            self.value = value
-        elif isinstance(self.value, Base):
-            self.value.set_value(path, value)
+            self.content = value
+        elif isinstance(self.content, Base):
+            self.content.set_value(path, value)
         else:
             print("could not find " + path + "\ncurrent: " + current)

@@ -1,5 +1,5 @@
 WORK_DIRECTORY = "."
-RAW_DATA_PATH = WORK_DIRECTORY + "/data/raw/V135139"
+RAW_DATA_PATH = WORK_DIRECTORY + "/data/M20250403"
 EXTRACT_DATA_PATH = WORK_DIRECTORY + "/data/extract/V135139"
 PROCESSED_DATA_PATH = WORK_DIRECTORY + "/data/processed/V135139"
 
@@ -17,7 +17,6 @@ PROCESS_FILE_LIST = [
     # ("/GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf", "/"),  # 武器
     # ("/GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf", "/"),  # 单位
     # ("/GameData/Generated/Gameplay/Decks/Divisions.ndf", "/"),  # 师卡组数
-    # ("/GameData/Generated/Gameplay/Decks/DivisionPacks.ndf", "/"),  # 师/卡组包  
     # ("/GameData/Generated/Gameplay/Decks/DivisionRules.ndf", "/"),  # 师卡组经验修正  
     # ("/GameData/Generated/Gameplay/Decks/DivisionCostMatrix.ndf", "/"),  # 师费用矩阵
     # ("/GameData/Generated/Gameplay/Gfx/DamageLevels.ndf", "/"),  # 伤害等级
@@ -41,7 +40,6 @@ PROCESS_FILE_LIST = [
     # ("/GameData/Gameplay/Constantes/ActionPointConsumptionGridRefs.ndf", "/"),
     # ("/GameData/Gameplay/Constantes/GDConstantes.ndf", "/"),  # 全局规则
     # ("/GameData/Gameplay/Constantes/HitRollConstants.ndf", "/"),  # 命中概率修正
-    # ("/GameData/Gameplay/Constantes/ModificateursJetPourToucher.ndf", "/"),  # 距离修正曲线
     # ("/GameData/Gameplay/Constantes/Ravitaillement.ndf", "/"),  # 补给规则
     # ("/GameData/Gameplay/Constantes/Transport.ndf", "/"),  # 载具受击
     # ("/GameData/Gameplay/Constantes/TransportConstantes.ndf", "/"),  # 载具基础
@@ -51,11 +49,9 @@ PROCESS_FILE_LIST = [
     # ("/GameData/Gameplay/Unit/DamageModules.ndf", "/"),  # 伤害基础
     # ("/GameData/Gameplay/Constantes/WeaponTypePriorities.ndf", "/"),  # 优先级
     # ("/GameData/Gameplay/Constantes/WreckageConstants.ndf", "/"),  # 载具受击
-    # ("/GameData/Gameplay/Unit/Tactic/Fire.ndf", "/"),  # 火焰
-    # ("/GameData/Gameplay/Unit/Tactic/Smoke.ndf", "/"),  # 烟雾
     # ("/GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf", "/"),  # FOB等建筑
     # ("/GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf", "/"),  # 经验等级包
-    # ("/GameData/Generated/Gameplay/Gfx/DistrictsDescriptor.ndf", "/"),  # 街区定义数据
+    # ("/GameData/Gameplay/Unit/Tactic/DistrictDescriptor.ndf", "/"),  # 街区定义数据
     # ("/GameData/Generated/Gameplay/Gfx/FireDescriptor.ndf", "/"),  # 火
     # ("/GameData/Generated/Gameplay/Gfx/SmokeDescriptor.ndf", "/"),  # 烟雾
     # ("/GameData/Generated/Gameplay/Gfx/MissileCarriage.ndf", "/"),  # 导弹挂载

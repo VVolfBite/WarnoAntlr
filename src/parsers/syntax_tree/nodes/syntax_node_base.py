@@ -31,6 +31,7 @@ class NodeType:
 class Base:
     def __init__(self):
         self.nodetype = NodeType.UNKNOWN
+        self.content = None
         self.value = None
 
     def __str__(self):
