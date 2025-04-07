@@ -1,15 +1,16 @@
 import logging
-
 from pathlib import Path
-
 from src.parsers.syntax_tree.nodes.syntax_node_base import *
 from src.parsers.syntax_tree.nodes.syntax_node_assignment import *
 
-
-# Collection是一种中间形式，用于描述出去Assigment后的所有基本结构的基类
-# 如 [v1,v2,v3] Map[(k1,v1),(k2,v2)] (p1,p2)等等
-# lookup是一个快速查阅检索的字典，主要用于查询Assigment的字段内容
+#=============================================
+# 1. 基础集合类
+#=============================================
 class Collection(Base):
+    """Collection是一种中间形式，用于描述出去Assignment后的所有基本结构的基类
+    如 [v1,v2,v3] Map[(k1,v1),(k2,v2)] (p1,p2)等等
+    lookup是一个快速查阅检索的字典，主要用于查询Assignment的字段内容
+    """
     def __init__(self):
         super().__init__()
         self.content = []
@@ -23,15 +24,14 @@ class Collection(Base):
             self.lookup[data.object_type] = len(self.content) - 1
 
     def get_value(self, path: str, default=None):
-        # get current ID
+        # 获取当前ID
         current = path.split("\\")[0]
-        # build remaining path
+        # 构建剩余路径
         remaining = path.removeprefix(current)
         remaining = remaining.removeprefix("\\")
-        # if nothing remains, return own value
+        
         if current == "":
             return self.content
-        # otherwise, call function on own value
         elif self.lookup.__contains__(current):
             return self.content[self.lookup[current]].get_value(remaining, default)
         else:
@@ -42,6 +42,7 @@ class Collection(Base):
         current = path.split("\\")[0]
         remaining = path.removeprefix(current)
         remaining = remaining.removeprefix("\\")
+        
         if current == "":
             self.content = value
         elif self.lookup.__contains__(current):
@@ -65,10 +66,14 @@ class Collection(Base):
     def contains(self, item):
         return self.content.__contains__(item)
 
-
-# File是对文件的基本描述，即一个Ndf文件本身，它将文件视为Assignments的集合
-# 即 [A1,A2,A3]
+#=============================================
+# 2. 具体集合类型
+#=============================================
+# 2.1 文件类型
 class File(Collection):
+    """File是对文件的基本描述，即一个Ndf文件本身，它将文件视为Assignments的集合
+    即 [A1,A2,A3]
+    """
     def __init__(self, assignments=[]):
         super().__init__()
         self.nodetype = NodeType.STRUCTURAL
@@ -78,11 +83,12 @@ class File(Collection):
     def __str__(self):
         return "{type: file, value: " + "".join(map(str, self.content)) + "}"
 
-
-# Object是对对象的描述，类似面向对象语言的实例化即 ClassA(Member = Value)
-# 因此Value是对象列表
-# 请确保get_class在规约完成时调用
+# 2.2 对象类型
 class Object(Collection):
+    """Object是对对象的描述，类似面向对象语言的实例化即 ClassA(Member = Value)
+    因此Value是对象列表
+    请确保get_class在规约完成时调用
+    """
     def __init__(self):
         super().__init__()
         self.content = []
@@ -106,9 +112,11 @@ class Object(Collection):
     def get_class(self):
         return (self.object_type, {item.id : None for item in self.content})
 
-# Pair是对对的描述，是NDF中特有的数据类型，即(P1,P2)
-# 因此Value是两个数据值
+# 2.3 键值对类型
 class Pair(Collection):
+    """Pair是对对的描述，是NDF中特有的数据类型，即(P1,P2)
+    因此Value是两个数据值
+    """
     def __init__(self):
         super().__init__()
         self.content = []
@@ -125,10 +133,11 @@ class Pair(Collection):
     def __str__(self):
         return "{type: pair, value: " + "".join(map(str, self.content)) + "}"
 
-
-# Vector是对数组的描述，即[V1,V2,V3]
-# 因此Value是列表中的数据值
+# 2.4 向量类型
 class Vector(Collection):
+    """Vector是对数组的描述，即[V1,V2,V3]
+    因此Value是列表中的数据值
+    """
     def __init__(self):
         super().__init__()
         self.content = []
@@ -138,13 +147,13 @@ class Vector(Collection):
         return "{type: vector, value: " + "".join(map(str, self.content)) + "}"
     
     def __hash__(self):
-        # 使用 tuple 来确保 value 是可哈希的
         return hash((self.nodetype, tuple(self.content)))
 
-
-# Map是对字典的描述，即Map[(k1,v1),(k2,v2)]
-# 因此Value是字典的pair value表 而map是键值对
+# 2.5 映射类型
 class Map(Collection):
+    """Map是对字典的描述，即Map[(k1,v1),(k2,v2)]
+    因此Value是字典的pair value表 而map是键值对
+    """
     def __init__(self):
         super().__init__()
         self.content = []
@@ -153,8 +162,6 @@ class Map(Collection):
 
     def append(self, data: Pair):
         super().append(data)
-        # key =  data.content[0].content
-        # value = data.content[1]
         self.map[data.content[0].content] = data.content[1]
         self.lookup[str(data.content[0].content)] = len(self.content) - 1
 
@@ -162,6 +169,7 @@ class Map(Collection):
         current = path.split("\\")[0]
         remaining = path.removeprefix(current)
         remaining = remaining.removeprefix("\\")
+        
         if current == "":
             return self.content
         elif self.lookup.__contains__(current) and remaining == "":
@@ -176,6 +184,7 @@ class Map(Collection):
         current = path.split("\\")[0]
         remaining = path.removeprefix(current)
         remaining = remaining.removeprefix("\\")
+        
         if current == "":
             self.content = value
         elif self.lookup.__contains__(current) and remaining == "":
