@@ -91,6 +91,7 @@ object_member
 id : ID (':' type_label)? | array_access;
 array_access : ID '[' int_value ']';
 
+
 // 8. 类型系统
 type_label 
     : builtin_type_label 

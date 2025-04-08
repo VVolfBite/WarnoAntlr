@@ -1,77 +1,89 @@
 from src.parsers.syntax_tree.nodes.syntax_node_base import *
 
-
-# Assignment是一个描述文件中基本语句的节点类
-# 基本结构是:
-# 1. export/private id is value
-# 2. member形式: id = value
-# 3. template形式: template id[params] is value
 class Assignment(Base):
+    """赋值语句节点
+    
+    支持的语法形式:
+    1. export/private id is value        # 普通赋值
+    2. id = value                        # 成员赋值
+    3. template id[params] is value      # 模板定义
+    4. UNNAMED ~/Reference               # 匿名赋值
+    """
+    
     def __init__(self):
         super().__init__()
-        self.id = ""
+        # 基本属性
+        self.id = ""                     # 标识符
         self.nodetype = NodeType.STRUCTURAL
-        self.is_export = False
-        self.is_private = False
-        self.is_unnamed = False
-        self.is_member = False
-        self.is_template = False
-        self.template_params = []    # 新增: 模板参数列表
-        self.base_type = None       # 新增: 模板基类
+        
+        # 修饰符标记
+        self.is_export = False           # export标记
+        self.is_private = False          # private标记
+        self.is_unnamed = False          # unnamed标记
+        self.is_member = False           # 成员标记
+        
+        # 模板相关
+        self.is_template = False         # 模板标记
+        self.template_params = []        # 模板参数列表
+        self.base_type = None           # 模板基类
 
     def __str__(self):
-        result = (
-            "{id: "
-            + self.id
-            + " type: assignment, export: "
-            + str(self.is_export)
-            + ", private: "
-            + str(self.is_private)
-            + ", member: "
-            + str(self.is_member)
-            + ", template: "
-            + str(self.is_template)
-        )
+        """字符串表示"""
+        result = [
+            f"{{id: {self.id}",
+            f"type: assignment",
+            f"export: {self.is_export}",
+            f"private: {self.is_private}",
+            f"member: {self.is_member}"
+        ]
+        
+        # 模板信息
         if self.is_template:
-            result += (
-                ", template_params: "
-                + str(self.template_params)
-                + ", base_type: "
-                + str(self.base_type)
-            )
-        result += ", value: " + str(self.content) + "}"
-        return result
+            result.extend([
+                f"template: {self.is_template}",
+                f"template_params: {self.template_params}",
+                f"base_type: {self.base_type}"
+            ])
+            
+        result.append(f"value: {self.content}")
+        return ", ".join(result) + "}"
 
     def __eq__(self, other):
-        if not type(other) == type(self):
+        """相等比较"""
+        if not isinstance(other, Assignment):
             return False
-        ret = (
-            self.nodetype == other.nodetype
-            and self.id == other.id
-            and self.is_export == other.is_export
-            and self.is_member == other.is_member
-            and self.is_unnamed == other.is_unnamed
-            and self.is_template == other.is_template
-            and self.content == other.content
-        )
-        return ret
+            
+        return (self.nodetype == other.nodetype
+                and self.id == other.id
+                and self.is_export == other.is_export
+                and self.is_member == other.is_member
+                and self.is_unnamed == other.is_unnamed
+                and self.is_template == other.is_template
+                and self.content == other.content)
 
     def get_value(self, path: str, default=None):
-
+        """获取指定路径的值
+        
+        Args:
+            path: 值的访问路径
+            default: 默认值
+        """
         current = path.split("\\")[0]
         if current == "":
             return self.content
         elif isinstance(self.content, Base):
             return self.content.get_value(path, default)
-        else:
-            return default
+        return default
 
     def set_value(self, path: str, value):
-
+        """设置指定路径的值
+        
+        Args:
+            path: 值的访问路径
+            value: 要设置的值
+        """
         current = path.split("\\")[0]
         if current == "":
             self.content = value
         elif isinstance(self.content, Base):
             self.content.set_value(path, value)
-        else:
-            print("could not find " + path + "\ncurrent: " + current)

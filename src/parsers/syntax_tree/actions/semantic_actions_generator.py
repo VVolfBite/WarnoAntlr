@@ -1,4 +1,5 @@
 from antlr4 import *
+from typing import Any  # 添加这行
 from src.parsers.parser.NdfGrammarListener import NdfGrammarListener
 from src.parsers.parser.NdfGrammarParser import NdfGrammarParser
 
@@ -42,7 +43,7 @@ class Stack:
         return len(self._stack)
 
     def __str__(self):
-        "".join(map(str, self._stack))
+        return "".join(map(str, self._stack))
 
 
 class StackMarker:
@@ -68,20 +69,31 @@ class Generator(NdfGrammarListener):
         self.register = {}
 
     def register_object(self, name, attributes, base_name=None, base_attributes=None):
+        """注册一个对象类型
+        
+        Args:
+            name: 类型名称
+            attributes: 属性字典 {属性名: 属性值}
+            base_name: 基类名称(可选)
+            base_attributes: 基类属性字典(可选) {属性名: 属性值}
+        """
         if name not in self.register:
+            # 新类型注册
             self.register[name] = {
                 "attributes": attributes,
-                "base": (
-                    {"name": base_name, "attributes": base_attributes}
-                    if base_name
-                    else None
-                ),
+                "base": {
+                    "name": base_name, 
+                    "attributes": base_attributes
+                } if base_name else None
             }
         else:
+            # 更新已有类型
             entry = self.register[name]
+            # 更新属性
             for attr, value in attributes.items():
                 if attr not in entry["attributes"] or value is not None:
                     entry["attributes"][attr] = value
+            # 更新基类信息
             if base_name:
                 if not entry.get("base") or entry["base"]["name"] != base_name:
                     entry["base"] = {"name": base_name, "attributes": base_attributes}
@@ -91,8 +103,23 @@ class Generator(NdfGrammarListener):
                             entry["base"]["attributes"][attr] = value
 
     def generate_object(self, name, value):
+        """根据类型生成对象实例
+        
+        Args:
+            name: 类型名称
+            value: 初始值
+        """
+        if DISABLE_CALCULATING:
+            return
+            
         if name not in self.generator:
             self.generator[name] = value
+        else:
+            current = self.generator[name]
+            if isinstance(current, list):
+                current.append(value)
+            else:
+                self.generator[name] = [current, value]
 
     def instantiate_class(self, class_name, **kwargs):
         get_class = lambda name: getattr(
@@ -102,15 +129,17 @@ class Generator(NdfGrammarListener):
         return class_(**kwargs) if class_ is not None else None
 
     #-----------------------------------------
-    # 2.2 赋值语句处理
+    # 2.2 赋值语句处理优化
     #-----------------------------------------
-    # 2.2.1 普通赋值
     def enterNormal_assignment(self, ctx):
         if self.ignore > 0:
             return
         self.stack.push(Assignment())
 
     def exitNormal_assignment(self, ctx): 
+        """处理普通赋值语句的完成
+        MyVar IS 100
+        """
         if self.ignore > 0:
             return
             
@@ -119,16 +148,15 @@ class Generator(NdfGrammarListener):
         
         # 设置content和value
         assignment.content = value
-        if self.mode in {"generate_object", "register_template"}:
-            assignment.value = value.value
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            assignment.value = value.value if hasattr(value, 'value') else None
             
         # 处理最终赋值
         if len(self.stack) == 1:
             assignment = self.stack.pop()
             self.assignments.append(assignment)
-            if self.mode in {"generate_object"}:
+            if self.mode == "generate_object":
                 self.generate_object(assignment.id, assignment.value)
-            
 
     # 2.2.2 成员赋值
     def enterMember_assignment(self, ctx):
@@ -179,8 +207,6 @@ class Generator(NdfGrammarListener):
             if self.mode in {"generate_object", "register_template"}:
                 self.generate_object(assignment.id, assignment.value)
 
-
-    # 2.2.4 模板赋值更新
     def enterTemplate_assignment(self, ctx):
         """处理模板赋值"""
         if self.ignore > 0:
@@ -191,7 +217,9 @@ class Generator(NdfGrammarListener):
         self.stack.push(assignment)
 
     def exitTemplate_assignment(self, ctx):
-        """完成模板赋值处理"""
+        """处理模板赋值的完成
+        template MyTemplate[T: int = 1] is Base(...)
+        """
         if self.ignore > 0:
             return
                 
@@ -207,17 +235,25 @@ class Generator(NdfGrammarListener):
             # 收集参数定义
             param_dict = {}
             for param in params.content:
+                param_type = param.content.value if hasattr(param.content, 'value') else None
+                param_default = param.value if hasattr(param, 'value') else None
                 param_dict[param.id] = {
-                    'type': param.content.value if hasattr(param.content, 'value') else None,
-                    'default': param.value if hasattr(param, 'value') else None
+                    'type': param_type,
+                    'default': param_default
                 }
                 
             # 注册模板
+            base_attributes = {}
+            if hasattr(value, 'content'):
+                for m in value.content:
+                    if hasattr(m, 'id') and hasattr(m, 'value'):
+                        base_attributes[m.id] = m.value
+                        
             self.register_object(
                 name=assignment.id,
                 attributes=param_dict,
                 base_name=value.object_type,
-                base_attributes={m.id: m.value for m in value.content}
+                base_attributes=base_attributes
             )
 
     #-----------------------------------------
@@ -343,7 +379,7 @@ class Generator(NdfGrammarListener):
         pass
 
     #-----------------------------------------
-    # 2.5 基本类型值处理
+    # 2.5 值系统处理优化 
     #-----------------------------------------
     def enterNil_value(self, ctx):
         if self.ignore > 0:
@@ -398,21 +434,27 @@ class Generator(NdfGrammarListener):
         self.stack.push(entity)
 
     def enterFloat2_value(self, ctx):
-        """处理二维向量值"""
+        """处理二维向量值
+        float2[1.0, 2.0]
+        """
         if self.ignore > 0:
             return
             
         entity = Base()
         entity.nodetype = NodeType.Float2
-        # 从子节点获取值
         values = []
+        
+        # 从栈中获取两个值并验证
         for i in range(2):
             value_node = self.stack.pop()
+            if not value_node.nodetype in {NodeType.Integer, NodeType.Float}:
+                logging.warning(f"Invalid float2 value type: {value_node.nodetype}")
+                return
             values.insert(0, float(value_node.value))
             
         entity.content = values
         if self.mode in {"generate_object", "register_template", "register_object"}:
-            entity.value = tuple(values)
+            entity.value = tuple(values)  # 使用tuple保证不可变性
             
         self.stack.push(entity)
 
@@ -504,38 +546,45 @@ class Generator(NdfGrammarListener):
             return
         # 特殊值由具体类型处理器处理
 
-    #-----------------------------------------
-    # 2.6 复合类型值处理
-    #-----------------------------------------
-    # 2.6.1 向量处理
     def enterVector_value(self, ctx):
+        """处理向量值
+        [1, 2, 3] 或 ["a", "b", "c"]
+        """
         if self.ignore > 0:
             return
-        self.stack.push(Vector())
+        vector = Vector()
+        vector.nodetype = NodeType.Vector
+        self.stack.push(vector)
         self.stack.push(StackMarker())
 
     def exitVector_value(self, ctx):
+        """完成向量值处理"""
         if self.ignore > 0:
             return
             
-        # 收集向量值
+        # 收集向量元素
         vector_values = []
         while type(self.stack.top()) != StackMarker:
             vector_values.append(self.stack.pop())
         vector_values.reverse()
-        self.stack.pop()
+        self.stack.pop()  # 移除标记
         
-        # 获取向量对象
+        # 设置向量内容
         vector = self.stack.top()
-        
-        # 设置content和value
-        for vector_value in vector_values:
-            vector.append(vector_value)
+        for value in vector_values:
+            vector.append(value)
             
-        if self.mode in {"generate_object", "register_template"}:
-            vector.value = [value.value for value in  vector_values]
+        # 设置最终值
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            vector.value = [
+                value.value if hasattr(value, 'value') else None 
+                for value in vector_values
+            ]
 
-    # 2.6.2 键值对处理
+    #-----------------------------------------
+    # 2.6 复合类型值处理
+    #-----------------------------------------
+    # 2.6.1 向量处理
     def enterPair_value(self, ctx):
         if self.ignore > 0:
             return
@@ -936,3 +985,69 @@ class Generator(NdfGrammarListener):
         value = self.stack.top()
         if value.value is None and self.mode in {"generate_object", "register_template"}:
             logging.warning(f"Value not generated for r_value: {value.content}")
+
+    #-----------------------------------------
+    # 2.13 辅助功能完善
+    #-----------------------------------------
+    def _resolve_reference(self, path: str) -> Any:
+        """解析引用路径
+        
+        Args:
+            path: 引用路径
+            
+        Returns:
+            解析后的值，如果找不到返回None
+        """
+        if not path:
+            return None
+            
+        path = path.lstrip('~$/').strip()
+        
+        # 处理多路径引用
+        if "|" in path:
+            paths = [p.strip() for p in path.split("|")]
+            values = []
+            for p in paths:
+                if p in self.reference:
+                    values.append(self.reference[p])
+            return values[0] if len(values) == 1 else values
+            
+        # 处理单一路径
+        if path in self.reference:
+            return self.reference[path]
+            
+        return None
+
+    def _validate_type(self, node: Base, expected_types: set) -> bool:
+        """验证节点类型
+        
+        Args:
+            node: 要验证的节点
+            expected_types: 期望的类型集合
+            
+        Returns:
+            类型是否匹配
+        """
+        return node.nodetype in expected_types
+
+    def _handle_error(self, msg: str, ctx = None):
+        """处理错误
+        
+        Args:
+            msg: 错误信息
+            ctx: 语法上下文(可选)
+        """
+        if ctx:
+            line = ctx.start.line if hasattr(ctx, 'start') else '?'
+            col = ctx.start.column if hasattr(ctx, 'start') else '?'
+            text = ctx.getText() if hasattr(ctx, 'getText') else ''
+            logging.error(f"Line {line}:{col} - {msg} near '{text}'")
+        else:
+            logging.error(msg)
+        self.ignore += 1
+
+    def enterType_initialization(self, ctx):
+        """处理类型初始化 如 float2(1.0)"""
+        if self.ignore > 0:
+            return
+        # TODO: 实现类型初始化逻辑
