@@ -17,6 +17,8 @@ sys.path.append(WORK_DIRECTORY)
 import src.extractor.base_class
 import src.extractor.extract_class
 import src.extractor.refined_class
+import src.extractor.test_class
+
 
 DISABLE_CALCULATING = False
 
@@ -123,7 +125,7 @@ class Generator(NdfGrammarListener):
 
     def instantiate_class(self, class_name, **kwargs):
         get_class = lambda name: getattr(
-            src.extractor.refined_class, name, None
+            src.extractor.test_class, name, None
         ) or getattr(src.extractor.extract_class, name, None)
         class_ = get_class(class_name)
         return class_(**kwargs) if class_ is not None else None
@@ -148,7 +150,7 @@ class Generator(NdfGrammarListener):
         
         # 设置content和value
         assignment.content = value
-        if self.mode in {"generate_object", "register_template", "register_object"}:
+        if self.mode in {"generate_object", "register_template"}:
             assignment.value = value.value if hasattr(value, 'value') else None
             
         # 处理最终赋值
@@ -428,65 +430,103 @@ class Generator(NdfGrammarListener):
         entity.nodetype = NodeType.Float
         entity.content = float(ctx.getText())
         
-        if self.mode in {"generate_object", "register_template", "register_object"}:
+        if self.mode in {"generate_object", "register_template"}:
             entity.value = float(ctx.getText())
             
         self.stack.push(entity)
 
     def enterFloat2_value(self, ctx):
-        """处理二维向量值
+        """处理二维向量值的开始"""
+        if self.ignore > 0:
+            return
+        
+        entity = Base()
+        entity.nodetype = NodeType.Float2
+        self.stack.push(entity)
+
+    def exitFloat2_value(self, ctx):
+        """处理二维向量值的完成
         float2[1.0, 2.0]
         """
         if self.ignore > 0:
             return
-            
-        entity = Base()
-        entity.nodetype = NodeType.Float2
-        values = []
         
         # 从栈中获取两个值并验证
+        values = []
         for i in range(2):
             value_node = self.stack.pop()
             if not value_node.nodetype in {NodeType.Integer, NodeType.Float}:
                 logging.warning(f"Invalid float2 value type: {value_node.nodetype}")
                 return
-            values.insert(0, float(value_node.value))
-            
+                
+            # 获取数值
+            if hasattr(value_node, 'value') and value_node.value is not None:
+                val = value_node.value
+            elif hasattr(value_node, 'content') and value_node.content is not None:
+                val = value_node.content
+            else:
+                logging.error("Float2 value node has no valid value or content")
+                return
+                
+            values.insert(0, float(val))
+        
+        # 获取float2实体并设置值
+        entity = self.stack.top()
         entity.content = values
-        if self.mode in {"generate_object", "register_template", "register_object"}:
+        if self.mode in {"generate_object", "register_template"}:
             entity.value = tuple(values)  # 使用tuple保证不可变性
-            
-        self.stack.push(entity)
 
     def enterFloat3_value(self, ctx):
-        """处理三维向量值"""
+        """处理三维向量值的开始"""
         if self.ignore > 0:
             return
-            
+        
         entity = Base()
         entity.nodetype = NodeType.Float3
-        # 从子节点获取值
+        self.stack.push(entity)
+
+    def exitFloat3_value(self, ctx):
+        """处理三维向量值的完成
+        float3[1.0, 2.0, 3.0]
+        """
+        if self.ignore > 0:
+            return
+        
+        # 从栈中获取三个值并验证
         values = []
         for i in range(3):
             value_node = self.stack.pop()
-            values.insert(0, float(value_node.value))
-            
+            if not value_node.nodetype in {NodeType.Integer, NodeType.Float}:
+                logging.warning(f"Invalid float3 value type: {value_node.nodetype}")
+                return
+                
+            # 获取数值
+            if hasattr(value_node, 'value') and value_node.value is not None:
+                val = value_node.value
+            elif hasattr(value_node, 'content') and value_node.content is not None:
+                val = value_node.content
+            else:
+                logging.error("Float3 value node has no valid value or content")
+                return
+                
+            values.insert(0, float(val))
+        
+        # 获取float3实体并设置值
+        entity = self.stack.top()
         entity.content = values
-        if self.mode in {"generate_object", "register_template", "register_object"}:
-            entity.value = tuple(values)
-            
-        self.stack.push(entity)
+        if self.mode in {"generate_object", "register_template"}:
+            entity.value = tuple(values)  # 使用tuple保证不可变性
 
     def enterString_value(self, ctx):
         if self.ignore > 0:
             return
             
         entity = Base()
-        entity.nodetype = NodeType.String_single if ctx.getText()[0] == "'" else NodeType.String_double
-        entity.content = str(ctx.getText())
+        entity.nodetype = NodeType.String
+        entity.content = str(ctx.getText()[1:-1])
         
         if self.mode in {"register_template", "generate_object"}:
-            entity.value = str(ctx.getText())
+            entity.value = str(ctx.getText()[1:-1])
             
         self.stack.push(entity)
 
@@ -496,11 +536,11 @@ class Generator(NdfGrammarListener):
             return
             
         entity = Base()
-        entity.nodetype = NodeType.HexInteger
+        entity.nodetype = NodeType.Hex
         hex_str = ctx.getText()
-        entity.content = hex_str
+        entity.content = int(hex_str, 16)
         
-        if self.mode in {"generate_object", "register_template", "register_object"}:
+        if self.mode in {"generate_object", "register_template" }:
             entity.value = int(hex_str, 16)
             
         self.stack.push(entity)
@@ -512,10 +552,10 @@ class Generator(NdfGrammarListener):
             
         entity = Base()
         entity.nodetype = NodeType.GUID
-        guid_str = ctx.getText().removeprefix("GUID:{").removesuffix("}")
+        guid_str = ctx.getText()
         entity.content = guid_str
         
-        if self.mode in {"generate_object", "register_template", "register_object"}:
+        if self.mode in {"generate_object", "register_template"}:
             entity.value = guid_str
             
         self.stack.push(entity)
@@ -529,7 +569,7 @@ class Generator(NdfGrammarListener):
         text = ctx.getText().replace(" ", "").removeprefix("RGBA[").removeprefix("rgba[").removesuffix("]")
         entity.content = [int(x) for x in text.split(",")]
         
-        if self.mode in {"generate_object", "register_template", "register_object"}:
+        if self.mode in {"generate_object", "register_template"}:
             entity.value = [int(x) for x in text.split(",")]
             
         self.stack.push(entity)
@@ -575,7 +615,7 @@ class Generator(NdfGrammarListener):
             vector.append(value)
             
         # 设置最终值
-        if self.mode in {"generate_object", "register_template", "register_object"}:
+        if self.mode in {"generate_object", "register_template"}:
             vector.value = [
                 value.value if hasattr(value, 'value') else None 
                 for value in vector_values
@@ -610,13 +650,7 @@ class Generator(NdfGrammarListener):
             pair.append(pair_value)
             
         if self.mode in {"generate_object", "register_template"}:
-            key = (
-                tuple(pair_values[0].value)
-                if isinstance((pair_values[0].value), list)
-                else pair_values[0].value
-            )
-            value = pair_values[1].value
-            pair.value = {key: value}
+            pair.value = (pair_values[0].value, pair_values[1].value)
 
     # 2.6.3 映射处理
     def enterMap_value(self, ctx):
@@ -644,7 +678,7 @@ class Generator(NdfGrammarListener):
             _map.append(map_value)
             
         if self.mode in {"generate_object", "register_template"}:
-            _map.value = {str(key): value.value for key, value in _map.map.items()}
+            _map.value = {str(value.value[0]): value.value[1] for value in map_values}
 
     # 2.6.4 对象处理
     def enterObject_type(self, ctx):
@@ -747,7 +781,7 @@ class Generator(NdfGrammarListener):
 
         # 设置content和value        
         entity.content = ctx.getText()
-        if self.mode in {"generate_object", "register_template", "register_object"}:
+        if self.mode in {"generate_object", "register_template"}:
             entity.value = "@" + ctx.getText()[1:-1]  # 移除首尾的@符号
             
             

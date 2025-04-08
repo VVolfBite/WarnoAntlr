@@ -12,23 +12,34 @@ class NodeType:
         Nil,           # 空值
         Boolean,       # 布尔值
         Integer,       # 整数
+        Hex,           # 十六进制数
         Float,         # 浮点数
         String,        # 字符串
-        GUID,         # GUID
+        GUID,          # GUID
         
         # 1.3 复合数据类型
-        Reference,     # 引用
-        Pair,         # 键值对
-        Vector,       # 向量
-        Map,          # 映射
-        Object,       # 对象
-        Template,     # 模板
+        Reference,      # 引用
+        Pair,          # 键值对
+        Vector,        # 向量
+        Map,           # 映射
+        Object,        # 对象
+        Template,      # 模板
         
         # 1.4 特殊类型
-        Float2,       # 二维向量
-        Float3,       # 三维向量
-        RGBA         # RGBA颜色
-    ) = range(17)
+        Float2,        # 二维向量
+        Float3,        # 三维向量
+        RGBA,          # RGBA颜色
+        
+        # 1.5 表达式类型
+        Arithmetic,    # 算术表达式
+        
+        # 1.6 模板系统
+        Parameter,     # 模板参数
+        Replacer,      # 替换值
+        
+        # 1.7 对象系统
+        Member         # 对象成员
+    ) = range(22)     # 更新范围到23以包含新增类型
 
 #=============================================
 # 2. 语法节点基类
@@ -46,7 +57,7 @@ class Base:
 
     def __str__(self) -> str:
         """字符串表示"""
-        info = f"{{type: {self.nodetype}, value: {self.value}"
+        info = f"type: {self.nodetype}, value: {self.value}"
         if self.operator:
             info += f", operator: {self.operator}"
         return info + "}"

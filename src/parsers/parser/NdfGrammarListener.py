@@ -116,6 +116,15 @@ class NdfGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by NdfGrammarParser#template_id.
+    def enterTemplate_id(self, ctx:NdfGrammarParser.Template_idContext):
+        pass
+
+    # Exit a parse tree produced by NdfGrammarParser#template_id.
+    def exitTemplate_id(self, ctx:NdfGrammarParser.Template_idContext):
+        pass
+
+
     # Enter a parse tree produced by NdfGrammarParser#template_param_type.
     def enterTemplate_param_type(self, ctx:NdfGrammarParser.Template_param_typeContext):
         pass

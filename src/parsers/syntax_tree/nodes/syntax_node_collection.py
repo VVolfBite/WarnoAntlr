@@ -53,17 +53,31 @@ class Collection(Base):
 # 2. 具体集合类型
 #=============================================
 class Object(Collection):
-    """对象节点，表示一个具体的对象实例"""
+    """对象节点类"""
     def __init__(self):
         super().__init__()
-        self.object_type = ""           # 对象类型
+        self.object_type = None
         self.nodetype = NodeType.Object
-        self.template_args = {}         # 模板参数
 
-    def __str__(self):
-        template_info = f"[{', '.join(f'{k}={v}' for k,v in self.template_args.items())}]" if self.template_args else ""
-        attributes = ", ".join(f"{item.id}={item.value}" for item in self.content)
-        return f"{self.object_type}{template_info}({attributes})"
+    def get_class(self) -> tuple[str, dict]:
+        """获取类信息
+        
+        Returns:
+            tuple[str, dict]: (类名, 属性字典)
+        """
+        # 获取类名
+        class_name = self.object_type
+        
+        # 收集属性
+        attributes = {}
+        for member in self.content:
+            if hasattr(member, 'id') and hasattr(member, 'content'):
+                if hasattr(member.content, 'content'):
+                    attributes[member.id] = member.content.content
+                else:
+                    attributes[member.id] = member.content
+                    
+        return class_name, attributes
 
 class Pair(Collection):
     """键值对节点，限制只能有两个元素"""

@@ -45,10 +45,10 @@ normal_assignment : ( export_prefix | private_prefix )? id K_IS r_value;
 template_assignment 
     : ( export_prefix | private_prefix )? 
       template_prefix 
-      id 
+      ID 
       template_param_list
       K_IS 
-      r_value
+      object
     ;
 
 member_assignment : id '=' ( r_value | normal_assignment );
@@ -56,12 +56,17 @@ unnamed_assignment : K_UNNAMED r_value;
 
 // 5. 模板系统
 template_param 
-    : id ':' type_label ('=' r_value)?
-    | id ':' list_label ('=' vector_value)?
-    | id ':' map_label ('=' map_value)?
+    : template_id ':' type_label ('=' r_value)?  // T:int = 1
+    | template_id ':' list_label ('=' vector_value)?  // T:list<int> = [1,2]
+    | template_id ':' map_label ('=' map_value)?  // T:map<string,int> = MAP[('a',1)]
     ;
 
-template_param_list : '[' (template_param (',' template_param)* ','?)? ']';
+template_param_list
+    : '[' (template_param (',' template_param)*)? ']'  // 修改这里
+    ;
+
+// 用于模板参数的标识符,避免与普通id规则冲突
+template_id : ID;
 
 template_param_type
     : type_label                                    // 基本类型参数
@@ -76,15 +81,15 @@ numeric_specialization
     ;
 
 // 6. 对象系统
-object : object_type '(' ( block )* ')';
-object_type : 'T'? ID;
+object : object_type '(' ( block (',' block)* ','? )* ')';   // 添加了逗号支持
+object_type : ID;
 block : normal_assignment | member_assignment | object_member;
 
 object_member
-    : member_assignment
-    | array_access '=' r_value
-    | ID '.' ID '=' r_value
-    | ID '.' array_access '=' r_value
+    : member_assignment ','?    // 允许尾随逗号
+    | array_access '=' r_value ','?
+    | ID '.' ID '=' r_value ','?
+    | ID '.' array_access '=' r_value ','?
     ;
 
 // 7. 标识符系统
@@ -136,7 +141,7 @@ data_structure_value : pair_value | vector_value | map_value;
 bool_value : K_TRUE | K_FALSE;
 nil_value : K_NIL;
 string_value : STRING_SINGLE | STRING_DOUBLE;
-int_value : INT | HEX_INT;
+int_value : INT ;
 float_value : FLOAT;
 hex_value : HEX_INT;  // 使用已定义的HEX_INT替代HEXNUMBER
 guid_value : GUID;

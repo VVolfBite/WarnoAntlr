@@ -69,6 +69,11 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by NdfGrammarParser#template_id.
+    def visitTemplate_id(self, ctx:NdfGrammarParser.Template_idContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by NdfGrammarParser#template_param_type.
     def visitTemplate_param_type(self, ctx:NdfGrammarParser.Template_param_typeContext):
         return self.visitChildren(ctx)
