@@ -2,9 +2,10 @@ from src.parsers.syntax_tree.nodes.syntax_node_base import *
 
 
 # Assignment是一个描述文件中基本语句的节点类
-# 基本结构是 export/private id is value
-# 还有一种member形式 即 id = value
-# 注意，类的特性是反应在Object上的而非Assignment上的
+# 基本结构是:
+# 1. export/private id is value
+# 2. member形式: id = value
+# 3. template形式: template id[params] is value
 class Assignment(Base):
     def __init__(self):
         super().__init__()
@@ -15,9 +16,11 @@ class Assignment(Base):
         self.is_unnamed = False
         self.is_member = False
         self.is_template = False
+        self.template_params = []    # 新增: 模板参数列表
+        self.base_type = None       # 新增: 模板基类
 
     def __str__(self):
-        return (
+        result = (
             "{id: "
             + self.id
             + " type: assignment, export: "
@@ -28,10 +31,16 @@ class Assignment(Base):
             + str(self.is_member)
             + ", template: "
             + str(self.is_template)
-            + ", value: "
-            + str(self.value)
-            + "}"
         )
+        if self.is_template:
+            result += (
+                ", template_params: "
+                + str(self.template_params)
+                + ", base_type: "
+                + str(self.base_type)
+            )
+        result += ", value: " + str(self.content) + "}"
+        return result
 
     def __eq__(self, other):
         if not type(other) == type(self):
@@ -43,7 +52,7 @@ class Assignment(Base):
             and self.is_member == other.is_member
             and self.is_unnamed == other.is_unnamed
             and self.is_template == other.is_template
-            and self.value == other.value
+            and self.content == other.content
         )
         return ret
 
@@ -51,9 +60,9 @@ class Assignment(Base):
 
         current = path.split("\\")[0]
         if current == "":
-            return self.value
-        elif isinstance(self.value, Base):
-            return self.value.get_value(path, default)
+            return self.content
+        elif isinstance(self.content, Base):
+            return self.content.get_value(path, default)
         else:
             return default
 
@@ -61,8 +70,8 @@ class Assignment(Base):
 
         current = path.split("\\")[0]
         if current == "":
-            self.value = value
-        elif isinstance(self.value, Base):
-            self.value.set_value(path, value)
+            self.content = value
+        elif isinstance(self.content, Base):
+            self.content.set_value(path, value)
         else:
             print("could not find " + path + "\ncurrent: " + current)

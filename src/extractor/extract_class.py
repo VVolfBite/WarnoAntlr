@@ -1301,3 +1301,27 @@ class CriticalEffect_Bounce(TCriticalEffect):
     def __init__(self, Roll=None):
         super().__init__(Descriptor="CriticalEffect_Bounce_Desc", Roll=Roll)
         self.Roll = Roll
+
+
+class TestBase(BaseDescription):
+    def __init__(self, FieldA=None, FieldB=None, FieldC=None, FieldD=None):
+        self.FieldA = FieldA
+        self.FieldB = FieldB
+        self.FieldC = FieldC
+        self.FieldD = FieldD
+
+
+class TestTemplate(BaseDescription):
+    def __init__(self, Key=None, Value=None):
+        self.Key = Key
+        self.Value = Value
+
+
+class TTestA(BaseDescription):
+    def __init__(self, FieldA=None, FiledB=None, FieldC=None, FieldD=None, FieldE=None, FieldF=None):
+        self.FieldA = FieldA
+        self.FiledB = FiledB
+        self.FieldC = FieldC
+        self.FieldD = FieldD
+        self.FieldE = FieldE
+        self.FieldF = FieldF

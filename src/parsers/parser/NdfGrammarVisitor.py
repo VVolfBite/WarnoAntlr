@@ -39,16 +39,6 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NdfGrammarParser#object_type.
-    def visitObject_type(self, ctx:NdfGrammarParser.Object_typeContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by NdfGrammarParser#block.
-    def visitBlock(self, ctx:NdfGrammarParser.BlockContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by NdfGrammarParser#normal_assignment.
     def visitNormal_assignment(self, ctx:NdfGrammarParser.Normal_assignmentContext):
         return self.visitChildren(ctx)
@@ -69,8 +59,43 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by NdfGrammarParser#template_param.
+    def visitTemplate_param(self, ctx:NdfGrammarParser.Template_paramContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#template_param_list.
+    def visitTemplate_param_list(self, ctx:NdfGrammarParser.Template_param_listContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#template_param_type.
+    def visitTemplate_param_type(self, ctx:NdfGrammarParser.Template_param_typeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#numeric_specialization.
+    def visitNumeric_specialization(self, ctx:NdfGrammarParser.Numeric_specializationContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by NdfGrammarParser#object.
     def visitObject(self, ctx:NdfGrammarParser.ObjectContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#object_type.
+    def visitObject_type(self, ctx:NdfGrammarParser.Object_typeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#block.
+    def visitBlock(self, ctx:NdfGrammarParser.BlockContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#object_member.
+    def visitObject_member(self, ctx:NdfGrammarParser.Object_memberContext):
         return self.visitChildren(ctx)
 
 
@@ -79,23 +104,13 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NdfGrammarParser#arithmetic.
-    def visitArithmetic(self, ctx:NdfGrammarParser.ArithmeticContext):
+    # Visit a parse tree produced by NdfGrammarParser#array_access.
+    def visitArray_access(self, ctx:NdfGrammarParser.Array_accessContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NdfGrammarParser#atom.
-    def visitAtom(self, ctx:NdfGrammarParser.AtomContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by NdfGrammarParser#op.
-    def visitOp(self, ctx:NdfGrammarParser.OpContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by NdfGrammarParser#concatination.
-    def visitConcatination(self, ctx:NdfGrammarParser.ConcatinationContext):
+    # Visit a parse tree produced by NdfGrammarParser#type_label.
+    def visitType_label(self, ctx:NdfGrammarParser.Type_labelContext):
         return self.visitChildren(ctx)
 
 
@@ -119,6 +134,16 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by NdfGrammarParser#template_type.
+    def visitTemplate_type(self, ctx:NdfGrammarParser.Template_typeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#type_initialization.
+    def visitType_initialization(self, ctx:NdfGrammarParser.Type_initializationContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by NdfGrammarParser#builtin_type_value.
     def visitBuiltin_type_value(self, ctx:NdfGrammarParser.Builtin_type_valueContext):
         return self.visitChildren(ctx)
@@ -134,13 +159,13 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NdfGrammarParser#nil_value.
-    def visitNil_value(self, ctx:NdfGrammarParser.Nil_valueContext):
+    # Visit a parse tree produced by NdfGrammarParser#bool_value.
+    def visitBool_value(self, ctx:NdfGrammarParser.Bool_valueContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NdfGrammarParser#bool_value.
-    def visitBool_value(self, ctx:NdfGrammarParser.Bool_valueContext):
+    # Visit a parse tree produced by NdfGrammarParser#nil_value.
+    def visitNil_value(self, ctx:NdfGrammarParser.Nil_valueContext):
         return self.visitChildren(ctx)
 
 
@@ -154,18 +179,38 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NdfGrammarParser#hex_value.
-    def visitHex_value(self, ctx:NdfGrammarParser.Hex_valueContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by NdfGrammarParser#float_value.
     def visitFloat_value(self, ctx:NdfGrammarParser.Float_valueContext):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by NdfGrammarParser#hex_value.
+    def visitHex_value(self, ctx:NdfGrammarParser.Hex_valueContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by NdfGrammarParser#guid_value.
     def visitGuid_value(self, ctx:NdfGrammarParser.Guid_valueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#special_value.
+    def visitSpecial_value(self, ctx:NdfGrammarParser.Special_valueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#rgba_value.
+    def visitRgba_value(self, ctx:NdfGrammarParser.Rgba_valueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#float2_value.
+    def visitFloat2_value(self, ctx:NdfGrammarParser.Float2_valueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#float3_value.
+    def visitFloat3_value(self, ctx:NdfGrammarParser.Float3_valueContext):
         return self.visitChildren(ctx)
 
 
@@ -184,6 +229,16 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by NdfGrammarParser#pair_element.
+    def visitPair_element(self, ctx:NdfGrammarParser.Pair_elementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#path_element.
+    def visitPath_element(self, ctx:NdfGrammarParser.Path_elementContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by NdfGrammarParser#obj_reference_value.
     def visitObj_reference_value(self, ctx:NdfGrammarParser.Obj_reference_valueContext):
         return self.visitChildren(ctx)
@@ -194,13 +249,23 @@ class NdfGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NdfGrammarParser#special_value.
-    def visitSpecial_value(self, ctx:NdfGrammarParser.Special_valueContext):
+    # Visit a parse tree produced by NdfGrammarParser#arithmetic.
+    def visitArithmetic(self, ctx:NdfGrammarParser.ArithmeticContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NdfGrammarParser#rgba_value.
-    def visitRgba_value(self, ctx:NdfGrammarParser.Rgba_valueContext):
+    # Visit a parse tree produced by NdfGrammarParser#atom.
+    def visitAtom(self, ctx:NdfGrammarParser.AtomContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#op.
+    def visitOp(self, ctx:NdfGrammarParser.OpContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NdfGrammarParser#concatination.
+    def visitConcatination(self, ctx:NdfGrammarParser.ConcatinationContext):
         return self.visitChildren(ctx)
 
 

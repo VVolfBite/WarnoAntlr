@@ -16,7 +16,6 @@ class ToNdfConverter:
         self.indent -= INDENT_SIZE
         self.indent = max(0, self.indent)
 
-    # TODO: formatting: add break up of structures based on line length
     def convert(self, _file: File) -> str:
         return self.convert_entity(_file)
 

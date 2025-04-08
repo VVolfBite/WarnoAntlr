@@ -1,0 +1,5 @@
+GameData:/Localisation/Waifu/COMPANIES.csv
+GameData:/Localisation/Waifu/INTERFACE_INGAME.csv
+GameData:/Localisation/Waifu/INTERFACE_OUTGAME.csv
+GameData:/Localisation/Waifu/PLATOONS.csv
+GameData:/Localisation/Waifu/UNITS.csv
