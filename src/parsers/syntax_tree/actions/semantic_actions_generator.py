@@ -52,17 +52,8 @@ class StackMarker:
 
 
 class Generator(NdfGrammarListener):
-
-    # RuleName其实没用，Generator的任务是解析一个Ndf文件并将其中的所有结构以Assignment的形式记录，其以Stack完成语法语义动作
-    # Ignore标识在某个结构下应当进行何种忽视动作，比如路径引用/计算过程中其实不应该出现赋值、对象创建等过程
-    # ClassRegister是我新加的，用于提取类似类结构的类名和成员名，以便以后直接制作Python类进行数据处理，这里的关键是Ndf中一个类并非所有的成员都会一次出现，因此需要多次提取，需要支持类的存储，更新扩展
-    def __init__(
-        self,
-        parser: NdfGrammarParser,
-        name_space="/",
-        reference = None,
-        mode="default",
-    ):
+    # 1. 类初始化和核心方法
+    def __init__(self, parser: NdfGrammarParser, name_space="/", reference=None, mode="default"):
         super().__init__()
         self.rule_names = parser.ruleNames
         self.assignments = []
@@ -113,13 +104,14 @@ class Generator(NdfGrammarListener):
         class_ = get_class(class_name)
         return class_(**kwargs) if class_ is not None else None
 
-    def enterNormal_assignment(self, ctx: NdfGrammarParser.Normal_assignmentContext):
+    # 2. 常规赋值相关方法
+    def enterNormal_assignment(self, ctx):
         if self.ignore > 0:
             return
         # 推入Assignment，此时堆栈为 Top | Assignment ->
         self.stack.push(Assignment())
 
-    def exitNormal_assignment(self, ctx: NdfGrammarParser.Normal_assignmentContext):
+    def exitNormal_assignment(self, ctx):
         if self.ignore > 0:
             return
 
@@ -127,7 +119,7 @@ class Generator(NdfGrammarListener):
         value = self.stack.pop()
         assignment = self.stack.top()
 
-        if self.mode in {"generate_object", "register_template","register_object"}:
+        if self.mode in {"generate_object", "register_template", "register_object"}:
             assignment.value = value.value
 
         # 弹出 Assignment，此时堆栈结构：Bottom | Top(Assignment)
@@ -138,7 +130,7 @@ class Generator(NdfGrammarListener):
             # 也许下边没用了
             self.assignments.append(assignment)
 
-    def enterMember_assignment(self, ctx: NdfGrammarParser.Member_assignmentContext):
+    def enterMember_assignment(self, ctx):
         if self.ignore > 0:
             return
         assignment = Assignment()
@@ -146,7 +138,7 @@ class Generator(NdfGrammarListener):
         # 推入一个Assignment，此时堆栈为 Top | Assignment  ->
         self.stack.push(assignment)
 
-    def exitMember_assignment(self, ctx: NdfGrammarParser.Member_assignmentContext):
+    def exitMember_assignment(self, ctx):
         if self.ignore > 0:
             return
         # 弹出一个Assignment值表，此时堆栈为 Top | Assignment | Value(Entity / Assignment) <-
@@ -158,7 +150,7 @@ class Generator(NdfGrammarListener):
         elif self.mode in {"register_object"}:
             assignment.value = value
 
-    def enterUnnamed_assignment(self, ctx: NdfGrammarParser.Unnamed_assignmentContext):
+    def enterUnnamed_assignment(self, ctx):
         if self.ignore > 0:
             return
         assignment = Assignment()
@@ -166,7 +158,7 @@ class Generator(NdfGrammarListener):
         # 推入一个Assignment，此时堆栈为 Top | Assignment  ->
         self.stack.push(assignment)
 
-    def exitUnnamed_assignment(self, ctx: NdfGrammarParser.Unnamed_assignmentContext):
+    def exitUnnamed_assignment(self, ctx):
         if self.ignore > 0:
             return
         # 弹出一个Assignment值表，此时堆栈为 Top | Assignment | Value(Entity / Assignment) <-
@@ -185,10 +177,7 @@ class Generator(NdfGrammarListener):
             if self.mode in {"generate_object", "register_template"}:
                 self.generate_object(assignment.id, assignment.value)
 
-    # Enter a parse tree produced by NdfGrammarParser#template_assignment.
-    def enterTemplate_assignment(
-        self, ctx: NdfGrammarParser.Template_assignmentContext
-    ):
+    def enterTemplate_assignment(self, ctx):
         if self.ignore > 0:
             return
         assignment = Assignment()
@@ -196,8 +185,7 @@ class Generator(NdfGrammarListener):
         # 推入一个Assignment，此时堆栈为 Top | Assignment  ->
         self.stack.push(assignment)
 
-    # Exit a parse tree produced by NdfGrammarParser#template_assignment.
-    def exitTemplate_assignment(self, ctx: NdfGrammarParser.Template_assignmentContext):
+    def exitTemplate_assignment(self, ctx):
         if self.ignore > 0:
             return
 
@@ -256,7 +244,289 @@ class Generator(NdfGrammarListener):
             assignment = self.stack.pop()
             self.assignments.append(assignment)
 
-    def enterArithmetic(self, ctx: NdfGrammarParser.ArithmeticContext):
+    # 3. 基本类型处理方法
+    def enterBool_value(self, ctx):
+        if self.ignore > 0:
+            return
+        entity = Base()
+        entity.nodetype = NodeType.Boolean
+        if self.mode in {"generate_object", "register_template"}:
+            if ctx.getText().lower() == "false":
+                entity.value = False
+            else:
+                entity.value = True
+        # 推入一个Entity，此时堆栈为 Top | Base(Bool)  ->
+        self.stack.push(entity)
+
+    def enterInt_value(self, ctx):
+        if self.ignore > 0:
+            return
+        entity = Base()
+        entity.nodetype = NodeType.Integer
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            entity.value = int(ctx.getText())
+        # 推入一个Entity，此时堆栈为 Top | Base(Int)  ->
+        self.stack.push(entity)
+
+    def enterFloat_value(self, ctx):
+        if self.ignore > 0:
+            return
+        entity = Base()
+        entity.nodetype = NodeType.Float
+
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            entity.value = float(ctx.getText())
+        # 推入一个Entity，此时堆栈为 Top | Base(Float)  ->
+        self.stack.push(entity)
+
+    def enterString_value(self, ctx):
+        if self.ignore > 0:
+            return
+        entity = Base()
+        value = ctx.getText()
+        if value[0] == "'":
+            entity.nodetype = NodeType.String_single
+        else:
+            entity.nodetype = NodeType.String_double
+
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            entity.value = str(ctx.getText())
+        # 推入一个Entity，此时堆栈为 Top | Base(String)  ->
+        self.stack.push(entity)
+
+    def enterHex_value(self, ctx):
+        if self.ignore > 0:
+            return
+        entity = Base()
+        entity.nodetype = NodeType.HexInteger
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            entity.value = ctx.getText()
+        # 推入一个Entity，此时堆栈为 Top | Base(Hex)  ->
+        self.stack.push(entity)
+
+    def enterGuid_value(self, ctx):
+        if self.ignore > 0:
+            return
+        entity = Base()
+        entity.nodetype = NodeType.GUID
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            entity.value = str(ctx.getText())
+        # 推入一个Entity，此时堆栈为 Top | Base(GUID)  ->
+        self.stack.push(entity)
+
+    # 4. 复合类型处理方法
+    def enterVector_value(self, ctx):
+        if self.ignore > 0:
+            return
+        # 推入一个Vector，此时堆栈为 Top | Vector  ->
+        self.stack.push(Vector())
+        # 推入一个Marker，此时堆栈为 Top | Vector | Marker  ->
+        self.stack.push(StackMarker())
+
+    def exitVector_value(self, ctx):
+        if self.ignore > 0:
+            return
+
+        vector_values = []
+        # 弹出 Vector 值，直到遇到 StackMarker
+        while not isinstance(self.stack.top(), StackMarker):
+            vector_values.append(self.stack.pop())
+
+        # 还原顺序并移除 Marker
+        vector_values.reverse()
+        self.stack.pop()
+
+        # 获取 Vector 并填充数据
+        vector = self.stack.top()
+        vector.extend(vector_values)
+
+        # 如果模式符合，设置 python_value
+        if self.mode in {"generate_object", "register_template"}:
+            vector.value = [value.value for value in vector.value]
+
+    def enterMap_value(self, ctx):
+        if self.ignore > 0:
+            return
+        # 推入一个Map，此时堆栈为 Top | Map  ->
+        self.stack.push(Map())
+        # 推入一个Marker，此时堆栈为 Top | Map | Marker  ->
+        self.stack.push(StackMarker())
+
+    def exitMap_value(self, ctx):
+        if self.ignore > 0:
+            return
+        map_values = []
+        # 弹出Map值列表，此时堆栈为 Top | Map | Marker | MapValue0 | MapValue1 <-
+        while not isinstance(self.stack.top(), StackMarker):
+            map_values.append(self.stack.pop())
+        # 还原顺序并移除 Marker
+        map_values.reverse()
+        self.stack.pop()
+        # 获取 Map 并填充数据
+        _map = self.stack.top()
+        _map.extend(map_values)
+        # 处理 python_value
+        if self.mode in {"generate_object", "register_template"}:
+            _map.value = _map.map
+
+    def enterPair_value(self, ctx):
+        if self.ignore > 0:
+            return
+        # 推入一个Pair，此时堆栈为 Top | Pair  ->
+        self.stack.push(Pair())
+        # 推入一个Marker，此时堆栈为 Top | Pair | Marker  ->
+        self.stack.push(StackMarker())
+
+    def exitPair_value(self, ctx):
+        if self.ignore > 0:
+            return
+        pair_values = []
+        # 弹出 Pair 值，直到遇到 StackMarker
+        while not isinstance(self.stack.top(), StackMarker):
+            pair_values.append(self.stack.pop())
+        # 还原顺序并移除 Marker
+        pair_values.reverse()
+        self.stack.pop()
+        # 获取 Pair 并填充数据
+        pair = self.stack.top()
+        pair.extend(pair_values)
+        # 如果模式符合，构造 python_value
+        if self.mode in {"generate_object", "register_template"}:
+            key = (
+                tuple(pair.value[0].value)
+                if isinstance(pair.value[0].value, list)
+                else pair.value[0].value
+            )
+            pair.value = [key, pair.value[1].value]
+
+    def enterObject_type(self, ctx):
+        if self.ignore > 0:
+            return
+        # 推入Object，此时堆栈为 Top | Object ->
+        obj = Object()
+        obj.object_type = ctx.getText()
+        self.stack.push(obj)
+        # 推入Object，此时堆栈为 Top | Object | Marker ->
+        self.stack.push(StackMarker())
+
+    def exitObject(self, ctx):
+        if self.ignore > 0:
+            return
+        members = []
+        # 弹出Member列表，此时堆栈为  Top | Object | Marker | Member0 | Member1 |Member2 <-
+        while not isinstance(self.stack.top(), StackMarker):
+            members.append(self.stack.pop())
+        members.reverse()
+        # 弹出Marker，此时堆栈为  Top | Object | Marker <-
+        self.stack.pop()
+        # 弹出object，此时堆栈为  Top | Object <-
+        obj = self.stack.top()
+        obj.extend(members)
+
+        if self.mode == "register_object":
+            class_name, class_attrs = obj.get_class()
+            self.register_object(name=class_name, attributes=class_attrs)
+        elif self.mode in {"generate_object", "register_template"}:
+            class_name = obj.object_type
+            kwargs = {val.id: val.value for val in obj.value}
+            obj.value = self.instantiate_class(class_name, **kwargs)
+
+    # 5. 修饰符处理方法
+    def enterExport_prefix(self, ctx):
+        if self.ignore > 0:
+            return
+        # 更新属性，此时的堆栈为  Top(Assignment)
+        self.stack.top().is_export = True
+
+    def enterTemplate_prefix(self, ctx):
+        if self.ignore > 0:
+            return
+        # 更新属性，此时的堆栈为  Top(Assignment)
+        self.stack.top().is_template = True
+
+    def enterPrivate_prefix(self, ctx):
+        if self.ignore > 0:
+            return
+        # 更新属性，此时的堆栈为  Top(Assignment)
+        self.stack.top().is_private = True
+
+    def enterId(self, ctx):
+        if self.ignore > 0:
+            return
+        # 更新属性，此时的堆栈为  Top(Assignment/Member ...)
+        self.stack.top().id = ctx.getText()
+
+    # 6. 特殊值处理方法
+    def enterNil_value(self, ctx):
+        if self.ignore > 0:
+            return
+        entity = Base()
+        entity.nodetype = NodeType.Nil
+
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            entity.value = None
+        # 推入一个Entity，此时堆栈为 Top | Base(Nil)  ->
+        self.stack.push(entity)
+
+    def enterRgba_value(self, ctx):
+        if self.ignore > 0:
+            return
+        entity = Base()
+        entity.nodetype = NodeType.RGBA
+
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            text = ctx.getText()
+            text = text.replace(" ", "")
+            text = text.removeprefix("RGBA[")
+            text = text.removeprefix("rgba[")
+            text = text.removesuffix("]")
+            nums = text.split(",")
+            entity.value = [int(x) for x in nums]
+        # 推入一个Entity，此时堆栈为 Top | Base(RGBA(List))  ->
+        self.stack.push(entity)
+
+    def enterObj_reference_value(self, ctx):
+        self.ignore += 1
+        if self.ignore > 1:
+            return
+        entity = Base()
+        entity.nodetype = NodeType.Reference
+        reference_str = str(ctx.getText())
+        if self.mode in {"generate_object", "register_template"} and self.reference is not None:
+            reference_str = str(ctx.getText())
+            if "|" in reference_str:
+                references = reference_str.split("|")
+                entity.value = [
+                    str(ref.strip().split("/")[-1] for ref in references)
+                ]
+            else:
+                entity.value = str(reference_str.split("/")[-1])
+        elif self.mode in {"register_object"} or self.reference is None:
+            entity.value = str(ctx.getText())
+        # 推入一个Entity，此时堆栈为 Top | Base(ObjReference)  ->
+        self.stack.push(entity)
+
+    def exitObj_reference_value(self, ctx):
+        if self.ignore > 0:
+            self.ignore -= 1
+        # 什么都不做，由后续的赋值语句完成弹出
+
+    def enterReplace_value(self, ctx):
+        if self.ignore > 0:
+            return
+        entity = Base()
+        entity.nodetype = NodeType.Replacer
+        if self.mode in {"generate_object", "register_template", "register_object"}:
+            entity.value = "@" + ctx.getText()[1:-1]
+        # 推入一个Entity，此时堆栈为 Top | Base(GUID)  ->
+        self.stack.push(entity)
+
+    def exitReplace_value(self, ctx):
+        if self.ignore > 0:
+            self.ignore -= 1
+
+    # 7. 算术运算相关方法
+    def enterArithmetic(self, ctx):
         if self.ignore > 0:
             return
         # 如果没有进入Arithmetic而是只是一个值，那么不要进行任何处理
@@ -274,7 +544,7 @@ class Generator(NdfGrammarListener):
         # 推入一个Entity，此时堆栈为 Top | Entity(Arithmetic)  ->
         self.stack.push(arithmetic)
 
-    def exitArithmetic(self, ctx: NdfGrammarParser.ArithmeticContext):
+    def exitArithmetic(self, ctx):
         if self.ignore > 0:
             return
         # 单值直接返回即可
@@ -328,288 +598,5 @@ class Generator(NdfGrammarListener):
             arithmetic.value = op1.value / op2.value
             return
 
-    def enterOp(self, ctx: NdfGrammarParser.Object_typeContext):
+    def enterOp(self, ctx):
         pass
-
-    def enterVector_value(self, ctx: NdfGrammarParser.Vector_valueContext):
-        if self.ignore > 0:
-            return
-        # 推入一个Vector，此时堆栈为 Top | Vector  ->
-        self.stack.push(Vector())
-        # 推入一个Marker，此时堆栈为 Top | Vector | Marker  ->
-        self.stack.push(StackMarker())
-
-    def exitVector_value(self, ctx: NdfGrammarParser.Vector_valueContext):
-        if self.ignore > 0:
-            return
-
-        vector_values = []
-        # 弹出 Vector 值，直到遇到 StackMarker
-        while not isinstance(self.stack.top(), StackMarker):
-            vector_values.append(self.stack.pop())
-
-        # 还原顺序并移除 Marker
-        vector_values.reverse()
-        self.stack.pop()
-
-        # 获取 Vector 并填充数据
-        vector = self.stack.top()
-        vector.extend(vector_values)
-
-        # 如果模式符合，设置 python_value
-        if self.mode in {"generate_object", "register_template"}:
-            vector.value = [value.value for value in vector.value]
-
-    def enterPair_value(self, ctx: NdfGrammarParser.Pair_valueContext):
-        if self.ignore > 0:
-            return
-        # 推入一个Pair，此时堆栈为 Top | Pair  ->
-        self.stack.push(Pair())
-        # 推入一个Marker，此时堆栈为 Top | Pair | Marker  ->
-        self.stack.push(StackMarker())
-
-    def exitPair_value(self, ctx: NdfGrammarParser.Pair_valueContext):
-        if self.ignore > 0:
-            return
-        pair_values = []
-        # 弹出 Pair 值，直到遇到 StackMarker
-        while not isinstance(self.stack.top(), StackMarker):
-            pair_values.append(self.stack.pop())
-        # 还原顺序并移除 Marker
-        pair_values.reverse()
-        self.stack.pop()
-        # 获取 Pair 并填充数据
-        pair = self.stack.top()
-        pair.extend(pair_values)
-        # 如果模式符合，构造 python_value
-        if self.mode in {"generate_object", "register_template"}:
-            key = (
-                tuple(pair.value[0].value)
-                if isinstance(pair.value[0].value, list)
-                else pair.value[0].value
-            )
-            pair.value = [key, pair.value[1].value]
-
-    def enterMap_value(self, ctx: NdfGrammarParser.Map_valueContext):
-        if self.ignore > 0:
-            return
-        # 推入一个Map，此时堆栈为 Top | Map  ->
-        self.stack.push(Map())
-        # 推入一个Marker，此时堆栈为 Top | Map | Marker  ->
-        self.stack.push(StackMarker())
-
-    def exitMap_value(self, ctx: NdfGrammarParser.Map_valueContext):
-        if self.ignore > 0:
-            return
-        map_values = []
-        # 弹出Map值列表，此时堆栈为 Top | Map | Marker | MapValue0 | MapValue1 <-
-        while not isinstance(self.stack.top(), StackMarker):
-            map_values.append(self.stack.pop())
-        # 还原顺序并移除 Marker
-        map_values.reverse()
-        self.stack.pop()
-        # 获取 Map 并填充数据
-        _map = self.stack.top()
-        _map.extend(map_values)
-        # 处理 python_value
-        if self.mode in {"generate_object", "register_template"}:
-            _map.value = _map.map
-        
-
-    def enterObject_type(self, ctx: NdfGrammarParser.Object_typeContext):
-        if self.ignore > 0:
-            return
-        # 推入Object，此时堆栈为 Top | Object ->
-        obj = Object()
-        obj.object_type = ctx.getText()
-        self.stack.push(obj)
-        # 推入Object，此时堆栈为 Top | Object | Marker ->
-        self.stack.push(StackMarker())
-
-    def exitObject(self, ctx: NdfGrammarParser.ObjectContext):
-        if self.ignore > 0:
-            return
-        members = []
-        # 弹出Member列表，此时堆栈为  Top | Object | Marker | Member0 | Member1 |Member2 <-
-        while not isinstance(self.stack.top(), StackMarker):
-            members.append(self.stack.pop())
-        members.reverse()
-        # 弹出Marker，此时堆栈为  Top | Object | Marker <-
-        self.stack.pop()
-        # 弹出object，此时堆栈为  Top | Object <-
-        obj = self.stack.top()
-        obj.extend(members)
-
-        if self.mode == "register_object":
-            class_name, class_attrs = obj.get_class()
-            self.register_object(name=class_name, attributes=class_attrs)
-        elif self.mode in {"generate_object", "register_template"}:
-            class_name = obj.object_type
-            kwargs = {val.id: val.value for val in obj.value}
-            obj.value = self.instantiate_class(class_name, **kwargs)
-
-    def enterExport_prefix(self, ctx: NdfGrammarParser.Export_prefixContext):
-        if self.ignore > 0:
-            return
-        # 更新属性，此时的堆栈为  Top(Assignment)
-        self.stack.top().is_export = True
-
-    def enterTemplate_prefix(self, ctx: NdfGrammarParser.Template_prefixContext):
-        if self.ignore > 0:
-            return
-        # 更新属性，此时的堆栈为  Top(Assignment)
-        self.stack.top().is_template = True
-
-    def enterPrivate_prefix(self, ctx: NdfGrammarParser.Private_prefixContext):
-        if self.ignore > 0:
-            return
-        # 更新属性，此时的堆栈为  Top(Assignment)
-        self.stack.top().is_private = True
-
-    def enterId(self, ctx: NdfGrammarParser.IdContext):
-        if self.ignore > 0:
-            return
-        # 更新属性，此时的堆栈为  Top(Assignment/Member ...)
-        self.stack.top().id = ctx.getText()
-
-    def enterNil_value(self, ctx: NdfGrammarParser.Nil_valueContext):
-        if self.ignore > 0:
-            return
-        entity = Base()
-        entity.nodetype = NodeType.Nil
-
-        if self.mode in {"generate_object", "register_template","register_object"}:
-            entity.value = None
-        # 推入一个Entity，此时堆栈为 Top | Base(Nil)  ->
-        self.stack.push(entity)
-
-    def enterBool_value(self, ctx: NdfGrammarParser.Bool_valueContext):
-        if self.ignore > 0:
-            return
-        entity = Base()
-        entity.nodetype = NodeType.Boolean
-        if self.mode in {"generate_object", "register_template"}:
-            if ctx.getText().lower() == "false":
-                entity.value = False
-            else:
-                entity.value = True
-        # 推入一个Entity，此时堆栈为 Top | Base(Bool)  ->
-        self.stack.push(entity)
-
-    def enterInt_value(self, ctx: NdfGrammarParser.Int_valueContext):
-        if self.ignore > 0:
-            return
-        entity = Base()
-        entity.nodetype = NodeType.Integer
-        if self.mode in {"generate_object", "register_template","register_object"}:
-            entity.value = int(ctx.getText())
-        # 推入一个Entity，此时堆栈为 Top | Base(Int)  ->
-        self.stack.push(entity)
-
-    def enterString_value(self, ctx: NdfGrammarParser.String_valueContext):
-        if self.ignore > 0:
-            return
-        entity = Base()
-        value = ctx.getText()
-        if value[0] == "'":
-            entity.nodetype = NodeType.String_single
-        else:
-            entity.nodetype = NodeType.String_double
-
-        if self.mode in {"generate_object", "register_template","register_object"}:
-            entity.value = str(ctx.getText())
-        # 推入一个Entity，此时堆栈为 Top | Base(String)  ->
-        self.stack.push(entity)
-
-    def enterHex_value(self, ctx: NdfGrammarParser.Hex_valueContext):
-        if self.ignore > 0:
-            return
-        entity = Base()
-        entity.nodetype = NodeType.HexInteger
-        if self.mode in {"generate_object", "register_template","register_object"}:
-            entity.value = ctx.getText()
-        # 推入一个Entity，此时堆栈为 Top | Base(Hex)  ->
-        self.stack.push(entity)
-
-    def enterFloat_value(self, ctx: NdfGrammarParser.Float_valueContext):
-        if self.ignore > 0:
-            return
-        entity = Base()
-        entity.nodetype = NodeType.Float
-
-        if self.mode in {"generate_object", "register_template","register_object"}:
-            entity.value = float(ctx.getText())
-        # 推入一个Entity，此时堆栈为 Top | Base(Float)  ->
-        self.stack.push(entity)
-
-    def enterGuid_value(self, ctx: NdfGrammarParser.Guid_valueContext):
-        if self.ignore > 0:
-            return
-        entity = Base()
-        entity.nodetype = NodeType.GUID
-        if self.mode in {"generate_object", "register_template","register_object"}:
-            entity.value = str(ctx.getText())
-        # 推入一个Entity，此时堆栈为 Top | Base(GUID)  ->
-        self.stack.push(entity)
-
-    def enterRgba_value(self, ctx: NdfGrammarParser.Rgba_valueContext):
-        if self.ignore > 0:
-            return
-        entity = Base()
-        entity.nodetype = NodeType.RGBA
-
-        if self.mode in {"generate_object", "register_template","register_object"}:
-            text = ctx.getText()
-            text = text.replace(" ", "")
-            text = text.removeprefix("RGBA[")
-            text = text.removeprefix("rgba[")
-            text = text.removesuffix("]")
-            nums = text.split(",")            
-            entity.value = [int(x) for x in nums]
-        # 推入一个Entity，此时堆栈为 Top | Base(RGBA(List))  ->
-        self.stack.push(entity)
-
-    def enterObj_reference_value(
-        self, ctx: NdfGrammarParser.Obj_reference_valueContext
-    ):
-        self.ignore += 1
-        if self.ignore > 1:
-            return
-        entity = Base()
-        entity.nodetype = NodeType.Reference
-        reference_str = str(ctx.getText())
-        if self.mode in {"generate_object", "register_template"} and self.reference is not None:
-            reference_str = str(ctx.getText())
-            if "|" in reference_str:
-                references = reference_str.split("|")
-                entity.value = [
-                    str(ref.strip().split("/")[-1] for ref in references)
-                ]
-            else:
-                entity.value = str(reference_str.split("/")[-1])
-        elif self.mode in {"register_object"} or self.reference is None:
-            entity.value = str(ctx.getText())
-        # 推入一个Entity，此时堆栈为 Top | Base(ObjReference)  ->
-        self.stack.push(entity)
-
-    def exitObj_reference_value(self, ctx: NdfGrammarParser.Obj_reference_valueContext):
-        if self.ignore > 0:
-            self.ignore -= 1
-        # 什么都不做，由后续的赋值语句完成弹出
-
-    # Enter a parse tree produced by NdfGrammarParser#replace_value.
-    def enterReplace_value(self, ctx: NdfGrammarParser.Replace_valueContext):
-        if self.ignore > 0:
-            return
-        entity = Base()
-        entity.nodetype = NodeType.Replacer
-        if self.mode in {"generate_object", "register_template", "register_object"}:
-            entity.value = "@" + ctx.getText()[1:-1]
-        # elif self.mode in {"register_object"}:
-        #     entity.value = ctx.getText()
-        # 推入一个Entity，此时堆栈为 Top | Base(GUID)  ->
-        self.stack.push(entity)
-
-    def exitReplace_value(self, ctx: NdfGrammarParser.Replace_valueContext):
-        if self.ignore > 0:
-            self.ignore -= 1
