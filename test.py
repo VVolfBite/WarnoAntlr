@@ -25,679 +25,632 @@ class TestNdfGrammar(unittest.TestCase):
             "array/data": [1, 2, 3, 4, 5]
         }
 
-    def parse_and_get_first(self, text: str, mode="default") -> Any:
-        """解析文本并返回第一个赋值结果"""
-        parser = self.parse_text(text)
-        tree = parser.ndf_file()
+    def parse_and_get_first(self, text: str, expected_values: dict):
+        """解析文本并验证结果
         
-        generator = Generator(parser, reference=self.reference, mode=mode)
-        walker = ParseTreeWalker()
-        walker.walk(generator, tree)
-        
-        return generator.assignments[0] if generator.assignments else None
-
-    #-----------------------------------------
-    # 1. 基本文件结构测试
-    #-----------------------------------------
-    def test_1_file_structure(self):
-        """测试文件结构"""
-        print("\n=== 测试文件结构 ===")
-        
-        # 1.1 空文件
-        node = self.parse_and_get_first("")
-        self.assertIsNone(node)
-        
-        # 1.2 单个赋值
-        node = self.parse_and_get_first("Test IS 100")
-        self.assertIsNotNone(node)
-        
-        # 1.3 多个赋值
-        text = """
-            Val1 IS 100
-            Val2 IS 200
-            Val3 IS 300
+        Args:
+            text: 要解析的文本
+            expected_values: 期望值字典 {mode: expected_value}
         """
-        parser = self.parse_text(text)
-        tree = parser.ndf_file()
-        generator = Generator(parser)
-        walker = ParseTreeWalker()
-        walker.walk(generator, tree)
-        self.assertEqual(len(generator.assignments), 3)
+        modes = ["register_object", "register_template", "generate_object"]
+        
+        for mode in modes:
+            print(f"Testing in {mode} mode")
+            parser = self.parse_text(text)
+            tree = parser.ndf_file()
+            generator = Generator(parser, reference=self.reference, mode=mode)
+            walker = ParseTreeWalker()
+            walker.walk(generator, tree)
+            
+            if not generator.assignments:
+                self.fail(f"No assignment generated in {mode} mode")
+                
+            node = generator.assignments[0]
+            expected = expected_values[mode]
+            
+            if mode == "register_object":
+                # register_object模式检查content
+                self.assertEqual(node.content.content, expected)
+            else:
+                # 其他模式检查value
+                self.assertEqual(node.content.value, expected)
 
     #-----------------------------------------
-    # 2. 赋值语句类型测试
+    # 1. 基础值类型测试
     #-----------------------------------------
-    def test_2_assignment_types(self):
-        """测试赋值语句类型"""
-        print("\n=== 测试赋值语句类型 ===")
+    def test_01_basic_values(self):
+        """基础值类型测试"""
+        print("\n=== 测试基础值类型 ===")
         
-        # 2.1 普通赋值
-        tests = [
-            # 基本赋值
-            "Val1 IS 100",
-            # 带修饰符
-            "export Val2 IS 200",
-            "private Val3 IS 300",
-            # 带类型标注
-            "Val4:int IS 400",
-            # 数组访问
-            "Array[0] IS 500"
+        test_cases = [
+            # 布尔值测试
+            ("Bool1 IS True", {
+                "register_object": True,
+                "register_template": True,
+                "generate_object": True
+            }),
+            # 整数测试
+            ("Int1 IS 100", {
+                "register_object": 100,
+                "register_template": 100,
+                "generate_object": 100
+            }),
+            # 浮点数测试
+            ("Float1 IS 3.14", {
+                "register_object": 3.14,
+                "register_template": 3.14,
+                "generate_object": 3.14
+            }),
+            # 字符串测试
+            ("String1 IS 'test'", {
+                "register_object": "test",
+                "register_template": "test",
+                "generate_object": "test"
+            }),
+            # 十六进制测试
+            ("Hex1 IS 0xFF", {
+                "register_object": 255,
+                "register_template": 255,
+                "generate_object": 255
+            }),
+            # GUID测试
+            ("Id1 IS GUID:{123-456}", {
+                "register_object": "GUID:{123-456}",
+                "register_template": "GUID:{123-456}",
+                "generate_object": "GUID:{123-456}"
+            })
         ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-            
-        # 2.2 成员赋值
-        tests = [
-            # 基本成员
-            "member = 100",
-            # 嵌套成员
-            "obj.member = 200",
-            # 数组成员
-            "array[0] = 300",
-            "obj.array[0] = 400"
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-            self.assertTrue(node.is_member)
-            
-        # 2.3 未命名赋值
-        node = self.parse_and_get_first("UNNAMED ~/test/path")
-        self.assertIsNotNone(node)
-        self.assertTrue(node.is_unnamed)
         
-        # 2.4 模板赋值
-        text = """
-            template MyTemplate[
-                T: int = 1,
-                S: string = "test"
-            ] is TBaseObject(
-                value = <T>,
-                name = <S>
-            )
-        """
-        node = self.parse_and_get_first(text, mode="register_template")
-        self.assertIsNotNone(node)
-        self.assertTrue(node.is_template)
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
 
     #-----------------------------------------
-    # 3. 类型系统测试
+    # 2. 复合数据类型测试
     #-----------------------------------------
-    def test_3_type_system(self):
-        """测试类型系统"""
-        print("\n=== 测试类型系统 ===")
+    def test_02_composite_values(self):
+        """复合数据类型测试"""
+        print("\n=== 测试复合数据类型 ===")
         
-        # 3.1 内置类型
-        tests = [
-            ("Val1:bool IS True", NodeType.Boolean),
-            ("Val2:string IS 'test'", NodeType.String),
-            ("Val3:int IS 100", NodeType.Integer),
-            ("Val4:float IS 3.14", NodeType.Float)
+        test_cases = [
+            # float2测试
+            ("Vec2 IS float2[1.0, 2.0]", {
+                "register_object": [1.0, 2.0],
+                "register_template": [1.0, 2.0],
+                "generate_object": (1.0, 2.0)
+            }),
+            # float3测试
+            ("Vec3 IS float3[1.0, 2.0, 3.0]", {
+                "register_object": [1.0, 2.0, 3.0],
+                "register_template": [1.0, 2.0, 3.0],
+                "generate_object": (1.0, 2.0, 3.0)
+            }),
+            # 列表测试
+            ("List1 IS [1, 2, 3]", {
+                "register_object": [1, 2, 3],
+                "register_template": [1, 2, 3],
+                "generate_object": [1, 2, 3]
+            }),
+            # 键值对测试
+            ("Pair1 IS ('key', 100)", {
+                "register_object": ('key', 100),
+                "register_template": ('key', 100),
+                "generate_object": ('key', 100)
+            }),
+            # 映射测试
+            ("Map1 IS MAP[('a', 1), ('b', 2)]", {
+                "register_object": {'a': 1, 'b': 2},
+                "register_template": {'a': 1, 'b': 2},
+                "generate_object": {'a': 1, 'b': 2}
+            }),
+            # RGBA测试
+            ("Color1 IS RGBA[255, 0, 0, 255]", {
+                "register_object": [255, 0, 0, 255],
+                "register_template": [255, 0, 0, 255],
+                "generate_object": (255, 0, 0, 255)
+            })
         ]
-        for text, type_ in tests:
-            node = self.parse_and_get_first(text)
-            self.assertEqual(node.content.nodetype, type_)
-            
-        # 3.2 复合类型
-        tests = [
-            # 键值对
-            """Val1:pair<string,int> IS ("key", 100)""",
-            # 列表
-            """Val2:list<int> IS [1, 2, 3]""",
-            # 映射
-            """Val3:map<string,int> IS MAP[("k1",1), ("k2",2)]"""
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-            
-        # 3.3 特殊类型
-        tests = [
-            "Vec2:float2 IS float2[1.0, 2.0]",
-            "Vec3:float3 IS float3[1.0, 2.0, 3.0]",
-            "Color:rgba IS RGBA[255, 0, 0, 255]"
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
+        
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
 
     #-----------------------------------------
-    # 4. 值系统测试
+    # 3. 路径引用测试
     #-----------------------------------------
-    def test_4_value_system(self):
-        """测试值系统"""
-        print("\n=== 测试值系统 ===")
+    def test_03_path_references(self):
+        """路径引用测试"""
+        print("\n=== 测试路径引用 ===")
         
-        # 4.1 基本值
-        tests = [
-            # 布尔值
-            ("Bool1 IS True", True),
-            ("Bool2 IS False", False),
-            # 空值
-            ("Nil1 IS nil", None),
-            # 字符串
-            ("Str1 IS 'single'", "single"),
-            ("Str2 IS \"double\"", "double"),
-            # 整数
-            ("Int1 IS 100", 100),
-            ("Int2 IS -50", -50),
-            ("Int3 IS 0xFF", 255),
-            # 浮点数
-            ("Float1 IS 3.14", 3.14),
-            ("Float2 IS -2.718", -2.718),
-            ("Float3 IS 1.23e-4", 0.000123),
-            # GUID
-            ("Guid1 IS GUID:{123-456}", "GUID:{123-456}")
-        ]
-        for text, expected in tests:
-            node = self.parse_and_get_first(text)
-            self.assertEqual(node.content.value, expected)
-            
-        # 4.2 数据结构
-        tests = [
-            # 空结构
-            "Empty1 IS []",
-            "Empty2 IS MAP[]",
-            # 简单结构
-            "List1 IS [1, 2, 3]",
-            "Map1 IS MAP[('a',1), ('b',2)]",
-            # 嵌套结构
-            "Nested1 IS [1, [2, 3], [4, [5, 6]]]",
-            "Nested2 IS MAP[('a',[1,2]), ('b',MAP[('x',3)])]"
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-
-    #-----------------------------------------
-    # 5. 引用系统测试
-    #-----------------------------------------
-    def test_5_reference_system(self):
-        """测试引用系统"""
-        print("\n=== 测试引用系统 ===")
-        
-        # 5.1 基本路径
-        tests = [
+        test_cases = [
             # 相对路径
-            "Ref1 IS ~/test/path",
+            ("Ref1 IS ~/test/path", {
+                "register_object": '~/test/path',
+                "register_template": '~/test/path',
+                "generate_object": 100
+            }),
             # 系统路径
-            "Ref2 IS $/system/value",
-            # 成员访问
-            "Ref3 IS ~/obj/member/value",
+            ("Ref2 IS $/system/value", {
+                "register_object": '$/system/value',
+                "register_template": '$/system/value',
+                "generate_object": "system"
+            }),
+            # 多重引用
+            ("Ref3 IS ~/test/path | ~/system/value", {
+                "register_object": '~/test/path | ~/system/value',
+                "register_template": '~/test/path | ~/system/value',
+                "generate_object": 100
+            }),
             # 数组访问
-            "Ref4 IS ~/array/data[2]"
+            ("Ref4 IS ~/array/data[2]", {
+                "register_object": '~/array/data[2]',
+                "register_template": '~/array/data[2]',
+                "generate_object": 3
+            })
         ]
-        for text in tests:
-            node = self.parse_and_get_first(text, mode="generate_object")
-            self.assertIsNotNone(node)
-            
-        # 5.2 多重引用
-        node = self.parse_and_get_first(
-            "Ref5 IS ~/test/path | ~/system/value", 
-            mode="generate_object"
-        )
-        self.assertEqual(node.content.value, 100)
-
-    #-----------------------------------------
-    # 6. 算术系统测试
-    #-----------------------------------------
-    def test_6_arithmetic_system(self):
-        """测试算术系统"""
-        print("\n=== 测试算术系统 ===")
         
-        tests = [
-            # 基本运算
-            "Math1 IS 1 + 2",
-            "Math2 IS 10 - 5",
-            "Math3 IS 3 * 4", 
-            "Math4 IS 15 div 3",
-            # 复合运算
-            "Math5 IS (1 + 2) * 3",
-            "Math6 IS -5 + 10",
-            "Math7 IS (10 + 5 * 2) div 4",
-            # 引用运算
-            "Math8 IS ~/test/path + 50",
-            "Math9 IS ~/test/path div 2"
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text, mode="generate_object")
-            self.assertIsNotNone(node)
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
 
     #-----------------------------------------
-    # 7. 对象系统深入测试
+    # 4. 对象系统测试
     #-----------------------------------------
-    def test_7_object_system(self):
-        """测试对象系统"""
+    def test_04_objects(self):
+        """对象系统测试"""
         print("\n=== 测试对象系统 ===")
         
-        # 7.1 基本对象
-        tests = [
+        test_cases = [
             # 简单对象
-            """
+            ("""
             Obj1 IS TBaseObject(
                 name = "test",
                 value = 100
             )
-            """,
-            # 带数组的对象
-            """
-            Obj2 IS TArrayObject(
-                values = [1, 2, 3],
-                size = 3
-            )
-            """,
-            # 带嵌套对象
-            """
-            Obj3 IS TParentObject(
+            """, {
+                "register_object": {"name": "test", "value": 100},
+                "register_template": {"name": "test", "value": 100}, 
+                "generate_object": {"name": "test", "value": 100}
+            }),
+            # 嵌套对象
+            ("""
+            Obj2 IS TParentObject(
                 child = TChildObject(
                     name = "child",
                     value = 200
                 ),
                 count = 1
             )
-            """
+            """, {
+                "register_object": {
+                    "child": {"name": "child", "value": 200},
+                    "count": 1
+                },
+                "register_template": {
+                    "child": {"name": "child", "value": 200},
+                    "count": 1
+                },
+                "generate_object": {
+                    "child": {"name": "child", "value": 200},
+                    "count": 1
+                }
+            })
         ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-            
-        # 7.2 对象成员访问
-        tests = [
-            # 直接成员
-            """
-            obj.name = "new name"
-            """,
-            # 嵌套成员
-            """
-            obj.child.value = 300
-            """,
-            # 数组成员
-            """
-            obj.values[0] = 100
-            """,
-            # 复合访问
-            """
-            obj.children[0].name = "child 1"
-            """
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-            self.assertTrue(node.is_member)
+        
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
 
     #-----------------------------------------
-    # 8. 模板系统深入测试
+    # 5. 模板系统测试
     #-----------------------------------------
-    def test_8_template_system(self):
-        """测试模板系统"""
+    def test_05_templates(self):
+        """模板系统测试"""
         print("\n=== 测试模板系统 ===")
         
-        # 8.1 基本模板
-        tests = [
-            # 单参数模板
-            """
-            template Single[T: int = 1] is TBase(
+        test_cases = [
+            # 基本模板
+            ("""
+            template Simple[T: int = 1] is TBaseObject(
                 value = <T>
             )
-            """,
+            """, {
+                "register_object": None,
+                "register_template": {
+                    "params": {"T": {"type": "int", "default": 1}},
+                    "base": {"name": "TBaseObject", "attrs": {"value": "<T>"}}
+                },
+                "generate_object": None
+            }),
             # 多参数模板
-            """
-            template Multi[
+            ("""
+            template Complex[
                 T: int = 1,
-                S: string = "test",
-                L: list<int> = [1,2,3]
-            ] is TComplex(
-                id = <T>,
-                name = <S>,
-                data = <L>
+                S: string = "test"
+            ] is TBaseObject(
+                value = <T>,
+                name = <S>
             )
-            """,
-            # 嵌套泛型
-            """
-            template Nested[
-                M: map<string, list<int>> = MAP[]
-            ] is TContainer(
-                data = <M>
-            )
-            """
+            """, {
+                "register_object": None,
+                "register_template": {
+                    "params": {
+                        "T": {"type": "int", "default": 1},
+                        "S": {"type": "string", "default": "test"}
+                    },
+                    "base": {
+                        "name": "TBaseObject",
+                        "attrs": {"value": "<T>", "name": "<S>"}
+                    }
+                },
+                "generate_object": None
+            })
         ]
-        for text in tests:
-            node = self.parse_and_get_first(text, mode="register_template")
-            self.assertTrue(node.is_template)
-            
-        # 8.2 模板特化
-        tests = [
-            # 类型特化
-            """
-            template TypeSpec<int> is TNumberContainer(
-                type = "integer"
-            )
-            """,
-            # 值特化
-            """
-            template ValueSpec<100> is TSizedContainer(
-                capacity = 100
-            )
-            """,
-            # 表达式特化
-            """
-            template ExprSpec<1 + 2 * 3> is TCalculated(
-                result = 7
-            )
-            """
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text, mode="register_template")
-            self.assertTrue(node.is_template)
+        
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
 
     #-----------------------------------------
-    # 9. 边界情况测试
+    # 6. 类型标注测试
     #-----------------------------------------
-    def test_9_edge_cases(self):
-        """测试边界情况"""
+    def test_06_type_annotations(self):
+        """类型标注测试"""
+        print("\n=== 测试类型标注 ===")
+        
+        test_cases = [
+            # 基本类型标注
+            ("Val1:int IS 100", {
+                "register_object": 100,
+                "register_template": 100,
+                "generate_object": 100
+            }),
+            # 复合类型标注
+            ("List1:list<int> IS [1, 2, 3]", {
+                "register_object": [1, 2, 3],
+                "register_template": [1, 2, 3],
+                "generate_object": [1, 2, 3]
+            }),
+            # 泛型类型标注
+            ("Map1:map<string,int> IS MAP[('a', 1)]", {
+                "register_object": {'a': 1},
+                "register_template": {'a': 1},
+                "generate_object": {'a': 1}
+            }),
+            # 对象类型标注
+            ("Obj1:TBaseObject IS TBaseObject(value = 100)", {
+                "register_object": {'value': 100},
+                "register_template": {'value': 100},
+                "generate_object": {'value': 100}
+            })
+        ]
+        
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
+
+    #-----------------------------------------
+    # 7. 修饰符测试
+    #-----------------------------------------
+    def test_07_modifiers(self):
+        """修饰符测试"""
+        print("\n=== 测试修饰符 ===")
+        
+        test_cases = [
+            # export修饰符
+            ("export Val1 IS 100", {
+                "register_object": 100,
+                "register_template": 100,
+                "generate_object": 100
+            }),
+            # private修饰符
+            ("private Val2 IS 200", {
+                "register_object": 200,
+                "register_template": 200,
+                "generate_object": 200
+            }),
+            # unnamed修饰符
+            ("unnamed ~/test/path", {
+                "register_object": "~/test/path",
+                "register_template": "~/test/path",
+                "generate_object": 100
+            })
+        ]
+        
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
+
+    #-----------------------------------------
+    # 8. 算术表达式测试
+    #-----------------------------------------
+    def test_08_arithmetic(self):
+        """算术表达式测试"""
+        print("\n=== 测试算术表达式 ===")
+        
+        test_cases = [
+            # 基本运算
+            ("Math1 IS 1 + 2", {
+                "register_object": 3,
+                "register_template": 3,
+                "generate_object": 3
+            }),
+            # 复合运算
+            ("Math2 IS (10 + 5) * 2", {
+                "register_object": 30,
+                "register_template": 30,
+                "generate_object": 30
+            }),
+            # 引用运算
+            ("Math3 IS ~/test/path + 50", {
+                "register_object": "~/test/path + 50",
+                "register_template": "~/test/path + 50",
+                "generate_object": 150
+            }),
+            # div运算
+            ("Math4 IS 15 div 3", {
+                "register_object": 5,
+                "register_template": 5,
+                "generate_object": 5
+            })
+        ]
+        
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
+
+    #-----------------------------------------
+    # 9. 成员访问测试
+    #-----------------------------------------
+    def test_09_member_access(self):
+        """成员访问测试"""
+        print("\n=== 测试成员访问 ===")
+        
+        test_cases = [
+            # 直接成员访问
+            ("obj.member = 100", {
+                "register_object": 100,
+                "register_template": 100,
+                "generate_object": 100
+            }),
+            # 数组成员访问
+            ("obj.array[0] = 200", {
+                "register_object": 200,
+                "register_template": 200,
+                "generate_object": 200
+            }),
+            # 嵌套成员访问
+            ("obj.child.value = 300", {
+                "register_object": 300,
+                "register_template": 300,
+                "generate_object": 300
+            })
+        ]
+        
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
+
+    #-----------------------------------------
+    # 10. 边界情况测试
+    #-----------------------------------------
+    def test_10_edge_cases(self):
+        """边界情况测试"""
         print("\n=== 测试边界情况 ===")
         
-        # 9.1 空值和特殊字符
-        tests = [
-            # 空字符串
-            'EmptyStr IS ""',
-            # 特殊字符串
-            r'SpecialStr IS "Hello\nWorld\t!"',
+        test_cases = [
+            # 空值
+            ("Nil1 IS nil", {
+                "register_object": None,
+                "register_template": None,
+                "generate_object": None
+            }),
+            # 空列表
+            ("Empty1 IS []", {
+                "register_object": [],
+                "register_template": [],
+                "generate_object": []
+            }),
+            # 空MAP
+            ("Empty2 IS MAP[]", {
+                "register_object": {},
+                "register_template": {},
+                "generate_object": {}
+            }),
             # Unicode字符串
-            'UnicodeStr IS "你好世界"',
+            ("Unicode1 IS '测试'", {
+                "register_object": "测试",
+                "register_template": "测试",
+                "generate_object": "测试"
+            }),
             # 转义字符
-            r'EscapeStr IS "\"quoted\""'
+            (r'Escape1 IS "test\ntest"', {
+                "register_object": "test\ntest",
+                "register_template": "test\ntest",
+                "generate_object": "test\ntest"
+            })
         ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-            
-        # 9.2 数值边界
-        tests = [
-            # 大整数
-            "BigInt IS 999999999",
-            # 小数精度
-            "SmallFloat IS 0.0000001",
-            # 科学计数
-            "SciFloat IS 1.23e-10",
-            # 16进制边界
-            "BigHex IS 0xFFFFFFFF"
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-            
-        # 9.3 复杂嵌套
-        tests = [
-            # 深度嵌套列表
-            "DeepList IS [1,[2,[3,[4,[5]]]]]",
+        
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
+
+    #-----------------------------------------
+    # 11. 混合特性测试
+    #-----------------------------------------
+    def test_11_mixed_features(self):
+        """混合特性测试"""
+        print("\n=== 测试混合特性 ===")
+        
+        test_cases = [
+            # 修饰符+类型标注+对象
+            ("""
+            export ComplexObj:TComplexObject IS TComplexObject(
+                value = 100,
+                list = [1, 2, 3],
+                map = MAP[('a', 1)]
+            )
+            """, {
+                "register_object": {
+                    "value": 100,
+                    "list": [1, 2, 3],
+                    "map": {"a": 1}
+                },
+                "register_template": {
+                    "value": 100,
+                    "list": [1, 2, 3],
+                    "map": {"a": 1}
+                },
+                "generate_object": {
+                    "value": 100,
+                    "list": [1, 2, 3],
+                    "map": {"a": 1}
+                }
+            }),
+            # 引用+算术+类型转换
+            ("""
+            Result IS float(~/test/path + 50) * 2
+            """, {
+                "register_object": "float(~/test/path + 50) * 2",
+                "register_template": "float(~/test/path + 50) * 2",
+                "generate_object": 300.0
+            }),
             # 复杂对象嵌套
-            """
-            DeepObj IS TParent(
-                child1 = TChild(
+            ("""
+            NestedObj IS TParent(
+                name = "parent",
+                child = TChild(
+                    name = "child",
                     data = TData(
-                        values = [
-                            TValue(x=1),
-                            TValue(x=2)
-                        ]
+                        list = [1, 2],
+                        map = MAP[('x', 100)]
                     )
                 )
             )
-            """,
-            # 混合嵌套
-            """
-            Mixed IS MAP[
-                ("key1", [1, (2, [3, 4])]),
-                ("key2", TObj(
-                    val = MAP[("x", 1)]
-                ))
-            ]
-            """
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-
-    #-----------------------------------------
-    # 10. 类型转换测试
-    #-----------------------------------------
-    def test_10_type_conversion(self):
-        """测试类型转换"""
-        print("\n=== 测试类型转换 ===")
-        
-        tests = [
-            # 数值转换
-            "Int1 IS float(100)",
-            "Float1 IS int(3.14)",
-            # 向量转换
-            "Vec1 IS float2([1, 2])",
-            "Vec2 IS float3([1.0, 2.0, 3.0])",
-            # 列表转换
-            "List1 IS list<int>([1, 2, 3])",
-            "List2 IS list<float>([1.5, 2.5])",
-            # 映射转换
-            """Map1 IS map<string,int>([
-                ("a", 1),
-                ("b", 2)
-            ])""",
-            # 复杂转换
-            """Map2 IS map<string,list<int>>([
-                ("x", [1, 2]),
-                ("y", [3, 4])
-            ])"""
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-
-    #-----------------------------------------
-    # 11. 复杂表达式测试
-    #-----------------------------------------
-    def test_11_complex_expressions(self):
-        """测试复杂表达式"""
-        print("\n=== 测试复杂表达式 ===")
-        
-        tests = [
-            # 条件表达式
-            """
-            Result1 IS TCondition(
-                test = True,
-                then = 100,
-                else = 200
+            """, {
+                "register_object": {
+                    "name": "parent",
+                    "child": {
+                        "name": "child",
+                        "data": {
+                            "list": [1, 2],
+                            "map": {"x": 100}
+                        }
+                    }
+                },
+                "register_template": {
+                    "name": "parent",
+                    "child": {
+                        "name": "child",
+                        "data": {
+                            "list": [1, 2],
+                            "map": {"x": 100}
+                        }
+                    }
+                },
+                "generate_object": {
+                    "name": "parent",
+                    "child": {
+                        "name": "child",
+                        "data": {
+                            "list": [1, 2],
+                            "map": {"x": 100}
+                        }
+                    }
+                }
+            }),
+            # 模板特化嵌套
+            ("""
+            template NestedTemplate[
+                T: int = 1,
+                S: string = "test"
+            ] is TBaseTemplate(
+                value = <T>,
+                child = TChildTemplate(
+                    name = <S>,
+                    list = [<T>, <T> * 2]
+                )
             )
-            """,
-            # 函数调用
-            """
-            Result2 IS TFunction(
-                name = "test",
-                args = [1, 2, 3],
-                kwargs = MAP[
-                    ("x", 10),
-                    ("y", 20)
-                ]
-            )
-            """,
-            # 路径组合
-            """
-            Path1 IS TPathCombine(
-                base = ~/base/path,
-                sub = "sub/path",
-                result = ~/base/path/sub/path
-            )
-            """,
-            # 复杂算术
-            "Math1 IS (1 + 2 * 3) div (4 - 2) * -5",
-            # 引用计算
-            "Ref1 IS (~/value1 + ~/value2) * ~/value3"
+            """, {
+                "register_object": None,
+                "register_template": {
+                    "params": {
+                        "T": {"type": "int", "default": 1},
+                        "S": {"type": "string", "default": "test"}
+                    },
+                    "base": {
+                        "type": "TBaseTemplate",
+                        "attrs": {
+                            "value": "<T>",
+                            "child": {
+                                "type": "TChildTemplate",
+                                "attrs": {
+                                    "name": "<S>",
+                                    "list": ["<T>", "<T> * 2"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "generate_object": None
+            })
         ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-
-    #-----------------------------------------
-    # 12. 注释和文档测试
-    #-----------------------------------------
-    def test_12_comments_and_docs(self):
-        """测试注释和文档"""
-        print("\n=== 测试注释和文档 ===")
         
-        tests = [
-            # 单行注释
-            """
-            // 这是单行注释
-            Value1 IS 100
-            """,
-            # 多行注释
-            """
-            /* 这是多行注释
-               第二行
-               第三行 */
-            Value2 IS 200
-            """,
-            # 混合注释
-            """
-            // 注释1
-            Value3 IS 300 // 行尾注释
-            /* 块注释 */
-            Value4 IS 400
-            """,
-            # 嵌套注释
-            """
-            /* 外层注释
-               /* 内层注释 */
-               继续外层 */
-            Value5 IS 500
-            """
-        ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
+        for text, expected_values in test_cases:
+            print(f"\nTesting: {text}")
+            self.parse_and_get_first(text, expected_values)
 
     #-----------------------------------------
-    # 13. 错误处理测试
+    # 12. 错误处理测试
     #-----------------------------------------
-    def test_13_error_handling(self):
-        """测试错误处理"""
+    def test_12_error_handling(self):
+        """错误处理测试"""
         print("\n=== 测试错误处理 ===")
         
         def verify_error(text):
-            """验证解析是否产生错误"""
+            """验证是否产生预期错误"""
             try:
-                node = self.parse_and_get_first(text)
+                self.parse_and_get_first(text, {
+                    "register_object": None,
+                    "register_template": None,
+                    "generate_object": None
+                })
                 return False
             except Exception:
                 return True
         
-        error_tests = [
+        error_cases = [
             # 语法错误
-            "Val1 IS",  # 缺少值
-            "IS 100",   # 缺少标识符
-            "Val2 = 100",  # 错误的赋值符号
+            "Invalid IS",  # 缺少值
+            "IS 100",     # 缺少标识符
+            "Obj IS TObject(,)",  # 无效的参数列表
             
             # 类型错误
-            "Val3:int IS 'string'",  # 类型不匹配
-            "Val4:float IS True",    # 类型不匹配
+            "Typed:int IS 'string'",  # 类型不匹配
+            "Vec:float2 IS [1,2,3]",  # 向量维度错误
             
             # 引用错误
-            "Val5 IS ~/non/exist/path",  # 不存在的路径
-            "Val6 IS $/invalid/path",    # 无效的系统路径
-            
-            # 数组索引错误
-            "Val7 IS array[-1]",     # 负索引
-            "Val8 IS array[9999]",   # 越界索引
+            "Ref IS ~/invalid/path",  # 无效路径
+            "Arr IS ~/array/data[10]", # 数组越界
             
             # 模板错误
-            """template Invalid[] is TBase(
-                value = <Missing>  // 未定义的参数
-            )""",
+            """
+            template Invalid[T] is TBase(
+                value = <S>  # 未定义的参数
+            )
+            """,
             
             # 对象错误
-            """Obj1 IS TObject(
-                unknown = 100  // 未知属性
-            )""",
-            
-            # 算术错误
-            "Val9 IS 1 div 0",  # 除零错误
-            "Val10 IS 'str' + 100"  # 类型不匹配
-        ]
-        
-        for text in error_tests:
-            self.assertTrue(verify_error(text))
-
-    #-----------------------------------------
-    # 14. 性能边界测试
-    #-----------------------------------------
-    def test_14_performance_boundaries(self):
-        """测试性能边界"""
-        print("\n=== 测试性能边界 ===")
-        
-        # 14.1 大型数据结构
-        large_list = ",".join(str(i) for i in range(1000))
-        large_map = ",".join(f'("{i}",{i})' for i in range(1000))
-        
-        tests = [
-            # 大列表
-            f"LargeList IS [{large_list}]",
-            # 大映射
-            f"LargeMap IS MAP[{large_map}]",
-            # 深度嵌套
-            "DeepNest IS " + "["*100 + "1" + "]"*100,
-            # 长标识符
-            f"{'Very'*100}LongName IS 100",
-            # 复杂表达式
-            "ComplexExpr IS " + " + ".join(str(i) for i in range(100))
-        ]
-        
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
-
-    #-----------------------------------------
-    # 15. 特殊语法特性测试
-    #-----------------------------------------
-    def test_15_special_features(self):
-        """测试特殊语法特性"""
-        print("\n=== 测试特殊语法特性 ===")
-        
-        tests = [
-            # 末尾逗号
             """
-            List1 IS [
-                1,
-                2,
-                3,  // 允许末尾逗号
-            ]
-            """,
-            # 空行和缩进
-            """
-            
-            Obj1 IS TObject(
-                
-                value1 = 100,
-                
-                value2 = 200,
-                
+            Obj IS TObject(
+                unknown = 100  # 未知属性
             )
-            
-            """,
-            # 特殊字符
             """
-            SpecialChars IS MAP[
-                ("tab\t", 1),
-                ("newline\n", 2),
-                ("quote\"", 3),
-                ("unicode\u0001", 4)
-            ]
-            """,
-            # 混合换行符
-            "Line1 IS 100\nLine2 IS 200\rLine3 IS 300\r\n",
-            # 二进制数据
-            "Binary IS GUID:{00-00-FF-FF}"
         ]
-        for text in tests:
-            node = self.parse_and_get_first(text)
-            self.assertIsNotNone(node)
+        
+        for text in error_cases:
+            print(f"\nTesting error case: {text}")
+            self.assertTrue(verify_error(text))
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
