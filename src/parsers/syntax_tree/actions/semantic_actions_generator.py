@@ -838,17 +838,64 @@ class Generator(NdfGrammarListener):
         self.stack.push(assignment)
 
     def exitTemplate_param(self, ctx):
-        """完成模板参数处理"""
+        """完成模板参数处理
+        支持以下形式:
+        1. id: type = value  # 完整形式
+        2. id: type         # 仅类型标注
+        3. id = value      # 仅默认值
+        4. id              # 仅标识符
+        """
         if self.ignore > 0:
             return
             
-        # 处理默认值
-        if ctx.getChildCount() > 3:  # id ':' type '=' value
-            value = self.stack.pop()
-            assignment = self.stack.top()
-            assignment.content = value
+        assignment = self.stack.top()
+        child_count = ctx.getChildCount()
+        
+        # 处理不同形式的参数声明
+        if child_count > 3:  # id ':' type '=' value
+            value = self.stack.pop()      # 弹出值
+            type_info = self.stack.pop()  # 弹出类型信息
+            
+            # 设置内容和值
+            assignment.content = type_info
+            
             if self.mode in {"register_template"}:
-                assignment.value = value.value
+                # 获取类型字符串并尝试转换
+                type_str = type_info.content.lower()
+                
+                # 类型转换映射
+                type_converters = {
+                    "bool": bool,
+                    "int": int,
+                    "float": float,
+                    "string": str,
+                    "guid": str
+                }
+                
+                # 进行类型转换
+                if type_str in type_converters and hasattr(value, 'value'):
+                    try:
+                        assignment.value = type_converters[type_str](value.value)
+                    except (ValueError, TypeError):
+                        # 转换失败时保持原值
+                        assignment.value = value.value
+                else:
+                    assignment.value = value.value
+                    
+        elif child_count > 2:  # id ':' type 或 id '=' value
+            top = self.stack.pop()
+            if ctx.getChild(1).getText() == ':':  # id ':' type
+                # 类型标注形式
+                assignment.content = top
+                if self.mode in {"register_template"}:
+                    assignment.value = top.content
+            else:  # id '=' value
+                # 默认值形式
+                assignment.content = None
+                if self.mode in {"register_template"}:
+                    assignment.value = top.value if hasattr(top, 'value') else None
+        
+        # id 形式不需要额外处理,因为id已在enterTemplate_id中设置
 
     def enterTemplate_param_list(self, ctx):
         """处理模板参数列表"""
