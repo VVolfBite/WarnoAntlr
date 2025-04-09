@@ -875,6 +875,24 @@ class Generator(NdfGrammarListener):
         for param in params:
             vector.append(param)
 
+    def enterTemplate_id(self, ctx:NdfGrammarParser.Template_idContext):
+        """处理模板参数标识符
+        
+        当进入template_id规则时:
+        1. 获取标识符文本
+        2. 设置栈顶Assignment的id属性
+        """
+        if self.ignore > 0:
+            return
+            
+        # 获取标识符文本
+        id_text = ctx.getText()
+        
+        # 设置栈顶元素的id
+        assignment = self.stack.top()
+        if assignment is not None:
+            assignment.id = id_text
+
     #-----------------------------------------
     # 2.9 类型标签处理
     #-----------------------------------------
@@ -892,6 +910,33 @@ class Generator(NdfGrammarListener):
 
         self.stack.push(entity)
 
+    def exitType_label(self, ctx):
+        """完成类型标签处理"""
+        if self.ignore > 0:
+            return
+
+        # 获取栈顶节点
+        entity = self.stack.top()
+        type_str = ctx.getText().lower()  # 统一转换为小写
+        
+        # 只在有值需要转换时处理
+        if hasattr(entity, 'value') and entity.value is not None:
+            # 类型转换映射
+            type_converters = {
+                "bool": bool,
+                "int": int,
+                "float": float,
+                "string": str,
+                "guid": str
+            }
+            
+            # 如果存在对应的转换器,则执行转换
+            if type_str in type_converters:
+                try:
+                    entity.value = type_converters[type_str](entity.value)
+                except (ValueError, TypeError):
+                    logging.warning(f"Failed to convert value {entity.value} to type {type_str}")
+
     def enterList_label(self, ctx):
         """处理列表类型标签"""
         if self.ignore > 0:
@@ -906,6 +951,19 @@ class Generator(NdfGrammarListener):
 
         self.stack.push(entity)
 
+    def exitList_label(self, ctx):
+        """完成列表类型标签处理"""
+        if self.ignore > 0:
+            return
+
+        # 获取栈顶节点
+        entity = self.stack.top()
+        
+        # 如果有值,尝试转换为列表
+        if hasattr(entity, 'value') and entity.value is not None:
+            if not isinstance(entity.value, list):
+                entity.value = list(entity.value) if hasattr(entity.value, '__iter__') else [entity.value]
+
     def enterMap_label(self, ctx):
         """处理映射类型标签"""
         if self.ignore > 0:
@@ -919,6 +977,21 @@ class Generator(NdfGrammarListener):
             entity.value = "map"  # 统一使用小写
 
         self.stack.push(entity)
+
+    def exitMap_label(self, ctx):
+        """完成映射类型标签处理"""
+        if self.ignore > 0:
+            return
+
+        # 获取栈顶节点    
+        entity = self.stack.top()
+        
+        # 如果有值,尝试转换为字典
+        if hasattr(entity, 'value') and entity.value is not None:
+            if not isinstance(entity.value, dict):
+                if isinstance(entity.value, (list, tuple)) and len(entity.value) % 2 == 0:
+                    # 将键值对列表转换为字典
+                    entity.value = dict(zip(entity.value[::2], entity.value[1::2]))
 
     #-----------------------------------------
     # 2.10 对象系统处理
