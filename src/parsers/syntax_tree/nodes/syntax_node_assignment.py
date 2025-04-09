@@ -1,31 +1,42 @@
 from src.parsers.syntax_tree.nodes.syntax_node_base import *
 
 class Assignment(Base):
-    """赋值语句节点
-    
-    支持的语法形式:
-    1. export/private id is value        # 普通赋值
-    2. id = value                        # 成员赋值
-    3. template id[params] is value      # 模板定义
-    4. UNNAMED ~/Reference               # 匿名赋值
-    """
-    
+    """赋值语句节点"""
     def __init__(self):
         super().__init__()
-        # 基本属性
-        self.id = ""                     # 标识符
-        self.nodetype = NodeType.STRUCTURAL
+        self.id = None
+        self.content = None
+        self.value = None
+        self.type_spec = None  # 添加类型标注字段
         
         # 修饰符标记
-        self.is_export = False           # export标记
-        self.is_private = False          # private标记
-        self.is_unnamed = False          # unnamed标记
-        self.is_member = False           # 成员标记
+        self.is_export = False
+        self.is_private = False
+        self.is_template = False
+        self.is_member = False
+        self.is_unnamed = False
+
+    def convert_value(self):
+        """根据类型标注转换值"""
+        if not self.type_spec or not hasattr(self, 'value'):
+            return
+
+        type_str = self.type_spec.lower()
+        converters = {
+            "bool": bool,
+            "int": int,
+            "float": float,
+            "string": str,
+            "guid": str,
+            "list": list,
+            "map": dict
+        }
         
-        # 模板相关
-        self.is_template = False         # 模板标记
-        self.template_params = []        # 模板参数列表
-        self.base_type = None           # 模板基类
+        if type_str in converters:
+            try:
+                self.value = converters[type_str](self.value)
+            except (ValueError, TypeError):
+                logging.warning(f"Failed to convert {self.value} to {type_str}")
 
     def __str__(self):
         """字符串表示"""

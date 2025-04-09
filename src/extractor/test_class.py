@@ -79,7 +79,7 @@ class TChildTemplate:
     """
     def __init__(self, name: str = None, list: list = None):
         self.name = name
-        self.list = list or []
+
 
 class TBaseTemplate:
     """基础模板类"""

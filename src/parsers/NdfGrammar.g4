@@ -56,9 +56,7 @@ unnamed_assignment : K_UNNAMED r_value;
 
 // 5. 模板系统
 template_param 
-    : template_id ':' type_label ('=' r_value)?  // T:int = 1
-    | template_id ':' list_label ('=' vector_value)?  // T:list<int> = [1,2]
-    | template_id ':' map_label ('=' map_value)?  // T:map<string,int> = MAP[('a',1)]
+    : id ('=' r_value)?  // T:int = 1, T:list<int> = [1,2], T = 1, T
     ;
 
 template_param_list
@@ -66,8 +64,6 @@ template_param_list
     ;
 
 // 用于模板参数的标识符,避免与普通id规则冲突
-template_id : ID;
-
 template_param_type
     : type_label                                    // 基本类型参数
     | type_label '<' template_param_type '>'        // 嵌套泛型参数
@@ -93,9 +89,16 @@ object_member
     ;
 
 // 7. 标识符系统
-id : ID (':' type_label)? | array_access;
-array_access : ID '[' int_value ']';
+id : ID (':' type_specifier)? | array_access;
 
+// 类型说明符包含所有可能的类型
+type_specifier
+    : type_label         // 基本类型(int, string等)
+    | list_label        // 列表类型(list<T>)
+    | map_label         // 映射类型(map<K,V>)
+    ;
+
+array_access : ID '[' int_value ']';
 
 // 8. 类型系统
 type_label 
