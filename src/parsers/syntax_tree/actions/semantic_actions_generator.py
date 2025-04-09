@@ -237,7 +237,7 @@ class Generator(NdfGrammarListener):
             # 收集参数定义
             param_dict = {}
             for param in params.content:
-                param_type = param.content.value if hasattr(param.content, 'value') else None
+                param_type =  None
                 param_default = param.value if hasattr(param, 'value') else None
                 param_dict[param.id] = {
                     'type': param_type,
@@ -286,10 +286,8 @@ class Generator(NdfGrammarListener):
             return
             
         # 设置标识符
-        if ctx.getChildCount() == 1:
-            self.stack.top().id = ctx.getText()
-        else:
-            self.stack.top().id = ctx.getChild(0).getText()
+        self.stack.top().id = ctx.getText()
+
 
     def enterArithmetic(self, ctx):
         if self.ignore > 0:
@@ -840,62 +838,37 @@ class Generator(NdfGrammarListener):
     def exitTemplate_param(self, ctx):
         """完成模板参数处理
         支持以下形式:
-        1. id: type = value  # 完整形式
-        2. id: type         # 仅类型标注
-        3. id = value      # 仅默认值
-        4. id              # 仅标识符
+        1. id:type = value  # 5个child: id, :, type, =, value
+        2. id:type         # 3个child: id, :, type
+        3. id = value      # 3个child: id, =, value
+        4. id              # 1个child: id
         """
         if self.ignore > 0:
             return
             
-        assignment = self.stack.top()
         child_count = ctx.getChildCount()
         
-        # 处理不同形式的参数声明
-        if child_count > 3:  # id ':' type '=' value
+        # 根据子节点数量进行不同处理
+        if child_count == 5:  # id ':' type '=' value
             value = self.stack.pop()      # 弹出值
-            type_info = self.stack.pop()  # 弹出类型信息
-            
-            # 设置内容和值
-            assignment.content = type_info
-            
-            if self.mode in {"register_template"}:
-                # 获取类型字符串并尝试转换
-                type_str = type_info.content.lower()
+            type_info = self.stack.pop()
+            assignment = self.stack.top() # 弹出类型信息
+            assignment.content = value.content
+            if self.mode in {"generate_object", "register_template"}:
+                assignment.value = value.value
                 
-                # 类型转换映射
-                type_converters = {
-                    "bool": bool,
-                    "int": int,
-                    "float": float,
-                    "string": str,
-                    "guid": str
-                }
-                
-                # 进行类型转换
-                if type_str in type_converters and hasattr(value, 'value'):
-                    try:
-                        assignment.value = type_converters[type_str](value.value)
-                    except (ValueError, TypeError):
-                        # 转换失败时保持原值
-                        assignment.value = value.value
-                else:
-                    assignment.value = value.value
-                    
-        elif child_count > 2:  # id ':' type 或 id '=' value
+        elif child_count == 3:  # id ':' type 或 id '=' value
             top = self.stack.pop()
+            assignment = self.stack.top() # 弹出类型信息
             if ctx.getChild(1).getText() == ':':  # id ':' type
-                # 类型标注形式
-                assignment.content = top
-                if self.mode in {"register_template"}:
-                    assignment.value = top.content
-            else:  # id '=' value
-                # 默认值形式
                 assignment.content = None
-                if self.mode in {"register_template"}:
-                    assignment.value = top.value if hasattr(top, 'value') else None
+            else:  # id '=' value
+                assignment.content = top.content
+                if self.mode in {"generate_object", "register_template"}:
+                    assignment.value = top.value
         
-        # id 形式不需要额外处理,因为id已在enterTemplate_id中设置
+        # child_count == 1 (仅id)的情况不需要额外处理
+        # 因为id已经在enterTemplate_id中设置
 
     def enterTemplate_param_list(self, ctx):
         """处理模板参数列表"""
@@ -951,38 +924,16 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.STRUCTURAL
         entity.content = ctx.getText()
-
-        if self.mode in {"register_template"}:
+        
+        if self.mode in {"generate_object", "register_template"}:
             entity.value = ctx.getText()
-
         self.stack.push(entity)
 
     def exitType_label(self, ctx):
         """完成类型标签处理"""
         if self.ignore > 0:
             return
-
-        # 获取栈顶节点
-        entity = self.stack.top()
-        type_str = ctx.getText().lower()  # 统一转换为小写
-        
-        # 只在有值需要转换时处理
-        if hasattr(entity, 'value') and entity.value is not None:
-            # 类型转换映射
-            type_converters = {
-                "bool": bool,
-                "int": int,
-                "float": float,
-                "string": str,
-                "guid": str
-            }
-            
-            # 如果存在对应的转换器,则执行转换
-            if type_str in type_converters:
-                try:
-                    entity.value = type_converters[type_str](entity.value)
-                except (ValueError, TypeError):
-                    logging.warning(f"Failed to convert value {entity.value} to type {type_str}")
+        # 不执行任何转换操作
 
     def enterList_label(self, ctx):
         """处理列表类型标签"""
@@ -992,24 +943,16 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.STRUCTURAL
         entity.content = ctx.getText()
-
-        if self.mode in {"register_template"}:
-            entity.value = "list"  # 统一使用小写
-
+        if self.mode in {"generate_object", "register_template"}:
+            entity.value = ctx.getText()
+            
         self.stack.push(entity)
 
     def exitList_label(self, ctx):
         """完成列表类型标签处理"""
         if self.ignore > 0:
             return
-
-        # 获取栈顶节点
-        entity = self.stack.top()
-        
-        # 如果有值,尝试转换为列表
-        if hasattr(entity, 'value') and entity.value is not None:
-            if not isinstance(entity.value, list):
-                entity.value = list(entity.value) if hasattr(entity.value, '__iter__') else [entity.value]
+        # 不执行任何转换操作
 
     def enterMap_label(self, ctx):
         """处理映射类型标签"""
@@ -1017,28 +960,18 @@ class Generator(NdfGrammarListener):
             return
 
         entity = Base()
-        entity.nodetype = NodeType.STRUCTURAL
+        entity.nodetype = NodeType.STRUCTURAL  
         entity.content = ctx.getText()
-
-        if self.mode in {"register_template"}:
-            entity.value = "map"  # 统一使用小写
-
+        if self.mode in {"generate_object", "register_template"}:
+            entity.value = ctx.getText()
+            
         self.stack.push(entity)
 
     def exitMap_label(self, ctx):
         """完成映射类型标签处理"""
         if self.ignore > 0:
             return
-
-        # 获取栈顶节点    
-        entity = self.stack.top()
-        
-        # 如果有值,尝试转换为字典
-        if hasattr(entity, 'value') and entity.value is not None:
-            if not isinstance(entity.value, dict):
-                if isinstance(entity.value, (list, tuple)) and len(entity.value) % 2 == 0:
-                    # 将键值对列表转换为字典
-                    entity.value = dict(zip(entity.value[::2], entity.value[1::2]))
+        # 不执行任何转换操作
 
     #-----------------------------------------
     # 2.10 对象系统处理

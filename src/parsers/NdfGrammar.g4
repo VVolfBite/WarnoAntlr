@@ -45,7 +45,7 @@ normal_assignment : ( export_prefix | private_prefix )? id K_IS r_value;
 template_assignment 
     : ( export_prefix | private_prefix )? 
       template_prefix 
-      ID 
+      id 
       template_param_list
       K_IS 
       object
