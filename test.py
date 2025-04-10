@@ -393,7 +393,7 @@ class TestNdfGrammar(unittest.TestCase):
             self.parse_and_get_first(text, expected_values)
 
     #-----------------------------------------
-    # 10. 混合特性测试
+    # 10. 混合特性测试 Checked
     #-----------------------------------------
     def test_10_mixed_features(self):
         """混合特性测试"""
@@ -403,6 +403,7 @@ class TestNdfGrammar(unittest.TestCase):
             ("""
             export ComplexObj:TComplexObject IS TComplexObject(
                 value = 100,
+                array = [1, 2, 3],
             )
             """, {
                 "register_object": {
@@ -422,7 +423,7 @@ class TestNdfGrammar(unittest.TestCase):
                 }
             }),
             ("""
-            Result IS float(~/test/path + 50) * 2
+            Result IS (~/test/path + 50.0) * 2.0
             """, {
                 "register_object": "float(~/test/path + 50) * 2",
                 "register_template": "float(~/test/path + 50) * 2",

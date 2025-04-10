@@ -4,44 +4,122 @@ grammar NdfGrammar;
 // 使用命令: java -jar .\antlr-4.13.2-complete.jar -Dlanguage=Python3 NdfGrammar.g4 -visitor -o parser
 
 //=============================================
-// Parser Rules - 基础结构
+// 1. 基础结构
 //=============================================
+ndf_file : assignment* EOF;
 
-// 1. 基本文件结构
-ndf_file : assignment* EOF;  // 文件由多个赋值语句组成
-
-// 2. 赋值语句类型
 assignment 
-    : normal_assignment    // 普通赋值: MyVar IS 100
-    | member_assignment    // 成员赋值: Name = "value"
-    | unnamed_assignment   // 匿名赋值: UNNAMED ~/Reference
-    | template_assignment  // 模板赋值: template MyTemplate[...] is Base(...)
+    : normal_assignment    
+    | template_assignment  
+    | member_assignment    
+    | unnamed_assignment   
     ;
 
-// 2. 前缀修饰符
+// 基础赋值
+normal_assignment : ( export_prefix | private_prefix )? id K_IS r_value;
+member_assignment : id '=' ( r_value | normal_assignment );
+unnamed_assignment : K_UNNAMED r_value;
+
+// 修饰符
 private_prefix : K_PRIVATE;
 export_prefix : K_EXPORT;
 template_prefix : K_TEMPLATE;
 
-// 3. 右值表达式
+//=============================================
+// 2. 标识符系统
+//=============================================
+id : ID (':' type_specifier)? | array_access;
+array_access : ID '[' int_value ']';
+
+//=============================================
+// 3. 右值系统
+//=============================================
 r_value 
-    : concatination 
-    | arithmetic 
-    | builtin_type_value 
-    | object 
-    | normal_assignment 
-    | member_assignment 
-    | obj_reference_value 
-    | nil_value 
-    | special_value 
-    | replace_value 
-    | type_initialization
-    | ID
+    : arithmetic          // 算术表达式
+    | builtin_type_value  // 基础类型值
+    | special_value       // 特殊类型值
+    | object             // 对象
+    | obj_reference_value // 引用值
+    | replace_value      // 替换值
+    | concatination      // 连接
+    | normal_assignment  // 嵌套赋值
+    | member_assignment  
+    | nil_value         // 空值
+    | type_initialization // 类型初始化
+    | ID                // 标识符
     ;
 
-// 4. 赋值语句
-normal_assignment : ( export_prefix | private_prefix )? id K_IS r_value;
+//=============================================
+// 4. 值系统
+//=============================================
+// 基础值
+builtin_type_value : primitive_value | data_structure_value;
+primitive_value : bool_value | string_value | int_value | hex_value | float_value | guid_value;
+data_structure_value : pair_value | vector_value | map_value;
 
+// 具体值定义
+bool_value : K_TRUE | K_FALSE;
+nil_value : K_NIL;
+string_value : STRING_SINGLE | STRING_DOUBLE;
+int_value : INT;
+float_value : FLOAT;
+hex_value : HEX_INT;
+guid_value : GUID;
+
+// 特殊值
+special_value : rgba_value | float2_value | float3_value;
+rgba_value : K_RGBA '[' INT ',' INT ',' INT ',' INT ']';
+float2_value : K_FLOAT2 '[' (float_value|int_value) ',' (float_value|int_value) ']';
+float3_value : K_FLOAT3 '[' (float_value|int_value) ',' (float_value|int_value) ',' (float_value|int_value) ']';
+
+//=============================================
+// 5. 类型系统
+//=============================================
+type_specifier
+    : type_label    
+    | list_label    
+    | map_label     
+    ;
+
+type_label 
+    : builtin_type_label 
+    | object_type
+    | template_type
+    ;
+
+builtin_type_label 
+    : K_BOOL | K_STRING | K_INT | K_FLOAT 
+    | K_FLOAT2 | K_FLOAT3
+    | pair_label | list_label | map_label
+    ;
+
+// 容器类型
+pair_label : K_PAIR '<' type_label ',' type_label '>';
+list_label : K_LIST '<' type_label '>';
+map_label : K_MAP '<' type_label ',' type_label '>';
+
+type_initialization
+    : builtin_type_label vector_value
+    | builtin_type_label '(' r_value ')'
+    ;
+
+//=============================================
+// 6. 对象系统
+//=============================================
+object : object_type '(' ( block (',' block)* ','? )* ')';
+object_type : ID;
+block : normal_assignment | member_assignment | object_member;
+
+object_member
+    : member_assignment ','?    
+    | array_access '=' r_value ','?
+    | ID '.' ID '=' r_value ','?
+    | ID '.' array_access '=' r_value ','?
+    ;
+
+//=============================================
+// 7. 模板系统
+//=============================================
 template_assignment 
     : ( export_prefix | private_prefix )? 
       template_prefix 
@@ -51,146 +129,39 @@ template_assignment
       object
     ;
 
-member_assignment : id '=' ( r_value | normal_assignment );
-unnamed_assignment : K_UNNAMED r_value;
+template_param : id ('=' r_value)?;
+template_param_list : '[' (template_param (',' template_param)*)? ']';
 
-// 5. 模板系统
-template_param 
-    : id ('=' r_value)?  // T:int = 1, T:list<int> = [1,2], T = 1, T
-    ;
-
-template_param_list
-    : '[' (template_param (',' template_param)*)? ']'  // 修改这里
-    ;
-
-// 用于模板参数的标识符,避免与普通id规则冲突
 template_param_type
-    : type_label                                    // 基本类型参数
-    | type_label '<' template_param_type '>'        // 嵌套泛型参数
-    | numeric_specialization                        // 数值特化
+    : type_label                            
+    | type_label '<' template_param_type '>'
+    | numeric_specialization                
     ;
 
+template_type : ID '<' template_param_type (',' template_param_type)* '>';
 numeric_specialization
-    : int_value                                     // 整数特化 
-    | float_value                                   // 浮点数特化
-    | arithmetic                                    // 算术表达式特化
-    ;
-
-// 6. 对象系统
-object : object_type '(' ( block (',' block)* ','? )* ')';   // 添加了逗号支持
-object_type : ID;
-block : normal_assignment | member_assignment | object_member;
-
-object_member
-    : member_assignment ','?    // 允许尾随逗号
-    | array_access '=' r_value ','?
-    | ID '.' ID '=' r_value ','?
-    | ID '.' array_access '=' r_value ','?
-    ;
-
-// 7. 标识符系统
-id : ID (':' type_specifier)? | array_access;
-
-// 类型说明符包含所有可能的类型
-type_specifier
-    : type_label         // 基本类型(int, string等)
-    | list_label        // 列表类型(list<T>)
-    | map_label         // 映射类型(map<K,V>)
-    ;
-
-array_access : ID '[' int_value ']';
-
-// 8. 类型系统
-type_label 
-    : builtin_type_label 
-    | object_type
-    | template_type
-    ;
-
-builtin_type_label 
-    : K_BOOL 
-    | K_STRING 
-    | K_INT 
-    | K_FLOAT 
-    | K_FLOAT2
-    | K_FLOAT3
-    | pair_label 
-    | list_label 
-    | map_label
-    ;
-
-pair_label : K_PAIR '<' type_label ',' type_label '>';
-list_label : K_LIST '<' type_label '>';
-map_label : K_MAP '<' type_label ',' type_label '>';
-template_type 
-    : ID '<' template_param_type (',' template_param_type)* '>'
-    ;
-
-// 9. 类型初始化
-type_initialization
-    : builtin_type_label vector_value
-    | builtin_type_label '(' r_value ')'
+    : int_value                                    
+    | float_value                                   
+    | arithmetic                                    
     ;
 
 //=============================================
-// Parser Rules - 值类型
+// 8. 复合数据系统
 //=============================================
-
-// 10. 值系统
-builtin_type_value : primitive_value | data_structure_value;
-primitive_value : bool_value | string_value | int_value | hex_value | float_value | guid_value;
-data_structure_value : pair_value | vector_value | map_value;
-
-bool_value : K_TRUE | K_FALSE;
-nil_value : K_NIL;
-string_value : STRING_SINGLE | STRING_DOUBLE;
-int_value : INT ;
-float_value : FLOAT;
-hex_value : HEX_INT;  // 使用已定义的HEX_INT替代HEXNUMBER
-guid_value : GUID;
-
-// 14. 特殊类型值
-special_value 
-    : rgba_value      // RGBA颜色值
-    | float2_value    // 2D向量值
-    | float3_value    // 3D向量值
-    ;
-
-// RGBA颜色值: 红,绿,蓝,透明度 (0-255)
-// 示例: RGBA[255, 128, 64, 255]  // 橙色不透明
-rgba_value : K_RGBA '[' INT ',' INT ',' INT ',' INT ']';
-
-// 2D向量值: x, y 坐标
-// 示例: float2[100.0, 200.0]     // x=100.0, y=200.0
-float2_value : K_FLOAT2 '[' (float_value|int_value) ',' (float_value|int_value) ']';
-
-// 3D向量值: x, y, z 坐标
-// 示例: float3[1.0, 2.0, 3.0]    // x=1.0, y=2.0, z=3.0
-float3_value : K_FLOAT3 '[' (float_value|int_value) ',' (float_value|int_value) ',' (float_value|int_value) ']';
-
-//=============================================
-// Parser Rules - 复合类型
-//=============================================
-
-// 11. 复合类型值
-// 示例: ("key", 100)
-pair_value : '(' pair_element ',' pair_element ')';
-
-// 示例: [1, 2, 3] 或 ["a", "b", "c"]
+// Vector
 vector_value : '[' (r_value (',' r_value)* ','?)? ']';
 
-// 示例: MAP[("key1", 100), ("key2", 200)]
+// Pair
+pair_value : '(' pair_element ',' pair_element ')';
+pair_element : r_value;
+
+// Map
 map_value : K_MAP '[' (pair_value (',' pair_value)* ','?)? ']';
 
-// 添加 pair_element 定义 (在复合类型区域)
-pair_element : r_value;  // pair元素可以是任何右值表达式
-
-// 12. 路径系统
-path_element
-    : ID
-    | INT
-    | K_GUID
-    ;
+//=============================================
+// 9. 引用系统
+//=============================================
+path_element : ID | INT | K_GUID;
 
 obj_reference_value
     : ('$'|'~')? ('/'? path_element)+ ('/' path_element)*
@@ -198,10 +169,12 @@ obj_reference_value
     | '$/' path_element ('/' path_element)*
     ;
 
-// 13. 替换值
 replace_value : '<' ID '>';
+concatination : obj_reference_value ('|' obj_reference_value)+;
 
-// 15. 算术系统
+//=============================================
+// 10. 算术系统
+//=============================================
 arithmetic 
     : '(' arithmetic ')' 
     | arithmetic op arithmetic 
@@ -211,9 +184,6 @@ arithmetic
 
 atom : int_value | float_value | hex_value | obj_reference_value;
 op : '+' | '-' | '*' | K_DIV;
-
-// 16. 并发引用
-concatination : obj_reference_value ('|' obj_reference_value)+;
 
 //=============================================
 // Lexer Rules

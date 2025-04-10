@@ -9,8 +9,7 @@ from src.parsers.parser.NdfGrammarParser import NdfGrammarParser
 from src.parsers.syntax_tree.actions import semantic_actions_generator
 from src.parsers.syntax_tree.nodes.syntax_node_assignment import *
 from src.parsers.syntax_tree.nodes.syntax_node_collection import *
-import src.extractor.extract_class
-import src.extractor.refined_class
+from typing import List, Tuple, Dict, Any, Union, Optional
 
 #=============================================
 # 1. 全局配置
@@ -21,7 +20,7 @@ sys.path.append(WORK_DIRECTORY)
 #=============================================
 # 2. 基础管理器类
 #=============================================
-class Manger:
+class Manager:
     """基础管理器类
     
     提供对象管理的基本功能:
@@ -30,11 +29,11 @@ class Manger:
     - 属性设置(set_xxx)
     - 文件解析(extract)
     """
-    def __init__(self, file_list, output_file="global.pkl", log_file="log.txt"):
+    def __init__(self, file_list: List[Tuple[str, str]], output_file: str = "global.pkl", log_file: str = "log.txt"):
         """初始化管理器
         
         Args:
-            file_list: 要处理的文件列表
+            file_list: 要处理的文件列表，每个元素为(文件路径, 命名空间)的元组
             output_file: 输出文件路径
             log_file: 日志文件路径
         """
@@ -43,9 +42,6 @@ class Manger:
         self.output_file = output_file
         self.log_file = log_file
 
-    #-----------------------------------------
-    # 2.1 基础文件操作
-    #-----------------------------------------
     def save(self):
         """保存字典到文件"""
         with open(self.output_file, "wb") as f:
@@ -61,9 +57,6 @@ class Manger:
         with open(self.log_file, "a") as f:
             f.write(message + "\n")
 
-    #-----------------------------------------
-    # 2.2 属性设置
-    #-----------------------------------------
     def set_dict(self, dict):
         self.dict = dict
 
@@ -76,9 +69,6 @@ class Manger:
     def set_log_file(self, log_file):
         self.log_file = log_file
 
-    #-----------------------------------------
-    # 2.3 核心功能
-    #-----------------------------------------
     def merge(self, dict1, dict2):
         """合并两个字典
         
@@ -97,7 +87,7 @@ class Manger:
                 dict1[key] = value
         return dict1
 
-    def extract(self, file_name, name_space, reference, mode="generate_object"):
+    def extract(self, file_name: str, name_space: str, reference: Any, mode: str = "generate_object") -> Dict:
         """解析NDF文件
         
         Args:
@@ -108,38 +98,57 @@ class Manger:
         
         Returns:
             解析结果(generator或register)
+            
+        Raises:
+            FileNotFoundError: 文件不存在
+            antlr4.error.Errors.ParseCancellationException: 解析错误
         """
-        input_stream = antlr4.InputStream(str(FileStream(file_name, encoding="utf8")))
-        lexer = NdfGrammarLexer(input_stream)
-        stream = CommonTokenStream(lexer)
-        parser = NdfGrammarParser(stream)
-        tree = parser.ndf_file()
-        
-        listener = semantic_actions_generator.Generator(
-            parser, 
-            name_space=name_space,
-            reference=reference,
-            mode=mode
-        )
-        
-        walker = ParseTreeWalker()
-        walker.walk(listener, tree)
-        
-        return (listener.generator if mode == "generate_object" 
-                else listener.register)
+        try:
+            input_stream = antlr4.InputStream(str(FileStream(file_name, encoding="utf8")))
+            lexer = NdfGrammarLexer(input_stream)
+            stream = CommonTokenStream(lexer)
+            parser = NdfGrammarParser(stream)
+            tree = parser.ndf_file()
+            
+            listener = semantic_actions_generator.Generator(
+                parser, 
+                name_space=name_space,
+                reference=reference,
+                mode=mode
+            )
+            
+            walker = ParseTreeWalker()
+            walker.walk(listener, tree)
+            
+            return (listener.generator if mode == "generate_object" 
+                    else listener.register)
+                    
+        except FileNotFoundError:
+            self.log(f"Error: File not found: {file_name}")
+            raise
+        except Exception as e:
+            self.log(f"Error parsing file {file_name}: {str(e)}")
+            raise
 
-    def check_file_exist(self):
-        """检查文件列表中的文件是否存在"""
-        file_status = {
-            file: os.path.exists(config.RAW_DATA_PATH + file) 
-            for file, name_space in self.file_list
-        }
+    def check_file_exist(self) -> Dict[str, bool]:
+        """检查文件列表中的文件是否存在
+        
+        Returns:
+            文件存在状态的字典 {文件路径: 是否存在}
+        """
+        file_status = {}
+        for file, _ in self.file_list:
+            full_path = os.path.join(config.RAW_DATA_PATH, file)
+            exists = os.path.exists(full_path)
+            if not exists:
+                self.log(f"Warning: File not found: {full_path}")
+            file_status[file] = exists
         return file_status
 
 #=============================================
 # 3. 注册管理器类
 #=============================================
-class RegisterManger(Manger):
+class RegisterManger(Manager):
     """注册管理器
     
     负责对象和模板的注册、导出等功能
@@ -239,11 +248,72 @@ class RegisterManger(Manger):
 #=============================================
 # 4. 生成管理器类
 #=============================================
-class GenerateManger(Manger):
+class GenerateManager(Manager):
     """生成管理器
     
     负责对象的生成、路径解析等功能
     """
+    def _resolve_path(self, path: Union[str, List[str]], namespace: Optional[str]) -> str:
+        """解析路径处理
+        
+        Args:
+            path: 路径字符串或路径片段列表
+            namespace: 当前命名空间
+            
+        Returns:
+            解析后的完整路径
+            
+        Raises:
+            TypeError: 路径类型错误
+            ValueError: 命名空间格式错误
+        """
+        if isinstance(path, list):
+            path = '/' + '/'.join(str(p) for p in path)
+        elif not isinstance(path, str):
+            raise TypeError("路径必须是字符串或列表")
+
+        path = path.strip()
+
+        if path.startswith("$/"):
+            return path[2:].strip('/')
+
+        if path.startswith("~/"):
+            if not namespace or not namespace.startswith('/'):
+                raise ValueError(f"Namespace '{namespace}' 必须以 '/' 开头")
+            return f"{namespace.rstrip('/')}/{path[2:].strip('/')}"
+
+        return path.strip('/')
+
+    def get(self, path: Union[str, List[str]], namespace: Optional[str] = None) -> Any:
+        """获取指定路径的值
+        
+        Args:
+            path: 路径字符串或路径片段列表
+            namespace: 当前命名空间(可选)
+            
+        Returns:
+            路径对应的值，如果路径无效则返回处理过的路径字符串
+        """
+        try:
+            full_path = self._resolve_path(path, namespace)
+            keys = full_path.strip('/').split('/')
+            current = self.dict
+
+            for key in keys:
+                if isinstance(current, dict) and key in current:
+                    current = current[key]
+                elif hasattr(current, key):
+                    current = getattr(current, key)
+                else:
+                    self.log(f"Warning: Path '{path}' not found in namespace '{namespace}'")
+                    return full_path.lstrip("$~/")
+
+            return current
+            
+        except Exception as e:
+            self.log(f"Error accessing path '{path}': {str(e)}")
+            return None
+
     def set(self, path, value, namespace=None):
         """设置值
         支持绝对路径($/...)和相对路径(~/...)
@@ -259,25 +329,6 @@ class GenerateManger(Manger):
 
         current[keys[-1]] = value
 
-    def get(self, path, namespace=None):
-        """获取值
-        支持绝对路径和相对路径
-        """
-        full_path = self._resolve_path(path, namespace)
-        keys = full_path.strip('/').split('/')
-        current = self.dict
-
-        for key in keys:
-            if isinstance(current, dict) and key in current:
-                current = current[key]
-            elif hasattr(current, key):
-                current = getattr(current, key)
-            else:
-                self.log(f"Warning: {path} not found in {namespace}")
-                return full_path.lstrip("$~/")
-
-        return current
-
     def set_batch(self, data_dict, current_namespace):
         """批量设置值"""
         if not isinstance(data_dict, dict):
@@ -285,27 +336,6 @@ class GenerateManger(Manger):
         for key, value in data_dict.items():
             self.set(key, value, namespace=current_namespace)
 
-    def _resolve_path(self, path, namespace):
-        """解析路径
-        处理绝对路径($/...)和相对路径(~/...)
-        """
-        if isinstance(path, list):
-            path = '/' + '/'.join(path)
-        elif not isinstance(path, str):
-            raise TypeError("路径必须是字符串或列表")
-
-        path = path.strip()
-
-        if path.startswith("$/"):
-            return path[2:].strip('/')
-
-        if path.startswith("~/"):
-            if not namespace or not namespace.startswith('/'):
-                raise ValueError(f"Namespace '{namespace}' 必须以 '/' 开头")
-            return f"{namespace.rstrip('/')}/{path[2:].strip('/')}"
-
-        return path.strip('/')
-    
     def generate(self):
         """生成对象"""
         for file, name_space in self.file_list:
@@ -335,7 +365,7 @@ def main():
     register_manger.save()
     
     # 2. 生成对象
-    generate_manger = GenerateManger(file_list, output_file="global.pkl")
+    generate_manger = GenerateManager(file_list, output_file="global.pkl")
     generate_manger.generate()
 
     # 3. 保存对象

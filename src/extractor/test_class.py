@@ -46,10 +46,9 @@ class Complex(TBaseObject):
 
 class TComplexObject:
     """复杂对象类"""
-    def __init__(self, value=None, list=None, map=None):
+    def __init__(self, value=None, array=None):
         self.value = value
-        self.list = list
-        self.map = map
+        self.array = array
 
 class TChild:
     """嵌套子对象类"""
