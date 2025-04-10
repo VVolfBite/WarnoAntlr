@@ -17,3 +17,17 @@ Warning: Path '~/test/path' not found in namespace '/'
 Warning: Path '~/test/path' not found in namespace '/'
 Warning: Path '~/test/path' not found in namespace '/'
 Warning: Path '~/test/path' not found in namespace '/'
+Warning: Path '~/test/path' not found in namespace '/'
+Warning: Path '~/test/path' not found in namespace '/'
+Warning: Path '~/test/path' not found in namespace '/'
+Warning: Path '~/test/path' not found in namespace '/'
+Warning: Path '~/test/path' not found in namespace '/'
+Warning: Path '~/test/path' not found in namespace '/'
+Warning: Path '~/test/path' not found in namespace '/'
+Warning: Path '~/test/path' not found in namespace '/'
+Generated objects from M20250403/test.ndf in namespace /
+Objects: ['Bool1', 'Int1', 'Float1', 'String1', 'Hex1', 'Id1', 'Vec2', 'Vec3', 'List1', 'Pair1', 'Map1', 'Color1', 'Nil1', 'Empty1', 'Empty2', 'Unicode1', 'Math1', 'Math2', 'Math3', 'Math4', 'Ref1', 'Ref2', 'Ref3', 'Obj1', 'Obj2', 'Val1', 'Val2', 'Unnamed-6459190319043776050', 'ComplexObj', 'Result', 'Base', 'UseBase', 'First', 'Second', 'Third', 'BaseObj', 'RefObj']
+Warning: Path '~/test/path' not found in namespace '/'
+Warning: Path '~/test/path' not found in namespace '/'
+Generated objects from M20250403/test.ndf in namespace /
+Objects: ['Bool1', 'Int1', 'Float1', 'String1', 'Hex1', 'Id1', 'Vec2', 'Vec3', 'List1', 'Pair1', 'Map1', 'Color1', 'Nil1', 'Empty1', 'Empty2', 'Unicode1', 'Math1', 'Math2', 'Math3', 'Math4', 'Ref1', 'Ref2', 'Ref3', 'Obj1', 'Obj2', 'Val1', 'Val2', 'Unnamed--1380852218747730190', 'ComplexObj', 'Result', 'Base', 'UseBase', 'First', 'Second', 'Third', 'BaseObj', 'RefObj']

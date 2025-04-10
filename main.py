@@ -1,5 +1,4 @@
-import pickle
-
+import dill
 import antlr4
 from antlr4 import *
 from src.extractor.base_class import BaseDescription
@@ -50,22 +49,30 @@ class Manager:
         self.export_file = self.config.get_output_path(export_file)
 
     def save(self, mode: str = "generate"):
-        """保存到文件"""
-        if mode == "register":
-            with open(self.register_file, "wb") as f:
-                pickle.dump(self.register_dict, f)
-        else:
-            with open(self.generate_file, "wb") as f:
-                pickle.dump(self.dict, f)
+        """保存到文件，使用dill处理复杂对象序列化"""
+        try:
+            if mode == "register":
+                with open(self.register_file, "wb") as f:
+                    dill.dump(self.register_dict, f)
+            else:
+                with open(self.generate_file, "wb") as f:
+                    dill.dump(self.dict, f)
+        except Exception as e:
+            self.log(f"Error saving to file: {str(e)}")
+            raise
 
     def load(self, mode: str = "generate"):
-        """从文件加载"""
-        if mode == "register":
-            with open(self.register_file, "rb") as f:
-                self.register_dict = pickle.load(f)
-        else:
-            with open(self.generate_file, "rb") as f:
-                self.dict = pickle.load(f)
+        """从文件加载，使用dill处理复杂对象反序列化"""
+        try:
+            if mode == "register":
+                with open(self.register_file, "rb") as f:
+                    self.register_dict = dill.load(f)
+            else:
+                with open(self.generate_file, "rb") as f:
+                    self.dict = dill.load(f)
+        except Exception as e:
+            self.log(f"Error loading from file: {str(e)}")
+            raise
 
     def log(self, message: str):
         """写入日志"""
@@ -415,6 +422,23 @@ def main():
     # 获取配置实例
     config = ConfigManager().get_instance()
     
+    # # 打印当前Python路径
+    # print("Python路径:", sys.path)
+    
+    # # 打印已加载模块
+    # print("已加载模块:")
+    # for name, module in sys.modules.items():
+    #     if 'test_class' in name:
+    #         print(f"- {name}: {module}")
+            
+    # # 尝试显式导入test_class
+    # try:
+    #     from src.extractor.test_class import TChildTemplate
+    #     print("成功导入 TChildTemplate")
+    # except ImportError as e:
+    #     print("导入失败:", str(e))
+        
+    
     # 设置文件和命名空间
     setup_files(config)
     
@@ -434,6 +458,10 @@ def main():
     manager.save(mode="register")
     manager.generate(reference=manager)
     manager.save(mode="generate")
+    manager.dict = {}
+    manager.load(mode="generate")
+    x = 1
+    print(x)
 
 if __name__ == "__main__":
     main()
