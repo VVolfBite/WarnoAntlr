@@ -23,13 +23,13 @@ Unicode1 IS '测试'
 // 4. 算术表达式
 Math1 IS 1 + 2
 Math2 IS (10 + 5) * 2
-Math3 IS ~/test/path + 50
+Math3 IS ~/Int1 + 50
 Math4 IS 15 div 3
 
 // 5. 路径引用
-Ref1 IS ~/test/path
-Ref2 IS $/system/value
-Ref3 IS ~/test/path | ~/system/value
+Ref1 IS ~/Int1
+Ref2 IS $/Float1
+Ref3 IS ~/Int1 | ~/Float1
 
 // 6. 对象系统
 Obj1 IS TBaseObject(
@@ -84,7 +84,7 @@ export ComplexObj:TComplexObject IS TComplexObject(
     array = [1, 2, 3],
 )
 
-Result IS (~/test/path + 50.0) * 2.0
+Result IS ($/Int1 + 50.0) * 2.0
 
 template NestedTemplate[
     T: int = 1,
@@ -94,4 +94,19 @@ template NestedTemplate[
     child = TChildTemplate(
         name = <S>,
     )
+)
+
+// 20. 立即引用测试
+Base IS 100
+UseBase IS Base + 50  // 直接引用上一行
+
+// 21. 链式引用
+First IS 1
+Second IS First * 2
+Third IS Second + First  // 引用前面两个值
+
+// 22. 对象立即引用
+BaseObj IS TBaseObject(value = 100, name = "base")
+RefObj IS TChildObject(
+    value = BaseObj
 )

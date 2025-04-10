@@ -1,7 +1,5 @@
 import pickle
-import sys
-import os
-import config
+
 import antlr4
 from antlr4 import *
 from src.extractor.base_class import BaseDescription
@@ -11,12 +9,12 @@ from src.parsers.syntax_tree.actions import semantic_actions_generator
 from src.parsers.syntax_tree.nodes.syntax_node_assignment import *
 from src.parsers.syntax_tree.nodes.syntax_node_collection import *
 from typing import List, Tuple, Dict, Any, Union, Optional
-
-#=============================================
-# 1. 全局配置
-#=============================================
-WORK_DIRECTORY = "D:/WarnoAntlr-main/"
-sys.path.append(WORK_DIRECTORY)
+from src.config.config_manager import ConfigManager
+from src.extractor.backup_class import *
+from src.extractor.base_class import *
+from src.extractor.refined_class import *
+from src.extractor.extract_class import *
+from src.extractor.test_class import *  # 最后导入test_class
 
 #=============================================
 # 2. 统一管理器类
@@ -40,13 +38,16 @@ class Manager:
         log_file: str = "log.txt",
         export_file: str = "TClass.py"
     ):
+        # 获取配置实例
+        self.config = ConfigManager().get_instance()
         self.file_list = file_list
-        self.register_dict = {}  # 存储注册信息
-        self.dict = {}          # 存储生成信息
-        self.register_file = register_file
-        self.generate_file = generate_file
-        self.log_file = log_file
-        self.export_file = export_file
+        self.register_dict = {}
+        self.dict = {}
+        # 使用config处理文件路径
+        self.register_file = self.config.get_output_path(register_file)
+        self.generate_file = self.config.get_output_path(generate_file)
+        self.log_file = self.config.get_output_path(log_file)
+        self.export_file = self.config.get_output_path(export_file)
 
     def save(self, mode: str = "generate"):
         """保存到文件"""
@@ -116,10 +117,10 @@ class Manager:
         """检查文件是否存在"""
         file_status = {}
         for file, _ in self.file_list:
-            full_path = os.path.join(config.RAW_DATA_PATH, file)
-            exists = os.path.exists(full_path)
+            file_path = self.config.get_full_path(file)
+            exists = file_path.exists()
             if not exists:
-                self.log(f"Warning: File not found: {full_path}")
+                self.log(f"Warning: File not found: {file_path}")
             file_status[file] = exists
         return file_status
 
@@ -188,9 +189,9 @@ class Manager:
     def register_template(self, reference: Optional[Any] = None):
         """注册模板"""
         for file, name_space in self.file_list:
-            file = config.RAW_DATA_PATH + file
+            file_path = self.config.get_full_path(file)
             template = self.extract(
-                file,
+                str(file_path),
                 name_space=name_space,
                 reference=reference,
                 mode="register_template"
@@ -200,9 +201,9 @@ class Manager:
     def register_object(self, reference: Optional[Any] = None):
         """注册对象"""
         for file, name_space in self.file_list:
-            file = config.RAW_DATA_PATH + file
+            file_path = self.config.get_full_path(file)
             object = self.extract(
-                file,
+                str(file_path),
                 name_space=name_space,
                 reference=reference,
                 mode="register_object"
@@ -210,19 +211,74 @@ class Manager:
             self.register_dict = self.merge(self.register_dict, object)
 
     def generate(self, reference: Optional[Any] = None):
-        """生成对象"""
+        """生成对象
+        
+        处理每个文件时:
+        1. 解析文件生成对象
+        2. 立即将对象添加到命名空间
+        3. 更新引用信息
+        """
         for file, name_space in self.file_list:
-            file = config.RAW_DATA_PATH + file
-            object = self.extract(
-                file,
+            file_path = self.config.get_full_path(file)
+            # 解析当前文件
+            object_dict = self.extract(
+                str(file_path),
                 name_space=name_space,
-                reference=reference,
+                reference=reference or self,
                 mode="generate_object"
             )
-            self.set_batch(object, "/")
+            
+            # 立即添加到命名空间
+            self.set_batch(object_dict, name_space)
+            
+            # 记录日志
+            self.log(f"Generated objects from {file} in namespace {name_space}")
+            self.log(f"Objects: {list(object_dict.keys())}")
 
     def export(self):
         """导出类定义"""
+        def format_value(value):
+            """格式化任意值为字符串表示
+            
+            处理以下类型:
+            1. BaseDescription对象 -> 调用reverse()
+            2. 列表/元组 -> 递归处理每个元素
+            3. 字典 -> 递归处理每个值
+            4. 字符串 -> 添加引号
+            5. 其他类型 -> 直接str()转换
+            """
+            if isinstance(value, BaseDescription):
+                return value.reverse()
+            elif isinstance(value, (list, tuple)):
+                items = [format_value(item) for item in value]
+                return f"[{', '.join(items)}]"
+            elif isinstance(value, dict):
+                items = [f'"{k}": {format_value(v)}' for k, v in value.items()]
+                return f"{{{', '.join(items)}}}"
+            elif isinstance(value, str):
+                return f'"{value}"'
+            else:
+                return str(value)
+
+        def format_param_default(key, value, is_base_only):
+            """格式化参数默认值"""
+            if is_base_only:
+                return f"{key}=None"
+                
+            if isinstance(value, dict) and 'default' in value:
+                default = value['default']
+                if isinstance(default, str):
+                    return f'{key}="{default}"'
+                return f"{key}={default if default is not None else 'None'}"
+            elif isinstance(value, str):
+                if value.startswith('@'):
+                    return f"{key}={value.lstrip('@')}"
+                return f'{key}="{value}"'
+            else:
+                return f"{key}={format_value(value)}"
+        # 生成导入语句
+        imports = "from src.extractor.base_class import BaseDescription\n\n"
+        # 主要导出逻辑
         class_definitions = []
         for class_name, data in self.register_dict.items():
             # 获取类信息
@@ -234,59 +290,38 @@ class Manager:
             # 生成类定义
             class_definition = f"class {class_name}({base_name}):\n"
             
-            # 处理参数
-            def format_value(value):
-                """格式化值为字符串表示"""
-                if isinstance(value, dict) and 'default' in value:
-                    # 如果是模板参数描述,直接使用default值
-                    default_value = value['default']
-                    if isinstance(default_value, str):
-                        return f'"{default_value}"'
-                    return str(default_value) if default_value is not None else 'None'
-                elif isinstance(value, BaseDescription):
-                    return value.reverse()
-                elif isinstance(value, str):
-                    return f'"{value}"'
-                elif isinstance(value, (list, tuple)):
-                    items = [format_value(item) for item in value]
-                    return f"[{', '.join(items)}]"
-                elif isinstance(value, dict):
-                    items = [f'"{k}": {format_value(v)}' for k, v in value.items()]
-                    return f"{{{', '.join(items)}}}"
-                else:
-                    return str(value)
+            # 判断是否仅继承BaseDescription
+            is_base_only = base_name == "BaseDescription"
             
             # 生成当前类参数
             current_params = ", ".join(
-                f"{key}={format_value(value)}"
+                format_param_default(key, value, is_base_only)
                 for key, value in attributes.items()
             )
             
             # 生成父类参数
-            super_params = ", ".join(
-                f"{key}={value.lstrip('@')}" if isinstance(value, str) and value.startswith('@')
-                else f"{key}={format_value(value)}"
-                for key, value in base_attributes.items()
-            )
+            if not is_base_only:
+                super_params = ", ".join(
+                    format_param_default(key, value, False)
+                    for key, value in base_attributes.items()
+                )
             
             # 生成__init__方法
             if current_params:
                 class_definition += f"    def __init__(self, {current_params}):\n"
-                if super_params:
+                if not is_base_only:
                     class_definition += f"        super().__init__({super_params})\n"
                 for key in attributes.keys():
                     class_definition += f"        self.{key} = {key}\n"
             else:
-                class_definition += "    def __init__(self):\n"
-                if super_params:
-                    class_definition += f"        super().__init__({super_params})\n"
-                else:
-                    class_definition += "        pass\n"
+                class_definition += f"    def __init__(self, {current_params}):\n"
+                for key in attributes.keys():
+                    class_definition += f"        self.{key} = {key}\n"
 
             class_definitions.append(class_definition)
 
         # 写入文件
-        complete_class_definitions = "\n\n".join(class_definitions)
+        complete_class_definitions = imports + "\n\n".join(class_definitions)
         with open(self.export_file, "w") as f:
             f.write(complete_class_definitions)
         print(f"Classes successfully written to {self.export_file}")
@@ -294,33 +329,110 @@ class Manager:
 #=============================================
 # 3. 主函数
 #=============================================
+def setup_files(config: ConfigManager):
+    """设置要处理的文件和命名空间"""
+    # 1. 测试文件
+    config.add_file("M20250403/test.ndf", "/")
+    
+    # 2. 游戏系统数据
+    game_system_files = [
+        # ("GameData/Generated/Gameplay/Gfx/CapaciteList.ndf", "/gameplay/gfx/aura"),  # 光环
+        # ("GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf", "/gameplay/gfx/effect"),  # 效果
+        # ("GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf", "/gameplay/gfx/condition"),  # 条件
+        # ("GameData/Generated/Gameplay/Gfx/Ammunition.ndf", "/gameplay/gfx/ammo"),  # 弹药
+        # ("GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf", "/gameplay/gfx/missile"),  # 导弹
+        # ("GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf", "/gameplay/gfx/weapon"),  # 武器
+        # ("GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf", "/gameplay/gfx/unit"),  # 单位
+    ]
+    
+    # 3. 战斗编制数据
+    division_files = [
+        # ("GameData/Generated/Gameplay/Decks/Divisions.ndf", "/gameplay/division/deck"),  # 师卡组
+        # ("GameData/Generated/Gameplay/Decks/DivisionRules.ndf", "/gameplay/division/rule"),  # 师规则
+        # ("GameData/Generated/Gameplay/Decks/DivisionCostMatrix.ndf", "/gameplay/division/cost"),  # 费用
+    ]
+    
+    # 4. 伤害系统数据
+    damage_files = [
+        # ("GameData/Generated/Gameplay/Gfx/DamageLevels.ndf", "/gameplay/damage/level"),  # 伤害等级
+        # ("GameData/Generated/Gameplay/Gfx/DamageResistance.ndf", "/gameplay/damage/resistance"),  # 防御
+        # ("GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf", "/gameplay/damage/family"),  # 家族
+        # ("GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf", "/gameplay/damage/penetration"),  # 穿透
+    ]
+    
+    # 5. 地形系统数据
+    # config.add_file("M20250403/GameData/Gameplay/Terrains/Terrains.ndf", "/gameplay/terrain")
+    
+    # 6. 暴击系统数据
+    critical_files = [
+        # ("GameData/Gameplay/Unit/CriticalModules/TemplateCriticalEffectModules.ndf", "/gameplay/critical/template"),
+        # ("GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf", "/gameplay/critical/air"),
+        # ("GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_GroundUnit.ndf", "/gameplay/critical/ground"),
+        # ("GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf", "/gameplay/critical/helicopter"),
+        # ("GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Infanterie.ndf", "/gameplay/critical/infantry"),
+    ]
+    
+    # 7. 游戏常量数据
+    constant_files = [
+        # ("GameData/Gameplay/Constantes/Strategic/GDConstantes.ndf", "/gameplay/const/strategic"),
+        # ("GameData/Gameplay/Constantes/Airplane.ndf", "/gameplay/const/air"),
+        # ("GameData/Gameplay/Constantes/Deroute.ndf", "/gameplay/const/rout"),
+        # ("GameData/Gameplay/Constantes/EvaluationMenace.ndf", "/gameplay/const/threat"),
+        # ("GameData/Gameplay/Constantes/FactoryResources.ndf", "/gameplay/const/resource"),
+        # ("GameData/Gameplay/Constantes/ActionPointConsumptionGrid.ndf", "/gameplay/const/ap/grid"),
+        # ("GameData/Gameplay/Constantes/ActionPointConsumptionGridRefs.ndf", "/gameplay/const/ap/ref"),
+        # ("GameData/Gameplay/Constantes/GDConstantes.ndf", "/gameplay/const/global"),
+        # ("GameData/Gameplay/Constantes/HitRollConstants.ndf", "/gameplay/const/hitroll"),
+        # ("GameData/Gameplay/Constantes/Ravitaillement.ndf", "/gameplay/const/supply"),
+        # ("GameData/Gameplay/Constantes/Transport.ndf", "/gameplay/const/transport/hit"),
+        # ("GameData/Gameplay/Constantes/TransportConstantes.ndf", "/gameplay/const/transport/base"),
+        # ("GameData/Gameplay/Constantes/VisionConstantes.ndf", "/gameplay/const/vision"),
+        # ("GameData/Gameplay/Constantes/WeaponConstantes.ndf", "/gameplay/const/weapon"),
+        # ("GameData/Gameplay/Unit/AirplaneConstantes.ndf", "/gameplay/const/aircraft"),
+        # ("GameData/Gameplay/Unit/DamageModules.ndf", "/gameplay/const/damage"),
+        # ("GameData/Gameplay/Constantes/WeaponTypePriorities.ndf", "/gameplay/const/priority"),
+        # ("GameData/Gameplay/Constantes/WreckageConstants.ndf", "/gameplay/const/wreck"),
+    ]
+    
+    # 8. 其他系统数据
+    other_files = [
+        # ("GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf", "/gameplay/gfx/building"),
+        # ("GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf", "/gameplay/gfx/experience"),
+        # ("GameData/Gameplay/Unit/Tactic/DistrictDescriptor.ndf", "/gameplay/district"),
+        # ("GameData/Generated/Gameplay/Gfx/FireDescriptor.ndf", "/gameplay/gfx/fire"),
+        # ("GameData/Generated/Gameplay/Gfx/SmokeDescriptor.ndf", "/gameplay/gfx/smoke"),
+        # ("GameData/Generated/Gameplay/Gfx/MissileCarriage.ndf", "/gameplay/gfx/carriage"),
+    ]
+    
+    # 批量添加文件和命名空间
+    for file_list in [game_system_files, division_files, damage_files, 
+                      critical_files, constant_files, other_files]:
+        for file, namespace in file_list:
+            config.add_file(f"M20250403/{file}", namespace)
+
 def main():
     """主函数"""
-    file_list = config.PROCESS_FILE_LIST
-    reference = {
-            "test/path": 100,
-            "system/value": "system",
-            "obj/member": {"value": 200},
-            "array/data": [1, 2, 3, 4, 5]
-        }
+    # 获取配置实例
+    config = ConfigManager().get_instance()
+    
+    # 设置文件和命名空间
+    setup_files(config)
+    
     # 创建管理器
     manager = Manager(
-        file_list=file_list,
+        file_list=config.process_file_list,
+        # 无需指定完整路径,Manager会自动处理
         register_file="register.pkl",
         generate_file="global.pkl",
         log_file="log.txt",
         export_file="TClass.py"
     )
     
-    # 检查文件
+    # 执行处理流程
     manager.check_file_exist()
-    
-    # 注册对象和模板
-    manager.register(reference=reference)
+    manager.register(reference=manager)
     manager.save(mode="register")
-    
-    # 生成对象
-    manager.generate(reference=reference)
+    manager.generate(reference=manager)
     manager.save(mode="generate")
 
 if __name__ == "__main__":

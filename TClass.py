@@ -1,34 +1,36 @@
+from src.extractor.base_class import BaseDescription
+
 class TBaseObject(BaseDescription):
-    def __init__(self, value="<T4>", name="<S>"):
+    def __init__(self, value=None, name=None):
         self.value = value
         self.name = name
 
 
 class TChildObject(BaseDescription):
-    def __init__(self, value=200, name="child"):
+    def __init__(self, value=None, name=None):
         self.value = value
         self.name = name
 
 
 class TParentObject(BaseDescription):
-    def __init__(self, count=1, child=[{id: value, type: assignment, export: False, private: False, member: True, value: type: 4, value: None}}, {id: name, type: assignment, export: False, private: False, member: True, value: type: 7, value: None}}]):
+    def __init__(self, count=None, child=None):
         self.count = count
         self.child = child
 
 
 class TComplexObject(BaseDescription):
-    def __init__(self, array=[type: 4, value: None}, type: 4, value: None}, type: 4, value: None}], value=100):
+    def __init__(self, array=None, value=None):
         self.array = array
         self.value = value
 
 
 class TChildTemplate(BaseDescription):
-    def __init__(self, name="<S>"):
+    def __init__(self, name=None):
         self.name = name
 
 
 class TBaseTemplate(BaseDescription):
-    def __init__(self, child=[{id: name, type: assignment, export: False, private: False, member: True, value: type: 20, value: None}}], value="<T>"):
+    def __init__(self, child=None, value=None):
         self.child = child
         self.value = value
 
@@ -52,6 +54,6 @@ class Complex(TBaseObject):
 
 class NestedTemplate(TBaseTemplate):
     def __init__(self, T=1, S="test"):
-        super().__init__(child=<src.extractor.test_class.TChildTemplate object at 0x000001F7FEABA9C0>, value=T)
+        super().__init__(child=TChildTemplate(name=S), value=T)
         self.T = T
         self.S = S

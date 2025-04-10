@@ -8,15 +8,9 @@ from src.parsers.syntax_tree.nodes.syntax_node_collection import *
 
 import logging
 
-import pickle
-import sys
-import config
 
-WORK_DIRECTORY = "D:/WarnoAntlr-main/"
-sys.path.append(WORK_DIRECTORY)
-import src.extractor.extract_class
-import src.extractor.refined_class
-import src.extractor.test_class
+# 在文件顶部import区域添加
+from src.config.config_manager import ConfigManager
 
 #=============================================
 # 1. 基础类定义
@@ -58,6 +52,7 @@ class Generator(NdfGrammarListener):
     #-----------------------------------------
     def __init__(self, parser, name_space="/", reference=None, mode="default"):
         super().__init__()
+        self.config = ConfigManager.get_instance()
         self.rule_names = parser.ruleNames
         self.assignments = []
         self.stack = Stack()
@@ -134,63 +129,82 @@ class Generator(NdfGrammarListener):
                 self.generator[name] = [current, value]
 
     def instantiate_class(self, class_name: str, **kwargs) -> Optional[Any]:
-        """
-        按优先级从三个模块实例化类
+        """按优先级从模块实例化类
         
         Args:
-            class_name: 类名
-            **kwargs: 类初始化参数
+            class_name: 要实例化的类名
+            **kwargs: 传递给类构造函数的参数
             
         Returns:
-            实例化的类对象,如果类不存在则返回None
-            
-        优先级:
-            1. refined_class
-            2. extract_class 
-            3. test_class
+            实例化的对象,如果找不到类则返回None
         """
-        def get_class(name: str) -> Optional[type]:
-            return (
-                getattr(src.extractor.refined_class, name, None)
-                or getattr(src.extractor.extract_class, name, None)
-                or getattr(src.extractor.test_class, name, None)
-            )
+        # 获取完整的类文件路径列表
+        class_paths = [
+            self.config.src_path / "extractor" / file_name 
+            for file_name in self.config.class_file_names
+        ]
+        
+        # 按优先级尝试从每个文件加载类
+        for class_path in class_paths:
+            if class_path.exists():
+                try:
+                    module = self.load_class_module(str(class_path))
+                    if module and hasattr(module, class_name):
+                        return getattr(module, class_name)(**kwargs)
+                except Exception as e:
+                    self._handle_error(f"Failed to load class {class_name} from {class_path}: {str(e)}")
+                    continue
+                    
+        return None
 
-        class_ = get_class(class_name)
-        return class_(**kwargs) if class_ else None
+    def load_class_module(self, module_path: str) -> Optional[Any]:
+        """加载类定义模块
+        
+        Args:
+            module_path: 模块文件路径
+            
+        Returns:
+            加载的模块对象,如果加载失败则返回None
+        """
+        try:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location(
+                Path(module_path).stem,
+                module_path
+            )
+            if not spec:
+                return None
+                
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            return module
+        except Exception as e:
+            self._handle_error(f"Failed to load module {module_path}: {str(e)}")
+            return None
 
     def _resolve_reference(self, path: str) -> Any:
-        """
-        解析引用路径
+        """解析引用路径
         
         Args:
-            path: 引用路径字符串
+            path: 引用路径字符串,可能包含多个路径用'|'分隔
             
         Returns:
-            解析后的值,如果路径无效则返回None
-            
-        支持:
-            - 单一路径: "~/path/to/value"  
-            - 多路径选择: "path1 | path2"
+            解析到的第一个有效值,如果都无效则返回None
         """
-        if not path:
+        if not path or not self.reference:
             return None
             
-        # 清理路径前缀    
-        path = path.lstrip('~$/').strip()
-        
         # 处理多路径选择
-        if "|" in path:
-            paths = [p.strip() for p in path.split("|")]
-            values = [
-                self.reference[p] 
-                for p in paths 
-                if p and p in self.reference
-            ]
-            return values[0] if len(values) == 1 else values or None
-            
-        # 处理单一路径
-        return self.reference.get(path)
+        paths = [p.strip() for p in path.split('|')]
+        
+        # 尝试每个路径,返回第一个有效值
+        for p in paths:
+            if p:  # 确保路径非空
+                value = self.reference.get(p, self.name_space)
+                if value is not None:
+                    return value
+                    
+        return None
 
     def _validate_type(self, node: Base, expected_types: set) -> bool:
         """
@@ -307,7 +321,13 @@ class Generator(NdfGrammarListener):
         self.stack.push(Assignment())
 
     def exitNormal_assignment(self, ctx):
-        """处理普通赋值语句的完成"""
+        """处理普通赋值语句的完成
+        
+        同时:
+        1. 添加到assignments列表
+        2. 生成对象(如果是generate模式)
+        3. 添加到引用索引(如果有命名空间)
+        """
         if self.ignore > 0:
             return
             
@@ -317,7 +337,6 @@ class Generator(NdfGrammarListener):
             return
         
         assignment = None
-        
         for item in reversed(self.stack._stack):
             if isinstance(item, Assignment):
                 assignment = item
@@ -334,11 +353,19 @@ class Generator(NdfGrammarListener):
 
         # 检查堆栈长度
         if len(self.stack) == 1:
+            # 1. 添加到assignments列表
             self.assignments.append(assignment)
             self.stack.pop()
-            if self.mode == "generate_object":
+            
+            if self.mode in {"generate_object", "register_template"}:
+                # 2. 生成对象
                 if hasattr(assignment, 'id') and assignment.id is not None:
                     self.generate_object(assignment.id, assignment.value)
+                    
+                    # 3. 添加到引用索引
+                    if self.name_space and self.reference:
+                        # 添加到引用字典
+                        self.reference.set(assignment.id,assignment.value,self.name_space)
 
     def enterMember_assignment(self, ctx):
         if self.ignore > 0:
@@ -425,10 +452,7 @@ class Generator(NdfGrammarListener):
             for param in params.content:
                 param_type =  None
                 param_default = param.value if hasattr(param, 'value') else None
-                param_dict[param.id] = {
-                    'type': param_type,
-                    'default': param_default
-                }
+                param_dict[param.id] = param_default
                 
             base_attributes = {}
             if hasattr(value, 'content'):
@@ -442,6 +466,7 @@ class Generator(NdfGrammarListener):
                 base_name=value.object_type,
                 base_attributes=base_attributes
             )
+        self.stack.pop()  # 弹出assignment
 
     #-----------------------------------------
     # 4. 基础值系统
@@ -866,25 +891,17 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.Reference
         reference_str = ctx.getText()
-        entity.content = 0
+        entity.content = 0  # 保存原始引用字符串
         
         if self.mode in {"generate_object", "register_template"}:
             if self.reference is None:
                 self._handle_error("Reference dictionary is not initialized", ctx)
                 return
-            
-            path = reference_str.lstrip('~$/').strip()
-            if "|" in path:
-                paths = [p.strip() for p in path.split("|")]
-                values = []
-                for p in paths:
-                    if p and p in self.reference:  # 添加空路径检查
-                        values.append(self.reference[p])
-                if values:  # 检查是否找到任何值
-                    entity.value = values[0] if len(values) == 1 else values
-            else:
-                if path and path in self.reference:  # 添加空路径检查
-                    entity.value = self.reference[path]
+                
+            # 使用_resolve_reference解析引用
+            resolved_value = self._resolve_reference(reference_str)
+            if resolved_value is not None:
+                entity.value = resolved_value
                 
         self.stack.push(entity)
 
