@@ -18,9 +18,6 @@ import src.extractor.extract_class
 import src.extractor.refined_class
 import src.extractor.test_class
 
-
-DISABLE_CALCULATING = False
-
 #=============================================
 # 1. 基础类定义
 #=============================================
@@ -314,24 +311,33 @@ class Generator(NdfGrammarListener):
         if self.ignore > 0:
             return
             
-        value = self.stack.pop()
+        value = self.stack.pop() if len(self.stack) > 0 else None
+        if not value:
+            self._handle_error("No value found for assignment", ctx)
+            return
+        
         assignment = None
         
         for item in reversed(self.stack._stack):
             if isinstance(item, Assignment):
                 assignment = item
                 break
-                
-        if assignment:
-            assignment.content = value
-            if self.mode in {"generate_object", "register_template"}:
-                assignment.value = value.value if hasattr(value, 'value') else None
-                assignment.convert_value()
 
-            if len(self.stack) == 1:
-                self.assignments.append(assignment)
-                self.stack.pop()
-                if self.mode == "generate_object":
+        if not assignment:
+            self._handle_error("No assignment found", ctx)
+            return
+                
+        assignment.content = value
+        if self.mode in {"generate_object", "register_template"}:
+            assignment.value = value.value if hasattr(value, 'value') else None
+            assignment.convert_value()
+
+        # 检查堆栈长度
+        if len(self.stack) == 1:
+            self.assignments.append(assignment)
+            self.stack.pop()
+            if self.mode == "generate_object":
+                if hasattr(assignment, 'id') and assignment.id is not None:
                     self.generate_object(assignment.id, assignment.value)
 
     def enterMember_assignment(self, ctx):
@@ -399,11 +405,19 @@ class Generator(NdfGrammarListener):
         """处理模板赋值的完成"""
         if self.ignore > 0:
             return
-                
-        value = self.stack.pop()
-        params = self.stack.pop()
-        assignment = self.stack.top()
-
+            
+        value = self.stack.pop()  # 可能为None
+        params = self.stack.pop()  # 可能为None
+        assignment = self.stack.top()  # 可能为None
+        
+        if not value or not params or not assignment:  # 添加检查
+            self._handle_error("Missing required values for template assignment", ctx)
+            return
+            
+        if not hasattr(value, 'content'):  # 添加属性检查
+            self._handle_error("Value node has no content", ctx)
+            return
+        
         assignment.content = value
         
         if self.mode == "register_template":
@@ -663,8 +677,17 @@ class Generator(NdfGrammarListener):
         self.stack.pop()
         
         _map = self.stack.top()
+        if not _map:  # 添加检查
+            self._handle_error("No map container found", ctx)
+            return
         
         for map_value in map_values:
+            if not hasattr(map_value, 'content'):  # 添加成员检查
+                self._handle_error("Invalid map value", ctx)
+                continue
+            if not isinstance(map_value.content, list) or len(map_value.content) != 2:
+                self._handle_error("Invalid map pair format", ctx)
+                continue
             _map.append(map_value)
             
         if self.mode in {"generate_object", "register_template"}:
@@ -722,14 +745,20 @@ class Generator(NdfGrammarListener):
         members = []
         while type(self.stack.top()) != StackMarker:
             member = self.stack.pop()
-            members.append(member)
+            if member:  # 检查成员是否存在
+                members.append(member)
             
         self.stack.pop()
 
         obj = self.stack.top()
+        
+        if not obj:  # 检查对象是否存在
+            self._handle_error("No object found", ctx)
+            return
 
         for member in members:
-            obj.append(member)
+            if hasattr(member, 'id'):  # 检查成员是否有id属性
+                obj.append(member)
 
         if self.mode in {"generate_object", "register_template"}:
             class_name = obj.object_type
@@ -759,7 +788,6 @@ class Generator(NdfGrammarListener):
             return
             
         assignment = Assignment()
-        assignment.is_template = True
         assignment.is_member = True
         self.stack.push(assignment)
 
@@ -820,7 +848,6 @@ class Generator(NdfGrammarListener):
     def enterTemplate_prefix(self, ctx):
         if self.ignore > 0:
             return
-        self.stack.top().is_template = True
 
     def enterPrivate_prefix(self, ctx):
         """处理私有前缀修饰符"""
@@ -841,17 +868,22 @@ class Generator(NdfGrammarListener):
         reference_str = ctx.getText()
         entity.content = 0
         
-        if self.mode in {"generate_object", "register_template"} and self.reference is not None:
+        if self.mode in {"generate_object", "register_template"}:
+            if self.reference is None:
+                self._handle_error("Reference dictionary is not initialized", ctx)
+                return
+            
             path = reference_str.lstrip('~$/').strip()
             if "|" in path:
                 paths = [p.strip() for p in path.split("|")]
                 values = []
                 for p in paths:
-                    if p in self.reference:
+                    if p and p in self.reference:  # 添加空路径检查
                         values.append(self.reference[p])
-                entity.value = values[0] if len(values) == 1 else values
+                if values:  # 检查是否找到任何值
+                    entity.value = values[0] if len(values) == 1 else values
             else:
-                if path in self.reference:
+                if path and path in self.reference:  # 添加空路径检查
                     entity.value = self.reference[path]
                 
         self.stack.push(entity)

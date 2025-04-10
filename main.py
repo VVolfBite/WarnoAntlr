@@ -4,6 +4,7 @@ import os
 import config
 import antlr4
 from antlr4 import *
+from src.extractor.base_class import BaseDescription
 from src.parsers.parser.NdfGrammarLexer import NdfGrammarLexer
 from src.parsers.parser.NdfGrammarParser import NdfGrammarParser
 from src.parsers.syntax_tree.actions import semantic_actions_generator
@@ -18,65 +19,60 @@ WORK_DIRECTORY = "D:/WarnoAntlr-main/"
 sys.path.append(WORK_DIRECTORY)
 
 #=============================================
-# 2. 基础管理器类
+# 2. 统一管理器类
 #=============================================
 class Manager:
-    """基础管理器类
+    """统一管理器类
     
-    提供对象管理的基本功能:
+    提供功能:
+    - 注册对象(register_object)
+    - 注册模板(register_template) 
+    - 生成对象(generate)
+    - 导出类(export)
+    - 路径解析(resolve_path)
     - 文件读写(save/load)
-    - 字典操作(merge)
-    - 属性设置(set_xxx)
-    - 文件解析(extract)
     """
-    def __init__(self, file_list: List[Tuple[str, str]], output_file: str = "global.pkl", log_file: str = "log.txt"):
-        """初始化管理器
-        
-        Args:
-            file_list: 要处理的文件列表，每个元素为(文件路径, 命名空间)的元组
-            output_file: 输出文件路径
-            log_file: 日志文件路径
-        """
-        self.dict = {}
+    def __init__(
+        self, 
+        file_list: List[Tuple[str, str]], 
+        register_file: str = "register.pkl",
+        generate_file: str = "global.pkl",
+        log_file: str = "log.txt",
+        export_file: str = "TClass.py"
+    ):
         self.file_list = file_list
-        self.output_file = output_file
+        self.register_dict = {}  # 存储注册信息
+        self.dict = {}          # 存储生成信息
+        self.register_file = register_file
+        self.generate_file = generate_file
         self.log_file = log_file
+        self.export_file = export_file
 
-    def save(self):
-        """保存字典到文件"""
-        with open(self.output_file, "wb") as f:
-            pickle.dump(self.dict, f)
+    def save(self, mode: str = "generate"):
+        """保存到文件"""
+        if mode == "register":
+            with open(self.register_file, "wb") as f:
+                pickle.dump(self.register_dict, f)
+        else:
+            with open(self.generate_file, "wb") as f:
+                pickle.dump(self.dict, f)
 
-    def load(self):
-        """从文件加载字典"""
-        with open(self.output_file, "rb") as f:
-            self.dict = pickle.load(f)
+    def load(self, mode: str = "generate"):
+        """从文件加载"""
+        if mode == "register":
+            with open(self.register_file, "rb") as f:
+                self.register_dict = pickle.load(f)
+        else:
+            with open(self.generate_file, "rb") as f:
+                self.dict = pickle.load(f)
 
-    def log(self, message):
-        """写入日志信息"""
+    def log(self, message: str):
+        """写入日志"""
         with open(self.log_file, "a") as f:
             f.write(message + "\n")
 
-    def set_dict(self, dict):
-        self.dict = dict
-
-    def set_file_list(self, file_list):
-        self.file_list = file_list
-
-    def set_output_file(self, output_file):
-        self.output_file = output_file
-
-    def set_log_file(self, log_file):
-        self.log_file = log_file
-
-    def merge(self, dict1, dict2):
-        """合并两个字典
-        
-        规则:
-        1. 键不存在时直接添加
-        2. 键存在且都是字典时递归合并
-        3. 键存在且原值为None时覆盖
-        """
+    def merge(self, dict1: dict, dict2: dict) -> dict:
+        """合并字典"""
         for key, value in dict2.items():
             if key in dict1:
                 if isinstance(dict1[key], dict) and isinstance(value, dict):
@@ -88,21 +84,7 @@ class Manager:
         return dict1
 
     def extract(self, file_name: str, name_space: str, reference: Any, mode: str = "generate_object") -> Dict:
-        """解析NDF文件
-        
-        Args:
-            file_name: 文件名
-            name_space: 命名空间
-            reference: 引用管理器
-            mode: 解析模式(generate_object/register_object/register_template)
-        
-        Returns:
-            解析结果(generator或register)
-            
-        Raises:
-            FileNotFoundError: 文件不存在
-            antlr4.error.Errors.ParseCancellationException: 解析错误
-        """
+        """解析NDF文件"""
         try:
             input_stream = antlr4.InputStream(str(FileStream(file_name, encoding="utf8")))
             lexer = NdfGrammarLexer(input_stream)
@@ -131,11 +113,7 @@ class Manager:
             raise
 
     def check_file_exist(self) -> Dict[str, bool]:
-        """检查文件列表中的文件是否存在
-        
-        Returns:
-            文件存在状态的字典 {文件路径: 是否存在}
-        """
+        """检查文件是否存在"""
         file_status = {}
         for file, _ in self.file_list:
             full_path = os.path.join(config.RAW_DATA_PATH, file)
@@ -145,61 +123,108 @@ class Manager:
             file_status[file] = exists
         return file_status
 
-#=============================================
-# 3. 注册管理器类
-#=============================================
-class RegisterManger(Manager):
-    """注册管理器
-    
-    负责对象和模板的注册、导出等功能
-    """
-    def __init__(self, file_list, output_file="global.pkl", export_file="TClass.py"):
-        super().__init__(file_list, output_file)
-        self.export_file = export_file
-    
-    def set_export_file(self, export_file):
-        self.export_file = export_file
+    def _resolve_path(self, path: Union[str, List[str]], namespace: Optional[str]) -> str:
+        """解析路径"""
+        if isinstance(path, list):
+            path = '/' + '/'.join(str(p) for p in path)
+        elif not isinstance(path, str):
+            raise TypeError("路径必须是字符串或列表")
 
-    def register(self, file_name):
-        """执行完整的注册流程"""
-        self.set_file_list(file_name)
-        self.register_object()
+        path = path.strip()
+        if path.startswith("$/"):
+            return path[2:].strip('/')
+        if path.startswith("~/"):
+            if not namespace or not namespace.startswith('/'):
+                raise ValueError(f"Namespace '{namespace}' 必须以 '/' 开头")
+            return f"{namespace.rstrip('/')}/{path[2:].strip('/')}"
+        return path.strip('/')
+
+    def get(self, path: Union[str, List[str]], namespace: Optional[str] = None) -> Any:
+        """获取值"""
+        try:
+            full_path = self._resolve_path(path, namespace)
+            keys = full_path.strip('/').split('/')
+            current = self.dict
+
+            for key in keys:
+                if isinstance(current, dict) and key in current:
+                    current = current[key]
+                elif hasattr(current, key):
+                    current = getattr(current, key)
+                else:
+                    self.log(f"Warning: Path '{path}' not found in namespace '{namespace}'")
+                    return full_path.lstrip("$~/")
+            return current
+        except Exception as e:
+            self.log(f"Error accessing path '{path}': {str(e)}")
+            return None
+
+    def set(self, path: str, value: Any, namespace: Optional[str] = None):
+        """设置值"""
+        full_path = self._resolve_path(path, namespace)
+        keys = full_path.strip('/').split('/')
+        current = self.dict
+
+        for key in keys[:-1]:
+            if key not in current or not isinstance(current[key], dict):
+                current[key] = {}
+            current = current[key]
+        current[keys[-1]] = value
+
+    def set_batch(self, data_dict: dict, current_namespace: str):
+        """批量设置值"""
+        if not isinstance(data_dict, dict):
+            raise TypeError("data_dict 必须是一个字典")
+        for key, value in data_dict.items():
+            self.set(key, value, namespace=current_namespace)
+
+    def register(self, reference: Optional[Any] = None):
+        """执行完整注册流程"""
+        self.register_object(reference)
         self.export()
-        self.register_template()
+        self.register_template(reference)
         self.export()
     
-    def register_template(self):
+    def register_template(self, reference: Optional[Any] = None):
         """注册模板"""
         for file, name_space in self.file_list:
             file = config.RAW_DATA_PATH + file
             template = self.extract(
                 file,
                 name_space=name_space,
-                reference=None,
+                reference=reference,
                 mode="register_template"
             )
-            self.dict = self.merge(self.dict, template)
+            self.register_dict = self.merge(self.register_dict, template)
 
-    def register_object(self):
+    def register_object(self, reference: Optional[Any] = None):
         """注册对象"""
         for file, name_space in self.file_list:
             file = config.RAW_DATA_PATH + file
             object = self.extract(
                 file,
                 name_space=name_space,
-                reference=None,
+                reference=reference,
                 mode="register_object"
             )
-            self.dict = self.merge(self.dict, object)
+            self.register_dict = self.merge(self.register_dict, object)
 
-    def add(self, dict):
-        """添加字典"""
-        self.dict = self.merge(self.dict, dict)
+    def generate(self, reference: Optional[Any] = None):
+        """生成对象"""
+        for file, name_space in self.file_list:
+            file = config.RAW_DATA_PATH + file
+            object = self.extract(
+                file,
+                name_space=name_space,
+                reference=reference,
+                mode="generate_object"
+            )
+            self.set_batch(object, "/")
 
     def export(self):
-        """导出类定义到Python文件"""
+        """导出类定义"""
         class_definitions = []
-        for class_name, data in self.dict.items():
+        for class_name, data in self.register_dict.items():
             # 获取类信息
             attributes = data.get("attributes", {})
             base = data.get("base") or {}
@@ -210,16 +235,37 @@ class RegisterManger(Manager):
             class_definition = f"class {class_name}({base_name}):\n"
             
             # 处理参数
+            def format_value(value):
+                """格式化值为字符串表示"""
+                if isinstance(value, dict) and 'default' in value:
+                    # 如果是模板参数描述,直接使用default值
+                    default_value = value['default']
+                    if isinstance(default_value, str):
+                        return f'"{default_value}"'
+                    return str(default_value) if default_value is not None else 'None'
+                elif isinstance(value, BaseDescription):
+                    return value.reverse()
+                elif isinstance(value, str):
+                    return f'"{value}"'
+                elif isinstance(value, (list, tuple)):
+                    items = [format_value(item) for item in value]
+                    return f"[{', '.join(items)}]"
+                elif isinstance(value, dict):
+                    items = [f'"{k}": {format_value(v)}' for k, v in value.items()]
+                    return f"{{{', '.join(items)}}}"
+                else:
+                    return str(value)
+            
+            # 生成当前类参数
             current_params = ", ".join(
-                f'{key}="{value}"' if isinstance(value, str) 
-                else f"{key}={value}"
+                f"{key}={format_value(value)}"
                 for key, value in attributes.items()
             )
             
+            # 生成父类参数
             super_params = ", ".join(
-                f"{key}={value.lstrip('@')}" 
-                if isinstance(value, str) and value.startswith("@")
-                else f"{key}={value}"
+                f"{key}={value.lstrip('@')}" if isinstance(value, str) and value.startswith('@')
+                else f"{key}={format_value(value)}"
                 for key, value in base_attributes.items()
             )
             
@@ -246,130 +292,36 @@ class RegisterManger(Manager):
         print(f"Classes successfully written to {self.export_file}")
 
 #=============================================
-# 4. 生成管理器类
-#=============================================
-class GenerateManager(Manager):
-    """生成管理器
-    
-    负责对象的生成、路径解析等功能
-    """
-    def _resolve_path(self, path: Union[str, List[str]], namespace: Optional[str]) -> str:
-        """解析路径处理
-        
-        Args:
-            path: 路径字符串或路径片段列表
-            namespace: 当前命名空间
-            
-        Returns:
-            解析后的完整路径
-            
-        Raises:
-            TypeError: 路径类型错误
-            ValueError: 命名空间格式错误
-        """
-        if isinstance(path, list):
-            path = '/' + '/'.join(str(p) for p in path)
-        elif not isinstance(path, str):
-            raise TypeError("路径必须是字符串或列表")
-
-        path = path.strip()
-
-        if path.startswith("$/"):
-            return path[2:].strip('/')
-
-        if path.startswith("~/"):
-            if not namespace or not namespace.startswith('/'):
-                raise ValueError(f"Namespace '{namespace}' 必须以 '/' 开头")
-            return f"{namespace.rstrip('/')}/{path[2:].strip('/')}"
-
-        return path.strip('/')
-
-    def get(self, path: Union[str, List[str]], namespace: Optional[str] = None) -> Any:
-        """获取指定路径的值
-        
-        Args:
-            path: 路径字符串或路径片段列表
-            namespace: 当前命名空间(可选)
-            
-        Returns:
-            路径对应的值，如果路径无效则返回处理过的路径字符串
-        """
-        try:
-            full_path = self._resolve_path(path, namespace)
-            keys = full_path.strip('/').split('/')
-            current = self.dict
-
-            for key in keys:
-                if isinstance(current, dict) and key in current:
-                    current = current[key]
-                elif hasattr(current, key):
-                    current = getattr(current, key)
-                else:
-                    self.log(f"Warning: Path '{path}' not found in namespace '{namespace}'")
-                    return full_path.lstrip("$~/")
-
-            return current
-            
-        except Exception as e:
-            self.log(f"Error accessing path '{path}': {str(e)}")
-            return None
-
-    def set(self, path, value, namespace=None):
-        """设置值
-        支持绝对路径($/...)和相对路径(~/...)
-        """
-        full_path = self._resolve_path(path, namespace)
-        keys = full_path.strip('/').split('/')
-        current = self.dict
-
-        for key in keys[:-1]:
-            if key not in current or not isinstance(current[key], dict):
-                current[key] = {}
-            current = current[key]
-
-        current[keys[-1]] = value
-
-    def set_batch(self, data_dict, current_namespace):
-        """批量设置值"""
-        if not isinstance(data_dict, dict):
-            raise TypeError("data_dict 必须是一个字典")
-        for key, value in data_dict.items():
-            self.set(key, value, namespace=current_namespace)
-
-    def generate(self):
-        """生成对象"""
-        for file, name_space in self.file_list:
-            file = config.RAW_DATA_PATH + file
-            object = self.extract(
-                file,
-                name_space=name_space,
-                reference=self,
-                mode="generate_object"
-            )
-            self.set_batch(object, "/")
-
-#=============================================
-# 5. 主函数
+# 3. 主函数
 #=============================================
 def main():
     """主函数"""
-    # 1. 注册对象与模板
     file_list = config.PROCESS_FILE_LIST
-    register_manger = RegisterManger(
+    reference = {
+            "test/path": 100,
+            "system/value": "system",
+            "obj/member": {"value": 200},
+            "array/data": [1, 2, 3, 4, 5]
+        }
+    # 创建管理器
+    manager = Manager(
         file_list=file_list,
-        output_file="register.pkl",
+        register_file="register.pkl",
+        generate_file="global.pkl",
+        log_file="log.txt",
         export_file="TClass.py"
     )
-    register_manger.check_file_exist()
-    register_manger.register(file_list)
-    register_manger.save()
     
-    # 2. 生成对象
-    generate_manger = GenerateManager(file_list, output_file="global.pkl")
-    generate_manger.generate()
-
-    # 3. 保存对象
-    # generate_manger.save()
+    # 检查文件
+    manager.check_file_exist()
+    
+    # 注册对象和模板
+    manager.register(reference=reference)
+    manager.save(mode="register")
+    
+    # 生成对象
+    manager.generate(reference=reference)
+    manager.save(mode="generate")
 
 if __name__ == "__main__":
     main()

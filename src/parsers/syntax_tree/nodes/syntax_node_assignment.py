@@ -1,3 +1,4 @@
+import logging
 from src.parsers.syntax_tree.nodes.syntax_node_base import *
 
 class Assignment(Base):
