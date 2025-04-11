@@ -68,9 +68,9 @@ guid_value : GUID;
 
 // 特殊值
 special_value : rgba_value | float2_value | float3_value;
-rgba_value : K_RGBA '[' INT ',' INT ',' INT ',' INT ']';
-float2_value : K_FLOAT2 '[' (float_value|int_value) ',' (float_value|int_value) ']';
-float3_value : K_FLOAT3 '[' (float_value|int_value) ',' (float_value|int_value) ',' (float_value|int_value) ']';
+rgba_value : K_RGBA '[' INT ',' INT ',' INT ',' INT ','? ']';
+float2_value : K_FLOAT2 '[' (float_value|int_value) ',' (float_value|int_value) ','? ']';
+float3_value : K_FLOAT3 '[' (float_value|int_value) ',' (float_value|int_value) ',' (float_value|int_value) ','? ']';
 
 //=============================================
 // 5. 类型系统
@@ -94,9 +94,9 @@ builtin_type_label
     ;
 
 // 容器类型
-pair_label : K_PAIR '<' type_label ',' type_label '>';
-list_label : K_LIST '<' type_label '>';
-map_label : K_MAP '<' type_label ',' type_label '>';
+pair_label : K_PAIR '<' type_label ',' type_label ','? '>';
+list_label : K_LIST '<' type_label ','? '>';
+map_label : K_MAP '<' type_label ',' type_label ','? '>';
 
 type_initialization
     : builtin_type_label vector_value
@@ -130,7 +130,7 @@ template_assignment
     ;
 
 template_param : id ('=' r_value)?;
-template_param_list : '[' (template_param (',' template_param)*)? ']';
+template_param_list : '[' (template_param (',' template_param)* ','?)? ']';
 
 template_param_type
     : type_label                            
@@ -138,7 +138,7 @@ template_param_type
     | numeric_specialization                
     ;
 
-template_type : ID '<' template_param_type (',' template_param_type)* '>';
+template_type : ID '<' template_param_type (',' template_param_type)* ','? '>';
 numeric_specialization
     : int_value                                    
     | float_value                                   
@@ -152,7 +152,7 @@ numeric_specialization
 vector_value : '[' (r_value (',' r_value)* ','?)? ']';
 
 // Pair
-pair_value : '(' pair_element ',' pair_element ')';
+pair_value : '(' pair_element ',' pair_element ','? ')';
 pair_element : r_value;
 
 // Map

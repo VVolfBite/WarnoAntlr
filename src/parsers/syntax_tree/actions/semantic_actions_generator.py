@@ -10,7 +10,7 @@ import logging
 
 
 # 在文件顶部import区域添加
-from src.config.config_manager import ConfigManager
+from src.core.config_manager import ConfigManager
 
 #=============================================
 # 1. 基础类定义
@@ -129,18 +129,10 @@ class Generator(NdfGrammarListener):
                 self.generator[name] = [current, value]
 
     def instantiate_class(self, class_name: str, **kwargs) -> Optional[Any]:
-        """按优先级从模块实例化类
-        
-        Args:
-            class_name: 要实例化的类名
-            **kwargs: 传递给类构造函数的参数
-            
-        Returns:
-            实例化的对象,如果找不到类则返回None
-        """
+        """按优先级从模块实例化类"""
         # 获取完整的类文件路径列表
         class_paths = [
-            self.config.src_path / "extractor" / file_name 
+            self.config.extractor_path / file_name 
             for file_name in self.config.class_file_names
         ]
         
@@ -891,17 +883,16 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.Reference
         reference_str = ctx.getText()
-        entity.content = 0  # 保存原始引用字符串
+        entity.content = ctx.getText()  # 保存原始引用字符串
         
         if self.mode in {"generate_object", "register_template"}:
-            if self.reference is None:
-                self._handle_error("Reference dictionary is not initialized", ctx)
-                return
-                
             # 使用_resolve_reference解析引用
             resolved_value = self._resolve_reference(reference_str)
             if resolved_value is not None:
                 entity.value = resolved_value
+            else:
+                entity.value = reference_str
+                logging.warning(f"Reference '{reference_str}' not found in reference dictionary")
                 
         self.stack.push(entity)
 

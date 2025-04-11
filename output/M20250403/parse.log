@@ -1,0 +1,1734 @@
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\weapons\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\units\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\units\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\classes.py
+Warning: Path 'EDefaultFactories/Logistic' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Infantry' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Art' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Tanks' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Recons' not found in namespace '$'
+Warning: Path 'EDefaultFactories/DCA' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Helis' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Planes' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Defense' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Logistic' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Art' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Infantry' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Tanks' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Recons' not found in namespace '$'
+Warning: Path 'EDefaultFactories/DCA' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Helis' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Planes' not found in namespace '$'
+Warning: Path 'EDefaultFactories/Defense' not found in namespace '$'
+Warning: Path 'EDefaultFactories/UniversalFactory' not found in namespace '$'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Gain_un_niveau_XP' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Normal' not found in namespace '$/GFX/Constantes'
+Error accessing path '~/TacticVictoryLevelConstantes': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/Constantes': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Warning: Path 'IADifficulty/TresFacile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Facile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Normal' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Difficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/TresDifficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/PlusDifficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'ModifierType_Additionnel' not found in namespace '$/GFX/Constantes'
+Error accessing path '~/ECollisionPlane/NoCollision': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/NoCollision': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/Ground': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/NearGround': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/LowAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/HighAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/ProjectileAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/Ground': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/Ground': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/NearGround': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/ProjectileAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/NearGround': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/Ground': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/NearGround': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/LowAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/ProjectileAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/LowAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/NearGround': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/LowAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/HighAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/ProjectileAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/HighAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/LowAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/HighAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/ProjectileAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/Ground': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/NearGround': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/ECollisionPlane/ProjectileAltitude': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Warning: Path 'ECombatRule/NotSpecified' not found in namespace '$/GFX/Constantes'
+Warning: Path 'ECombatRule/Conquest' not found in namespace '$/GFX/Constantes'
+Warning: Path 'ECombatRule/Destruction' not found in namespace '$/GFX/Constantes'
+Warning: Path 'ECombatRule/NotSpecified' not found in namespace '$/GFX/Constantes'
+Warning: Path 'ECombatRule/Conquest' not found in namespace '$/GFX/Constantes'
+Warning: Path 'ECombatRule/Destruction' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/TresFacile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Facile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Normal' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Difficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/TresDifficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/PlusDifficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/TresFacile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Facile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Normal' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Difficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/TresDifficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/PlusDifficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/TresFacile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Facile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Normal' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/Difficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/TresDifficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/PlusDifficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/TresDifficile' not found in namespace '$/GFX/Constantes'
+Warning: Path 'IADifficulty/PlusDifficile' not found in namespace '$/GFX/Constantes'
+Error accessing path '~/DissimulationValue/VEHICLE': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/DissimulationValue/VEHICLE_RECO': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/DissimulationValue/INFANTRY': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Error accessing path '~/DissimulationValue/INFANTRY_RECO': Namespace '$/GFX/Constantes' 必须以 '/' 开头
+Warning: Path 'ETerrainType/Default' not found in namespace '$/GFX/Constantes'
+Warning: Path 'ETerrainType/Default' not found in namespace '$/GFX/Constantes'
+Warning: Path 'ETerrainType/ForetLegere' not found in namespace '$/GFX/Constantes'
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_allie': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Gain_un_niveau_XP': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_Panique_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_Hors_Transport_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_allie': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Gain_un_niveau_XP': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_Panique_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_Hors_Transport_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_allie': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Gain_un_niveau_XP': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_Panique_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_Hors_Transport_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_allie_different_de_caster': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_capture_allie_solo': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_allie': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Bouclier_Suppression_50': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_allie': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Bouclier_Suppression_99': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Choc': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Choc_feedback': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_choc_ok_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Infanterie_Cowering_Rampe': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_Retraite_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_Infanterie_Cowering_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Infanterie_Cowering_Stop': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_Retraite_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_Infanterie_Cowering_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Baisse_Dangerosite_et_Transport_0_Effet': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_GroundUnit_Engaged_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Ajoute_Tag_Hors_Transport': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_GSR': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_RadioJammed_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_GSR_ok_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Ajoute_Tag_GSR_ok': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Bouclier_Suppression_IFV': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_soloselected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_soloselected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_IFV_feedback': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_IFV_ok_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Infanterie_bonus_discretion': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Infanterie_bonus_defense': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Effet_Suppress_Recu_125pourcent': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Effet_Suppress_Recu_125pourcent': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_military_police': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_soloselected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_soloselected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_military_police_feedback': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_post_ordre': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Destruction': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_oui': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Regen_suppress_regular': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_xp_regular_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_oui': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Regen_suppress_veteran': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_xp_veteran_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_oui': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Regen_suppress_elite': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_xp_elite_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_SF_feedback': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_stressOnMiss_high': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_stressOnMiss_low': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_stressOnMiss_mid': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Tank_bonus_discretion': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Trepied': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_Trepied_ok_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Ajoute_Tag_Trepied_ok': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Malus_ciblage_UAV': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_electronic_warfare': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_eo_dazzler': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_fireDirection': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_soloselected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_allied': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_soloselected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_allied': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_jammer': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_electronic_warfare_arty': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_anyalliance': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_reserviste': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_reserviste_immune_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_reserviste': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_reserviste_immune_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_resolute': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_security': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Choc_feedback': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_sigint_close': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_allied': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_allied': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_RadioJammed_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_ennemi': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_sigint_far': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_allied': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_selected': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_allied': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_RadioJammed_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_sigint_close_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_sigint_feedback': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_sigint_ok_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_sniper': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagRaisedInUnit_snipe_ok_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_sniper_feedback': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionTagNotRaisedInUnit_snipe_ok_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteCumulEffect_jamais': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteDeclenchementType_automatique': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteTargetFilter_joueur': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/AllianceRelation/vide': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/UnitEffect_Ajoute_Tag_snipe_ok': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/CapaciteFeedbackActivationMask_never': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ConditionNotInMovement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/EVisionUnitType/HighAltitude': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'ResistanceFamily_infanterie' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/EArmorLocation/Front': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'ResistanceFamily_infanterie' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/EArmorLocation/Rear': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'ResistanceFamily_infanterie' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/EArmorLocation/Sides': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'ResistanceFamily_infanterie' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/EArmorLocation/Top': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'ResistanceFamily_infanterie' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/EArmorLocation/Front': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'ResistanceFamily_infanterie' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/EArmorLocation/Rear': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'ResistanceFamily_infanterie' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/EArmorLocation/Sides': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'ResistanceFamily_infanterie' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/EArmorLocation/Top': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Physical' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Physical' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Physical' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Remplacement': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ETeamTypeForUnitEffect/Number': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/Capacite_Aura_capture_allie_solo': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/Capacite_Aura_Commandement_1': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/Capacite_Aura_Commandement_2': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/Capacite_Aura_Commandement_3': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Pourcentage': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Error accessing path '~/ModifierType_Multiplicatif': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Error accessing path '~/ModifierType_Additionnel': Namespace '$/GFX/EffectCapacity' 必须以 '/' 开头
+Warning: Path 'EDamageType/Suppress' not found in namespace '$/GFX/EffectCapacity'
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_AmmoExplosion_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_4_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_FuelExplosion_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_ArmourCracked_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Bailed_Out' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_BailedOut_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Vitesse_50' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_TransmissionDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Vitesse_50' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_EngineDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Full_Stop' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_EngineDestroyed_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Chenille_Detruite' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_TracksBroken_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Tourelle_Bloquee' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_TurretStuck_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_3_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_Incendiary_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_Spalling_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Error accessing path '~/CriticalEffect_Bounce_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/CriticalEffect_CompReset_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_EngineOnFire_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_FuelTankOnFire_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_PilotInjured_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Stop_Armes' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_WeaponsJammed_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_PilotUnconscious_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_EngineDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_PilotPanicked_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_OilLeak_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_PropellerDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_RadiatorDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_EngineOverheating_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_WingsDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_EngineStalling_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_FloatCarburatorFailure_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_FuelTankLeaking_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_AileronDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_RadiatorOverheating_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_TailDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_RudderDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/AirplaneCriticalEffect_ElevatorDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_HUD_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_FuelTankLeaking_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_TailRotorDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_MainRotorDamaged_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_Turbine_Engine_Failure_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_turbineOnFire_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_FuelTankOnFire_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_CrewInjured_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Stop_Armes' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_WeaponsJammed_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Error accessing path '~/HelicoCriticalEffect_Hydraulic_Fluid_Fire_Desc': Namespace '$/GFX/UnitConstantes' 必须以 '/' 开头
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+跳过无模板文件: GameData/Gameplay/Constantes/Airplane.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/Deroute.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/EvaluationMenace.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/FactoryResources.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/GDConstantes.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/HitRollConstants.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/CapaciteList.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+跳过无模板文件: GameData/Gameplay/Constantes/Airplane.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/Deroute.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/EvaluationMenace.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/FactoryResources.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/GDConstantes.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/HitRollConstants.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/CapaciteList.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+跳过无模板文件: GameData/Gameplay/Constantes/Airplane.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/Deroute.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/EvaluationMenace.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/FactoryResources.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/GDConstantes.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/HitRollConstants.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/CapaciteList.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_AmmoExplosion_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_4_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_FuelExplosion_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_ArmourCracked_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Bailed_Out' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_BailedOut_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Vitesse_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_TransmissionDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Vitesse_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_EngineDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Full_Stop' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_EngineDestroyed_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Chenille_Detruite' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_TracksBroken_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Tourelle_Bloquee' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_TurretStuck_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_3_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_Incendiary_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_Spalling_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_Bounce_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_CompReset_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_EngineOnFire_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_FuelTankOnFire_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_PilotInjured_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Stop_Armes' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_WeaponsJammed_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_PilotUnconscious_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_EngineDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_PilotPanicked_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_OilLeak_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_PropellerDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_RadiatorDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_EngineOverheating_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_WingsDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_EngineStalling_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_FloatCarburatorFailure_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_FuelTankLeaking_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_AileronDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_RadiatorOverheating_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_TailDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_RudderDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_ElevatorDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_HUD_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_FuelTankLeaking_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_TailRotorDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_MainRotorDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_Turbine_Engine_Failure_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_turbineOnFire_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_FuelTankOnFire_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_CrewInjured_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Stop_Armes' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_WeaponsJammed_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_Hydraulic_Fluid_Fire_Desc' not found in namespace '$/GFX/UnitConstantes'
+跳过无模板文件: GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf
+跳过无模板文件: GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf
+跳过无模板文件: GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Infanterie.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/Ammunition.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/FireDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/SmokeDescriptor.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/Ravitaillement.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\units\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\units\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Decks/Divisions.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Decks/DivisionRules.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Decks/DivisionCostMatrix.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\decks\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\decks\classes.py
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictCadavrePositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path '$/GFX/Unit/CadavreDurationApresFeu_Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Ruin' not found in namespace '$/GFX/Unit'
+Warning: Path '~/InflammableModuleDescriptorDistrict' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictPositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxSuppressionDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxStunDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_SuppressDamagesRegenRatioList' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_StunDamagesRegen' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictSelectionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path 'CadavreDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/PackSignauxModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/TargetDataModuleDescriptor' not found in namespace '$/GFX/Unit'
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictCadavrePositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path '$/GFX/Unit/CadavreDurationApresFeu_Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Ruin' not found in namespace '$/GFX/Unit'
+Warning: Path '~/InflammableModuleDescriptorDistrict' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictPositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxSuppressionDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxStunDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_SuppressDamagesRegenRatioList' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_StunDamagesRegen' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictSelectionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path 'CadavreDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/PackSignauxModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/TargetDataModuleDescriptor' not found in namespace '$/GFX/Unit'
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictCadavrePositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path '$/GFX/Unit/CadavreDurationApresFeu_Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Ruin' not found in namespace '$/GFX/Unit'
+Warning: Path '~/InflammableModuleDescriptorDistrict' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictPositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxSuppressionDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxStunDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_SuppressDamagesRegenRatioList' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_StunDamagesRegen' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictSelectionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path 'CadavreDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/PackSignauxModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/TargetDataModuleDescriptor' not found in namespace '$/GFX/Unit'
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictCadavrePositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path '$/GFX/Unit/CadavreDurationApresFeu_Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Ruin' not found in namespace '$/GFX/Unit'
+Warning: Path '~/InflammableModuleDescriptorDistrict' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictPositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxSuppressionDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxStunDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_SuppressDamagesRegenRatioList' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_StunDamagesRegen' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictSelectionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path 'CadavreDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/PackSignauxModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/TargetDataModuleDescriptor' not found in namespace '$/GFX/Unit'
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictCadavrePositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path '$/GFX/Unit/CadavreDurationApresFeu_Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Ruin' not found in namespace '$/GFX/Unit'
+Warning: Path '~/InflammableModuleDescriptorDistrict' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictPositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxSuppressionDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxStunDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_SuppressDamagesRegenRatioList' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_StunDamagesRegen' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictSelectionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path 'CadavreDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/PackSignauxModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/TargetDataModuleDescriptor' not found in namespace '$/GFX/Unit'
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictCadavrePositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path '$/GFX/Unit/CadavreDurationApresFeu_Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Ruin' not found in namespace '$/GFX/Unit'
+Warning: Path '~/InflammableModuleDescriptorDistrict' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictPositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxSuppressionDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxStunDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_SuppressDamagesRegenRatioList' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_StunDamagesRegen' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictSelectionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path 'CadavreDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/PackSignauxModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/TargetDataModuleDescriptor' not found in namespace '$/GFX/Unit'
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictCadavrePositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path '$/GFX/Unit/CadavreDurationApresFeu_Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Ruin' not found in namespace '$/GFX/Unit'
+Warning: Path '~/InflammableModuleDescriptorDistrict' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictPositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxSuppressionDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxStunDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_SuppressDamagesRegenRatioList' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_StunDamagesRegen' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictSelectionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path 'CadavreDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/PackSignauxModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/TargetDataModuleDescriptor' not found in namespace '$/GFX/Unit'
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\units\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\units\classes.py
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\decks\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\decks\classes.py
+Successfully loaded register data from C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\register\decks\data.dill
+跳过无模板文件: GameData/Gameplay/Constantes/Airplane.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/Deroute.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/EvaluationMenace.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/FactoryResources.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/GDConstantes.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/HitRollConstants.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\constants\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/CapaciteList.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/EffetsSurUnite.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ConditionsDescriptor.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\effects\classes.py
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_AmmoExplosion_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_4_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_FuelExplosion_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_ArmourCracked_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Bailed_Out' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_BailedOut_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Vitesse_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_TransmissionDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Vitesse_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_EngineDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Full_Stop' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_EngineDestroyed_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Chenille_Detruite' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_TracksBroken_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Tourelle_Bloquee' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_TurretStuck_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_3_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_Incendiary_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_Spalling_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_Bounce_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/CriticalEffect_CompReset_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_EngineOnFire_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_FuelTankOnFire_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_PilotInjured_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Stop_Armes' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_WeaponsJammed_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_PilotUnconscious_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_EngineDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_PilotPanicked_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_OilLeak_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_PropellerDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_RadiatorDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_EngineOverheating_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_WingsDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_EngineStalling_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_FloatCarburatorFailure_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_FuelTankLeaking_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_AileronDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Deroute' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_RadiatorOverheating_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_TailDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_RudderDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/AirplaneCriticalEffect_ElevatorDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_HUD_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_FuelTankLeaking_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_TailRotorDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_MainRotorDamaged_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_Turbine_Engine_Failure_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_turbineOnFire_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Pert_2_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_FuelTankOnFire_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Visee_50' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_CrewInjured_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Stop_Armes' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_WeaponsJammed_Desc' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '$/GFX/EffectCapacity/UnitEffect_Critic_Perd_1_PV' not found in namespace '$/GFX/UnitConstantes'
+Warning: Path '~/HelicoCriticalEffect_Hydraulic_Fluid_Fire_Desc' not found in namespace '$/GFX/UnitConstantes'
+跳过无模板文件: GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Airplane.ndf
+跳过无模板文件: GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Helico.ndf
+跳过无模板文件: GameData/Gameplay/Unit/CriticalModules/CriticalEffectModule_Infanterie.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\unit_consts\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/Ammunition.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/AmmunitionMissiles.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/WeaponDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageStairTypeEvolutionOverRangeDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/FireDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/SmokeDescriptor.ndf
+跳过无模板文件: GameData/Gameplay/Constantes/Ravitaillement.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\weapons\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/UniteDescriptor.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageLevels.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistance.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/DamageResistanceFamilyListImpl.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/BuildingDescriptors.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Gfx/ExperienceLevels.ndf
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictCadavrePositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path '$/GFX/Unit/CadavreDurationApresFeu_Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictTagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictFlagsModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ETerrainType/Ruin' not found in namespace '$/GFX/Unit'
+Warning: Path '~/InflammableModuleDescriptorDistrict' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictPositionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxSuppressionDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_MaxStunDamages' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_SuppressDamagesRegenRatioList' not found in namespace '$/GFX/Unit'
+Warning: Path '~/Building_StunDamagesRegen' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path 'ResistanceFamily_batiment' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictSelectionModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DistrictApparenceModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/LinkTeamModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/DebugModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path 'EGameplayBehavior/Nothing' not found in namespace '$/GFX/Unit'
+Warning: Path 'CadavreDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/PackSignauxModuleDescriptor' not found in namespace '$/GFX/Unit'
+Warning: Path '~/TargetDataModuleDescriptor' not found in namespace '$/GFX/Unit'
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\units\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\units\classes.py
+跳过无模板文件: GameData/Generated/Gameplay/Decks/Divisions.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Decks/DivisionRules.ndf
+跳过无模板文件: GameData/Generated/Gameplay/Decks/DivisionCostMatrix.ndf
+Successfully saved register data to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\decks\data.dill
+Successfully exported classes to C:\Users\Administrator\Desktop\WarnoAntlr\output\M20250403\template\decks\classes.py
