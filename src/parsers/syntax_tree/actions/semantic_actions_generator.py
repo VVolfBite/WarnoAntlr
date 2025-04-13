@@ -75,6 +75,7 @@ class Generator(NdfGrammarListener):
             
         # 主要逻辑
         if name not in self.register:
+            logging.info(f"Registering new class: {name}")
             self.register[name] = {
                 "attributes": attributes,
                 "base": {
@@ -107,6 +108,7 @@ class Generator(NdfGrammarListener):
                             if attr not in base["attributes"] or value is not None:
                                 base["attributes"][attr] = value
 
+
     def generate_object(self, name: str, value: Any) -> None:
         """根据类型生成对象实例"""
         # 参数检查
@@ -116,6 +118,7 @@ class Generator(NdfGrammarListener):
             
         # 主要逻辑
         if name not in self.generator:
+            logging.info(f"Generating new object: {name}")
             self.generator[name] = value
         else:
             current = self.generator.get(name)  # 使用get而不是直接访问
@@ -127,6 +130,7 @@ class Generator(NdfGrammarListener):
                 current.append(value)
             else:
                 self.generator[name] = [current, value]
+        
 
     def instantiate_class(self, class_name: str, **kwargs) -> Optional[Any]:
         """按优先级从模块实例化类"""
@@ -482,7 +486,7 @@ class Generator(NdfGrammarListener):
             
         entity = Base()
         entity.nodetype = NodeType.Boolean
-        entity.content = True if ctx.getText().lower() == "true" else False
+        entity.content = ctx.getText()
         
         if self.mode in {"generate_object", "register_template"}:
             entity.value = True if ctx.getText().lower() == "true" else False
@@ -495,7 +499,7 @@ class Generator(NdfGrammarListener):
             
         entity = Base()
         entity.nodetype = NodeType.Integer
-        entity.content = int(ctx.getText())
+        entity.content = ctx.getText()
         
         if self.mode in {"generate_object", "register_template"}:
             entity.value = int(ctx.getText())
@@ -508,7 +512,7 @@ class Generator(NdfGrammarListener):
             
         entity = Base()
         entity.nodetype = NodeType.Float
-        entity.content = float(ctx.getText())
+        entity.content = ctx.getText()
         
         if self.mode in {"generate_object", "register_template"}:
             entity.value = float(ctx.getText())
@@ -521,7 +525,7 @@ class Generator(NdfGrammarListener):
             
         entity = Base()
         entity.nodetype = NodeType.String
-        entity.content = str(ctx.getText()[1:-1])
+        entity.content = ctx.getText()
         
         if self.mode in {"register_template", "generate_object"}:
             entity.value = str(ctx.getText()[1:-1])
@@ -536,7 +540,7 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.Hex
         hex_str = ctx.getText()
-        entity.content = int(hex_str, 16)
+        entity.content = ctx.getText()
         
         if self.mode in {"generate_object", "register_template" }:
             entity.value = int(hex_str, 16)
@@ -551,7 +555,7 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.GUID
         guid_str = ctx.getText()
-        entity.content = guid_str
+        entity.content = ctx.getText()
         
         if self.mode in {"generate_object", "register_template"}:
             entity.value = guid_str
@@ -614,10 +618,8 @@ class Generator(NdfGrammarListener):
                 
             if hasattr(value_node, 'value') and value_node.value is not None:
                 val = value_node.value
-            elif hasattr(value_node, 'content') and value_node.content is not None:
-                val = value_node.content
             else:
-                logging.error("Float2 value node has no valid value or content")
+                logging.error("Float2 value node has no valid value")
                 return
                 
             values.insert(0, float(val))
@@ -670,7 +672,7 @@ class Generator(NdfGrammarListener):
         entity = Base()
         entity.nodetype = NodeType.RGBA
         text = ctx.getText().replace(" ", "").removeprefix("RGBA[").removeprefix("rgba[").removesuffix("]")
-        entity.content = [int(x) for x in text.split(",")]
+        entity.content = ctx.getText()
         
         if self.mode in {"generate_object", "register_template"}:
             entity.value = [int(x) for x in text.split(",")]
@@ -819,7 +821,7 @@ class Generator(NdfGrammarListener):
             value = self.stack.pop()
             assignment = self.stack.top()
             
-            assignment.content = value.content
+            assignment.content = value
             if self.mode in {"generate_object", "register_template"}:
                 assignment.value = value.value
                 if hasattr(assignment, 'type_spec'):
@@ -969,7 +971,7 @@ class Generator(NdfGrammarListener):
         text = text.replace("div", " div ")
         text = text.replace("DIV", " div ")
         
-        arithmetic.content = text
+        arithmetic.content = ctx.getText()
         self.stack.push(arithmetic)
 
     def exitArithmetic(self, ctx):
@@ -982,7 +984,7 @@ class Generator(NdfGrammarListener):
         elif ctx.getChildCount() == 2 and ctx.getChild(0).getText() == "-":
             op1 = self.stack.pop()
             arithmetic = self.stack.top()
-            arithmetic.content = -op1.content
+            arithmetic.content = "-" + op1.content
             if self.mode in {"generate_object", "register_template"}:
                 arithmetic.value = -op1.value
             return
@@ -1002,7 +1004,7 @@ class Generator(NdfGrammarListener):
             op2 = self.stack.pop()
             op1 = self.stack.pop()
             arithmetic = self.stack.top()
-            arithmetic.content = op1.content + op2.content
+            arithmetic.content = op1.content + "+" + op2.content
             if self.mode in {"generate_object", "register_template"}:
                 arithmetic.value = op1.value + op2.value
             return
@@ -1011,7 +1013,7 @@ class Generator(NdfGrammarListener):
             op2 = self.stack.pop()
             op1 = self.stack.pop()
             arithmetic = self.stack.top()
-            arithmetic.content = op1.content - op2.content
+            arithmetic.content = op1.content + "-" + op2.content
             if self.mode in {"generate_object", "register_template"}:
                 arithmetic.value = op1.value - op2.value
             return
@@ -1020,7 +1022,7 @@ class Generator(NdfGrammarListener):
             op2 = self.stack.pop()
             op1 = self.stack.pop()
             arithmetic = self.stack.top()
-            arithmetic.content = op1.content * op2.content
+            arithmetic.content = op1.content + "*" + op2.content
             if self.mode in {"generate_object", "register_template"}:
                 arithmetic.value = op1.value * op2.value
             return
@@ -1029,7 +1031,7 @@ class Generator(NdfGrammarListener):
             op2 = self.stack.pop()
             op1 = self.stack.pop()
             arithmetic = self.stack.top()
-            arithmetic.content = op1.content / op2.content
+            arithmetic.content = op1.content + "/" + op2.content
             if self.mode in {"generate_object", "register_template"}:
                 arithmetic.value = op1.value / op2.value
             return
