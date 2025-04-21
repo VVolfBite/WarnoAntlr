@@ -1,5 +1,5 @@
 from antlr4 import *
-from typing import Any, Optional  # 添加这行
+from typing import Any, Optional, Dict, TYPE_CHECKING  # 添加TYPE_CHECKING
 from src.parsers.parser.NdfGrammarListener import NdfGrammarListener
 from src.parsers.parser.NdfGrammarParser import NdfGrammarParser
 
@@ -7,10 +7,18 @@ from src.parsers.syntax_tree.nodes.syntax_node_assignment import *
 from src.parsers.syntax_tree.nodes.syntax_node_collection import *
 
 import logging
-
+import src.extractor.refined_class
+import src.extractor.extract_class
+import src.extractor.backup_class
+import src.extractor.base_class
 
 # 在文件顶部import区域添加
-from src.core.config_manager import ConfigManager
+try:
+    from src.core.config_manager import ConfigManager
+    from src.core.path_resolver import PathResolver
+except ImportError:
+    from core.config_manager import ConfigManager
+    from core.path_resolver import PathResolver
 
 #=============================================
 # 1. 基础类定义
@@ -45,23 +53,48 @@ class StackMarker:
 # 2. 主生成器类
 #=============================================
 class Generator(NdfGrammarListener):
-    """语法树生成器"""
+    """语义动作生成器
+    处理NDF语法树的语义动作，生成对应的Python对象
+
+    主要功能:
+    1. 语法树遍历 - 遍历ANTLR生成的语法树
+    2. 语义动作 - 执行相应的语义动作
+    3. 对象生成 - 生成Python对象和类定义
+    """
     
     #-----------------------------------------
     # 1. 基础设施
     #-----------------------------------------
-    def __init__(self, parser, name_space="/", reference=None, mode="default"):
+    def __init__(self, parser: Parser, config: ConfigManager, name_space: str = "/", reference: Optional[PathResolver] = None, mode: str = "default"):
+        """初始化生成器
+        Args:
+            parser: ANTLR解析器
+            config: 配置管理器
+            name_space: 命名空间
+            reference: 路径解析器，用于解析引用
+            mode: 解析模式 ("register_object"|"register_template"|"generate_object")
+        """
         super().__init__()
-        self.config = ConfigManager.get_instance()
+        self.config = config
         self.rule_names = parser.ruleNames
         self.assignments = []
         self.stack = Stack()
         self.ignore = 0
         self.name_space = name_space
-        self.reference = reference
         self.mode = mode
+        
+        # 生成的对象使用普通字典
         self.generator = {}
+        # 注册的类型使用普通字典
         self.register = {}
+        
+        # reference必须是PathResolver
+        if reference is not None and not isinstance(reference, PathResolver):
+            raise TypeError("reference must be an instance of PathResolver")
+        self.reference = reference or PathResolver()
+        
+        self.current_class = None
+        self.current_template = None
 
     def register_object(self, name: str, attributes: dict, base_name: Optional[str] = None, base_attributes: Optional[dict] = None) -> None:
         """注册一个对象类型"""
@@ -134,49 +167,16 @@ class Generator(NdfGrammarListener):
 
     def instantiate_class(self, class_name: str, **kwargs) -> Optional[Any]:
         """按优先级从模块实例化类"""
-        # 获取完整的类文件路径列表
-        class_paths = [
-            self.config.extractor_path / file_name 
-            for file_name in self.config.class_file_names
-        ]
-        
-        # 按优先级尝试从每个文件加载类
-        for class_path in class_paths:
-            if class_path.exists():
-                try:
-                    module = self.load_class_module(str(class_path))
-                    if module and hasattr(module, class_name):
-                        return getattr(module, class_name)(**kwargs)
-                except Exception as e:
-                    self._handle_error(f"Failed to load class {class_name} from {class_path}: {str(e)}")
-                    continue
-                    
-        return None
+        # 直接从多个模块获取类
+        get_class = lambda name: (            
+            getattr(src.extractor.extract_class, name, None) or
+            getattr(src.extractor.backup_class, name, None) or
+            getattr(src.extractor.refined_class, name, None) or
+            getattr(src.extractor.base_class, name, None)
+        )
+        class_ = get_class(class_name)
+        return class_(**kwargs) if class_ is not None else None
 
-    def load_class_module(self, module_path: str) -> Optional[Any]:
-        """加载类定义模块
-        
-        Args:
-            module_path: 模块文件路径
-            
-        Returns:
-            加载的模块对象,如果加载失败则返回None
-        """
-        try:
-            import importlib.util
-            spec = importlib.util.spec_from_file_location(
-                Path(module_path).stem,
-                module_path
-            )
-            if not spec:
-                return None
-                
-            module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
-            return module
-        except Exception as e:
-            self._handle_error(f"Failed to load module {module_path}: {str(e)}")
-            return None
 
     def _resolve_reference(self, path: str) -> Any:
         """解析引用路径
@@ -361,7 +361,7 @@ class Generator(NdfGrammarListener):
                     # 3. 添加到引用索引
                     if self.name_space and self.reference:
                         # 添加到引用字典
-                        self.reference.set(assignment.id,assignment.value,self.name_space)
+                        self.reference.set("~/"+assignment.id,assignment.value,self.name_space)
 
     def enterMember_assignment(self, ctx):
         if self.ignore > 0:
@@ -776,8 +776,13 @@ class Generator(NdfGrammarListener):
             return
 
         for member in members:
-            if hasattr(member, 'id'):  # 检查成员是否有id属性
+            if hasattr(member, 'is_member') and member.is_member: # 检查成员是否有id属性
                 obj.append(member)
+            elif hasattr(member, 'id') and not member.is_member:
+                if self.mode in {"generate_object", "register_template"}:
+                    if self.name_space and self.reference:
+                        # 添加到引用字典
+                        self.reference.set("~/"+member.id,member.value,self.name_space)
 
         if self.mode in {"generate_object", "register_template"}:
             class_name = obj.object_type
